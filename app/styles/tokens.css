@@ -1,0 +1,96 @@
+/*
+ * Trenzora design tokens.
+ * Indian + modern + editorial + playful: warm paper, deep ink, a few loud
+ * Indian colours used sparingly. Every page styles itself with these tokens.
+ *
+ * Breakpoints (CSS can't use vars in media queries — keep in sync):
+ *   sm 640px · md 960px · lg 1280px
+ */
+:root {
+  /* Colour — surfaces */
+  --c-paper: #fbf6ee;
+  --c-paper-2: #f3ebdd;
+  --c-paper-3: #e9dfcd;
+  --c-ink: #16130f;
+  --c-ink-2: #4a433b; /* muted text, 8.9:1 on paper */
+  --c-ink-3: #6e665c; /* meta text, 5.3:1 on paper */
+  --c-line: rgb(22 19 15 / 0.14);
+  --c-line-strong: rgb(22 19 15 / 0.32);
+  --c-white: #fffdf9;
+
+  /* Colour — brand accents (Indian palette) */
+  --c-sindoor: #e0452b;
+  --c-sindoor-ink: #b8301a; /* accessible on paper / with white text */
+  --c-marigold: #f2b705;
+  --c-peacock: #0e6e6b;
+  --c-rani: #e8559a;
+  --c-focus: #3047d9;
+
+  /* Type */
+  --font-display:
+    'Bricolage Grotesque Variable', 'Arial Black', system-ui, sans-serif;
+  --font-body:
+    'Bricolage Grotesque Variable', system-ui, -apple-system, 'Segoe UI',
+    Roboto, 'Noto Sans', sans-serif;
+  --font-serif: 'Instrument Serif', 'Times New Roman', Georgia, serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-h3: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --fs-h2: clamp(1.875rem, 1.4rem + 2.2vw, 3rem);
+  --fs-h1: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);
+  --fs-mega: clamp(3.25rem, 1.4rem + 8.6vw, 9rem);
+
+  --lh-tight: 0.92;
+  --lh-snug: 1.15;
+  --lh-body: 1.55;
+
+  --tracking-tight: -0.035em;
+  --tracking-caps: 0.12em;
+
+  /* Space (4px base) */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --s-10: 8rem;
+  --section-y: clamp(3.5rem, 2rem + 6vw, 8rem);
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --max-w: 90rem;
+  --measure: 38rem;
+
+  /* Shape + depth */
+  --r-sm: 4px;
+  --r-md: 10px;
+  --r-lg: 18px;
+  --r-pill: 999px;
+  --shadow-1: 0 1px 2px rgb(22 19 15 / 0.06), 0 4px 16px rgb(22 19 15 / 0.06);
+  --shadow-2: 0 12px 48px rgb(22 19 15 / 0.18);
+
+  /* Motion — subtle by default */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-1: 140ms;
+  --dur-2: 260ms;
+  --dur-3: 480ms;
+
+  /* Layout */
+  --header-h: 3.75rem;
+  --tap: 2.75rem; /* 44px minimum touch target */
+  --z-header: 30;
+  --z-sticky: 25;
+  --z-drawer: 50;
+}
+
+@media (min-width: 960px) {
+  :root {
+    --header-h: 4.5rem;
+  }
+}

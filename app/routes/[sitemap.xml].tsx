@@ -8,6 +8,9 @@ export async function loader({
   const response = await getSitemapIndex({
     storefront,
     request,
+    types: ['products', 'collections', 'pages'],
+    // Brand pages + design-family pages that live only in Hydrogen.
+    customChildSitemaps: ['/sitemap-trenzora.xml'],
   });
 
   response.headers.set('Cache-Control', `max-age=${60 * 60 * 24}`);

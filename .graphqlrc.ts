@@ -13,13 +13,7 @@ const graphqlConfig: IGraphQLConfig = {
       documents: [
         './*.{ts,tsx,js,jsx}',
         './app/**/*.{ts,tsx,js,jsx}',
-        '!./app/graphql/**/*.{ts,tsx,js,jsx}',
       ],
-    },
-
-    customer: {
-      schema: getSchema('customer-account'),
-      documents: ['./app/graphql/customer-account/*.{ts,tsx,js,jsx}'],
     },
 
     // Add your own GraphQL projects here for CMS, Shopify Admin API, etc.

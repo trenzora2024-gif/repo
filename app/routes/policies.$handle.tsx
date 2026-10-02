@@ -1,15 +1,19 @@
 import {Link, useLoaderData} from 'react-router';
 import type {Route} from './+types/policies.$handle';
 import {type Shop} from '@shopify/hydrogen/storefront-api-types';
+import {seoMeta} from '~/lib/seo';
 
 type SelectedPolicies = keyof Pick<
   Shop,
   'privacyPolicy' | 'shippingPolicy' | 'termsOfService' | 'refundPolicy'
 >;
 
-export const meta: Route.MetaFunction = ({data}) => {
-  return [{title: `Hydrogen | ${data?.policy.title ?? ''}`}];
-};
+export const meta: Route.MetaFunction = ({data, params}) =>
+  seoMeta({
+    title: data?.policy.title ?? 'Policy',
+    description: `${data?.policy.title ?? 'Store policy'} for Trenzora orders in India.`,
+    path: `/policies/${params.handle}`,
+  });
 
 export async function loader({params, context}: Route.LoaderArgs) {
   if (!params.handle) {
@@ -45,15 +49,14 @@ export default function Policy() {
   const {policy} = useLoaderData<typeof loader>();
 
   return (
-    <div className="policy">
-      <br />
-      <br />
-      <div>
-        <Link to="/policies">← Back to Policies</Link>
-      </div>
-      <br />
-      <h1>{policy.title}</h1>
-      <div dangerouslySetInnerHTML={{__html: policy.body}} />
+    <div className="container page-end">
+      <header className="page-hero">
+        <p className="eyebrow">
+          <Link to="/policies">Policies</Link>
+        </p>
+        <h1>{policy.title}</h1>
+      </header>
+      <div className="prose" dangerouslySetInnerHTML={{__html: policy.body}} />
     </div>
   );
 }

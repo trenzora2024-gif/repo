@@ -1,6 +1,15 @@
 import {useLoaderData, Link} from 'react-router';
 import type {Route} from './+types/policies._index';
 import type {PoliciesQuery, PolicyItemFragment} from 'storefrontapi.generated';
+import {seoMeta} from '~/lib/seo';
+
+export const meta: Route.MetaFunction = () =>
+  seoMeta({
+    title: 'Policies',
+    description:
+      'Trenzora store policies: privacy, shipping, refunds and terms.',
+    path: '/policies',
+  });
 
 export async function loader({context}: Route.LoaderArgs) {
   const data: PoliciesQuery = await context.storefront.query(POLICIES_QUERY);
@@ -25,15 +34,20 @@ export default function Policies() {
   const {policies} = useLoaderData<typeof loader>();
 
   return (
-    <div className="policies">
-      <h1>Policies</h1>
-      <div>
+    <div className="container page-end">
+      <header className="page-hero">
+        <p className="eyebrow">Help</p>
+        <h1>Policies</h1>
+      </header>
+      <ul className="stack">
         {policies.map((policy) => (
-          <fieldset key={policy.id}>
-            <Link to={`/policies/${policy.handle}`}>{policy.title}</Link>
-          </fieldset>
+          <li key={policy.id}>
+            <Link className="link-arrow" to={`/policies/${policy.handle}`}>
+              {policy.title}
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

@@ -10,10 +10,16 @@
     "preview": "shopify hydrogen preview --build",
     "lint": "eslint --no-error-on-unmatched-pattern .",
     "typecheck": "react-router typegen && tsc --noEmit",
-    "codegen": "shopify hydrogen codegen && react-router typegen"
+    "codegen": "shopify hydrogen codegen && react-router typegen",
+    "dev:mock": "node scripts/dev-mock.mjs",
+    "mock:storefront": "node scripts/mock-storefront.ts",
+    "catalogue:export": "node scripts/export-catalogue.ts",
+    "format": "prettier --write app scripts"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
     "@shopify/hydrogen": "2026.4.7",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
