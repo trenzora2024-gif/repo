@@ -12,7 +12,6 @@ import {
   type ShouldRevalidateFunction,
 } from 'react-router';
 import type {Route} from './+types/root';
-import favicon from '~/assets/favicon.svg';
 import displayFontCss from '@fontsource-variable/bricolage-grotesque/wght.css?url';
 import displayFontLatin from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url';
 import serifFontCss from '@fontsource/instrument-serif/latin-400-italic.css?url';
@@ -47,7 +46,20 @@ export function links() {
       href: displayFontLatin,
       crossOrigin: 'anonymous',
     },
-    {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    {rel: 'icon', href: '/favicon.ico', sizes: '48x48'},
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/brand/favicon-32.png',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '192x192',
+      href: '/brand/icon-192.png',
+    },
+    {rel: 'apple-touch-icon', href: '/apple-touch-icon.png'},
   ];
 }
 

@@ -39,6 +39,15 @@ export function seoMeta({
   noindex,
   jsonLd,
 }: SeoInput): MetaDescriptor[] {
+  // Pages without their own image share the brand card.
+  image = image?.url
+    ? image
+    : {
+        url: absoluteUrl('/brand/og-default.jpg', origin),
+        alt: `${SITE.name} logo`,
+        width: 1200,
+        height: 630,
+      };
   const url = absoluteUrl(path.split('?')[0], origin);
   const fullTitle = title.includes(SITE.name)
     ? title
