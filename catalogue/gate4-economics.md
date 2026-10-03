@@ -102,6 +102,82 @@ GST registered; ITC eligible subject to normal rules (no ITC % assumed); retail 
 - Splash-proof lid, metal straw; white.
 - Sublimation, printed around the tumbler; max printable area 9.5 × 8 in; PNG/JPEG at 300 DPI.
 
+## Gate 4D: working position (2026-10-03)
+
+Gate 4 is **not approved**. Nothing in Shopify was changed.
+
+### Working supplier mappings: pending final confirmation
+
+| Product       | Supplier product                                                                        | Ref             | Status                   |
+| ------------- | --------------------------------------------------------------------------------------- | --------------- | ------------------------ |
+| Oversized tee | Printrove Oversized T-shirt (https://printrove.com/products/oversized-t-shirts)         | none published  | working; quote requested |
+| Tote          | Qikink Unisex Tote Bag Zipper, type Standard (https://qikink.com/custom/bags/tote-bag/) | page SKU `TbZp` | working; quote requested |
+| Tumbler       | Qikink Tumbler Bottle, 20 oz (https://qikink.com/custom/drinkware/tumbler-bottle/)      | page SKU `Tumb` | working                  |
+
+Quote requests (draft, not sent):
+
+- [`docs/suppliers/printrove-quote-request.md`](../docs/suppliers/printrove-quote-request.md)
+- [`docs/suppliers/qikink-tote-quote-request.md`](../docs/suppliers/qikink-tote-quote-request.md)
+
+Both use design 01 Mumbai Made.
+
+### Owner inputs
+
+- **Pending owner decisions:**
+  - working tote = Qikink Unisex Tote Bag Zipper / TbZp;
+  - tee blank colour = TBD;
+  - payment gateway not yet selected.
+- **Confirmed by the owner:**
+  - customer prices ₹999 tee / ₹599 tote / ₹1,099 tumbler (provisional), GST inclusive;
+  - Trenzora is GST registered;
+  - input tax credit eligible subject to normal GST rules;
+  - tee output GST 5% at ₹999 (owner-provided, not government-verified).
+
+### Cost model (`npm run costs:check`)
+
+- **Tee:**
+  - A = minimum print charge (floor, not expected);
+  - C = full 15.6 × 19.6 in template (conservative).
+- **Tote:**
+  - A = ₹80 DTF minimum (floor, not expected);
+  - C = ₹90 for a full 10 × 12 in DTF print (conservative).
+- **Tumbler:**
+  - verified supplier cost: ₹440 (print included) + ₹54 shipping, + ₹34 COD on COD orders, each + 18%;
+  - no RTO charge; 450 g / 500 g shipping weight.
+- **Print billing basis:** UNKNOWN for both suppliers until they confirm. No A scenario is the expected cost.
+- **Tote and tumbler margins:** not calculated until their output GST is confirmed.
+
+### Gate 4 blockers
+
+**A. Before product prices can be approved**
+
+1. Printrove's quote for design 01: actual print charge and billing basis (tee scenario B).
+2. Tee blank colour. It sets the print rate: ₹0.8 vs ₹1.5 per sq in.
+3. Output GST rate and HSN for the tote and the tumbler, from an official source or your CA. Ideally the same confirmation for the tee's owner-provided 5%.
+4. Payment gateway and Shopify fees, for contribution after payment fees.
+
+**B. Before product images can be approved**
+
+1. Confirm the working tote (TbZp) and choose its colour.
+2. Confirm the tee blank colour (same decision as A2).
+3. Supplier-designer mockups of the V7 masters at the confirmed placement and scale. All ten fit every print area; the tote needs downscaling to 10 × 12 in.
+
+**C. Before checkout / launch**
+
+1. Payment gateway selected and set up.
+2. Printrove confirms 2XL = our XXL. Needed for variant mapping and fulfilment.
+3. Shopify → Printrove and Shopify → Qikink fulfilment set up, with SKU/variant mapping.
+4. Printrove RTO charge, to decide whether to offer COD on tees. Qikink states no RTO charge.
+5. Production and delivery times, for the shipping page.
+6. One physical sample per product type, including the tee GSM (the page says 220 GSM; a shared 180 gsm template block is ignored).
+
+**D. Can be confirmed after launch**
+
+- Whether Printrove's ₹60 shipping and ₹50 COD include GST. The model already treats them as the full cost (an upper bound) and GST is recoverable as ITC.
+- The exact tote print charge, already bounded at ₹80–₹90.
+- Tote dimensions and exact weights. Not used in pricing or current product copy.
+- Qikink's ₹20 + GST storage fee on reshipped returns. Optional, per reship.
+
 ## Gate 4C: supplier economics verification (2026-10-03)
 
 Scenario labels: **A** = minimum print charge (floor only, not expected); **B** = actual billing method (UNKNOWN for both suppliers: neither says how the billed area is measured); **C** = full print area (conservative).

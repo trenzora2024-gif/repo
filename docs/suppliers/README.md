@@ -5,7 +5,7 @@
 | Printrove | Premium Oversized Tee × 8 designs   | 40 (S–XXL) | `catalogue/supplier-orders/printrove.csv` |
 | Qikink    | Everyday Tote × 8, 20oz Tumbler × 8 | 16         | `catalogue/supplier-orders/qikink.csv`    |
 
-Checklists: [`printrove.md`](printrove.md) · [`qikink.md`](qikink.md). Each one has a ready-to-send message, the exact facts we need, and where each answer goes in the repo.
+Checklists: [`printrove.md`](printrove.md) · [`qikink.md`](qikink.md). Quote requests for design 01 (drafts, Gate 4D): [`printrove-quote-request.md`](printrove-quote-request.md) · [`qikink-tote-quote-request.md`](qikink-tote-quote-request.md). Each one has a ready-to-send message, the exact facts we need, and where each answer goes in the repo.
 
 ## Rules for every supplier conversation
 

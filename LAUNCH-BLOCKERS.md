@@ -32,13 +32,20 @@ Nothing has been connected to, imported into or published on any Shopify store. 
 - Unplanned, not changed: Shopify's default Home page collection (`frontpage`, manual, on 3 channels) contains `mumbai-made-oversized-tee`. Neither the import nor Gate 3 put it there. The product is a draft with no channels, so it isn't customer-visible. Decide before publishing (Gate 5/6) whether it stays.
 - Gate 4 (pricing, supplier economics, artwork and shipping approval) is next and needs separate approval.
 
-## Gate 4 status: supplier data verified, GST not verified, prices still PROVISIONAL (2026-10-03)
+## Gate 4 status: working position, prices still PROVISIONAL (2026-10-03)
 
-- Brief: `catalogue/gate4-economics.md`. Printrove tee and Qikink tumbler costs verified from the official pages (`ops/landed-cost.csv`). Qikink tote: exact product and costs not on the page.
-- Gate 4B: tee modelled at 5% (owner-provided rule: 5% up to ₹2,500 per piece, 18% above, from 22 Sep 2025; official text not reachable here). Tote best match: Qikink Unisex Tote Bag Zipper (owner to confirm); its print cost is unverified, so no tote economics yet. Tumbler output GST not verified. Payment fees not finalised.
-- Gate 4C: Qikink tote and tumbler supplier costs verified (Pricing 2026, shipping, no RTO charge). Printrove print-billing basis, GST on shipping/COD and 2XL = XXL unknown. Tote and tumbler output GST not verified.
-- `npm run costs:check` shows verified supplier charges now; contribution and 50 / 55 / 60% target prices appear once output GST is entered from an official source.
-- SEO descriptions fixed in the catalogue source and re-exported (4 changed). Not yet applied in Shopify.
+Gate 4 is not approved. Working supplier mappings (pending final confirmation):
+
+- Tee: Printrove Oversized T-shirt.
+- Tote: Qikink Unisex Tote Bag Zipper (TbZp, Standard).
+- Tumbler: Qikink Tumbler Bottle (Tumb, 20 oz).
+
+Quote requests: `docs/suppliers/printrove-quote-request.md`, `docs/suppliers/qikink-tote-quote-request.md` (drafts, not sent). Full detail and blocker list: `catalogue/gate4-economics.md` → Gate 4D.
+
+- **Before prices are approved:** Printrove print charge and billing basis; tee blank colour; output GST for tote and tumbler (and official/CA confirmation of the tee's 5%); payment fees.
+- **Before images are approved:** confirm tote TbZp and its colour; tee blank colour; supplier-designer mockups of the V7 masters.
+- **Before launch:** payment gateway; Printrove 2XL = XXL; Shopify fulfilment and SKU mapping for both suppliers; Printrove RTO charge (COD decision); production and delivery times; one sample per product.
+- SEO descriptions fixed in the catalogue source (4 changed); not yet applied in Shopify.
 
 ## A. Shopify account and access
 
