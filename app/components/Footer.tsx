@@ -15,14 +15,18 @@ export function Footer() {
             </p>
             <p>
               <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>
-              {' · '}
-              <a
-                href={SITE.social.instagram}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Instagram
-              </a>
+              {SITE.instagram ? (
+                <>
+                  {' · '}
+                  <a
+                    href={SITE.instagram.url}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Instagram
+                  </a>
+                </>
+              ) : null}
             </p>
           </div>
           <div className="footer-grid">

@@ -44,20 +44,22 @@ export default function Contact() {
             <p className="meta">{BUSINESS.supportHours}</p>
           ) : null}
         </div>
-        <div className="info-card">
-          <h2>Instagram</h2>
-          <p>
-            <a
-              className="link-arrow"
-              href={SITE.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @trenzora.in
-            </a>
-          </p>
-          <p className="meta">DMs open. Tag us to get featured.</p>
-        </div>
+        {SITE.instagram ? (
+          <div className="info-card">
+            <h2>Instagram</h2>
+            <p>
+              <a
+                className="link-arrow"
+                href={SITE.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @{SITE.instagram.handle}
+              </a>
+            </p>
+            <p className="meta">DMs open. Tag us to get featured.</p>
+          </div>
+        ) : null}
       </div>
 
       <section className="section section--tight split">

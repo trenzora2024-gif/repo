@@ -15,9 +15,12 @@ export const SITE = {
   country: 'IN',
   currency: 'INR',
   contactEmail: 'support@trenzora.in',
-  social: {
-    instagram: 'https://www.instagram.com/trenzora.in',
-  },
+  /**
+   * Official Instagram for trenzora.in. Null until the owner confirms the
+   * handle (the previously linked @trenzora.in account isn't ours). Every
+   * Instagram link and mention is hidden while this is null.
+   */
+  instagram: null as {handle: string; url: string} | null,
 } as const;
 
 /**

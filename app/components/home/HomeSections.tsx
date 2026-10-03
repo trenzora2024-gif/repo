@@ -375,18 +375,26 @@ export function PeopleOfTrenzora({posts = []}: {posts?: PeoplePost[]}) {
               Your <span className="serif">turn.</span>
             </h2>
             <p className="lede">
-              Wear it. Tag <strong>@trenzora.in</strong>. The best ones live
-              here.
+              {SITE.instagram ? (
+                <>
+                  Wear it. Tag <strong>@{SITE.instagram.handle}</strong>. The
+                  best ones live here.
+                </>
+              ) : (
+                <>Wear it, share it. The best ones live here.</>
+              )}
             </p>
           </div>
-          <a
-            href={SITE.social.instagram}
-            className="link-arrow"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
+          {SITE.instagram ? (
+            <a
+              href={SITE.instagram.url}
+              className="link-arrow"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+          ) : null}
         </div>
         <div className="people-grid">
           {posts.length
