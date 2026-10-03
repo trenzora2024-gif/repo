@@ -52,8 +52,7 @@ export const SUPPLIER_BY_PRODUCT_TYPE: Record<ProductTypeHandle, SupplierKey> =
  * automatically by `npm run verify:artwork`.)
  */
 export const ARTWORK_REVISIONS: Partial<Record<DesignFamilyHandle, string>> = {
-  'desi-roots':
-    'Visual overlap: the descender of “मुंबई” crosses the red rule and touches “SAME ROOTS. NEW STORIES.” Keep the text, concept and typography; give the Marathi text clear space from the rule and tagline. (Visual check — clear this entry only after reviewing the revised master.)',
-  'pet-parent':
-    'The current master reads “BRUNO’S HUMAN · PET PARENT CLUB”. It is not approved for launch and needs a generic “PET PARENT CLUB” treatment with no pet name before supplier upload.',
+  // v2 pack (2026-10-03): 07 Pet Parent (generic, no pet name) and
+  // 09 Desi Roots (clearance) reviewed visually and approved. Red-rule
+  // collisions are now detected automatically by verify:artwork.
 };

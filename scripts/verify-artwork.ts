@@ -86,6 +86,14 @@ function analysePixels(buf: Buffer, width: number, height: number) {
   let maxX = -1;
   let minY = -1;
   let maxY = -1;
+  // Accent-rule clearance: per row, red pixel extent + a 10px-binned map of
+  // dark ink, so we can measure the gap between the red rule and the text.
+  const BIN = 10;
+  const bins = Math.ceil(width / BIN);
+  const darkBins = new Uint8Array(bins * height);
+  const redCount = new Uint32Array(height);
+  const redMin = new Int32Array(height).fill(-1);
+  const redMax = new Int32Array(height).fill(-1);
   let rowsTouchingLeft = 0;
   let rowsTouchingRight = 0;
   let cornersTransparent = true;
@@ -113,9 +121,20 @@ function analysePixels(buf: Buffer, width: number, height: number) {
     let rowMin = -1;
     let rowMax = -1;
     for (let x = 0; x < width; x++) {
-      if (line[x * 4 + 3]) {
+      const i = x * 4;
+      if (line[i + 3]) {
         if (rowMin < 0) rowMin = x;
         rowMax = x;
+      }
+      if (line[i + 3] > 128) {
+        const [r, g, b] = [line[i], line[i + 1], line[i + 2]];
+        if (r < 90 && g < 90 && b < 90)
+          darkBins[y * bins + ((x / BIN) | 0)] = 1;
+        else if (r > 170 && g < 120 && b < 100) {
+          redCount[y]++;
+          if (redMin[y] < 0) redMin[y] = x;
+          redMax[y] = x;
+        }
       }
     }
     if ((y === 0 || y === height - 1) && (line[3] || line[stride - 1])) {
@@ -131,6 +150,45 @@ function analysePixels(buf: Buffer, width: number, height: number) {
     }
     [prev, line] = [line, prev];
   }
+  /** Finds the red accent rule and the clear space above/below it. */
+  function measureRule() {
+    let top = -1;
+    let bottom = -1;
+    for (let y = 0; y < height; y++) {
+      if (redCount[y] > width * 0.05) {
+        if (top < 0) top = y;
+        bottom = y;
+      } else if (top >= 0) break;
+    }
+    if (top < 0) return null;
+    let x0 = width;
+    let x1 = -1;
+    for (let y = top; y <= bottom; y++) {
+      x0 = Math.min(x0, redMin[y]);
+      x1 = Math.max(x1, redMax[y]);
+    }
+    const b0 = Math.floor(x0 / BIN);
+    const b1 = Math.floor(x1 / BIN);
+    const inkInRow = (y: number) => {
+      for (let b = b0; b <= b1; b++) if (darkBins[y * bins + b]) return true;
+      return false;
+    };
+    let overlapRows = 0;
+    for (let y = top; y <= bottom; y++) if (inkInRow(y)) overlapRows++;
+    let above = 0;
+    for (let y = top - 1; y >= 0 && !inkInRow(y); y--) above++;
+    let below = 0;
+    for (let y = bottom + 1; y < height && !inkInRow(y); y++) below++;
+    return {
+      top,
+      bottom,
+      x: [x0, x1],
+      overlapRows,
+      clearAbove: above,
+      clearBelow: below,
+    };
+  }
+
   return {
     transparentBackground: cornersTransparent,
     inkBounds: {x: [minX, maxX], y: [minY, maxY]},
@@ -140,6 +198,7 @@ function analysePixels(buf: Buffer, width: number, height: number) {
       top: minY,
       bottom: height - 1 - maxY,
     },
+    rule: measureRule(),
     edgeClipped:
       rowsTouchingLeft > 0 ||
       rowsTouchingRight > 0 ||
@@ -149,6 +208,14 @@ function analysePixels(buf: Buffer, width: number, height: number) {
     rowsTouchingRight,
   };
 }
+
+/**
+ * Clear space between the red accent rule and text, in px at 300 DPI.
+ * Below COLLISION (≈1.3 mm) or any overlap fails; below COMFORT (≈3.4 mm)
+ * is reported as tight for a design review.
+ */
+const RULE_COLLISION = 15;
+const RULE_COMFORT = 40;
 
 const lines: string[] = [`Trenzora artwork pack check (${dir})`, ''];
 let problems = 0;
@@ -204,6 +271,23 @@ if (!existsSync(dir)) {
       if (!pixels.transparentBackground) {
         lines.push('  ✗ background is not transparent');
         problems++;
+      }
+      const rule = pixels.rule;
+      if (rule) {
+        const minGap = Math.min(rule.clearAbove, rule.clearBelow);
+        const detail = rule.overlapRows
+          ? `text runs through the red rule (${rule.overlapRows} rows of overlap)`
+          : `clear space ${rule.clearAbove}px above, ${rule.clearBelow}px below`;
+        if (rule.overlapRows > 0 || minGap < RULE_COLLISION) {
+          lines.push(`  ✗ red rule collides with text: ${detail}`);
+          problems++;
+        } else if (minGap < RULE_COMFORT) {
+          lines.push(
+            `  ! red rule is tight: ${detail} (comfort minimum ${RULE_COMFORT}px; design review)`,
+          );
+        } else {
+          lines.push(`  ✓ red rule clear of text: ${detail}`);
+        }
       }
       if (pixels.edgeClipped) {
         lines.push(

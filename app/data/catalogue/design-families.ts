@@ -196,9 +196,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Pet Parent',
     code: 'PET',
     artworkFile: '07_pet_parent.png',
-    // Approved launch treatment. The supplied master still needs revising
-    // (tracked in ops/suppliers.ts → ARTWORK_REVISIONS).
-    artworkText: 'PET PARENT CLUB',
+    artworkText: 'PET PARENT CLUB · PROUD MEMBER OF THE PET PARENT CLUB.',
     tagline: 'Proud member of the Pet Parent Club.',
     story:
       'Indie or pedigree, adopted or rescued, woof or meow: they run the house and you’re just the staff. Pet Parent is for everyone whose camera roll is mostly one furry face.',

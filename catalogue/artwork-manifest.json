@@ -12,25 +12,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        0,
-        4499
+        1067,
+        3436
       ],
       "y": [
-        806,
-        4939
+        1001,
+        4864
       ]
     },
     "margins": {
-      "left": 0,
-      "right": 0,
-      "top": 806,
-      "bottom": 460
+      "left": 1067,
+      "right": 1063,
+      "top": 1001,
+      "bottom": 535
     },
-    "edgeClipped": true,
-    "rowsTouchingLeft": 25,
-    "rowsTouchingRight": 82,
-    "bytes": 216251,
-    "sha256": "798b70101c3886713b8e530db8118cc62e5d9b2ca793393bb58cf61f530b36b6"
+    "rule": {
+      "top": 1752,
+      "bottom": 1769,
+      "x": [
+        1725,
+        2775
+      ],
+      "overlapRows": 0,
+      "clearAbove": 32,
+      "clearBelow": 93
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 173784,
+    "sha256": "b3299b222214ecf26f9208e0dd3fcb1568125656bb1d763c4fac68ef7b26c84c"
   },
   {
     "family": "local-life",
@@ -45,25 +56,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        1,
-        4499
+        1092,
+        3410
       ],
       "y": [
-        786,
-        4939
+        978,
+        4864
       ]
     },
     "margins": {
-      "left": 1,
-      "right": 0,
-      "top": 786,
-      "bottom": 460
+      "left": 1092,
+      "right": 1089,
+      "top": 978,
+      "bottom": 535
     },
-    "edgeClipped": true,
+    "rule": {
+      "top": 1732,
+      "bottom": 1749,
+      "x": [
+        1725,
+        2775
+      ],
+      "overlapRows": 0,
+      "clearAbove": 28,
+      "clearBelow": 104
+    },
+    "edgeClipped": false,
     "rowsTouchingLeft": 0,
-    "rowsTouchingRight": 148,
-    "bytes": 210187,
-    "sha256": "28224b301d979f5a04788d02783cd358e3efc6663fb1adccee46bcd36598c27b"
+    "rowsTouchingRight": 0,
+    "bytes": 168070,
+    "sha256": "a2812c3bff79548cda7b15a4e2e29037cb5255bfefe0c434b1afcab1ac09297c"
   },
   {
     "family": "corporate-survivor",
@@ -78,25 +100,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        0,
-        4499
+        609,
+        3877
       ],
       "y": [
-        764,
-        4939
+        884,
+        4864
       ]
     },
     "margins": {
-      "left": 0,
-      "right": 0,
-      "top": 764,
-      "bottom": 460
+      "left": 609,
+      "right": 622,
+      "top": 884,
+      "bottom": 535
     },
-    "edgeClipped": true,
-    "rowsTouchingLeft": 445,
-    "rowsTouchingRight": 245,
-    "bytes": 226966,
-    "sha256": "2db4fd07f5f2e7b917bb6a1cf42e76a4fda986332577aab6bd15802d4253f9a6"
+    "rule": {
+      "top": 1912,
+      "bottom": 1929,
+      "x": [
+        1525,
+        2975
+      ],
+      "overlapRows": 0,
+      "clearAbove": 27,
+      "clearBelow": 111
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 200561,
+    "sha256": "d8c627c31074b7d6b5b613ee573e7d7d4951caa778a8467851cfcd6d591c7c3a"
   },
   {
     "family": "coffee-personality",
@@ -111,25 +144,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        0,
-        4499
+        1054,
+        3452
       ],
       "y": [
-        772,
-        4939
+        894,
+        4864
       ]
     },
     "margins": {
-      "left": 0,
-      "right": 0,
-      "top": 772,
-      "bottom": 460
+      "left": 1054,
+      "right": 1047,
+      "top": 894,
+      "bottom": 535
     },
-    "edgeClipped": true,
-    "rowsTouchingLeft": 210,
-    "rowsTouchingRight": 76,
-    "bytes": 249155,
-    "sha256": "bdbb5f9477d6e010f14705938ec44ed291a534a64d4eca230848fad2db21fee6"
+    "rule": {
+      "top": 1902,
+      "bottom": 1919,
+      "x": [
+        1700,
+        2800
+      ],
+      "overlapRows": 18,
+      "clearAbove": 0,
+      "clearBelow": 0
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 195067,
+    "sha256": "fb7dd0dfa3588368db646c2407595ea9545ae4919c1350ab4e530e659e5a091b"
   },
   {
     "family": "bestie-energy",
@@ -144,25 +188,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        0,
-        4499
+        997,
+        3504
       ],
       "y": [
-        780,
-        4939
+        998,
+        4864
       ]
     },
     "margins": {
-      "left": 0,
-      "right": 0,
-      "top": 780,
-      "bottom": 460
+      "left": 997,
+      "right": 995,
+      "top": 998,
+      "bottom": 535
     },
-    "edgeClipped": true,
-    "rowsTouchingLeft": 484,
-    "rowsTouchingRight": 392,
-    "bytes": 227027,
-    "sha256": "41c0b705b42450528f871ea33e10b76a2f45821dd6bcdc322b50b526bc269361"
+    "rule": {
+      "top": 1732,
+      "bottom": 1749,
+      "x": [
+        1675,
+        2825
+      ],
+      "overlapRows": 0,
+      "clearAbove": 8,
+      "clearBelow": 111
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 187409,
+    "sha256": "9b4aa5dcf9722c0dcfec1d903142899411f47b67d446cf88c380df4ecebdcbf1"
   },
   {
     "family": "us",
@@ -191,11 +246,22 @@
       "top": 792,
       "bottom": 460
     },
+    "rule": {
+      "top": 2238,
+      "bottom": 2263,
+      "x": [
+        1050,
+        3450
+      ],
+      "overlapRows": 0,
+      "clearAbove": 51,
+      "clearBelow": 148
+    },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 234861,
-    "sha256": "d2511186b591e9eefd3e43d825a47490a5f5728b3baadbe61d9d27b809cc9ff5"
+    "bytes": 248378,
+    "sha256": "2a9244f9620bb4fef55aba786038f5a7046f1630e7df873c5e57c7bc4442b058"
   },
   {
     "family": "pet-parent",
@@ -210,25 +276,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        495,
-        4017
+        976,
+        3526
       ],
       "y": [
-        785,
-        4939
+        991,
+        4864
       ]
     },
     "margins": {
-      "left": 495,
-      "right": 482,
-      "top": 785,
-      "bottom": 460
+      "left": 976,
+      "right": 973,
+      "top": 991,
+      "bottom": 535
+    },
+    "rule": {
+      "top": 1712,
+      "bottom": 1729,
+      "x": [
+        1750,
+        2750
+      ],
+      "overlapRows": 0,
+      "clearAbove": 40,
+      "clearBelow": 124
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 205115,
-    "sha256": "56984c3a083fb6891ba026e7a1d559740b886772d512498576d0faeb7edf6615"
+    "bytes": 152229,
+    "sha256": "94726b0e5153d8e6ba1d619bbdfc92f65daf3538888d60fa694da05fc42c90c9"
   },
   {
     "family": "campus-energy",
@@ -243,25 +320,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        0,
-        4499
+        965,
+        3512
       ],
       "y": [
-        777,
-        4939
+        894,
+        4864
       ]
     },
     "margins": {
-      "left": 0,
-      "right": 0,
-      "top": 777,
-      "bottom": 460
+      "left": 965,
+      "right": 987,
+      "top": 894,
+      "bottom": 535
     },
-    "edgeClipped": true,
-    "rowsTouchingLeft": 643,
-    "rowsTouchingRight": 992,
-    "bytes": 251484,
-    "sha256": "225402b0d0a723c6dd9a1fd3f31704d47b429701dc60bb7c44aa10338f329695"
+    "rule": {
+      "top": 1912,
+      "bottom": 1929,
+      "x": [
+        1600,
+        2900
+      ],
+      "overlapRows": 0,
+      "clearAbove": 0,
+      "clearBelow": 0
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 193887,
+    "sha256": "68d843a2a67ea15af5833eecee53857234288f13258c55aca1d1caf35e487ba2"
   },
   {
     "family": "desi-roots",
@@ -276,25 +364,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        225,
-        4262
+        1285,
+        3211
       ],
       "y": [
         650,
-        4939
+        4864
       ]
     },
     "margins": {
-      "left": 225,
-      "right": 237,
+      "left": 1285,
+      "right": 1288,
       "top": 650,
-      "bottom": 460
+      "bottom": 535
+    },
+    "rule": {
+      "top": 2042,
+      "bottom": 2059,
+      "x": [
+        1450,
+        3050
+      ],
+      "overlapRows": 0,
+      "clearAbove": 63,
+      "clearBelow": 131
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 194376,
-    "sha256": "8a6065b64fa07e6634fa6a840246407ab611507dab9bc2fa0e59a8c201be7439"
+    "bytes": 165295,
+    "sha256": "00efdc31a123e8f0a9001eff882f3278855745b31ec6c922649eb8dd069eda58"
   },
   {
     "family": "make-it-yours",
@@ -323,10 +422,21 @@
       "top": 806,
       "bottom": 460
     },
+    "rule": {
+      "top": 2238,
+      "bottom": 2263,
+      "x": [
+        1050,
+        3450
+      ],
+      "overlapRows": 0,
+      "clearAbove": 32,
+      "clearBelow": 82
+    },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 246065,
-    "sha256": "56737c1689791a8166587aa4b75b20f67d39cac0b5d0a39b312c8df90d3bb79b"
+    "bytes": 260031,
+    "sha256": "7626aa1d8752e60ed56d3c324a232d4b958e6bcdec08a958be251bf3b7f9aa5a"
   }
 ]
