@@ -50,19 +50,31 @@ For each row of `catalogue/supplier-map.csv` with **Release = V1 launch**:
 
 Fill `ops/landed-cost.csv` per product type (per size for the tee) from **written quotes and rate cards only**:
 
-| Column                                                        | Meaning                                                                                       |
-| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `product_cost_inr`                                            | Product (blank) price per unit, as shown by the supplier                                      |
-| `print_cost_inr`                                              | Print charge per unit at our print size (0 if the product price includes print)               |
-| `supplier_prices_include_gst`                                 | Whether the supplier's product, print, shipping and COD amounts include GST                   |
-| `supplier_gst_pct`                                            | GST rate on product + print                                                                   |
-| `shipping_inr`, `shipping_gst_pct`                            | Supplier shipping for one packed unit, and its GST rate                                       |
-| `cod_fee_inr`, `cod_fee_gst_pct`                              | Supplier COD charge per order, and its GST rate (0 if none)                                   |
-| `rto_charge_inr`                                              | What one return-to-origin costs you (0 if the supplier confirms none). No RTO rate is assumed |
-| `gateway_fee_pct`, `gateway_fixed_inr`, `gateway_fee_gst_pct` | Prepaid gateway fee from its rate card, ex GST, and the GST on the fee                        |
-| `output_gst_pct`                                              | GST rate on the sale (confirm HSN/rate with your CA)                                          |
-| `itc_claimable`                                               | yes if you're GST-registered and can claim input tax credit                                   |
-| `source`, `quote_date`                                        | Supplier page/dashboard/invoice/written reply, and date                                       |
+Two files, kept apart:
+
+**`ops/landed-cost.csv`: supplier pricing** (supplier's own page, dashboard, invoice or written reply only)
+
+| Column                             | Meaning                                                                                |
+| ---------------------------------- | -------------------------------------------------------------------------------------- |
+| `product_cost_inr`                 | Product (blank) price per unit                                                         |
+| `print_cost_inr`                   | Print charge per unit at our print size (0 if included in the product price)           |
+| `supplier_prices_include_gst`      | Whether the supplier's amounts include GST                                             |
+| `supplier_gst_pct`                 | GST rate on product + print                                                            |
+| `shipping_inr`, `shipping_gst_pct` | Supplier shipping for one packed unit, and its GST rate                                |
+| `cod_fee_inr`, `cod_fee_gst_pct`   | Supplier COD charge per order and its GST rate (0 if none)                             |
+| `rto_charge_inr`                   | Cost of one return-to-origin (0 if the supplier confirms none). No RTO rate is assumed |
+| `source`, `quote_date`             | Exact supplier URL/document, and date                                                  |
+
+**`ops/business-inputs.csv`: owner inputs** (one row per product type)
+
+| Column                                                                          | Meaning                                                                                                            |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `itc_claimable`, `itc_source`                                                   | Input tax credit eligibility (owner)                                                                               |
+| `output_gst_pct`, `hsn`, `gst_source`                                           | GST rate on the sale and its HSN, from an official GST/CBIC rate notification                                      |
+| `gst_threshold_inr`, `output_gst_pct_above`                                     | Price threshold per piece (taxable value) and the rate above it, e.g. apparel; `none` if the rate has no threshold |
+| `gateway_fee_pct`, `gateway_fixed_inr`, `gateway_fee_gst_pct`, `gateway_source` | Prepaid gateway fee from its rate card (ex GST), GST on the fee, and the source                                    |
+
+Retail prices are GST inclusive: the model uses taxable value = price ÷ (1 + output GST).
 
 Enter a value only when it comes from the supplier's own page, dashboard, invoice or written reply (gateway: its rate card; GST: your CA). A value confirmed to be zero is entered as `0`. The report shows contribution before and after the payment fee, prepaid and COD, the price needed for 50 / 55 / 60% margin, and the GST split.
 

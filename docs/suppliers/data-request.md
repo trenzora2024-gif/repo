@@ -2,7 +2,7 @@
 
 The Claude cloud environment can't open printrove.com or qikink.com (blocked by the environment's network policy). There are two ways to get these values in:
 
-1. **No manual work:** add `printrove.com`, `qikink.com` and `help.qikink.com` to the environment's allowed domains (Environment → Edit → Network access → Custom; keep the defaults). Claude then reads the official pages itself in a new session.
+1. **No manual work:** add `printrove.com`, `qikink.com` and `help.qikink.com` (supplier pricing), plus `cbic-gst.gov.in` and `cbic.gov.in` (official GST rate notifications), to the environment's allowed domains (Environment → Edit → Network access → Custom; keep the defaults). Claude then reads the official pages itself in a new session.
 2. **Or** copy the values below from the official pages or your supplier dashboards.
 
 Only values that come from the supplier's own page, dashboard, invoice or written reply go into `ops/landed-cost.csv`, each with its source and date. "Not stated" is a valid answer; it stays blank.
@@ -54,13 +54,14 @@ Official page: <https://qikink.com/custom/drinkware/tumbler-bottle/>
 | T7  | COD charge per order and its GST                                                                           | `cod_fee_inr`, `cod_fee_gst_pct`                   |
 | T8  | RTO charge per failed delivery (or "none")                                                                 | `rto_charge_inr`                                   |
 
-## Not on supplier pages (owner / CA)
+## Owner inputs (`ops/business-inputs.csv`, kept apart from supplier pricing)
 
-| #   | Value                                                                                  | CSV column                                                    |
-| --- | -------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| O1  | GST-registered and able to claim input tax credit?                                     | `itc_claimable`                                               |
-| O2  | Output GST rate per product (HSN): tee, cotton tote, steel tumbler                     | `output_gst_pct`                                              |
-| O3  | Payment gateway chosen, its fee % and fixed fee from its rate card, and GST on the fee | `gateway_fee_pct`, `gateway_fixed_inr`, `gateway_fee_gst_pct` |
-| O4  | Shopify's transaction fee for that gateway on the Basic plan (Admin → Settings → Plan) | add to `gateway_fee_pct`                                      |
+| #   | Value                                                                                                                                                                                                                                   | Status                                                                                                             | Column                                                                             |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| O1  | GST registered, input tax credit eligible                                                                                                                                                                                               | **Confirmed by owner 2026-10-03** (no ITC percentage assumed; supplier GST is modelled separately from output GST) | `itc_claimable`, `itc_source`                                                      |
+| O2  | Output GST on the tee: HSN for a cotton knitted T-shirt and the per-piece value threshold with its two rates, from the current CBIC rate notification. ₹999 is GST-inclusive, so the threshold test uses its taxable value (₹951 at 5%) | Needs official source                                                                                              | `hsn`, `output_gst_pct`, `gst_threshold_inr`, `output_gst_pct_above`, `gst_source` |
+| O3  | Output GST on the tote and tumbler: HSN for the exact Qikink products (Q1, T1) and the rate from the current CBIC notification                                                                                                          | Needs Q1/T1 + official source                                                                                      | same                                                                               |
+| O4  | Payment gateway chosen, its fee % and fixed fee from its rate card, GST on the fee                                                                                                                                                      | Owner decision                                                                                                     | `gateway_fee_pct`, `gateway_fixed_inr`, `gateway_fee_gst_pct`, `gateway_source`    |
+| O5  | Shopify's transaction fee for that gateway on the Basic plan (Admin → Settings → Plan)                                                                                                                                                  | Owner, from Admin                                                                                                  | add to `gateway_fee_pct`                                                           |
 
 Then run `npm run costs:check`. The report gives contribution before and after the payment fee, prepaid and COD, the GST split, and the prices for 50 / 55 / 60% margin.

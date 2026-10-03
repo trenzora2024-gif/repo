@@ -22,6 +22,15 @@ Search-result snippets of the supplier sites, never opened:
 
 Also unverified: any payment-gateway rate, any output GST rate, and any Shopify transaction fee.
 
+## Owner business and tax inputs (`ops/business-inputs.csv`, separate from supplier pricing)
+
+- **Confirmed:** GST registered and input-tax-credit eligible. No ITC percentage is assumed; supplier GST is modelled separately from output GST.
+- **Prices are GST inclusive** (₹999 / ₹599 / ₹1,099). The model uses taxable value = price ÷ (1 + output GST), never price + GST, and GST is never shown as a separate customer surcharge.
+- **Output GST rates aren't set yet.** The official CBIC/GST sites are blocked from this environment too, so no rate, HSN or threshold is entered.
+  - **Tee:** the model applies a per-piece threshold on taxable value once the official rate notification gives the threshold and both rates. ₹999 incl. GST is ₹951 taxable at the lower rate, so it sits below a ₹1,000 threshold either way. The rate itself still needs the current notification.
+  - **Tote and tumbler:** HSN and rate depend on the exact Qikink products (request items Q1/T1).
+- **Payment gateway:** not chosen yet.
+
 ## Economics model (`npm run costs:check`)
 
 Per unit, from `ops/landed-cost.csv`:

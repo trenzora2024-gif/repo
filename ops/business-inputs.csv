@@ -1,0 +1,4 @@
+product_type,itc_claimable,itc_source,output_gst_pct,gst_threshold_inr,output_gst_pct_above,hsn,gst_source,gateway_fee_pct,gateway_fixed_inr,gateway_fee_gst_pct,gateway_source
+oversized-tee,yes,Owner: GST registered and ITC-eligible (2026-10-03),,,,,,,,,
+tote,yes,Owner: GST registered and ITC-eligible (2026-10-03),,,,,,,,,
+tumbler,yes,Owner: GST registered and ITC-eligible (2026-10-03),,,,,,,,,

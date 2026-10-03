@@ -1,12 +1,17 @@
 // Contribution per unit, from verified inputs only.
 //   npm run costs:check
 //
-// Reads ops/landed-cost.csv (fill it only from the supplier's own page,
-// dashboard, invoice or written reply; gateway and GST from their own rate
-// card / your CA) and the retail prices in app/data/catalogue/pricing.ts.
-// A row with any blank input is reported as incomplete and gets NO figure:
-// nothing is estimated or defaulted. A value confirmed to be zero (e.g. "no
-// RTO charge") is entered as 0. Writes catalogue/landed-cost-report.md.
+// Two inputs, kept apart on purpose:
+//   ops/landed-cost.csv     SUPPLIER pricing, only from the supplier's own
+//                           page, dashboard, invoice or written reply.
+//   ops/business-inputs.csv OWNER inputs per product type: input tax credit,
+//                           output GST (from official GST sources) and the
+//                           payment gateway's rate card.
+// Retail prices come from app/data/catalogue/pricing.ts and are GST
+// INCLUSIVE: taxable value = price ÷ (1 + output GST), never price + GST.
+// Any blank input means no figures for that row: nothing is estimated or
+// defaulted. A value confirmed to be zero is entered as 0.
+// Writes catalogue/landed-cost-report.md.
 import {readFileSync, writeFileSync} from 'node:fs';
 import {
   PRICE_OVERRIDES_INR,
@@ -14,11 +19,12 @@ import {
 } from '../app/data/catalogue/pricing.ts';
 import type {ProductTypeHandle} from '../app/data/catalogue/types.ts';
 
-const INPUT = 'ops/landed-cost.csv';
+const SUPPLIER_INPUT = 'ops/landed-cost.csv';
+const BUSINESS_INPUT = 'ops/business-inputs.csv';
 const REPORT = 'catalogue/landed-cost-report.md';
 const TARGET_MARGINS = [0.5, 0.55, 0.6];
 
-const NUMERIC = [
+const SUPPLIER_NUMERIC = [
   'product_cost_inr',
   'print_cost_inr',
   'supplier_gst_pct',
@@ -27,22 +33,27 @@ const NUMERIC = [
   'cod_fee_inr',
   'cod_fee_gst_pct',
   'rto_charge_inr',
+] as const;
+const SUPPLIER_TEXT = ['source', 'quote_date'] as const;
+const BUSINESS_NUMERIC = [
+  'output_gst_pct',
   'gateway_fee_pct',
   'gateway_fixed_inr',
   'gateway_fee_gst_pct',
-  'output_gst_pct',
 ] as const;
-const BOOLEAN = ['supplier_prices_include_gst', 'itc_claimable'] as const;
-const TEXT = ['source', 'quote_date'] as const;
+const BUSINESS_TEXT = ['itc_source', 'gst_source', 'gateway_source'] as const;
 
 type Row = Record<string, string>;
-type Num = Record<(typeof NUMERIC)[number], number>;
+type Num = Record<
+  (typeof SUPPLIER_NUMERIC)[number] | (typeof BUSINESS_NUMERIC)[number],
+  number
+>;
 
-function parseCsv(text: string): Row[] {
-  const [header, ...lines] = text.trim().split(/\r?\n/);
+function parseCsv(path: string): Row[] {
+  const [header, ...lines] = readFileSync(path, 'utf8').trim().split(/\r?\n/);
   const keys = header.split(',');
   return lines
-    .filter((line) => line.trim())
+    .filter((line) => line.trim() && !line.startsWith('#'))
     .map((line) => {
       const cells = line.split(',');
       return Object.fromEntries(
@@ -53,9 +64,26 @@ function parseCsv(text: string): Row[] {
 
 const yes = (v: string) => /^(y|yes|true|1)$/i.test(v);
 const isBool = (v: string) => /^(y|yes|true|1|n|no|false|0)$/i.test(v);
+const isNum = (v: string | undefined) =>
+  v !== undefined && v !== '' && !Number.isNaN(Number(v));
 const inr = (n: number) =>
   `₹${n.toLocaleString('en-IN', {maximumFractionDigits: 0})}`;
 const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
+
+/**
+ * Output GST rate for a GST-inclusive price. With a threshold (apparel), the
+ * lower rate applies while the taxable value at that rate stays at or below
+ * the threshold.
+ */
+function outputGstRate(
+  retail: number,
+  low: number,
+  threshold: number | null,
+  high: number | null,
+) {
+  if (threshold == null || high == null) return low;
+  return retail / (1 + low / 100) <= threshold ? low : high;
+}
 
 /** A supplier charge as {ex GST, GST} from the quoted amount. */
 function charge(amount: number, gstPct: number, quotedInclGst: boolean) {
@@ -64,7 +92,12 @@ function charge(amount: number, gstPct: number, quotedInclGst: boolean) {
   return {ex, gst: ex * rate};
 }
 
-function contribution(n: Num, inclGst: boolean, itc: boolean) {
+function contribution(
+  n: Num,
+  inclGst: boolean,
+  itc: boolean,
+  gstRate: (retail: number) => number,
+) {
   const goods = charge(
     n.product_cost_inr + n.print_cost_inr,
     n.supplier_gst_pct,
@@ -74,38 +107,51 @@ function contribution(n: Num, inclGst: boolean, itc: boolean) {
   const cod = charge(n.cod_fee_inr, n.cod_fee_gst_pct, inclGst);
   // With input tax credit the GST on a charge is recovered; without, it's a cost.
   const cost = (c: {ex: number; gst: number}) => (itc ? c.ex : c.ex + c.gst);
-  const gatewayPct =
-    (n.gateway_fee_pct / 100) * (itc ? 1 : 1 + n.gateway_fee_gst_pct / 100);
-  const gatewayFixed =
-    n.gateway_fixed_inr * (itc ? 1 : 1 + n.gateway_fee_gst_pct / 100);
+  const feeGst = 1 + n.gateway_fee_gst_pct / 100;
+  const gatewayPct = (n.gateway_fee_pct / 100) * (itc ? 1 : feeGst);
+  const gatewayFixed = n.gateway_fixed_inr * (itc ? 1 : feeGst);
   const fixed = cost(goods) + cost(ship);
-  const outGst = n.output_gst_pct / 100;
 
   const at = (retail: number) => {
-    const net = retail / (1 + outGst);
+    const rate = gstRate(retail);
+    const net = retail / (1 + rate / 100);
     const beforeFee = net - fixed;
     const gateway = retail * gatewayPct + gatewayFixed;
-    const prepaid = beforeFee - gateway;
-    const codOrder = beforeFee - cost(cod);
-    return {net, beforeFee, gateway, prepaid, codOrder};
+    return {
+      rate,
+      net,
+      outputGst: retail - net,
+      beforeFee,
+      gateway,
+      prepaid: beforeFee - gateway,
+      codOrder: beforeFee - cost(cod),
+    };
   };
-  /** Retail price (incl. GST) giving margin `t` on net revenue. */
+  /** GST-inclusive retail price giving margin `t` on taxable value. */
   const priceFor = (t: number, mode: 'prepaid' | 'cod') => {
-    const k = (1 - t) / (1 + outGst);
-    return mode === 'prepaid'
-      ? (fixed + gatewayFixed) / (k - gatewayPct)
-      : (fixed + cost(cod)) / k;
+    const solve = (rate: number) => {
+      const k = (1 - t) / (1 + rate / 100);
+      return mode === 'prepaid'
+        ? (fixed + gatewayFixed) / (k - gatewayPct)
+        : (fixed + cost(cod)) / k;
+    };
+    // Solve at the rate the resulting price actually attracts.
+    const first = solve(gstRate(0));
+    return gstRate(first) === gstRate(0) ? first : solve(gstRate(first));
   };
+  // Supplier GST on a prepaid unit (recovered as input tax credit when claimable).
   const inputGst = goods.gst + ship.gst;
-  return {goods, ship, cod, fixed, at, priceFor, inputGst, outGst};
+  return {fixed, at, priceFor, inputGst};
 }
 
-const rows = parseCsv(readFileSync(INPUT, 'utf8'));
+const business = new Map(
+  parseCsv(BUSINESS_INPUT).map((row) => [row.product_type, row]),
+);
 const out: string[] = [
   '# Contribution per unit (before marketing)',
   '',
-  `Generated by \`npm run costs:check\` from \`${INPUT}\` and \`app/data/catalogue/pricing.ts\`.`,
-  'Rows with any blank or invalid input show no figures. Nothing is estimated.',
+  `Generated by \`npm run costs:check\` from \`${SUPPLIER_INPUT}\` (supplier pricing), \`${BUSINESS_INPUT}\` (owner tax and payment inputs) and \`app/data/catalogue/pricing.ts\`.`,
+  'Retail prices are GST inclusive. Rows with any blank or invalid input show no figures. Nothing is estimated.',
   '',
 ];
 const complete: string[] = [];
@@ -113,14 +159,27 @@ const targets: string[] = [];
 const gstRows: string[] = [];
 const incomplete: string[] = [];
 
-for (const row of rows) {
+for (const row of parseCsv(SUPPLIER_INPUT)) {
   const type = row.product_type as ProductTypeHandle;
   const retail = RETAIL_PRICE_INR[type];
   const label = `${type} / ${row.variant}`;
+  const biz = business.get(type) ?? {};
+  const threshold = biz.gst_threshold_inr ?? '';
   const missing: string[] = [
-    ...NUMERIC.filter((k) => row[k] === '' || Number.isNaN(Number(row[k]))),
-    ...BOOLEAN.filter((k) => !isBool(row[k] ?? '')),
-    ...TEXT.filter((k) => !row[k]),
+    ...SUPPLIER_NUMERIC.filter((k) => !isNum(row[k])),
+    ...(isBool(row.supplier_prices_include_gst ?? '')
+      ? []
+      : ['supplier_prices_include_gst']),
+    ...SUPPLIER_TEXT.filter((k) => !row[k]),
+    ...BUSINESS_NUMERIC.filter((k) => !isNum(biz[k])).map((k) => `owner:${k}`),
+    ...(isBool(biz.itc_claimable ?? '') ? [] : ['owner:itc_claimable']),
+    ...(threshold === 'none' || isNum(threshold)
+      ? []
+      : ['owner:gst_threshold_inr']),
+    ...(isNum(threshold) && !isNum(biz.output_gst_pct_above)
+      ? ['owner:output_gst_pct_above']
+      : []),
+    ...BUSINESS_TEXT.filter((k) => !biz[k]).map((k) => `owner:${k}`),
   ];
   if (retail == null) missing.unshift('product_type (unknown)');
   if (missing.length) {
@@ -128,19 +187,30 @@ for (const row of rows) {
     continue;
   }
 
-  const n = Object.fromEntries(NUMERIC.map((k) => [k, Number(row[k])])) as Num;
-  const itc = yes(row.itc_claimable);
-  const m = contribution(n, yes(row.supplier_prices_include_gst), itc);
+  const n = Object.fromEntries(
+    [
+      ...SUPPLIER_NUMERIC.map((k) => [k, row[k]]),
+      ...BUSINESS_NUMERIC.map((k) => [k, biz[k]]),
+    ].map(([k, v]) => [k, Number(v)]),
+  ) as Num;
+  const itc = yes(biz.itc_claimable);
+  const gstRate = (price: number) =>
+    outputGstRate(
+      price,
+      n.output_gst_pct,
+      isNum(threshold) ? Number(threshold) : null,
+      isNum(biz.output_gst_pct_above) ? Number(biz.output_gst_pct_above) : null,
+    );
+  const m = contribution(n, yes(row.supplier_prices_include_gst), itc, gstRate);
   const r = m.at(retail);
   complete.push(
-    `| ${label} | ${inr(retail)} | ${inr(r.net)} | ${inr(m.fixed)} | ${inr(r.beforeFee)} (${pct(r.beforeFee / r.net)}) | ${inr(r.gateway)} | ${inr(r.prepaid)} (${pct(r.prepaid / r.net)}) | ${inr(r.codOrder)} (${pct(r.codOrder / r.net)}) | ${inr(n.rto_charge_inr)} | ${row.source} (${row.quote_date}) |`,
+    `| ${label} | ${inr(retail)} | ${r.rate}% | ${inr(r.net)} | ${inr(m.fixed)} | ${inr(r.beforeFee)} (${pct(r.beforeFee / r.net)}) | ${inr(r.gateway)} | ${inr(r.prepaid)} (${pct(r.prepaid / r.net)}) | ${inr(r.codOrder)} (${pct(r.codOrder / r.net)}) | ${inr(n.rto_charge_inr)} | ${row.source} (${row.quote_date}) |`,
   );
   targets.push(
     `| ${label} | ${TARGET_MARGINS.map((t) => `${inr(m.priceFor(t, 'prepaid'))} / ${inr(m.priceFor(t, 'cod'))}`).join(' | ')} |`,
   );
-  const outputGst = retail - r.net;
   gstRows.push(
-    `| ${label} | ${itc ? 'yes' : 'no'} | ${inr(outputGst)} | ${inr(m.inputGst)} | ${inr(itc ? outputGst - m.inputGst : outputGst)} |`,
+    `| ${label} | ${itc ? 'yes' : 'no'} | ${inr(r.net)} | ${inr(r.outputGst)} (${r.rate}%) | ${inr(m.inputGst)} | ${inr(itc ? r.outputGst - m.inputGst : r.outputGst)} | ${biz.gst_source} |`,
   );
 }
 
@@ -150,22 +220,22 @@ if (complete.length) {
     '',
     'Supplier = product + print + supplier shipping (ex GST when input tax credit is claimable).',
     '',
-    '| Product / variant | Retail (incl. GST) | Net revenue (ex GST) | Supplier | Before payment fee | Gateway fee | Prepaid | COD | Cost per RTO | Source |',
-    '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |',
+    '| Product / variant | Retail (GST incl.) | Output GST | Taxable value | Supplier | Before payment fee | Gateway fee | Prepaid | COD | Cost per RTO | Supplier source |',
+    '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |',
     ...complete,
     '',
-    'Margins are on net revenue. Contribution is before marketing, overheads and income tax. An RTO costs the amount shown each time it happens; no RTO rate is assumed.',
+    'Margins are on taxable value (GST-inclusive price ÷ (1 + output GST)). Contribution is before marketing, overheads and income tax. An RTO costs the amount shown each time it happens; no RTO rate is assumed.',
     '',
-    '## Retail price (incl. GST) for a target margin: prepaid / COD',
+    '## GST-inclusive retail price for a target margin: prepaid / COD',
     '',
     `| Product / variant | ${TARGET_MARGINS.map((t) => `${t * 100}%`).join(' | ')} |`,
     `| --- | ${TARGET_MARGINS.map(() => '---').join(' | ')} |`,
     ...targets,
     '',
-    '## GST per unit at current prices',
+    '## GST per unit at current prices (prepaid)',
     '',
-    '| Product / variant | Input tax credit | Output GST collected | Input GST on supplier charges | Net GST payable |',
-    '| --- | --- | --- | --- | --- |',
+    '| Product / variant | Input tax credit | Taxable value | Output GST | Input GST on supplier charges | Net GST payable | GST source |',
+    '| --- | --- | --- | --- | --- | --- | --- |',
     ...gstRows,
     '',
   );
@@ -173,6 +243,8 @@ if (complete.length) {
 if (incomplete.length) {
   out.push(
     '## Incomplete rows (no figures shown)',
+    '',
+    '`owner:` = `ops/business-inputs.csv`; everything else = `ops/landed-cost.csv`.',
     '',
     '| Product / variant | Missing inputs |',
     '| --- | --- |',
@@ -189,12 +261,12 @@ if (Object.keys(PRICE_OVERRIDES_INR).length) {
 out.push(
   '## Formula',
   '',
-  '- Net revenue = retail ÷ (1 + output GST).',
+  '- Retail prices are GST inclusive. Taxable value = retail ÷ (1 + output GST); output GST = retail − taxable value.',
+  '- With a threshold (apparel), the lower rate applies while the taxable value stays at or below it; target prices are solved at the rate they attract.',
   '- Supplier charges (product, print, shipping, COD fee) are taken ex GST when input tax credit is claimable, otherwise including GST.',
-  '- Before payment fee = net revenue − product − print − supplier shipping.',
+  '- Before payment fee = taxable value − product − print − supplier shipping.',
   '- Prepaid = before payment fee − gateway fee (retail × gateway % + fixed fee, plus GST on the fee unless claimable).',
   '- COD = before payment fee − supplier COD fee (no gateway fee on a COD order).',
-  '- Target price solves: margin on net revenue = target, for prepaid and COD separately.',
   '',
 );
 
