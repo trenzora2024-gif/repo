@@ -38,7 +38,13 @@
     "02_local_life.png": "v3 approved: rule 43px clear, glyphs intact",
     "03_corporate_survivor.png": "v3 approved: rule 47px clear, glyphs intact",
     "05_bestie_energy.png": "v3 approved: rule 43px clear, glyphs intact",
-    "04_coffee_personality.png": "v7 PRODUCTION-SAFE: intact glyphs, no gaps, wording unchanged, square rule 59px/51px clear, TRENZORA mark pixel-identical. PENDING brand decision: typeface is Lato, not the V1 family",
-    "08_campus_energy.png": "v7 PRODUCTION-SAFE: intact glyphs, no gaps, wording unchanged, square rule 59px/51px clear, TRENZORA mark pixel-identical. PENDING brand decision: typeface is Lato, not the V1 family"
+    "04_coffee_personality.png": "v7 ACCEPTED by brand owner: production-safe; typeface Lato accepted",
+    "08_campus_energy.png": "v7 ACCEPTED by brand owner: production-safe; typeface Lato accepted"
+  },
+  "signedOff": {
+    "date": "2026-10-03",
+    "pack": "v7",
+    "by": "brand owner",
+    "note": "V1 artwork accepted as-is; 04 and 08 set in Lato. No further revisions."
   }
 }

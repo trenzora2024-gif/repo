@@ -52,22 +52,42 @@ export const SUPPLIER_BY_PRODUCT_TYPE: Record<ProductTypeHandle, SupplierKey> =
  * automatically by `npm run verify:artwork`.)
  */
 export const ARTWORK_REVISIONS: Partial<Record<DesignFamilyHandle, string>> = {
-  // v7 pack (2026-10-03): production-safe (intact glyphs, rule 59/51px,
-  // mark pixel-identical). Only open item: typeface. Clear both entries
-  // once the brand owner accepts Lato, or once matching files arrive.
-  'coffee-personality':
-    'v7: production-safe. Brand decision pending: headline and subline are set in Lato, while the approved V1 masters use a different family (barred capital I). See artwork/typeface-comparison-v7.png.',
-  'campus-energy':
-    'v7: production-safe. Brand decision pending: headline and subline are set in Lato, while the approved V1 masters use a different family (barred capital I). See artwork/typeface-comparison-v7.png.',
+  // None. V1 artwork signed off on 2026-10-03 (v7 pack). 04 and 08 are set
+  // in Lato, accepted by the brand owner; no further revisions requested.
 };
 
 /**
- * Masters locked after approval (v2 pack, 2026-10-03). verify:artwork fails
- * if a later pack changes them. 07 + 09 approved; 06 + 10 are V2 and must
- * stay unchanged. Update a hash only with explicit brand approval.
+ * All 10 masters locked at the signed-off v7 pack (2026-10-03).
+ * verify:artwork fails if any file changes. Update a hash only with explicit
+ * brand approval.
  */
 export const LOCKED_MASTERS: Record<string, {sha256: string; reason: string}> =
   {
+    '01_mumbai_made.png': {
+      sha256:
+        '36d53398be6317abfc12bfc3fa23ba317a91cc9beeaee205b918da18bf7d7914',
+      reason: 'approved V1 master',
+    },
+    '02_local_life.png': {
+      sha256:
+        '228de52c41d466726087a62d5505496020bf83f44a3a864b152bcf163a8ee339',
+      reason: 'approved V1 master',
+    },
+    '03_corporate_survivor.png': {
+      sha256:
+        'c2bc169cdbf7aa470cbba5e7ff668bdc794f361fa9a64b6f9300b85fc5465e13',
+      reason: 'approved V1 master',
+    },
+    '04_coffee_personality.png': {
+      sha256:
+        '07be0de986529dc2b1c6b20e6c09ebff120a0869439f28e51a7b4537b224923a',
+      reason: 'approved V1 master (v7, Lato accepted)',
+    },
+    '05_bestie_energy.png': {
+      sha256:
+        'f3128ecc53b217a65757a124fedaaac83ef31c89af66d3b6d21bc59e54628c6e',
+      reason: 'approved V1 master',
+    },
     '06_us.png': {
       sha256:
         '2a9244f9620bb4fef55aba786038f5a7046f1630e7df873c5e57c7bc4442b058',
@@ -77,6 +97,11 @@ export const LOCKED_MASTERS: Record<string, {sha256: string; reason: string}> =
       sha256:
         '94726b0e5153d8e6ba1d619bbdfc92f65daf3538888d60fa694da05fc42c90c9',
       reason: 'approved V1 master',
+    },
+    '08_campus_energy.png': {
+      sha256:
+        'b3c9e3d80a13e1493ea6b0d9bd009ed56d87acb5e1465e394910e2371c12d832',
+      reason: 'approved V1 master (v7, Lato accepted)',
     },
     '09_desi_roots.png': {
       sha256:
