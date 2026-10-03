@@ -1,9 +1,12 @@
 import type {ProductTypeSpec} from './types.ts';
 
 /**
- * The three hero products. Specs are written to the category standard of the
- * selected supplier blanks — confirm every line against the supplier spec
- * sheet during sampling before launch.
+ * The three hero products. Customer-facing copy states only what the working
+ * supplier blanks publish (Printrove: 100% cotton, loose boxy fit; Qikink:
+ * cotton canvas tote with long handles, double-wall stainless steel tumbler,
+ * sublimation, front-centred placement). Unconfirmed construction details
+ * (GSM, neck rib, zip closure, dimensions) stay internal until a sample or a
+ * written supplier answer confirms them.
  */
 export const PRODUCT_TYPES: ProductTypeSpec[] = [
   {
@@ -12,11 +15,10 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
     shortName: 'Oversized Tee',
     shopifyProductType: 'T-Shirt',
     skuCode: 'TEE',
-    summary:
-      'A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.',
-    materials: ['100% cotton, heavyweight jersey', 'Ribbed crew neck'],
-    fit: 'Oversized, relaxed fit with dropped shoulders. Take your usual size for the intended oversized look, or size down for a closer fit.',
-    printMethod: 'Direct-to-garment (DTG) print, made to order.',
+    summary: 'A relaxed, boxy oversized tee in soft 100% cotton.',
+    materials: ['100% cotton', 'Relaxed, boxy oversized fit'],
+    fit: 'Oversized, relaxed boxy fit. Take your usual size for the intended oversized look, or size down for a closer fit.',
+    printMethod: 'Printed to order in India.',
     care: [
       'Machine wash cold, inside out',
       'Do not bleach',
@@ -34,7 +36,7 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
     skuCode: 'TOT',
     summary:
       'A sturdy cotton canvas tote with long handles — laptop, groceries, life.',
-    materials: ['Natural cotton canvas', 'Long shoulder handles'],
+    materials: ['Cotton canvas', 'Long handles'],
     printMethod: 'Printed to order on one side.',
     care: [
       'Spot clean where possible',
@@ -49,7 +51,8 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
     shortName: '20oz Tumbler',
     shopifyProductType: 'Tumbler',
     skuCode: 'TMB',
-    summary: 'A 20oz insulated stainless steel tumbler, printed edge to edge.',
+    summary:
+      'A 20oz insulated stainless steel tumbler with the design printed front and centre.',
     materials: [
       'Double-wall stainless steel',
       '20oz (approx. 590 ml) capacity',

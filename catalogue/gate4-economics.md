@@ -102,6 +102,10 @@ GST registered; ITC eligible subject to normal rules (no ITC % assumed); retail 
 - Splash-proof lid, metal straw; white.
 - Sublimation, printed around the tumbler; max printable area 9.5 × 8 in; PNG/JPEG at 300 DPI.
 
+## Owner pricing decision (2026-10-03)
+
+V1 launch prices are **approved**: ₹999 tee / ₹599 tote / ₹1,099 tumbler, GST inclusive (`PRICE_STATUS = 'approved'`). They are not recalculated from supplier costs unless the owner asks. Everything below is internal cost tracking; none of it blocks the build or launch.
+
 ## Gate 4D: working position (2026-10-03)
 
 Gate 4 is **not approved**. Nothing in Shopify was changed.

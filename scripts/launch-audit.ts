@@ -21,7 +21,11 @@ import {
   PRODUCT_TYPES,
   TAG,
 } from '../app/data/catalogue/index.ts';
-import {PRICE_STATUS, RETAIL_PRICE_INR} from '../app/data/catalogue/pricing.ts';
+import {
+  PRICE_APPROVAL,
+  PRICE_STATUS,
+  RETAIL_PRICE_INR,
+} from '../app/data/catalogue/pricing.ts';
 import {SUPPLIERS, SUPPLIER_BY_PRODUCT_TYPE} from '../ops/suppliers.ts';
 import {SUPPLIER_TEMPLATES} from '../ops/supplier-templates.ts';
 
@@ -279,12 +283,13 @@ const costsComplete =
   costs.includes('## Contribution at current prices') &&
   !costs.includes('## Incomplete rows') &&
   !costs.includes('payment fee inputs missing');
+const prices = `₹${RETAIL_PRICE_INR['oversized-tee']} / ₹${RETAIL_PRICE_INR.tote} / ₹${RETAIL_PRICE_INR.tumbler}`;
 check(
   'pricing',
-  PRICE_STATUS === 'provisional' || costsComplete,
+  PRICE_STATUS === 'provisional' || PRICE_APPROVAL.length > 0,
   PRICE_STATUS === 'provisional'
-    ? `prices PROVISIONAL (₹${RETAIL_PRICE_INR['oversized-tee']} / ₹${RETAIL_PRICE_INR.tote} / ₹${RETAIL_PRICE_INR.tumbler}); landed costs ${costsComplete ? 'complete — ready for Gate 4' : 'incomplete'}`
-    : `prices APPROVED with complete landed costs`,
+    ? `prices PROVISIONAL (${prices}); landed costs ${costsComplete ? 'complete' : 'incomplete'}`
+    : `prices APPROVED (${prices}): ${PRICE_APPROVAL}; landed costs ${costsComplete ? 'complete' : 'incomplete (internal, does not block)'}`,
 );
 
 /* ------------------------------------------- temporary renders not shipped */

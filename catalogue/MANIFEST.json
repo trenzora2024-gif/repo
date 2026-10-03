@@ -32,7 +32,7 @@
     "make-it-yours-tote",
     "make-it-yours-tumbler"
   ],
-  "priceStatus": "provisional",
+  "priceStatus": "approved",
   "prices": {
     "oversized-tee": 999,
     "tote": 599,
@@ -41,12 +41,12 @@
   "productStatus": "DRAFT",
   "published": false,
   "files": {
-    "shopify-products.csv": "eee4894dcd655c0111b0011d9aebffec8ca27b197d6ca229dbe11c15a2175232",
+    "shopify-products.csv": "024eacb11de80142db5bede6d54e1184a96958f2cc97c64e8c41a60ca05b60a8",
     "supplier-orders/printrove.csv": "63fbf304a2db517d1eea343bdce20330303715914e47a24528d69bfc0173f1e4",
     "supplier-orders/qikink.csv": "ee317d5e37ba3bc323bf5a60809fb6d80aa17a331804391db4b0127e1b3e5c2f",
-    "admin/products.productSet.json": "4a162bd92c91cafb47442b4a9e7f373dc9ca9a3ed2c04ef382f6f5ce96910c57",
+    "admin/products.productSet.json": "f8fcfe0383912d04afa3b1381e8b3676c158ad76cdbd67fdd6573312ccc4fc72",
     "admin/collections.variables.json": "851679a9bae888da0ea887ac9815baf8d5c0d86d650bf0442fa1d66565cff7a4",
     "collections.md": "0c2f35e79e2c495e18cf14a5aa30dcc126241402c4f6de10d5a814ed0695c422",
-    "supplier-map.csv": "e0ca95f66b88609e20cda4760523f0f29f9cf140c543b6f267dca74888da880d"
+    "supplier-map.csv": "525b7a35445ef08b38862e89bca41ea1138ec8895003c80c378a539124051b34"
   }
 }
