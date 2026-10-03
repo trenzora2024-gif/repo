@@ -96,10 +96,17 @@ export default function Contact() {
             For complaints about an order or our service, email{' '}
             <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a> or
             call <a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a>.
-            {officer
-              ? ` Grievance Officer: ${officer.name}, ${officer.designation}.`
-              : null}
           </p>
+          {officer ? (
+            <p>
+              <strong>Grievance Officer:</strong> {officer.name},{' '}
+              {officer.designation}. We acknowledge complaints within 48 hours
+              and aim to resolve them within one month.
+            </p>
+          ) : null}
+          {BUSINESS.supportHours ? (
+            <p>Support hours: {BUSINESS.supportHours}.</p>
+          ) : null}
         </div>
       </section>
     </div>

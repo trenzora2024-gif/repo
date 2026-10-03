@@ -40,9 +40,13 @@ export const BUSINESS = {
     'Maharashtra 400701, India',
   ],
   /** Grievance Officer (Consumer Protection (E-Commerce) Rules, 2020). */
-  grievanceOfficer: null as {name: string; designation: string} | null,
+  grievanceOfficer: {name: 'Rekha Buchade', designation: 'General Manager'} as {
+    name: string;
+    designation: string;
+  } | null,
   /** Support hours, once decided (e.g. 'Mon–Sat, 10am–6pm IST'). */
-  supportHours: null as string | null,
+  supportHours: '10:00 AM – 7:00 PM, Monday to Saturday; closed on Sundays' as
+    string | null,
   /**
    * Orders can be cancelled until they enter production. Set a fixed window
    * (in hours) only once the fulfilment flow guarantees it.
@@ -59,7 +63,7 @@ export const SHIPPING = {
   deliveryDays: '3–7 working days',
   totalEstimate: '5–11 working days',
   coverage: 'We ship across India.',
-  costNote: 'Shipping is calculated at checkout.',
+  costNote: 'Free shipping on all orders in India.',
 } as const;
 
 export const RETURNS = {
@@ -98,7 +102,7 @@ export const FAQ = [
   },
   {
     q: 'How much is shipping?',
-    a: 'The shipping charge for your order is shown at checkout before you pay.',
+    a: 'Shipping is free on all orders delivered in India.',
   },
   {
     q: 'How can I track my order?',
@@ -138,7 +142,7 @@ export const FAQ = [
   },
   {
     q: 'How can I contact support?',
-    a: 'Email cs@trenzora.com or call +91 96196 57030. Please include your order number.',
+    a: 'Email cs@trenzora.com or call +91 96196 57030, 10:00 AM to 7:00 PM, Monday to Saturday. Please include your order number.',
   },
 ] as const;
 

@@ -33,7 +33,14 @@ const address = BUSINESS.address.join(', ');
 const businessName = BUSINESS.legalName ?? BUSINESS.tradingName;
 const days = RETURNS.windowDays;
 
-const contactBlock = `<p>Email ${email} or call ${phone}. Please include your order number.</p>
+const hours = BUSINESS.supportHours ? ` (${BUSINESS.supportHours})` : '';
+const officer = BUSINESS.grievanceOfficer;
+const grievance = officer
+  ? `<p><strong>Grievance Officer:</strong> ${officer.name}, ${officer.designation}. Email ${email} or call ${phone}. We acknowledge complaints within 48 hours and aim to resolve them within one month.</p>`
+  : '';
+
+const contactBlock = `<p>Email ${email} or call ${phone}${hours}. Please include your order number.</p>
+${grievance}
 <p>${businessName}, ${address}.</p>`;
 
 const shipping: Policy = {
@@ -50,12 +57,12 @@ const shipping: Policy = {
 <h2>Delivery time</h2>
 <p>After dispatch, delivery usually takes ${SHIPPING.deliveryDays}, depending on your pin code. In total, most orders arrive within ${SHIPPING.totalEstimate} of ordering. These are estimates, not guarantees. Some pin codes, public holidays, weather and courier volumes can add time.</p>
 <h2>Shipping charges</h2>
-<p>The shipping charge for your order is calculated and shown at checkout before you pay. The amount shown at checkout is the amount you pay.</p>
+<p>Shipping is free on all orders delivered in India.</p>
 <h2>Tracking</h2>
 <p>When your order is dispatched, we email you a tracking link. Your order confirmation email also links to your order status page. If you haven’t received a tracking link within ${SHIPPING.productionDays} of ordering, write to us.</p>
 <h2>Your delivery address</h2>
 <p>Please check your name, address, pin code and phone number at checkout. We can change the address only before your order is dispatched, so write to us straight away if you notice a mistake.</p>
-<p>If an order can’t be delivered because the address or phone number was incomplete or incorrect, or because nobody was available after the courier’s delivery attempts, the parcel is returned to us. We’ll contact you to arrange re-delivery, and the re-delivery shipping charge is payable by you. Because each piece is made to order, we may not be able to offer a refund for an order returned for these reasons.</p>
+<p>If a delivery attempt fails, the courier will usually reattempt delivery once or twice, and may call you on the phone number you gave at checkout. If the order still can’t be delivered because the address or phone number was incomplete or incorrect, or because nobody was available, the parcel is returned to us. We’ll contact you to arrange re-delivery, and the re-delivery shipping charge is payable by you. Because each piece is made to order, we may not be able to offer a refund for an order returned for these reasons.</p>
 <h2>Damaged parcel</h2>
 <p>If the parcel looks damaged or tampered with when it arrives, take photos of the parcel before opening it if you can. Email us within ${days} days of delivery with your order number and photos of the parcel and the product. See our <a href="/policies/refund-policy">refund policy</a> for what happens next.</p>
 <h2>Marked as delivered but not received</h2>
@@ -71,7 +78,8 @@ const refund: Policy = {
     'Made-to-order products: how Trenzora handles damaged, defective, misprinted or wrong items, and what isn’t covered.',
   shopifyField: 'Refund policy',
   html: `<p>Last updated: ${POLICIES_UPDATED}</p>
-<p>Every Trenzora piece is made to order for you. That’s why we don’t accept returns for change of mind. If something is wrong with your order, though, we’ll put it right.</p>
+<p>Every Trenzora piece is made to order for you after you buy it. It isn’t picked from stock, so we can’t resell a returned item. That’s why we don’t accept returns for change of mind. If something is wrong with your order, though, we’ll put it right.</p>
+<p><strong>Returns are accepted only with our approval.</strong> Please don’t send a product to any address, including the address on our website or invoice, unless we have approved your claim in writing and told you exactly where and how to send it. We can’t accept, refund or replace items sent without approval.
 <h2>How to make a claim</h2>
 <p>Email ${email} within <strong>${days} days of delivery</strong> with:</p>
 <ul>
@@ -80,7 +88,7 @@ const refund: Policy = {
 <li>a photo of the shipping label and packaging;</li>
 <li>for damage in transit, photos of the parcel, and an unboxing video if you have one.</li>
 </ul>
-<p>We’ll review your claim and reply by email. We usually don’t need the product back. If we do, we’ll tell you how to send it before you send anything. Please don’t post items to us without hearing from us first.</p>
+<p>We’ll review your claim and reply by email. For most approved claims you don’t need to send the product back. If we do need it, we’ll tell you how in our approval email.</p>
 <h2>What we cover</h2>
 <p>For each of the following, once we’ve verified your claim, we’ll send a replacement at no cost. If a replacement isn’t possible, we’ll refund what you paid for the affected item.</p>
 <ul>
@@ -199,7 +207,7 @@ const terms: Policy = {
 <h2>Products</h2>
 <p>Our products are made to order. We describe and show them as accurately as we can, but colours and print placement can look slightly different on screens and vary slightly between pieces. Sizes are approximate, so please check the size details on each product page.</p>
 <h2>Prices</h2>
-<p>Prices are in Indian rupees (₹) and include applicable taxes. The shipping charge is shown at checkout before you pay. If a product is listed at a clearly wrong price, we may cancel the order and refund you in full.</p>
+<p>Prices are in Indian rupees (₹) and include applicable taxes. Shipping is free on all orders delivered in India. If a product is listed at a clearly wrong price, we may cancel the order and refund you in full.</p>
 <h2>Orders</h2>
 <p>Your order is an offer to buy. We accept it when we confirm it by email. We may decline or cancel an order, with a full refund, as described in our cancellation policy.</p>
 <h2>Payment</h2>
@@ -229,7 +237,8 @@ const contactInfo: Policy = {
   shopifyField: 'Contact information',
   html: `<p><strong>${businessName}</strong></p>
 <p>${address}</p>
-<p>Email: ${email}<br />Phone: ${phone}</p>`,
+<p>Email: ${email}<br />Phone: ${phone}${hours}</p>
+${grievance}`,
 };
 
 /** Policies rendered at /policies/<handle>; shipping renders at /shipping. */
