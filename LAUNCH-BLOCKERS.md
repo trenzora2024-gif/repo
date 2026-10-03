@@ -25,6 +25,13 @@ Nothing has been connected to, imported into or published on any Shopify store. 
 - After (live store): 24 products, 56 variants, all `DRAFT`, `publishedAt` null and 0 publications on every product, 0 media, 0 V2 (`us-*`, `make-it-yours-*`), 56 unique SKUs. Handles, tags, vendor, type, prices (₹999 / ₹599 / ₹1,099, no compare-at), `CONTINUE` and untracked inventory all match the manifest. No supplier name (Printrove, Qikink, Vistaprint, Kraftix) in any title, description or SEO field.
 - Not done (by design): no collections created (only Shopify's default `frontpage` exists), no images, no publishing, no payment, shipping or policy changes. Gate 3 is next and needs separate approval.
 
+## Gate 3 status: DONE (2026-10-03), 4 smart collections created, unpublished
+
+- Created from `catalogue/admin/collections.variables.json` (sha256 matches `MANIFEST.json`) via `collectionCreate`. Each rule is "product tag equals `col:<handle>`", all conditions.
+- Live counts and members match the catalogue exactly: Mumbai Made `mumbai-made` 12, Drops `drops` 24, Gifts `gifts` 18, The Edit `trending` 12. 0 publications on each collection. No V2 products exist; all 24 products are still `DRAFT` with 0 publications.
+- Unplanned, not changed: Shopify's default Home page collection (`frontpage`, manual, on 3 channels) contains `mumbai-made-oversized-tee`. Neither the import nor Gate 3 put it there. The product is a draft with no channels, so it isn't customer-visible. Decide before publishing (Gate 5/6) whether it stays.
+- Gate 4 (pricing, supplier economics, artwork and shipping approval) is next and needs separate approval.
+
 ## A. Shopify account and access
 
 | #   | What                                                                         | Why it blocks                                                                                                                                                      | What to do                                                                                                                                                                                                                                                                                                                                              |
