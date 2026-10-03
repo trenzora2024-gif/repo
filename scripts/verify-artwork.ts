@@ -16,7 +16,7 @@ import {existsSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {inflateSync} from 'node:zlib';
 import {DESIGN_FAMILIES} from '../app/data/catalogue/index.ts';
-import {ARTWORK_REVISIONS} from '../ops/suppliers.ts';
+import {ARTWORK_REVISIONS, LOCKED_MASTERS} from '../ops/suppliers.ts';
 
 const args = process.argv.slice(2);
 const dir = args.includes('--dir')
@@ -260,6 +260,18 @@ if (!existsSync(dir)) {
         '  · V2 personalization-ready master: kept and checked, not for V1 sale',
       );
     }
+    const locked = LOCKED_MASTERS[family.artworkFile];
+    if (locked) {
+      const sha = createHash('sha256').update(buf).digest('hex');
+      if (sha !== locked.sha256) {
+        lines.push(
+          `  ✗ locked master changed (${locked.reason}): expected ${locked.sha256.slice(0, 12)}…, got ${sha.slice(0, 12)}…`,
+        );
+        problems++;
+      } else {
+        lines.push(`  ✓ matches locked version (${locked.reason})`);
+      }
+    }
     const revision = ARTWORK_REVISIONS[family.handle];
     if (revision) {
       lines.push(`  ✗ content revision required: ${revision}`);
@@ -281,9 +293,15 @@ if (!existsSync(dir)) {
         if (rule.overlapRows > 0 || minGap < RULE_COLLISION) {
           lines.push(`  ✗ red rule collides with text: ${detail}`);
           problems++;
+        } else if (minGap < RULE_COMFORT && family.release === 'v1') {
+          // V1 brand standard: at least 40px clear space, no exceptions.
+          lines.push(
+            `  ✗ red rule too close to text: ${detail} (V1 minimum ${RULE_COMFORT}px)`,
+          );
+          problems++;
         } else if (minGap < RULE_COMFORT) {
           lines.push(
-            `  ! red rule is tight: ${detail} (comfort minimum ${RULE_COMFORT}px; design review)`,
+            `  ! red rule is tight: ${detail} (V2 master; ${RULE_COMFORT}px recommended)`,
           );
         } else {
           lines.push(`  ✓ red rule clear of text: ${detail}`);

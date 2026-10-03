@@ -56,3 +56,32 @@ export const ARTWORK_REVISIONS: Partial<Record<DesignFamilyHandle, string>> = {
   // 09 Desi Roots (clearance) reviewed visually and approved. Red-rule
   // collisions are now detected automatically by verify:artwork.
 };
+
+/**
+ * Masters locked after approval (v2 pack, 2026-10-03). verify:artwork fails
+ * if a later pack changes them. 07 + 09 approved; 06 + 10 are V2 and must
+ * stay unchanged. Update a hash only with explicit brand approval.
+ */
+export const LOCKED_MASTERS: Record<string, {sha256: string; reason: string}> =
+  {
+    '06_us.png': {
+      sha256:
+        '2a9244f9620bb4fef55aba786038f5a7046f1630e7df873c5e57c7bc4442b058',
+      reason: 'V2 master — keep unchanged',
+    },
+    '07_pet_parent.png': {
+      sha256:
+        '94726b0e5153d8e6ba1d619bbdfc92f65daf3538888d60fa694da05fc42c90c9',
+      reason: 'approved V1 master',
+    },
+    '09_desi_roots.png': {
+      sha256:
+        '00efdc31a123e8f0a9001eff882f3278855745b31ec6c922649eb8dd069eda58',
+      reason: 'approved V1 master',
+    },
+    '10_make_it_yours.png': {
+      sha256:
+        '7626aa1d8752e60ed56d3c324a232d4b958e6bcdec08a958be251bf3b7f9aa5a',
+      reason: 'V2 master — keep unchanged',
+    },
+  };
