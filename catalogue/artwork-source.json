@@ -1,11 +1,15 @@
 {
-  "source": "Trenzora_V1_10_Corrected_Production_Design_Masters_v3.zip",
-  "sha256": "5b5c833e7bec1ccc54dad61073b4fa642d0c9cfda29ea73f357bccfa7a236322",
+  "source": "Trenzora_V1_10_Corrected_Production_Design_Masters_v4.zip",
+  "sha256": "8736519dc75892bf79760e36e463ad114e6d37d562f5ddd8db39db27f4c83793",
   "receivedOn": "2026-10-03",
   "extractedTo": "artwork/masters/ (gitignored; files byte-identical to the ZIP, unmodified)",
   "packSpec": "4500x5400 px, 300 DPI, RGBA, transparent background",
   "files": 10,
   "supersedes": [
+    {
+      "source": "Trenzora_V1_10_Corrected_Production_Design_Masters_v3.zip",
+      "sha256": "5b5c833e7bec1ccc54dad61073b4fa642d0c9cfda29ea73f357bccfa7a236322"
+    },
     {
       "source": "…_v2.zip",
       "sha256": "6094aba510ce837c1fa18c97a5662fac059a245f04417e294b12ff9aff7880e3"
@@ -22,7 +26,7 @@
     "02_local_life.png": "v3 approved: rule 43px clear, glyphs intact",
     "03_corporate_survivor.png": "v3 approved: rule 47px clear, glyphs intact",
     "05_bestie_energy.png": "v3 approved: rule 43px clear, glyphs intact",
-    "04_coffee_personality.png": "v3 REJECTED: cut glyph strips in COFFEE; rule 31px from subtitle",
-    "08_campus_energy.png": "v3 REJECTED: cut glyph strips in SUGGESTION"
+    "04_coffee_personality.png": "v4 REJECTED: glyphs intact, but red rule overlaps COFFEE baseline (12 rows); typeface/mark inconsistent with V1 set",
+    "08_campus_energy.png": "v4 REJECTED: glyphs intact, but red rule overlaps SUGGESTION baseline (6 rows); typeface/mark inconsistent with V1 set"
   }
 }

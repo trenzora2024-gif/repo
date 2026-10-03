@@ -144,36 +144,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        1054,
-        3452
+        1249,
+        3247
       ],
       "y": [
-        894,
-        4864
+        926,
+        4833
       ]
     },
     "margins": {
-      "left": 1054,
-      "right": 1047,
-      "top": 894,
-      "bottom": 535
+      "left": 1249,
+      "right": 1252,
+      "top": 926,
+      "bottom": 566
     },
     "rule": {
-      "top": 1982,
-      "bottom": 1999,
+      "top": 1928,
+      "bottom": 1946,
       "x": [
-        1700,
-        2800
+        1650,
+        2850
       ],
-      "overlapRows": 0,
-      "clearAbove": 41,
-      "clearBelow": 31
+      "overlapRows": 12,
+      "clearAbove": 0,
+      "clearBelow": 126
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 195151,
-    "sha256": "c54f2200c587ad7a47c156fab36bc826055c31af5a2fc54caeff0065d37d6aa6"
+    "bytes": 177387,
+    "sha256": "01cdd182b2f3ec466c9e9debc1ffe9e06faccda841e646d8d284db8c807b8608"
   },
   {
     "family": "bestie-energy",
@@ -320,36 +320,36 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        965,
-        3512
+        1135,
+        3355
       ],
       "y": [
-        894,
-        4864
+        926,
+        4833
       ]
     },
     "margins": {
-      "left": 965,
-      "right": 987,
-      "top": 894,
-      "bottom": 535
+      "left": 1135,
+      "right": 1144,
+      "top": 926,
+      "bottom": 566
     },
     "rule": {
-      "top": 1982,
-      "bottom": 1999,
+      "top": 1928,
+      "bottom": 1946,
       "x": [
         1600,
         2900
       ],
-      "overlapRows": 0,
-      "clearAbove": 41,
-      "clearBelow": 41
+      "overlapRows": 6,
+      "clearAbove": 0,
+      "clearBelow": 126
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 193945,
-    "sha256": "38e01ec9399a7e6d1f38cbc8feabb6c75c89d1e274c8c255ec03ab9fc6d95833"
+    "bytes": 177385,
+    "sha256": "b924643e9da208fc46326e9dc80052b77aabd609dcc34b809e4e6a0696d82894"
   },
   {
     "family": "desi-roots",
