@@ -11,6 +11,15 @@ Prepared 2026-10-03. Nothing here has been run. Every step that changes the stor
 - V7 masters unchanged.
 - 24 V1 products / 56 variants. Us and Make It Yours (V2) are never imported.
 
+## Pre-launch state verified (2026-10-03, read-only via the Shopify connector)
+
+- **Store:** Trenzora, `hetvyh-8e.myshopify.com`, primary domain `trenzora.in`, INR, India, taxes included. Not MaternEase.
+- **Products:** 24 V1 products, 56 variants (8 tees × 5 sizes + 8 totes + 8 tumblers), all `DRAFT`, 0 publications. Every tee ₹999, tote ₹599, tumbler ₹1,099. No V2 products.
+- **Collections:** `mumbai-made`, `drops`, `gifts`, `trending` exist with 0 publications. `frontpage` is on 3 channels.
+- **Hydrogen publication:** `gid://shopify/Publication/226146451634` ("Trenzora"). Not the Online Store (`…226143731890`) or Point of Sale (`…226143764658`).
+- **Production guard:** the app refuses to start without real Shopify credentials, so it can never fall back to the mock.shop demo catalogue. `.env.mock` is used only by `npm run dev:mock`.
+- **Deployment:** this cloud environment cannot reach any Shopify host or `trenzora.in`, and holds no Oxygen deployment token. Deploy through the Hydrogen channel's GitHub connection or from your machine.
+
 ## Before you start (owner)
 
 1. Shopify access for whoever runs the steps: your machine, or this environment with the Shopify hosts allowed (see `LAUNCH-BLOCKERS.md` → ACTION REQUIRED FROM ME).
