@@ -44,12 +44,15 @@ npx shopify hydrogen env pull     # writes .env (gitignored, never committed)
 ### C. Verify Storefront API access (read-only)
 
 ```
+npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com --expect-domain trenzora.in
+                                 # Gate 1: exact store, never MaternEase, INR, nothing imported yet
 npm run verify:store             # store identity (blocks MaternEase), INR, policies, products, collections, tag search
 ```
 
 At this point products are expected to be "0/24 visible", since nothing has been imported yet.
 
 ### D. Import the 24 V1 products as DRAFTS
+
 Full procedure, both routes (Admin CSV or the API `productSet`), and the pre- and post-flight queries: **`catalogue/README.md`**.
 
 🔒 **GATE 2: authorize creating 24 draft products (56 variants) in the Trenzora store.** The CSV contains V1 only. Us and Make It Yours (V2) are never exported for import.

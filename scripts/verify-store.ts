@@ -30,6 +30,18 @@ const envFile = args.includes('--env-file')
   ? args[args.indexOf('--env-file') + 1]
   : '.env';
 const withCart = args.includes('--cart');
+const argValue = (flag: string) =>
+  args.includes(flag) ? args[args.indexOf(flag) + 1] : undefined;
+// Gate 1: the connection must be exactly this store, and nothing imported yet.
+//   npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com --expect-domain trenzora.in
+const gate1 = args.includes('--gate1');
+const expectStore = argValue('--expect-store');
+const expectDomain = argValue('--expect-domain');
+const hostOf = (value = '') =>
+  value
+    .replace(/^https?:\/\//, '')
+    .replace(/\/.*$/, '')
+    .toLowerCase();
 
 type Level = 'ok' | 'info' | 'warn' | 'block';
 const results: Array<{level: Level; area: string; message: string}> = [];
@@ -99,6 +111,15 @@ async function main() {
     return;
   }
   if (!domain || !token) return;
+  if (expectStore) {
+    const configured = hostOf(domain);
+    report(
+      configured === expectStore.toLowerCase() ? 'ok' : 'block',
+      'identity',
+      `PUBLIC_STORE_DOMAIN = ${configured} (expected ${expectStore})`,
+    );
+    if (configured !== expectStore.toLowerCase()) return;
+  }
 
   // --------------------------------------------------------------- shop
   const {shop} = await gql<{
@@ -130,6 +151,25 @@ async function main() {
     'shop',
     `Connected to "${shop.name}" — ${shop.primaryDomain.url}`,
   );
+  if (expectDomain) {
+    const primary = shop.primaryDomain.host.toLowerCase();
+    const prod = expectDomain.toLowerCase();
+    const level: Level =
+      primary === prod || primary === `www.${prod}`
+        ? 'ok'
+        : primary === expectStore?.toLowerCase()
+          ? 'info'
+          : 'block';
+    report(
+      level,
+      'identity',
+      level === 'ok'
+        ? `Primary domain ${primary} = production domain`
+        : level === 'info'
+          ? `Primary domain is still ${primary}; ${prod} is not primary yet (expected before Gate 6, not now)`
+          : `Primary domain ${primary} is neither ${prod} nor ${expectStore}`,
+    );
+  }
   report(
     shop.paymentSettings.currencyCode === 'INR' ? 'ok' : 'block',
     'shop',
@@ -146,6 +186,31 @@ async function main() {
       'policies',
       `${name}: ${policy ? `/policies/${policy.handle}` : 'not set (footer links will 404)'}`,
     );
+  }
+
+  if (gate1) {
+    // Storefront API sees only published items; drafts are checked in Admin.
+    const {products: anyProducts, collections: anyCollections} = await gql<{
+      products: {nodes: Array<{handle: string}>};
+      collections: {nodes: Array<{handle: string}>};
+    }>(
+      `query { products(first: 10) { nodes { handle } } collections(first: 10) { nodes { handle } } }`,
+    );
+    report(
+      anyProducts.nodes.length ? 'block' : 'ok',
+      'gate1',
+      anyProducts.nodes.length
+        ? `${anyProducts.nodes.length}+ products already visible: ${anyProducts.nodes.map((p) => p.handle).join(', ')}`
+        : 'No products visible on the storefront (nothing imported/published)',
+    );
+    report(
+      anyCollections.nodes.length ? 'warn' : 'ok',
+      'gate1',
+      anyCollections.nodes.length
+        ? `Collections visible: ${anyCollections.nodes.map((c) => c.handle).join(', ')} (Shopify may create a default "frontpage")`
+        : 'No collections visible on the storefront',
+    );
+    return;
   }
 
   // ----------------------------------------------------------- products
