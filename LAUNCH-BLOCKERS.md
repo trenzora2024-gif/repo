@@ -18,6 +18,13 @@ Nothing has been connected to, imported into or published on any Shopify store. 
 - When unblocked, Gate 1 runs: `npx shopify hydrogen link` (you approve the login code) → `npx shopify hydrogen env pull` → `npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com --expect-domain trenzora.in`. It stops on any store other than trenzora-in, any MaternEase match, a non-INR currency, or products already visible.
 - First local run (2026-10-03): `env pull` wrote `PUBLIC_STORE_DOMAIN=hetvyh-8e.myshopify.com`, the store's permanent shop identifier. It's listed as an exact alias in `app/lib/store-guard.ts`, and `verify:store` confirms live that both hosts return the same shop ID. `PUBLIC_CHECKOUT_DOMAIN` wasn't set: use `trenzora.in` while it's the primary domain serving the Online Store (that's where Shopify checkout runs today), and switch to `checkout.trenzora.in` before Gate 6 moves `trenzora.in` to Hydrogen.
 
+## Gate 2 status: DONE (2026-10-03), 24 V1 products imported as drafts
+
+- Route B (Admin API `productSet`, 4 batches of 6) from `catalogue/admin/products.productSet.json` (sha256 `ed622361…e3bc`, matches `MANIFEST.json`; a fresh `catalogue:export` reproduces it byte for byte).
+- Before: the connector store was confirmed as Trenzora (`hetvyh-8e.myshopify.com`, primary `trenzora.in`, INR, IN), and the pre-flight check found 0 products and none of our collection handles.
+- After (live store): 24 products, 56 variants, all `DRAFT`, `publishedAt` null and 0 publications on every product, 0 media, 0 V2 (`us-*`, `make-it-yours-*`), 56 unique SKUs. Handles, tags, vendor, type, prices (₹999 / ₹599 / ₹1,099, no compare-at), `CONTINUE` and untracked inventory all match the manifest. No supplier name (Printrove, Qikink, Vistaprint, Kraftix) in any title, description or SEO field.
+- Not done (by design): no collections created (only Shopify's default `frontpage` exists), no images, no publishing, no payment, shipping or policy changes. Gate 3 is next and needs separate approval.
+
 ## A. Shopify account and access
 
 | #   | What                                                                         | Why it blocks                                                                                                                                                      | What to do                                                                                                                                                                                                                                                                                                                                              |
