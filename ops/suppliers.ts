@@ -52,12 +52,13 @@ export const SUPPLIER_BY_PRODUCT_TYPE: Record<ProductTypeHandle, SupplierKey> =
  * automatically by `npm run verify:artwork`.)
  */
 export const ARTWORK_REVISIONS: Partial<Record<DesignFamilyHandle, string>> = {
-  // v5 pack (2026-10-03), visual review. The typeface is consistent again,
-  // but the files were patched from the defective v3 pixels.
+  // v6 pack (2026-10-03): the headline pixels are identical to rejected
+  // v3 (pixel diff: changes only below row 1981), so the erased strips
+  // were carried over.
   'coffee-personality':
-    'v5: erased strips cut through the bottom of “COFFEE” again (same defect as v3). Re-export from the source design file with the rule repositioned. Do not erase pixels from the PNG.',
+    'v6: headline is pixel-identical to rejected v3. Erased strips remain through the bottom of “COFFEE” (rows 1902–1919). The letters must be re-set as live type in the V1 typeface; they can’t be recovered from any existing PNG.',
   'campus-energy':
-    'v5: erased strips cut through “SUGGESTION” and through the subline “CAMPUS DAYS • FOREVER”. Re-export from the source design file with the rule repositioned. Do not erase pixels from the PNG.',
+    'v6: headline is pixel-identical to rejected v3. Erased strips remain through “SUGGESTION” (rows 1912–1929). The letters must be re-set as live type in the V1 typeface; they can’t be recovered from any existing PNG.',
 };
 
 /**

@@ -170,7 +170,7 @@
       ],
       "overlapRows": 0,
       "clearAbove": 40,
-      "clearBelow": 62
+      "clearBelow": 42
     },
     "cuts": [
       {
@@ -183,7 +183,7 @@
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
     "bytes": 195151,
-    "sha256": "508f413415bc1d1caaf8b02052047e04e03782e0c84ea5c7bc83087aceb0fb9b"
+    "sha256": "60d2fa1168a4bd4733d76438ce10acd54e5ff4e45291bd736f5ead2a2fc856e7"
   },
   {
     "family": "bestie-energy",
@@ -356,7 +356,7 @@
       ],
       "overlapRows": 0,
       "clearAbove": 40,
-      "clearBelow": 72
+      "clearBelow": 42
     },
     "cuts": [
       {
@@ -368,8 +368,8 @@
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 193202,
-    "sha256": "29ad43f8f4013752e7bc97c8392d0dc0422c11c511d0c6a2be8e352118065e03"
+    "bytes": 193945,
+    "sha256": "a5e228199554c31863d77e58295bbc042fe0755973b85404af1ac1528c23702f"
   },
   {
     "family": "desi-roots",

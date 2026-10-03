@@ -1,11 +1,15 @@
 {
-  "source": "Trenzora_V1_10_Corrected_Production_Design_Masters_v5.zip",
-  "sha256": "eab42c5443d1c35e89ab8a9059ebd7b1464f67cb84d7e9a25744fbf956d65615",
+  "source": "Trenzora_V1_10_Corrected_Production_Design_Masters_v6.zip",
+  "sha256": "1393ce2de0da26fef5e56dc8e071e3d060b154f1296ebedf4c6a56cb6ad4310a",
   "receivedOn": "2026-10-03",
   "extractedTo": "artwork/masters/ (gitignored; files byte-identical to the ZIP, unmodified)",
   "packSpec": "4500x5400 px, 300 DPI, RGBA, transparent background",
   "files": 10,
   "supersedes": [
+    {
+      "source": "Trenzora_V1_10_Corrected_Production_Design_Masters_v5.zip",
+      "sha256": "eab42c5443d1c35e89ab8a9059ebd7b1464f67cb84d7e9a25744fbf956d65615"
+    },
     {
       "source": "Trenzora_V1_10_Corrected_Production_Design_Masters_v4.zip",
       "sha256": "8736519dc75892bf79760e36e463ad114e6d37d562f5ddd8db39db27f4c83793"
@@ -30,7 +34,7 @@
     "02_local_life.png": "v3 approved: rule 43px clear, glyphs intact",
     "03_corporate_survivor.png": "v3 approved: rule 47px clear, glyphs intact",
     "05_bestie_energy.png": "v3 approved: rule 43px clear, glyphs intact",
-    "04_coffee_personality.png": "v5 REJECTED: consistent typeface, but erased strips cut through COFFEE (as in v3)",
-    "08_campus_energy.png": "v5 REJECTED: consistent typeface, but erased strips cut through SUGGESTION and the subline CAMPUS DAYS • FOREVER"
+    "04_coffee_personality.png": "v6 REJECTED: headline pixel-identical to v3; erased strips through COFFEE remain",
+    "08_campus_energy.png": "v6 REJECTED: headline pixel-identical to v3; erased strips through SUGGESTION remain"
   }
 }
