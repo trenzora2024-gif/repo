@@ -14,7 +14,10 @@
     "dev:mock": "node scripts/dev-mock.mjs",
     "mock:storefront": "node scripts/mock-storefront.ts",
     "catalogue:export": "node scripts/export-catalogue.ts",
-    "format": "prettier --write app scripts"
+    "format": "prettier --write app scripts",
+    "verify:store": "node scripts/verify-store.ts",
+    "verify:artwork": "node scripts/verify-artwork.ts",
+    "qa:storefront": "node scripts/qa-storefront.mjs"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {

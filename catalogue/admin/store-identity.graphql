@@ -1,0 +1,15 @@
+# Step A/C guard — run FIRST after switching to the Trenzora store.
+# Abort if name/domain is not Trenzora (never MaternEase). Validated: Admin API.
+query TrenzoraStoreIdentity {
+  shop {
+    name
+    myshopifyDomain
+    primaryDomain {
+      host
+    }
+    currencyCode
+    shopAddress {
+      countryCodeV2
+    }
+  }
+}

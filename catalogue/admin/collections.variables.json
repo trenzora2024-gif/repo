@@ -1,0 +1,107 @@
+[
+  {
+    "input": {
+      "title": "Mumbai Made",
+      "handle": "mumbai-made",
+      "descriptionHtml": "<p>The first Trenzora drop. A love letter to Mumbai on a tee, a tote and a tumbler.</p>",
+      "seo": {
+        "title": "Mumbai Made | Trenzora",
+        "description": "The first Trenzora drop. A love letter to Mumbai on a tee, a tote and a tumbler."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "col:mumbai-made"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "title": "Drops",
+      "handle": "drops",
+      "descriptionHtml": "<p>Original Trenzora designs, released in drops. New designs land every week.</p>",
+      "seo": {
+        "title": "Drops | Trenzora",
+        "description": "Original Trenzora designs, released in drops. New designs land every week."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "col:drops"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "title": "Personalize",
+      "handle": "personalize",
+      "descriptionHtml": "<p>Designs made to carry your names, dates and words. Originals available now; personal text coming soon.</p>",
+      "seo": {
+        "title": "Personalize | Trenzora",
+        "description": "Designs made to carry your names, dates and words. Originals available now; personal text coming soon."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "col:personalize"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "title": "Gifts",
+      "handle": "gifts",
+      "descriptionHtml": "<p>Gifts with personality — for besties, couples, colleagues, pet parents and anyone who misses home.</p>",
+      "seo": {
+        "title": "Gifts | Trenzora",
+        "description": "Gifts with personality — for besties, couples, colleagues, pet parents and anyone who misses home."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "col:gifts"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "title": "Trending",
+      "handle": "trending",
+      "descriptionHtml": "<p>What people with personality are picking right now.</p>",
+      "seo": {
+        "title": "Trending | Trenzora",
+        "description": "What people with personality are picking right now."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "col:trending"
+          }
+        ]
+      }
+    }
+  }
+]

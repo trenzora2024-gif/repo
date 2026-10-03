@@ -13,3 +13,7 @@ node_modules
 *.log
 .DS_Store
 *.tsbuildinfo
+
+# Production artwork (see artwork/masters/README.md)
+artwork/masters/*
+!artwork/masters/README.md

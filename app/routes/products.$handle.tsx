@@ -16,6 +16,8 @@ import {
   PRODUCT_TYPES,
   productHandle,
   resolveCatalogueEntry,
+  TAG,
+  tagQuery,
 } from '~/data/catalogue';
 import {FAQ, HOW_ITS_MADE, RETURNS, SHIPPING, SITE} from '~/data/site';
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
@@ -100,7 +102,7 @@ export async function loader({context, params, request}: Route.LoaderArgs) {
   const siblings = entry
     ? storefront
         .query(SIBLINGS_QUERY, {
-          variables: {query: `tag:'design:${entry.family.handle}'`},
+          variables: {query: tagQuery(TAG.design(entry.family.handle))},
           cache: storefront.CacheShort(),
         })
         .then((res) => res.products.nodes)

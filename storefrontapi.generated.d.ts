@@ -285,6 +285,7 @@ export type ProductCardFragment = Pick<
 };
 
 export type HomeQueryVariables = StorefrontAPI.Exact<{
+  dropQuery: StorefrontAPI.Scalars['String']['input'];
   country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
   language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
 }>;
@@ -992,7 +993,7 @@ export type PredictiveProductsQuery = {
 };
 
 interface GeneratedQueryTypes {
-  '#graphql\n  query Home($country: CountryCode, $language: LanguageCode)\n  @inContext(country: $country, language: $language) {\n    drop: products(first: 60, query: "tag:\'drop:01\'") {\n      nodes {\n        ...ProductCard\n      }\n    }\n    trending: collection(handle: "trending") {\n      products(first: 8) {\n        nodes {\n          ...ProductCard\n        }\n      }\n    }\n  }\n  #graphql\n  fragment ProductCard on Product {\n    id\n    handle\n    title\n    tags\n    productType\n    featuredImage {\n      id\n      url\n      altText\n      width\n      height\n    }\n    priceRange {\n      minVariantPrice {\n        amount\n        currencyCode\n      }\n    }\n    selectedOrFirstAvailableVariant(\n      selectedOptions: []\n      ignoreUnknownOptions: true\n      caseInsensitiveMatch: true\n    ) {\n      id\n      availableForSale\n      price {\n        amount\n        currencyCode\n      }\n    }\n  }\n\n': {
+  '#graphql\n  query Home(\n    $dropQuery: String!\n    $country: CountryCode\n    $language: LanguageCode\n  )\n  @inContext(country: $country, language: $language) {\n    drop: products(first: 60, query: $dropQuery) {\n      nodes {\n        ...ProductCard\n      }\n    }\n    trending: collection(handle: "trending") {\n      products(first: 8) {\n        nodes {\n          ...ProductCard\n        }\n      }\n    }\n  }\n  #graphql\n  fragment ProductCard on Product {\n    id\n    handle\n    title\n    tags\n    productType\n    featuredImage {\n      id\n      url\n      altText\n      width\n      height\n    }\n    priceRange {\n      minVariantPrice {\n        amount\n        currencyCode\n      }\n    }\n    selectedOrFirstAvailableVariant(\n      selectedOptions: []\n      ignoreUnknownOptions: true\n      caseInsensitiveMatch: true\n    ) {\n      id\n      availableForSale\n      price {\n        amount\n        currencyCode\n      }\n    }\n  }\n\n': {
     return: HomeQuery;
     variables: HomeQueryVariables;
   };

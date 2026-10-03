@@ -1,0 +1,24 @@
+# Step E — create one smart collection. Run once per entry in
+# collections.variables.json. Collections are created UNPUBLISHED; publishing
+# to the Hydrogen channel is a separate, approved step. Validated: Admin API.
+mutation TrenzoraCollectionCreate($input: CollectionInput!) {
+  collectionCreate(input: $input) {
+    collection {
+      id
+      handle
+      title
+      ruleSet {
+        appliedDisjunctively
+        rules {
+          column
+          relation
+          condition
+        }
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

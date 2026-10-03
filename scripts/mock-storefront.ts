@@ -372,6 +372,17 @@ const cartPayload = (id: string) => ({
 });
 
 // ------------------------------------------------------------------- roots
+function mockPolicy(handle: string, title: string) {
+  return {
+    __typename: 'ShopPolicy',
+    id: `gid://shopify/ShopPolicy/${handle}`,
+    handle,
+    title,
+    url: `/policies/${handle}`,
+    body: `<p>[Mock] ${title} placeholder. Write the real policy in Shopify Admin.</p>`,
+  };
+}
+
 const shop = {
   __typename: 'Shop',
   id: 'gid://shopify/Shop/1',
@@ -387,10 +398,11 @@ const shop = {
     supportedDigitalWallets: [],
     enabledPresentmentCurrencies: ['INR'],
   },
-  privacyPolicy: null,
-  refundPolicy: null,
-  shippingPolicy: null,
-  termsOfService: null,
+  // Mock only — real policies are written in Shopify Admin → Settings → Policies.
+  privacyPolicy: mockPolicy('privacy-policy', 'Privacy policy'),
+  refundPolicy: mockPolicy('refund-policy', 'Refund policy'),
+  shippingPolicy: mockPolicy('shipping-policy', 'Shipping policy'),
+  termsOfService: mockPolicy('terms-of-service', 'Terms of service'),
   subscriptionPolicy: null,
 };
 

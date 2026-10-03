@@ -1,5 +1,7 @@
 # Trenzora go-live checklist
 
+The step-by-step store connection, with authorization gates, is in `docs/STORE-CONNECTION.md`.
+
 ## 1. Shopify store (owner action)
 - [ ] Create or confirm the **Trenzora** Shopify store (INR, India). The Shopify account connected to this workspace is a different store (MaternEase), so nothing has been written to it.
 - [ ] Install the **Hydrogen** sales channel and create a storefront. That gives you `PUBLIC_STOREFRONT_API_TOKEN`, `PRIVATE_STOREFRONT_API_TOKEN` and `PUBLIC_STOREFRONT_ID`.
@@ -8,7 +10,7 @@
 - [ ] Policies: Refund, Privacy, Terms, Shipping (Settings → Policies). The footer already links to them. Make the refund policy match `RETURNS` in `app/data/site.ts`.
 
 ## 2. Catalogue
-- [ ] Run `npm run catalogue:export`, then go to Shopify Admin → Products → Import → `catalogue/shopify-products.csv`. This imports 30 products as **draft**.
+- [ ] Run `npm run catalogue:export`, then go to Shopify Admin → Products → Import → `catalogue/shopify-products.csv`. This imports 30 products as **draft** and unpublished.
 - [ ] Create the 5 smart collections in `catalogue/collections.md` (`mumbai-made`, `drops`, `personalize`, `gifts`, `trending`).
 - [ ] Create each product with the supplier using the production masters (`01_mumbai_made.png` … `10_make_it_yours.png`). Record the supplier product refs in `catalogue/supplier-map.csv`.
 - [ ] Upload real supplier mockups/photography to each Shopify product. Until then the site shows clearly labelled brand concept cards, not fake mockups.
@@ -26,7 +28,7 @@
 - [ ] `npx shopify hydrogen deploy` (Oxygen), or connect the GitHub repo in the Hydrogen channel
 - [ ] Point the `trenzora.in` domain to the Hydrogen storefront and set up the checkout subdomain
 - [ ] Submit `https://trenzora.in/sitemap.xml` in Google Search Console
-- [ ] Shopify **Customer Events**: add a pixel for `checkout_completed` → `purchase`, plus GA4/Meta as needed
+- [ ] Shopify **Customer Events**: paste `catalogue/shopify-custom-pixel.js` (emits `purchase`), then set GTM_ID or add GA4/Meta
 
 ## 5. Pre-launch QA on the real store
 - [ ] Place a live order with a ₹1 test product or a test gateway, end to end, to the supplier

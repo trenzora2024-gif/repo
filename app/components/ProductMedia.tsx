@@ -63,6 +63,7 @@ export function ProductMedia({
           height={600}
           loading={loading}
           decoding="async"
+          data-placeholder="concept"
         />
       ) : null}
     </div>

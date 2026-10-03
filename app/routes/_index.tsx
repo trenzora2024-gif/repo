@@ -15,6 +15,10 @@ import {
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {organizationJsonLd, seoMeta, websiteJsonLd} from '~/lib/seo';
 import {SITE} from '~/data/site';
+import {TAG, tagQuery} from '~/data/catalogue';
+
+/** The drop featured on the homepage. */
+const CURRENT_DROP = '01';
 
 export const meta: Route.MetaFunction = () =>
   seoMeta({
@@ -27,6 +31,7 @@ export const meta: Route.MetaFunction = () =>
 export async function loader({context}: Route.LoaderArgs) {
   const {storefront} = context;
   const data = await storefront.query(HOME_QUERY, {
+    variables: {dropQuery: tagQuery(TAG.drop(CURRENT_DROP))},
     cache: storefront.CacheShort(),
   });
 
@@ -63,9 +68,13 @@ export default function Homepage() {
 }
 
 const HOME_QUERY = `#graphql
-  query Home($country: CountryCode, $language: LanguageCode)
+  query Home(
+    $dropQuery: String!
+    $country: CountryCode
+    $language: LanguageCode
+  )
   @inContext(country: $country, language: $language) {
-    drop: products(first: 60, query: "tag:'drop:01'") {
+    drop: products(first: 60, query: $dropQuery) {
       nodes {
         ...ProductCard
       }

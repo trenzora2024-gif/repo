@@ -1,7 +1,12 @@
 import {Link, useLoaderData} from 'react-router';
 import type {Route} from './+types/designs.$handle';
 import {ProductCard} from '~/components/ProductCard';
-import {DESIGN_FAMILIES, getDesignFamily} from '~/data/catalogue';
+import {
+  DESIGN_FAMILIES,
+  TAG,
+  getDesignFamily,
+  tagQuery,
+} from '~/data/catalogue';
 import {posterArtSvg, svgDataUri} from '~/lib/art';
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {breadcrumbJsonLd, seoMeta} from '~/lib/seo';
@@ -30,7 +35,7 @@ export async function loader({params, context}: Route.LoaderArgs) {
   if (!family) throw new Response('Design not found', {status: 404});
 
   const {products} = await context.storefront.query(DESIGN_PRODUCTS_QUERY, {
-    variables: {query: `tag:'design:${family.handle}'`},
+    variables: {query: tagQuery(TAG.design(family.handle))},
     cache: context.storefront.CacheShort(),
   });
 

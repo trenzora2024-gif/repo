@@ -27,6 +27,14 @@ export const TAG = {
   personalizable: 'personalizable',
 } as const;
 
+/**
+ * Storefront API search filter for one tag. Values are double-quoted because
+ * Trenzora tags contain colons (`design:mumbai-made`).
+ */
+export function tagQuery(tag: string) {
+  return `tag:"${tag.replace(/"/g, '')}"`;
+}
+
 export const COLLECTIONS: Record<
   CollectionHandle,
   {title: string; description: string; rule: string}

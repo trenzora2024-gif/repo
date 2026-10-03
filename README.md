@@ -14,7 +14,12 @@ trenzora.in → Hydrogen (Oxygen) → Storefront API → Shopify cart/checkout �
 | `npm run dev` | Dev server against the real store, using `.env` (copy it from `.env.example`). |
 | `npm run build` / `npm run preview` | Production build / local preview of the build. |
 | `npm run typecheck` · `npm run lint` | Quality gates. |
-| `npm run catalogue:export` | Regenerates the Shopify import files in `catalogue/`. |
+| `npm run catalogue:export` | Regenerates `catalogue/`: product CSV (drafts), supplier map, collection inputs, Shopify custom pixel. |
+| `npm run verify:store` | Read-only Storefront API readiness check (blocks MaternEase). Add `-- --cart` to test the checkout URL. |
+| `npm run verify:artwork` | Checks the production master pack in `artwork/masters/`. |
+| `npm run qa:storefront` | Browser QA (mobile + desktop) against `BASE_URL`. Needs Playwright. |
+
+**Connecting the real store:** follow `docs/STORE-CONNECTION.md` (steps A–I with authorization gates).
 
 Node 22+. Never commit secrets: `.env` is gitignored. `.env.mock` holds only dummy values.
 
@@ -40,7 +45,8 @@ app/
                         /cart, /search, /about, /shipping, /contact, policies, sitemaps
 catalogue/              Generated: shopify-products.csv, supplier-map.csv, collections.md
 scripts/                export-catalogue.ts, mock-storefront.ts (dev only), dev-mock.mjs
-docs/                   LAUNCH.md (go-live checklist), PERSONALIZATION.md
+docs/                   STORE-CONNECTION.md (runbook), LAUNCH.md, PERSONALIZATION.md
+artwork/masters/        Official production masters go here (gitignored binaries)
 ```
 
 ## Catalogue conventions
@@ -62,7 +68,7 @@ Shopify analytics (page, product, collection, search, cart views, checkout and p
 | `begin_checkout` | Checkout button in the cart |
 | `customization_start` / `customization_complete` | Personalization fields on the product page (live once personalization is enabled) |
 | `email_signup` | "New drop every week" form |
-| `purchase` | Shopify checkout. Add a Shopify **Customer Events** custom pixel that forwards `checkout_completed` |
+| `purchase` | Shopify checkout, via the generated custom pixel `catalogue/shopify-custom-pixel.js` |
 | `share_design` | Reserved; wire it up when share buttons ship |
 
 To send these to GA4, Meta or another tool, attach GTM or a Shopify custom pixel to `dataLayer`. The headline funnel is **customization_start → purchase**.

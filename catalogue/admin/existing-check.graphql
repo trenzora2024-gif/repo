@@ -1,0 +1,19 @@
+# Step D/E pre-flight — make sure nothing with our handles/tags already exists,
+# so the import never overwrites or duplicates. Validated: Admin API.
+query TrenzoraExistingCheck {
+  products(first: 50, query: "tag:\"drop:01\"") {
+    nodes {
+      handle
+      status
+    }
+  }
+  collections(
+    first: 20
+    query: "handle:mumbai-made OR handle:drops OR handle:personalize OR handle:gifts OR handle:trending"
+  ) {
+    nodes {
+      handle
+      title
+    }
+  }
+}
