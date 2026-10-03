@@ -8,16 +8,17 @@ trenzora.in → Hydrogen (Oxygen) → Storefront API → Shopify cart/checkout �
 
 ## Run it
 
-| Command | What it does |
-| --- | --- |
-| `npm run dev:mock` | **Preview without a Shopify store.** Starts a local mock Storefront API with the 30-SKU Trenzora catalogue plus the dev server at <http://localhost:3000>. |
-| `npm run dev` | Dev server against the real store, using `.env` (copy it from `.env.example`). |
-| `npm run build` / `npm run preview` | Production build / local preview of the build. |
-| `npm run typecheck` · `npm run lint` | Quality gates. |
-| `npm run catalogue:export` | Regenerates `catalogue/`: product CSV (drafts), supplier map, collection inputs, Shopify custom pixel. |
-| `npm run verify:store` | Read-only Storefront API readiness check (blocks MaternEase). Add `-- --cart` to test the checkout URL. |
-| `npm run verify:artwork` | Checks the production master pack in `artwork/masters/`. |
-| `npm run qa:storefront` | Browser QA (mobile + desktop) against `BASE_URL`. Needs Playwright. |
+| Command                              | What it does                                                                                                                                                                                   |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run dev:mock`                   | **Preview without a Shopify store.** Starts a local mock Storefront API with the 24-SKU V1 Trenzora catalogue plus the dev server at <http://localhost:3000>.                                  |
+| `npm run dev`                        | Dev server against the real store, using `.env` (copy it from `.env.example`).                                                                                                                 |
+| `npm run build` / `npm run preview`  | Production build / local preview of the build.                                                                                                                                                 |
+| `npm run typecheck` · `npm run lint` | Quality gates.                                                                                                                                                                                 |
+| `npm run catalogue:export`           | Regenerates `catalogue/`: product CSV (drafts), supplier map, collection inputs, Shopify custom pixel.                                                                                         |
+| `npm run verify:store`               | Read-only Storefront API readiness check (blocks MaternEase). Add `-- --cart` to test the checkout URL.                                                                                        |
+| `npm run verify:artwork`             | Checks the production master pack in `artwork/masters/`.                                                                                                                                       |
+| `npm run preview:snapshot`           | With `dev:mock` running: captures every page into one self-contained, shareable HTML file (`.preview/trenzora-preview.html`) with an in-browser cart, search and drawers. Mock catalogue only. |
+| `npm run qa:storefront`              | Browser QA (mobile + desktop) against `BASE_URL`. Needs Playwright.                                                                                                                            |
 
 **Connecting the real store:** follow `docs/STORE-CONNECTION.md` (steps A–I with authorization gates).
 
@@ -64,13 +65,13 @@ The storefront joins a Shopify product to its editorial content (story, concept,
 
 Shopify analytics (page, product, collection, search, cart views, checkout and purchase) runs through Hydrogen's `<Analytics.Provider>`, gated on customer-privacy consent. Trenzora's own event stream goes to `window.dataLayer` using these names:
 
-| Event | Fired from |
-| --- | --- |
-| `page_view`, `view_item`, `add_to_cart` | `AnalyticsBridge` (mirrors Hydrogen events) |
-| `begin_checkout` | Checkout button in the cart |
-| `customization_start` / `customization_complete` | Personalization fields on the product page (live once personalization is enabled) |
-| `email_signup` | "New drop every week" form |
-| `purchase` | Shopify checkout, via the generated custom pixel `catalogue/shopify-custom-pixel.js` |
-| `share_design` | Reserved; wire it up when share buttons ship |
+| Event                                            | Fired from                                                                           |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `page_view`, `view_item`, `add_to_cart`          | `AnalyticsBridge` (mirrors Hydrogen events)                                          |
+| `begin_checkout`                                 | Checkout button in the cart                                                          |
+| `customization_start` / `customization_complete` | Personalization fields on the product page (live once personalization is enabled)    |
+| `email_signup`                                   | "New drop every week" form                                                           |
+| `purchase`                                       | Shopify checkout, via the generated custom pixel `catalogue/shopify-custom-pixel.js` |
+| `share_design`                                   | Reserved; wire it up when share buttons ship                                         |
 
 To send these to GA4, Meta or another tool, attach GTM or a Shopify custom pixel to `dataLayer`. The headline funnel is **customization_start → purchase**.

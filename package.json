@@ -17,7 +17,8 @@
     "format": "prettier --write app scripts",
     "verify:store": "node scripts/verify-store.ts",
     "verify:artwork": "node scripts/verify-artwork.ts",
-    "qa:storefront": "node scripts/qa-storefront.mjs"
+    "qa:storefront": "node scripts/qa-storefront.mjs",
+    "preview:snapshot": "node scripts/preview-snapshot.mjs"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {

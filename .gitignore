@@ -17,3 +17,4 @@ node_modules
 # Production artwork (see artwork/masters/README.md)
 artwork/masters/*
 !artwork/masters/README.md
+.preview/
