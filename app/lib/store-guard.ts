@@ -15,6 +15,26 @@ export function isBlockedStore(value: string | undefined | null) {
   return Boolean(value && BLOCKED_STORE_PATTERNS.some((re) => re.test(value)));
 }
 
+/**
+ * Other .myshopify.com hosts of the SAME approved store, exact hosts only.
+ * When a store picks a new .myshopify.com name in Admin, Shopify keeps the
+ * original shop identifier, and `hydrogen env pull` writes that one into
+ * PUBLIC_STORE_DOMAIN. Add a host here only after confirming in Shopify Admin
+ * that it is the same store. Never add patterns.
+ */
+export const APPROVED_STORE_ALIASES: Record<string, string[]> = {
+  // Trenzora: renamed in Admin; hetvyh-8e is the original shop identifier.
+  'trenzora-in.myshopify.com': ['hetvyh-8e.myshopify.com'],
+};
+
+/** True when `host` is `approved` itself or one of its listed aliases. */
+export function isApprovedStoreHost(host: string, approved: string) {
+  const h = host.toLowerCase();
+  const a = approved.toLowerCase();
+  if (isBlockedStore(h)) return false;
+  return h === a || (APPROVED_STORE_ALIASES[a] ?? []).includes(h);
+}
+
 type StoreEnv = {
   PUBLIC_STORE_DOMAIN?: string;
   PUBLIC_STOREFRONT_API_TOKEN?: string;

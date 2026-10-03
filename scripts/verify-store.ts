@@ -22,7 +22,7 @@ import {
   TAG,
   tagQuery,
 } from '../app/data/catalogue/index.ts';
-import {isBlockedStore} from '../app/lib/store-guard.ts';
+import {isApprovedStoreHost, isBlockedStore} from '../app/lib/store-guard.ts';
 
 const API_VERSION = '2026-04';
 const args = process.argv.slice(2);
@@ -64,8 +64,12 @@ const env = loadEnv(envFile);
 const domain = env.PUBLIC_STORE_DOMAIN ?? '';
 const token = env.PUBLIC_STOREFRONT_API_TOKEN ?? '';
 
-async function gql<T>(query: string, variables: Record<string, unknown> = {}) {
-  const base = domain.includes('://') ? domain : `https://${domain}`;
+async function gql<T>(
+  query: string,
+  variables: Record<string, unknown> = {},
+  host = domain,
+) {
+  const base = host.includes('://') ? host : `https://${host}`;
   const res = await fetch(`${base}/api/${API_VERSION}/graphql.json`, {
     method: 'POST',
     headers: {
@@ -121,13 +125,81 @@ async function main() {
     .filter(Boolean);
   if (storeAliases.length) {
     const configured = hostOf(domain);
-    const match = storeAliases.includes(configured);
-    report(
-      match ? 'ok' : 'block',
-      'identity',
-      `PUBLIC_STORE_DOMAIN = ${configured} (expected ${storeAliases.join(' or ')})`,
-    );
-    if (!match) return;
+    // The first entry is the approved store; other entries, and the aliases
+    // pinned in app/lib/store-guard.ts, must prove they are the same shop.
+    const approved = storeAliases[0];
+    const accepted =
+      storeAliases.includes(configured) ||
+      isApprovedStoreHost(configured, approved);
+    if (!accepted || isBlockedStore(configured)) {
+      report(
+        'block',
+        'identity',
+        `PUBLIC_STORE_DOMAIN = ${configured} (expected ${approved} or a listed alias)`,
+      );
+      return;
+    }
+    if (configured === approved) {
+      report('ok', 'identity', `PUBLIC_STORE_DOMAIN = ${configured}`);
+    } else {
+      // An alias: confirm live that both hosts serve the same shop.
+      const query = `query { shop { id name } }`;
+      const viaConfigured = await gql<{shop: {id: string; name: string}}>(
+        query,
+      );
+      const viaApproved = await gql<{shop: {id: string; name: string}}>(
+        query,
+        {},
+        approved,
+      ).catch((error: Error) => error);
+      if (viaApproved instanceof Error) {
+        report(
+          'warn',
+          'identity',
+          `PUBLIC_STORE_DOMAIN = ${configured}, a listed alias of ${approved}; live cross-check via ${approved} failed (${viaApproved.message})`,
+        );
+      } else if (viaApproved.shop.id !== viaConfigured.shop.id) {
+        report(
+          'block',
+          'identity',
+          `${configured} (${viaConfigured.shop.id}) and ${approved} (${viaApproved.shop.id}) are different shops`,
+        );
+        return;
+      } else {
+        report(
+          'ok',
+          'identity',
+          `PUBLIC_STORE_DOMAIN = ${configured}, same shop as ${approved} (${viaConfigured.shop.id})`,
+        );
+      }
+    }
+  }
+  if (gate1 && expectDomain) {
+    const checkout = hostOf(env.PUBLIC_CHECKOUT_DOMAIN);
+    const prod = expectDomain.toLowerCase();
+    const approved = storeAliases[0];
+    if (checkout === prod || checkout === `www.${prod}`) {
+      // Fine while the apex still targets the Online Store; once Hydrogen
+      // takes the apex (Gate 6), checkout needs its own subdomain.
+      report(
+        'warn',
+        'checkout',
+        `PUBLIC_CHECKOUT_DOMAIN = ${checkout}: OK while ${prod} serves the Online Store; switch to checkout.${prod} before ${prod} moves to Hydrogen (Gate 6)`,
+      );
+    } else if (
+      checkout &&
+      !checkout.endsWith(`.${prod}`) &&
+      !storeAliases.includes(checkout) &&
+      !(approved && isApprovedStoreHost(checkout, approved))
+    ) {
+      report(
+        'block',
+        'checkout',
+        `PUBLIC_CHECKOUT_DOMAIN = ${checkout} is neither ${prod}, a ${prod} subdomain, nor the approved store`,
+      );
+    } else if (checkout) {
+      report('ok', 'checkout', `PUBLIC_CHECKOUT_DOMAIN = ${checkout}`);
+    }
   }
 
   // --------------------------------------------------------------- shop
@@ -166,7 +238,9 @@ async function main() {
     const level: Level =
       primary === prod || primary === `www.${prod}`
         ? 'ok'
-        : storeAliases.includes(primary)
+        : storeAliases.includes(primary) ||
+            (storeAliases.length > 0 &&
+              isApprovedStoreHost(primary, storeAliases[0]))
           ? 'info'
           : 'block';
     report(

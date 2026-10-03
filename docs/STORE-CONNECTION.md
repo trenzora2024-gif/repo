@@ -44,10 +44,12 @@ npx shopify hydrogen env pull     # writes .env (gitignored, never committed)
 ### C. Verify Storefront API access (read-only)
 
 ```
-npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com,hetvyh-8e.myshopify.com --expect-domain trenzora.in
+npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com --expect-domain trenzora.in
                                  # Gate 1: exact store, never MaternEase, INR, nothing imported yet
 npm run verify:store             # store identity (blocks MaternEase), INR, policies, products, collections, tag search
 ```
+
+`PUBLIC_STORE_DOMAIN` may show the store's original shop identifier (`hetvyh-8e.myshopify.com`) instead of `trenzora-in`. Leave it as Shopify wrote it: it's an exact alias in `app/lib/store-guard.ts`, and Gate 1 cross-checks that both hosts return the same shop ID. `PUBLIC_CHECKOUT_DOMAIN` is the host where Shopify checkout runs. Today that's `trenzora.in`, the primary domain still serving the Online Store. Before Gate 6 moves `trenzora.in` to Hydrogen, connect `checkout.trenzora.in` in Settings → Domains and switch to it.
 
 At this point products are expected to be "0/24 visible", since nothing has been imported yet.
 
