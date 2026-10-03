@@ -94,6 +94,13 @@ function analysePixels(buf: Buffer, width: number, height: number) {
   const redCount = new Uint32Array(height);
   const redMin = new Int32Array(height).fill(-1);
   const redMax = new Int32Array(height).fill(-1);
+  // Erased-strip ("cut glyph") detection: per column, the last row with
+  // ink and whether a short transparent gap followed it. A gap of
+  // CUT_MIN..CUT_MAX px with ink on both sides, repeated across many columns
+  // at the same rows, is a horizontal cut through letters, not typography.
+  const lastInk = new Int32Array(width).fill(-1);
+  const runLen = new Uint32Array(width); // ink run ending at lastInk
+  const cutHits = new Uint32Array(height);
   let rowsTouchingLeft = 0;
   let rowsTouchingRight = 0;
   let cornersTransparent = true;
@@ -127,6 +134,24 @@ function analysePixels(buf: Buffer, width: number, height: number) {
         rowMax = x;
       }
       if (line[i + 3] > 128) {
+        if (lastInk[x] === y - 1) runLen[x]++;
+        else {
+          const gap = lastInk[x] >= 0 ? y - lastInk[x] - 1 : 0;
+          // Only gaps that slice through a tall stroke: normal letterforms
+          // never have a short gap inside a vertical stem.
+          const resumesOnRule =
+            line[i] > 170 && line[i + 1] < 120 && line[i + 2] < 100;
+          if (
+            gap >= CUT_MIN &&
+            gap <= CUT_MAX &&
+            runLen[x] >= CUT_STEM &&
+            !resumesOnRule // rule proximity is measured by the rule check
+          ) {
+            for (let gy = lastInk[x] + 1; gy < y; gy++) cutHits[gy]++;
+          }
+          runLen[x] = 1;
+        }
+        lastInk[x] = y;
         const [r, g, b] = [line[i], line[i + 1], line[i + 2]];
         if (r < 90 && g < 90 && b < 90)
           darkBins[y * bins + ((x / BIN) | 0)] = 1;
@@ -150,6 +175,20 @@ function analysePixels(buf: Buffer, width: number, height: number) {
     }
     [prev, line] = [line, prev];
   }
+  /** Bands of rows where many columns share a short gap = erased strip. */
+  function findCuts() {
+    const bands: Array<{from: number; to: number; columns: number}> = [];
+    for (let y = 0; y < height; y++) {
+      if (cutHits[y] < CUT_COLUMNS) continue;
+      const last = bands[bands.length - 1];
+      if (last && y - last.to <= 1) {
+        last.to = y;
+        last.columns = Math.max(last.columns, cutHits[y]);
+      } else bands.push({from: y, to: y, columns: cutHits[y]});
+    }
+    return bands;
+  }
+
   /** Finds the red accent rule and the clear space above/below it. */
   function measureRule() {
     let top = -1;
@@ -199,6 +238,7 @@ function analysePixels(buf: Buffer, width: number, height: number) {
       bottom: height - 1 - maxY,
     },
     rule: measureRule(),
+    cuts: findCuts(),
     edgeClipped:
       rowsTouchingLeft > 0 ||
       rowsTouchingRight > 0 ||
@@ -215,6 +255,11 @@ function analysePixels(buf: Buffer, width: number, height: number) {
  * is reported as tight for a design review.
  */
 const RULE_COLLISION = 15;
+/** Erased-strip detector: gap height range (px) and min columns affected. */
+const CUT_MIN = 2;
+const CUT_MAX = 30;
+const CUT_COLUMNS = 120;
+const CUT_STEM = 40;
 const RULE_COMFORT = 40;
 
 const lines: string[] = [`Trenzora artwork pack check (${dir})`, ''];
@@ -282,6 +327,15 @@ if (!existsSync(dir)) {
     } else {
       if (!pixels.transparentBackground) {
         lines.push('  ✗ background is not transparent');
+        problems++;
+      }
+      if (pixels.cuts.length) {
+        const where = pixels.cuts
+          .map((c) => `rows ${c.from}–${c.to} (${c.columns} columns)`)
+          .join(', ');
+        lines.push(
+          `  ✗ erased strips cut through artwork: ${where} — letters have missing sections`,
+        );
         problems++;
       }
       const rule = pixels.rule;

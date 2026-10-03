@@ -37,6 +37,7 @@
       "clearAbove": 44,
       "clearBelow": 81
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
@@ -81,6 +82,7 @@
       "clearAbove": 43,
       "clearBelow": 89
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
@@ -125,6 +127,7 @@
       "clearAbove": 47,
       "clearBelow": 91
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
@@ -144,36 +147,43 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        1249,
-        3247
+        1054,
+        3452
       ],
       "y": [
-        926,
-        4833
+        894,
+        4864
       ]
     },
     "margins": {
-      "left": 1249,
-      "right": 1252,
-      "top": 926,
-      "bottom": 566
+      "left": 1054,
+      "right": 1047,
+      "top": 894,
+      "bottom": 535
     },
     "rule": {
-      "top": 1928,
-      "bottom": 1946,
+      "top": 1981,
+      "bottom": 1998,
       "x": [
-        1650,
-        2850
+        1700,
+        2800
       ],
-      "overlapRows": 12,
-      "clearAbove": 0,
-      "clearBelow": 126
+      "overlapRows": 0,
+      "clearAbove": 40,
+      "clearBelow": 62
     },
+    "cuts": [
+      {
+        "from": 1902,
+        "to": 1919,
+        "columns": 245
+      }
+    ],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 177387,
-    "sha256": "01cdd182b2f3ec466c9e9debc1ffe9e06faccda841e646d8d284db8c807b8608"
+    "bytes": 195151,
+    "sha256": "508f413415bc1d1caaf8b02052047e04e03782e0c84ea5c7bc83087aceb0fb9b"
   },
   {
     "family": "bestie-energy",
@@ -213,6 +223,7 @@
       "clearAbove": 43,
       "clearBelow": 76
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
@@ -257,6 +268,7 @@
       "clearAbove": 51,
       "clearBelow": 148
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
@@ -301,6 +313,7 @@
       "clearAbove": 40,
       "clearBelow": 124
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
@@ -320,36 +333,43 @@
     "transparentBackground": true,
     "inkBounds": {
       "x": [
-        1135,
-        3355
+        965,
+        3512
       ],
       "y": [
-        926,
-        4833
+        894,
+        4864
       ]
     },
     "margins": {
-      "left": 1135,
-      "right": 1144,
-      "top": 926,
-      "bottom": 566
+      "left": 965,
+      "right": 987,
+      "top": 894,
+      "bottom": 535
     },
     "rule": {
-      "top": 1928,
-      "bottom": 1946,
+      "top": 1981,
+      "bottom": 1998,
       "x": [
         1600,
         2900
       ],
-      "overlapRows": 6,
-      "clearAbove": 0,
-      "clearBelow": 126
+      "overlapRows": 0,
+      "clearAbove": 40,
+      "clearBelow": 72
     },
+    "cuts": [
+      {
+        "from": 1912,
+        "to": 1929,
+        "columns": 292
+      }
+    ],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 177385,
-    "sha256": "b924643e9da208fc46326e9dc80052b77aabd609dcc34b809e4e6a0696d82894"
+    "bytes": 193202,
+    "sha256": "29ad43f8f4013752e7bc97c8392d0dc0422c11c511d0c6a2be8e352118065e03"
   },
   {
     "family": "desi-roots",
@@ -389,6 +409,7 @@
       "clearAbove": 63,
       "clearBelow": 131
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
@@ -433,6 +454,7 @@
       "clearAbove": 32,
       "clearBelow": 82
     },
+    "cuts": [],
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,

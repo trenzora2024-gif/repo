@@ -52,12 +52,12 @@ export const SUPPLIER_BY_PRODUCT_TYPE: Record<ProductTypeHandle, SupplierKey> =
  * automatically by `npm run verify:artwork`.)
  */
 export const ARTWORK_REVISIONS: Partial<Record<DesignFamilyHandle, string>> = {
-  // v4 pack (2026-10-03), visual review. Glyph cuts are fixed (headlines
-  // re-set), but two issues remain in both files.
+  // v5 pack (2026-10-03), visual review. The typeface is consistent again,
+  // but the files were patched from the defective v3 pixels.
   'coffee-personality':
-    'v4: the red rule sits on the baseline of “COFFEE” (12 rows of overlap). Needs ≥40px clear above and below. The typeface and the lighter “TRENZORA” mark also differ from the other V1 masters (01–03, 05, 07, 09); match them.',
+    'v5: erased strips cut through the bottom of “COFFEE” again (same defect as v3). Re-export from the source design file with the rule repositioned. Do not erase pixels from the PNG.',
   'campus-energy':
-    'v4: the red rule sits on the baseline of “SUGGESTION” (6 rows of overlap). Needs ≥40px clear above and below. The typeface and the lighter “TRENZORA” mark also differ from the other V1 masters (01–03, 05, 07, 09); match them.',
+    'v5: erased strips cut through “SUGGESTION” and through the subline “CAMPUS DAYS • FOREVER”. Re-export from the source design file with the rule repositioned. Do not erase pixels from the PNG.',
 };
 
 /**
