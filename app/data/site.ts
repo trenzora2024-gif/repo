@@ -14,7 +14,7 @@ export const SITE = {
   locale: 'en_IN',
   country: 'IN',
   currency: 'INR',
-  contactEmail: 'cs@trenzora.com',
+  contactEmail: 'support@trenzora.in',
   social: {
     instagram: 'https://www.instagram.com/trenzora.in',
   },
@@ -142,7 +142,7 @@ export const FAQ = [
   },
   {
     q: 'How can I contact support?',
-    a: 'Email cs@trenzora.com or call +91 96196 57030, 10:00 AM to 7:00 PM, Monday to Saturday. Please include your order number.',
+    a: 'Email support@trenzora.in or call +91 96196 57030, 10:00 AM to 7:00 PM, Monday to Saturday. Please include your order number.',
   },
 ] as const;
 
