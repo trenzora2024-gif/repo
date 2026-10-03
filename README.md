@@ -8,17 +8,18 @@ trenzora.in → Hydrogen (Oxygen) → Storefront API → Shopify cart/checkout �
 
 ## Run it
 
-| Command                              | What it does                                                                                                                                                                                   |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run dev:mock`                   | **Preview without a Shopify store.** Starts a local mock Storefront API with the 24-SKU V1 Trenzora catalogue plus the dev server at <http://localhost:3000>.                                  |
-| `npm run dev`                        | Dev server against the real store, using `.env` (copy it from `.env.example`).                                                                                                                 |
-| `npm run build` / `npm run preview`  | Production build / local preview of the build.                                                                                                                                                 |
-| `npm run typecheck` · `npm run lint` | Quality gates.                                                                                                                                                                                 |
-| `npm run catalogue:export`           | Regenerates `catalogue/`: product CSV (drafts), supplier map, collection inputs, Shopify custom pixel.                                                                                         |
-| `npm run verify:store`               | Read-only Storefront API readiness check (blocks MaternEase). Add `-- --cart` to test the checkout URL.                                                                                        |
-| `npm run verify:artwork`             | Checks the production master pack in `artwork/masters/`.                                                                                                                                       |
-| `npm run preview:snapshot`           | With `dev:mock` running: captures every page into one self-contained, shareable HTML file (`.preview/trenzora-preview.html`) with an in-browser cart, search and drawers. Mock catalogue only. |
-| `npm run qa:storefront`              | Browser QA (mobile + desktop) against `BASE_URL`. Needs Playwright.                                                                                                                            |
+| Command                                                    | What it does                                                                                                                                                                                   |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run dev:mock`                                         | **Preview without a Shopify store.** Starts a local mock Storefront API with the 24-SKU V1 Trenzora catalogue plus the dev server at <http://localhost:3000>.                                  |
+| `npm run dev`                                              | Dev server against the real store, using `.env` (copy it from `.env.example`).                                                                                                                 |
+| `npm run build` / `npm run preview`                        | Production build / local preview of the build.                                                                                                                                                 |
+| `npm run typecheck` · `npm run lint`                       | Quality gates.                                                                                                                                                                                 |
+| `npm run catalogue:export`                                 | Regenerates `catalogue/`: product CSV (drafts), supplier map, collection inputs, Shopify custom pixel.                                                                                         |
+| `npm run verify:store`                                     | Read-only Storefront API readiness check (blocks MaternEase). Add `-- --cart` to test the checkout URL.                                                                                        |
+| `npm run verify:artwork`                                   | Checks the production master pack in `artwork/masters/`.                                                                                                                                       |
+| `npm run preview:snapshot`                                 | With `dev:mock` running: captures every page into one self-contained, shareable HTML file (`.preview/trenzora-preview.html`) with an in-browser cart, search and drawers. Mock catalogue only. |
+| `npm run supplier:check` · `mockups:check` · `costs:check` | Ops readiness: supplier templates + artwork DPI fit, supplier mockups → upload plan, landed cost (margins only from complete, sourced inputs). See `docs/SUPPLIER-SETUP.md`.                   |
+| `npm run qa:storefront`                                    | Browser QA (mobile + desktop) against `BASE_URL`. Needs Playwright.                                                                                                                            |
 
 **Connecting the real store:** follow `docs/STORE-CONNECTION.md` (steps A–I with authorization gates).
 
@@ -45,7 +46,8 @@ app/
   routes/               Home, /collections/*, /designs/:handle, /products/:handle,
                         /cart, /search, /about, /shipping, /contact, policies, sitemaps
 catalogue/              Generated: shopify-products.csv, supplier-map.csv, collections.md
-ops/suppliers.ts        OPS-ONLY: suppliers, product→supplier map, artwork revisions.
+ops/                    OPS-ONLY: suppliers.ts (product→supplier, locked masters),
+                        supplier-templates.ts (blanks, print areas), landed-cost.csv (cost inputs).
                         Never imported by app/ (keeps supplier data out of the site)
 scripts/                export-catalogue.ts, mock-storefront.ts (dev only), dev-mock.mjs
 docs/                   STORE-CONNECTION.md (runbook), LAUNCH.md, PERSONALIZATION.md

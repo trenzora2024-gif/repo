@@ -1,0 +1,8 @@
+product_type,variant,supplier_unit_cost_inr,supplier_cost_includes_gst,supplier_gst_pct,itc_claimable,shipping_to_customer_inr,packaging_inr,gateway_fee_pct,gateway_fixed_inr,cod_share_pct,cod_fee_inr,rto_rate_pct,rto_cost_inr,reprint_rate_pct,output_gst_pct,source,quote_date
+oversized-tee,S,,,,,,,,,,,,,,,,
+oversized-tee,M,,,,,,,,,,,,,,,,
+oversized-tee,L,,,,,,,,,,,,,,,,
+oversized-tee,XL,,,,,,,,,,,,,,,,
+oversized-tee,XXL,,,,,,,,,,,,,,,,
+tote,default,,,,,,,,,,,,,,,,
+tumbler,default,,,,,,,,,,,,,,,,

@@ -1,0 +1,61 @@
+# Attach supplier mockups to the V1 draft products (GATE: after products exist
+# in the Trenzora store; never MaternEase). Plan: catalogue/mockup-manifest.json
+# from `npm run mockups:check`. Validated against the Admin API schema.
+# Does not change product status or publishing.
+
+# 1. Look up the draft product by handle (must be DRAFT and in the Trenzora store).
+query ProductForMedia($handle: String!) {
+  productByIdentifier(identifier: {handle: $handle}) {
+    id
+    title
+    status
+    media(first: 20) {
+      nodes {
+        alt
+        mediaContentType
+        status
+      }
+    }
+  }
+}
+
+# 2. Reserve upload targets for the local mockup files
+#    (resource: IMAGE, httpMethod: POST, filename/mimeType/fileSize from the manifest).
+mutation StageMockups($input: [StagedUploadInput!]!) {
+  stagedUploadsCreate(input: $input) {
+    stagedTargets {
+      url
+      resourceUrl
+      parameters {
+        name
+        value
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+# 3. Attach the uploaded files in manifest order, with alt text
+#    (media: [{originalSource: resourceUrl, alt, mediaContentType: IMAGE}]).
+mutation AttachMockups($product: ProductUpdateInput!, $media: [CreateMediaInput!]) {
+  productUpdate(product: $product, media: $media) {
+    product {
+      id
+      status
+      media(first: 20) {
+        nodes {
+          alt
+          mediaContentType
+          status
+        }
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

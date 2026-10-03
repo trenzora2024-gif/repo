@@ -18,7 +18,10 @@
     "verify:store": "node scripts/verify-store.ts",
     "verify:artwork": "node scripts/verify-artwork.ts",
     "qa:storefront": "node scripts/qa-storefront.mjs",
-    "preview:snapshot": "node scripts/preview-snapshot.mjs"
+    "preview:snapshot": "node scripts/preview-snapshot.mjs",
+    "supplier:check": "node scripts/supplier-check.ts",
+    "costs:check": "node scripts/landed-cost.ts",
+    "mockups:check": "node scripts/mockups.ts"
   },
   "prettier": "@shopify/prettier-config",
   "dependencies": {

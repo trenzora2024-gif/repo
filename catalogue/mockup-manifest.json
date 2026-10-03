@@ -1,0 +1,127 @@
+{
+  "dir": "artwork/mockups",
+  "products": 24,
+  "productsWithImages": 0,
+  "plan": [
+    {
+      "handle": "mumbai-made-oversized-tee",
+      "title": "Mumbai Made — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "mumbai-made-tote",
+      "title": "Mumbai Made — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "mumbai-made-tumbler",
+      "title": "Mumbai Made — 20oz Tumbler",
+      "images": []
+    },
+    {
+      "handle": "local-life-oversized-tee",
+      "title": "Local Life — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "local-life-tote",
+      "title": "Local Life — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "local-life-tumbler",
+      "title": "Local Life — 20oz Tumbler",
+      "images": []
+    },
+    {
+      "handle": "corporate-survivor-oversized-tee",
+      "title": "Corporate Survivor — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "corporate-survivor-tote",
+      "title": "Corporate Survivor — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "corporate-survivor-tumbler",
+      "title": "Corporate Survivor — 20oz Tumbler",
+      "images": []
+    },
+    {
+      "handle": "coffee-personality-oversized-tee",
+      "title": "Coffee Personality — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "coffee-personality-tote",
+      "title": "Coffee Personality — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "coffee-personality-tumbler",
+      "title": "Coffee Personality — 20oz Tumbler",
+      "images": []
+    },
+    {
+      "handle": "bestie-energy-oversized-tee",
+      "title": "Bestie Energy — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "bestie-energy-tote",
+      "title": "Bestie Energy — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "bestie-energy-tumbler",
+      "title": "Bestie Energy — 20oz Tumbler",
+      "images": []
+    },
+    {
+      "handle": "pet-parent-oversized-tee",
+      "title": "Pet Parent — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "pet-parent-tote",
+      "title": "Pet Parent — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "pet-parent-tumbler",
+      "title": "Pet Parent — 20oz Tumbler",
+      "images": []
+    },
+    {
+      "handle": "campus-energy-oversized-tee",
+      "title": "Campus Energy — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "campus-energy-tote",
+      "title": "Campus Energy — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "campus-energy-tumbler",
+      "title": "Campus Energy — 20oz Tumbler",
+      "images": []
+    },
+    {
+      "handle": "desi-roots-oversized-tee",
+      "title": "Desi Roots — Premium Oversized Tee",
+      "images": []
+    },
+    {
+      "handle": "desi-roots-tote",
+      "title": "Desi Roots — Everyday Tote",
+      "images": []
+    },
+    {
+      "handle": "desi-roots-tumbler",
+      "title": "Desi Roots — 20oz Tumbler",
+      "images": []
+    }
+  ]
+}

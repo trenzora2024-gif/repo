@@ -18,3 +18,6 @@ node_modules
 artwork/masters/*
 !artwork/masters/README.md
 .preview/
+
+# Supplier mockups (see scripts/mockups.ts)
+artwork/mockups/*
