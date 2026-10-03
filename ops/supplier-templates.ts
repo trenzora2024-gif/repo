@@ -48,38 +48,49 @@ export const SUPPLIER_TEMPLATES: Record<ProductTypeHandle, SupplierTemplate> = {
   'oversized-tee': {
     productType: 'oversized-tee',
     supplier: SUPPLIER_BY_PRODUCT_TYPE['oversized-tee'],
-    blankName: null,
+    // Working mapping (Gate 4D), pending Printrove's written quote.
+    blankName: 'Oversized T-shirts',
     blankRef: null,
     blankColour: null,
     placement: 'Front, centred, below the collar',
-    printArea: null,
+    // "Design Template 15.60 x 19.60 inches (W x H) – Front".
+    printArea: {widthIn: 15.6, heightIn: 19.6},
+    // XXL ↔ Printrove 2XL is unconfirmed (no Printrove page says "XXL").
     variantRefs: {S: null, M: null, L: null, XL: null, XXL: null},
-    source: null,
+    source:
+      'https://printrove.com/products/oversized-t-shirts (product page, 2026-10-03)',
     verified: false,
   },
   tote: {
     productType: 'tote',
     supplier: SUPPLIER_BY_PRODUCT_TYPE.tote,
-    blankName: null,
-    blankRef: null,
+    // Working mapping (Gate 4D), pending Qikink's written quote.
+    blankName: 'Unisex Tote Bag Zipper (type Standard)',
+    blankRef: 'TbZp',
     blankColour: null,
     placement: 'One side, centred',
-    printArea: null,
+    // "maxPrintableAreaInches": DTF, DTG "10 x 12 inches"; POD prints the front.
+    printArea: {widthIn: 10, heightIn: 12},
     variantRefs: {default: null},
-    source: null,
+    source:
+      'https://qikink.com/custom/bags/tote-bag/ (product page, 2026-10-03)',
     verified: false,
   },
   tumbler: {
     productType: 'tumbler',
     supplier: SUPPLIER_BY_PRODUCT_TYPE.tumbler,
-    blankName: null,
-    blankRef: null,
+    // Working mapping (Gate 4D). Qikink lists White as the only colour, but
+    // the blank colour stays an owner decision until confirmed.
+    blankName: 'Tumbler Bottle (20 Oz)',
+    blankRef: 'Tumb',
     blankColour: null,
     placement:
       'Wrap: design centred on the front face of the wrap, transparent elsewhere',
-    printArea: null,
+    // "maxPrintableAreaInches": "9.5 x 8 inches", printed around the tumbler.
+    printArea: {widthIn: 9.5, heightIn: 8},
     variantRefs: {default: null},
-    source: null,
+    source:
+      'https://qikink.com/custom/drinkware/tumbler-bottle/ (product page, 2026-10-03)',
     verified: false,
   },
 };

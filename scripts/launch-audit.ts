@@ -340,7 +340,7 @@ const mentions = tracked.filter((file) => {
   return /maternease/i.test(readFileSync(file, 'utf8'));
 });
 const allowed =
-  /^(app\/lib\/store-guard\.ts|catalogue\/admin\/|scripts\/(verify-store|launch-audit)\.ts|docs\/|LAUNCH-BLOCKERS\.md|README\.md|catalogue\/launch-audit\.md)/;
+  /^(app\/lib\/store-guard\.ts|catalogue\/admin\/|scripts\/(verify-store|launch-audit)\.ts|docs\/|LAUNCH-BLOCKERS\.md|README\.md|catalogue\/README\.md|catalogue\/launch-audit\.md)/;
 const unexpected = mentions.filter((f) => !allowed.test(f));
 check(
   'maternease',

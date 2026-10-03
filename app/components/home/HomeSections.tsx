@@ -54,7 +54,8 @@ export function Hero() {
           width={HERO_VISUAL.portrait.width}
           height={HERO_VISUAL.portrait.height}
           alt={HERO_VISUAL.alt}
-          fetchPriority="high"
+          // React 18 drops the camelCase prop; pass the HTML attribute as is.
+          {...{fetchpriority: 'high'}}
           decoding="async"
         />
         <figcaption>Mumbai Made — tee, tote, tumbler</figcaption>
