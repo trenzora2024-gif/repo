@@ -462,10 +462,8 @@ h4,
   justify-self: center;
 }
 
-.logo img {
-  display: block;
-  height: 2.75rem;
-  width: auto;
+.logo span {
+  color: var(--c-sindoor);
 }
 
 .nav-primary {
@@ -508,10 +506,6 @@ h4,
   .logo {
     justify-self: start;
     font-size: 1.75rem;
-  }
-
-  .logo img {
-    height: 3.25rem;
   }
 
   .menu-toggle {

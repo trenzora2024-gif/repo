@@ -44,7 +44,7 @@ export function seoMeta({
     ? image
     : {
         url: absoluteUrl('/brand/og-default.jpg', origin),
-        alt: `${SITE.name} logo`,
+        alt: `${SITE.name} wordmark`,
         width: 1200,
         height: 630,
       };

@@ -13,13 +13,7 @@ import {PRIMARY_NAV} from '~/data/site';
 export function Logo() {
   return (
     <Link to="/" className="logo" aria-label="Trenzora home" prefetch="intent">
-      <img
-        src="/brand/trenzora-logo.webp"
-        alt="Trenzora"
-        width={348}
-        height={156}
-        decoding="async"
-      />
+      trenzora<span aria-hidden="true">.</span>
     </Link>
   );
 }
