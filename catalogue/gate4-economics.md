@@ -102,6 +102,42 @@ GST registered; ITC eligible subject to normal rules (no ITC % assumed); retail 
 - Splash-proof lid, metal straw; white.
 - Sublimation, printed around the tumbler; max printable area 9.5 × 8 in; PNG/JPEG at 300 DPI.
 
+## Gate 4C: supplier economics verification (2026-10-03)
+
+Scenario labels: **A** = minimum print charge (floor only, not expected); **B** = actual billing method (UNKNOWN for both suppliers: neither says how the billed area is measured); **C** = full print area (conservative).
+
+**Printrove tee.**
+
+- **Verified:** ₹240 base up to 2XL; print ₹0.8/sq in (white, min ₹80) or ₹1.5/sq in (other colours, min ₹120); 5% GST on base + print (https://printrove.com/products/oversized-t-shirts).
+- **Verified:** shipping ₹60 per 500 g; COD ₹50 per order (https://printrove.com/shipping).
+- **Verified:** RTO parcels are stored 30 days without a warehousing fee; address correction ₹65 + GST (https://printrove.com/returns-and-refund).
+- **Unknown:** print billing basis; whether ₹60/₹50 include GST, or whether GST applies to them at all; any RTO shipping charge; 2XL = XXL (no page uses "XXL"; the size guide is served from a blocked host).
+- **Note:** Printrove's blog (https://printrove.com/blog/how-to-sell-oversized-t-shirts-india-print-on-demand) describes a different "Premium Oversized T-shirt" (240 GSM French Terry, ₹285). It is not used.
+
+**Qikink tote: "Unisex Tote Bag Zipper"** (page sku `TbZp`, type Standard), https://qikink.com/custom/bags/tote-bag/.
+
+- **Verified:** ₹150 ex GST, 5% (product page; "Tote Bag / Zipper / ₹150 / 5%" at https://qikink.com/help/payments-pricing/pricing/).
+- **Verified:** DTF ₹0.75/sq in, min ₹80; DTG colour ₹0.75/sq in, min ₹100; DTG white ₹0.5/sq in, min ₹50; 5% GST on printing (https://qikink.com/help/payments-pricing/printing-charges/). The DTG rates are written for garments/T-shirts; applying them to the tote is unverified.
+- **Verified:** shipping Air ₹54 per 500 g + 18%, Surface ₹42.37 + 18%; COD ₹34 per order + 18% (pricing page; https://qikink.com/shipping/ shows ₹63.7 / ₹50 / ₹40.12 incl. GST).
+- **Verified:** no RTO charge (https://qikink.com/help/returns/no-return-to-origin-rto-charges/). Reshipping a returned item costs ₹20 + 18% storage plus shipping.
+- **Verified:** 135 g white / 150 g other colours; max print area 10 × 12 in (DTF/DTG).
+- **Inferred:** the product page's sample ₹80 equals the DTF minimum; the page does not tie it to a print size. Scenario A = ₹80; scenario C = 120 sq in × ₹0.75 = ₹90.
+- **Inferred:** dimensions 14.5 × 13.5 × 2.5 in, handle 11.5 in, from https://qikink.com/help/printing/size-of-the-totebag/. That article says "Tote Bag", not "Zipper".
+- **Inconsistent:** the sample table's GST (₹32/₹36) doesn't match the listed rates; the list rates are used.
+- **Unverified:** the "Non-Zipper ₹100/₹115" figures on the range page and sample table; the pricing list has only Zipper ₹150.
+
+**Qikink tumbler.**
+
+- **Verified:** ₹440 ex GST at 18%, print included; shipping ₹54 + 18%; COD ₹34 + 18%; no RTO charge; 450 g (shipping weight 500 g); page sku `Tumb`; no HSN.
+- **Inferred:** ₹519 = ₹440 × 1.18 = ₹519.20; the sample total ₹623 = ₹528 + ₹95.04 GST, consistent with the listed 18% on shipping and COD.
+
+**V7 fit.** All ten masters fit every print area, scaled in the supplier designer (the artwork is not changed):
+
+- Tee 15.6 × 19.6 in: at native size, effective DPI 197–268 when scaled to fill.
+- Tote 10 × 12 in: needs downscaling, effective DPI 322 or better.
+- Tumbler 9.5 × 8 in: effective DPI 483 or better.
+- No master fails.
+
 ## Gate 4B: follow-up (2026-10-03)
 
 **Apparel GST.** The tee is modelled at **5% up to ₹2,500 per piece, 18% above, effective 22 Sep 2025**. This is the owner-provided rule; the old ₹1,000 threshold is not used. No official text could be read here:

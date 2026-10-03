@@ -270,9 +270,9 @@ for (const row of parseCsv(SUPPLIER_INPUT)) {
 
 if (supplierRows.length) {
   out.push(
-    '## Verified supplier charges per unit',
+    '## Supplier charges per unit',
     '',
-    'From `ops/landed-cost.csv` (supplier pages only; see its `notes` column). Amounts ex GST.',
+    'From `ops/landed-cost.csv`: values stated on official supplier pages, or calculated directly from them where its `notes` column says "Inferred". Amounts ex GST.',
     '',
     '| Product / variant | Product + print | Supplier GST on product | Shipping | GST on shipping | COD fee | GST on COD fee | RTO charge | Not stated by supplier | Source |',
     '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |',

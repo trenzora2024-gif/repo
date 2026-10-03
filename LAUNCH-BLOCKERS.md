@@ -36,6 +36,7 @@ Nothing has been connected to, imported into or published on any Shopify store. 
 
 - Brief: `catalogue/gate4-economics.md`. Printrove tee and Qikink tumbler costs verified from the official pages (`ops/landed-cost.csv`). Qikink tote: exact product and costs not on the page.
 - Gate 4B: tee modelled at 5% (owner-provided rule: 5% up to ₹2,500 per piece, 18% above, from 22 Sep 2025; official text not reachable here). Tote best match: Qikink Unisex Tote Bag Zipper (owner to confirm); its print cost is unverified, so no tote economics yet. Tumbler output GST not verified. Payment fees not finalised.
+- Gate 4C: Qikink tote and tumbler supplier costs verified (Pricing 2026, shipping, no RTO charge). Printrove print-billing basis, GST on shipping/COD and 2XL = XXL unknown. Tote and tumbler output GST not verified.
 - `npm run costs:check` shows verified supplier charges now; contribution and 50 / 55 / 60% target prices appear once output GST is entered from an official source.
 - SEO descriptions fixed in the catalogue source and re-exported (4 changed). Not yet applied in Shopify.
 
