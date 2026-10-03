@@ -14,11 +14,40 @@ export const SITE = {
   locale: 'en_IN',
   country: 'IN',
   currency: 'INR',
-  // TODO(brand): confirm the public support inbox + handles before launch.
-  contactEmail: 'hello@trenzora.in',
+  contactEmail: 'cs@trenzora.com',
   social: {
     instagram: 'https://www.instagram.com/trenzora.in',
   },
+} as const;
+
+/**
+ * Business identity shown on Contact, policies and grievance details.
+ * Address and phone are the values configured in Shopify (Settings → Store
+ * details, read 2026-10-04). `null` = not provided yet: the page omits it and
+ * the gap is listed in LAUNCH-BLOCKERS.md. Never fill these with guesses.
+ */
+export const BUSINESS = {
+  tradingName: 'Trenzora',
+  /** Registered legal name and entity type (e.g. proprietorship / LLP / Pvt Ltd). */
+  legalName: null as string | null,
+  /** GSTIN, shown on invoices; not required on the site. */
+  gstin: null as string | null,
+  phone: '+91 96196 57030',
+  phoneHref: 'tel:+919619657030',
+  address: [
+    'Ground Floor, Shop No. 63, Panchavati Plaza',
+    'Ghansoli, Navi Mumbai',
+    'Maharashtra 400701, India',
+  ],
+  /** Grievance Officer (Consumer Protection (E-Commerce) Rules, 2020). */
+  grievanceOfficer: null as {name: string; designation: string} | null,
+  /** Support hours, once decided (e.g. 'Mon–Sat, 10am–6pm IST'). */
+  supportHours: null as string | null,
+  /**
+   * Orders can be cancelled until they enter production. Set a fixed window
+   * (in hours) only once the fulfilment flow guarantees it.
+   */
+  cancellationWindowHours: null as number | null,
 } as const;
 
 /**
@@ -36,7 +65,7 @@ export const SHIPPING = {
 export const RETURNS = {
   windowDays: 7,
   summary:
-    'Every piece is printed for you, so we can’t accept returns for change of mind or size. If your order arrives damaged, misprinted or wrong, tell us within 7 days of delivery with a photo and we’ll replace it at no cost.',
+    'Every piece is made to order, so we can’t accept returns for change of mind or size. If your order arrives damaged, defective, misprinted or wrong, tell us within 7 days of delivery with photos and we’ll replace it at no cost, or refund you if a replacement isn’t possible.',
 } as const;
 
 export const HOW_ITS_MADE = [
@@ -56,24 +85,60 @@ export const HOW_ITS_MADE = [
 
 export const FAQ = [
   {
-    q: 'When will my order arrive?',
-    a: `Each piece is made to order. Printing takes ${SHIPPING.productionDays} and delivery takes ${SHIPPING.deliveryDays} after dispatch, depending on your pin code.`,
+    q: 'What is Trenzora?',
+    a: 'Trenzora is an Indian design brand. We make original-design oversized tees, totes and tumblers, made for people with personality. Every design is a Trenzora original.',
   },
   {
-    q: 'What happens after I order?',
-    a: 'You get an order confirmation email straight away. When your piece is printed and dispatched, we email you a tracking link.',
+    q: 'Where do you ship?',
+    a: 'We currently deliver within India only.',
   },
   {
-    q: 'Can I return or exchange?',
+    q: 'How long does delivery take?',
+    a: `Each piece is made to order. Production usually takes ${SHIPPING.productionDays}, and delivery usually takes ${SHIPPING.deliveryDays} after dispatch, depending on your pin code. These are estimates, not guarantees.`,
+  },
+  {
+    q: 'How much is shipping?',
+    a: 'The shipping charge for your order is shown at checkout before you pay.',
+  },
+  {
+    q: 'How can I track my order?',
+    a: 'When your order is dispatched, we email you a tracking link. Your order confirmation email also has a link to your order status page.',
+  },
+  {
+    q: 'Can I cancel my order?',
+    a: 'Write to us as soon as possible. If your order hasn’t gone into production yet, we’ll cancel it and refund you in full. Once production has started, we can’t cancel it.',
+  },
+  {
+    q: 'Do you accept returns?',
     a: RETURNS.summary,
   },
   {
-    q: 'Can I add my own name?',
-    a: 'Not yet. Personalized designs, Us and Make It Yours, are coming soon. Every design available today is a Trenzora original, printed exactly as shown.',
+    q: 'What if my product arrives damaged?',
+    a: `Email us within ${RETURNS.windowDays} days of delivery with your order number and clear photos of the product and its packaging. Once we’ve checked them, we’ll replace it at no cost, or refund you if a replacement isn’t possible.`,
   },
   {
-    q: 'Is the design original?',
-    a: 'Yes. Every Trenzora design is drawn in-house. We don’t resell stock graphics.',
+    q: 'What if I receive the wrong product?',
+    a: `Email us within ${RETURNS.windowDays} days of delivery with your order number and photos of what you received. We’ll send the right product at no cost, or refund you if we can’t.`,
+  },
+  {
+    q: 'Can I change my size after ordering?',
+    a: 'Only before your order goes into production, so write to us straight away. After that we can’t change or exchange sizes, because each piece is made for your order. Check the size details on the product page before you buy.',
+  },
+  {
+    q: 'Are products made to order?',
+    a: 'Yes. Nothing is printed until you order, which is why production takes a few working days.',
+  },
+  {
+    q: 'How should I care for my products?',
+    a: 'Tees: machine wash cold, inside out; don’t bleach; don’t iron directly on the print; line dry in shade. Totes: spot clean, or hand wash cold inside out if needed. Tumblers: hand wash only; not dishwasher or microwave safe. Full care notes are on each product page.',
+  },
+  {
+    q: 'Can I add my own name?',
+    a: 'Not yet. Personalized designs are coming soon. Every design available today is a Trenzora original, printed as shown.',
+  },
+  {
+    q: 'How can I contact support?',
+    a: 'Email cs@trenzora.com or call +91 96196 57030. Please include your order number.',
   },
 ] as const;
 
@@ -95,9 +160,12 @@ export const FOOTER_NAV = {
     {title: 'Gifts', to: '/collections/gifts'},
   ],
   help: [
-    {title: 'Shipping', to: '/shipping'},
     {title: 'Contact', to: '/contact'},
-    {title: 'Refund policy', to: '/policies/refund-policy'},
+    {title: 'Track your order', to: '/track-order'},
+    {title: 'FAQ', to: '/faq'},
+    {title: 'Shipping', to: '/shipping'},
+    {title: 'Returns & refunds', to: '/policies/refund-policy'},
+    {title: 'Cancellations', to: '/policies/cancellation-policy'},
     {title: 'Privacy policy', to: '/policies/privacy-policy'},
     {title: 'Terms of service', to: '/policies/terms-of-service'},
   ],

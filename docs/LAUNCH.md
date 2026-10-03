@@ -24,7 +24,9 @@ Owner actions: `LAUNCH-BLOCKERS.md` → **ACTION REQUIRED FROM ME**. The step-by
 
 ## 3. Content (`app/data/site.ts`)
 
-- [ ] Support email `hello@trenzora.in` exists and Instagram `@trenzora.in` is yours. _(you)_
+- [x] Support email `cs@trenzora.com` and phone +91 96196 57030 (from Shopify store details) shown on Contact, policies and footer.
+- [ ] `cs@trenzora.com` mailbox receives mail; Instagram `@trenzora.in` is yours. _(you)_
+- [ ] Policies: site pages done (`/shipping`, `/policies/*`, `/faq`, `/track-order`, `/contact`); paste `catalogue/policies/*.html` into Shopify Settings → Policies after review. _(you)_
 - [x] Delivery window (2–4 + 3–7 working days) is consistent with the public supplier pages (Printrove 5–9 days total; Qikink 2–3 + 2–5 days).
 - [x] Returns promise: replacement for damaged or misprinted items within 7 days.
 

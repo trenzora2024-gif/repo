@@ -1,5 +1,5 @@
 import type {MetaDescriptor} from 'react-router';
-import {SITE} from '~/data/site';
+import {BUSINESS, SITE} from '~/data/site';
 
 /**
  * One place to build page metadata: unique title, description, canonical,
@@ -103,6 +103,7 @@ export function organizationJsonLd() {
     url: SITE.url,
     slogan: SITE.positioning,
     email: SITE.contactEmail,
+    telephone: BUSINESS.phone,
     sameAs: Object.values(SITE.social),
   };
 }

@@ -68,6 +68,9 @@ const PATHS = [
   '/policies/refund-policy',
   '/policies/privacy-policy',
   '/policies/terms-of-service',
+  '/policies/cancellation-policy',
+  '/faq',
+  '/track-order',
   '/sitemap.xml',
   '/robots.txt',
 ];

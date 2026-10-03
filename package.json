@@ -23,6 +23,7 @@
     "launch:audit": "node scripts/launch-audit.ts",
     "supplier:check": "node scripts/supplier-check.ts",
     "costs:check": "node scripts/landed-cost.ts",
+    "policies:export": "node scripts/export-policies.ts",
     "mockups:check": "node scripts/mockups.ts"
   },
   "prettier": "@shopify/prettier-config",

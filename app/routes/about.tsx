@@ -74,14 +74,14 @@ export default function About() {
               <h2>Original designs</h2>
               <p className="muted">
                 {LAUNCH_FAMILIES.length} originals, from Mumbai Made to Desi
-                Roots. New drops every week.
+                Roots, with more drops to come.
               </p>
             </div>
             <div className="info-card">
               <h2>Printed to order</h2>
               <p className="muted">
-                Nothing is printed until you order. No dead stock. Made fresh in
-                India.
+                Nothing is printed until you order, so there’s no dead stock.
+                Made in India.
               </p>
             </div>
             <div className="info-card">

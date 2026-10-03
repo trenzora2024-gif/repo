@@ -9,6 +9,13 @@ const STATIC_PATHS = [
   '/about',
   '/shipping',
   '/contact',
+  '/faq',
+  '/track-order',
+  '/policies',
+  '/policies/refund-policy',
+  '/policies/cancellation-policy',
+  '/policies/privacy-policy',
+  '/policies/terms-of-service',
 ];
 
 export async function loader({request}: Route.LoaderArgs) {

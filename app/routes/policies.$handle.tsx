@@ -1,96 +1,25 @@
-import {Link, useLoaderData} from 'react-router';
+import {redirect, useLoaderData} from 'react-router';
 import type {Route} from './+types/policies.$handle';
-import {type Shop} from '@shopify/hydrogen/storefront-api-types';
+import {PolicyPage} from '~/components/PolicyPage';
+import {getPolicy} from '~/data/legal';
 import {seoMeta} from '~/lib/seo';
-
-type SelectedPolicies = keyof Pick<
-  Shop,
-  'privacyPolicy' | 'shippingPolicy' | 'termsOfService' | 'refundPolicy'
->;
 
 export const meta: Route.MetaFunction = ({data, params}) =>
   seoMeta({
     title: data?.policy.title ?? 'Policy',
-    description: `${data?.policy.title ?? 'Store policy'} for Trenzora orders in India.`,
+    description: data?.policy.description ?? 'Trenzora store policy.',
     path: `/policies/${params.handle}`,
   });
 
-export async function loader({params, context}: Route.LoaderArgs) {
-  if (!params.handle) {
-    throw new Response('No handle was passed in', {status: 404});
-  }
-
-  const policyName = params.handle.replace(
-    /-([a-z])/g,
-    (_: unknown, m1: string) => m1.toUpperCase(),
-  ) as SelectedPolicies;
-
-  const data = await context.storefront.query(POLICY_CONTENT_QUERY, {
-    variables: {
-      privacyPolicy: false,
-      shippingPolicy: false,
-      termsOfService: false,
-      refundPolicy: false,
-      [policyName]: true,
-      language: context.storefront.i18n?.language,
-    },
-  });
-
-  const policy = data.shop?.[policyName];
-
-  if (!policy) {
-    throw new Response('Could not find the policy', {status: 404});
-  }
-
+export function loader({params}: Route.LoaderArgs) {
+  // The shipping policy lives at /shipping (linked from the footer).
+  if (params.handle === 'shipping-policy') throw redirect('/shipping', 301);
+  const policy = params.handle ? getPolicy(params.handle) : undefined;
+  if (!policy) throw new Response('Policy not found', {status: 404});
   return {policy};
 }
 
 export default function Policy() {
   const {policy} = useLoaderData<typeof loader>();
-
-  return (
-    <div className="container page-end">
-      <header className="page-hero">
-        <p className="eyebrow">
-          <Link to="/policies">Policies</Link>
-        </p>
-        <h1>{policy.title}</h1>
-      </header>
-      <div className="prose" dangerouslySetInnerHTML={{__html: policy.body}} />
-    </div>
-  );
+  return <PolicyPage policy={policy} />;
 }
-
-// NOTE: https://shopify.dev/docs/api/storefront/latest/objects/Shop
-const POLICY_CONTENT_QUERY = `#graphql
-  fragment Policy on ShopPolicy {
-    body
-    handle
-    id
-    title
-    url
-  }
-  query Policy(
-    $country: CountryCode
-    $language: LanguageCode
-    $privacyPolicy: Boolean!
-    $refundPolicy: Boolean!
-    $shippingPolicy: Boolean!
-    $termsOfService: Boolean!
-  ) @inContext(language: $language, country: $country) {
-    shop {
-      privacyPolicy @include(if: $privacyPolicy) {
-        ...Policy
-      }
-      shippingPolicy @include(if: $shippingPolicy) {
-        ...Policy
-      }
-      termsOfService @include(if: $termsOfService) {
-        ...Policy
-      }
-      refundPolicy @include(if: $refundPolicy) {
-        ...Policy
-      }
-    }
-  }
-` as const;
