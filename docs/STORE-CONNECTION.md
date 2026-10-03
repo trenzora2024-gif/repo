@@ -44,7 +44,7 @@ npx shopify hydrogen env pull     # writes .env (gitignored, never committed)
 ### C. Verify Storefront API access (read-only)
 
 ```
-npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com --expect-domain trenzora.in
+npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com,hetvyh-8e.myshopify.com --expect-domain trenzora.in
                                  # Gate 1: exact store, never MaternEase, INR, nothing imported yet
 npm run verify:store             # store identity (blocks MaternEase), INR, policies, products, collections, tag search
 ```

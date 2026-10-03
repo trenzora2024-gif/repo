@@ -111,14 +111,23 @@ async function main() {
     return;
   }
   if (!domain || !token) return;
-  if (expectStore) {
+  // --expect-store accepts a comma-separated list of the SAME store's
+  // .myshopify.com addresses (permanent ID + renamed handle), e.g.
+  // trenzora-in.myshopify.com,hetvyh-8e.myshopify.com
+  const storeAliases = (expectStore ?? '')
+    .toLowerCase()
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (storeAliases.length) {
     const configured = hostOf(domain);
+    const match = storeAliases.includes(configured);
     report(
-      configured === expectStore.toLowerCase() ? 'ok' : 'block',
+      match ? 'ok' : 'block',
       'identity',
-      `PUBLIC_STORE_DOMAIN = ${configured} (expected ${expectStore})`,
+      `PUBLIC_STORE_DOMAIN = ${configured} (expected ${storeAliases.join(' or ')})`,
     );
-    if (configured !== expectStore.toLowerCase()) return;
+    if (!match) return;
   }
 
   // --------------------------------------------------------------- shop
@@ -157,7 +166,7 @@ async function main() {
     const level: Level =
       primary === prod || primary === `www.${prod}`
         ? 'ok'
-        : primary === expectStore?.toLowerCase()
+        : storeAliases.includes(primary)
           ? 'info'
           : 'block';
     report(
