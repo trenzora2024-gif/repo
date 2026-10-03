@@ -12,6 +12,7 @@ import {
 import {ProductCard} from '~/components/ProductCard';
 import {ProductForm} from '~/components/ProductForm';
 import {ProductMedia} from '~/components/ProductMedia';
+import {ProductGallery} from '~/components/ProductGallery';
 import {
   PRODUCT_TYPES,
   productHandle,
@@ -175,27 +176,13 @@ export default function ProductPage() {
       </nav>
 
       <div className="pdp">
-        <div className="pdp__gallery" aria-label="Product images">
-          {gallery.length ? (
-            gallery.map((image, index) => (
-              <ProductMedia
-                key={image.url}
-                image={image}
-                handle={product.handle}
-                alt={image.altText || `${product.title} — image ${index + 1}`}
-                loading={index === 0 ? 'eager' : 'lazy'}
-                sizes="(min-width: 960px) 55vw, 100vw"
-              />
-            ))
-          ) : (
-            <ProductMedia
-              handle={product.handle}
-              tags={product.tags}
-              alt={`${product.title} — design concept`}
-              loading="eager"
-              sizes="(min-width: 960px) 55vw, 100vw"
-            />
-          )}
+        <div className="pdp__gallery">
+          <ProductGallery
+            images={gallery}
+            handle={product.handle}
+            tags={product.tags}
+            title={product.title}
+          />
         </div>
 
         <div className="pdp__info">
@@ -216,6 +203,10 @@ export default function ProductPage() {
 
           {family ? (
             <>
+              <div className="pdp__statement">
+                <p className="pdp__headline">{family.headline}</p>
+                <p className="pdp__line serif">{family.line}</p>
+              </div>
               <p className="pdp__story">{family.story}</p>
               <dl className="facts">
                 <div>

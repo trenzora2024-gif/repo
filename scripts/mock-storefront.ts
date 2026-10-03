@@ -13,7 +13,7 @@ import {
   type IncomingMessage,
   type ServerResponse,
 } from 'node:http';
-import {readFileSync} from 'node:fs';
+import {existsSync, readFileSync} from 'node:fs';
 import {createRequire} from 'node:module';
 import {
   buildClientSchema,
@@ -70,6 +70,16 @@ function connection<T>(items: T[], args: {first?: number; last?: number} = {}) {
   };
 }
 
+// Studio renders from `npm run visuals:render` (public/visuals/), served by
+// the Hydrogen dev server, stand in for supplier product photography.
+// MOCK_RENDERS=0 simulates a store with no product images yet.
+const ASSET_BASE = process.env.MOCK_ASSET_BASE ?? 'http://localhost:3000';
+const RENDER_SHOTS = [
+  ['01-studio', ''],
+  ['02-detail', ' — print detail'],
+  ['03-editorial', ' — styled'],
+] as const;
+
 // ---------------------------------------------------------------- products
 // Mirrors the real V1 import: only the 24 launch products exist.
 // MOCK_INCLUDE_V2=1 simulates V2 products being wrongly published, to test
@@ -80,7 +90,25 @@ const products: Obj[] = SOURCE.map((item, index) =>
   buildProduct(item, index + 1),
 );
 
+function productImages(item: CatalogueProduct, n: number): Obj[] {
+  if (process.env.MOCK_RENDERS === '0') return [];
+  const dir = `public/visuals/products/${item.handle}`;
+  if (!existsSync(dir)) return [];
+  return RENDER_SHOTS.filter(([file]) => existsSync(`${dir}/${file}.webp`)).map(
+    ([file, suffix], i) => ({
+      __typename: 'Image',
+      id: `gid://shopify/ProductImage/${(1000 + n) * 10 + i}`,
+      url: `${ASSET_BASE}/visuals/products/${item.handle}/${file}.webp`,
+      altText: `${item.imageAlt}${suffix}`,
+      width: 1200,
+      height: 1200,
+      thumbnail: null,
+    }),
+  );
+}
+
 function buildProduct(item: CatalogueProduct, n: number): Obj {
+  const images = productImages(item, n);
   const product: Obj = {
     __typename: 'Product',
     id: `gid://shopify/Product/${1000 + n}`,
@@ -100,9 +128,20 @@ function buildProduct(item: CatalogueProduct, n: number): Obj {
     isGiftCard: false,
     requiresSellingPlan: false,
     seo: {title: item.seo.title, description: item.seo.description},
-    featuredImage: null,
-    images: () => connection([]),
-    media: () => connection([]),
+    featuredImage: images[0] ?? null,
+    images: (args: {first?: number}) => connection(images, args),
+    media: (args: {first?: number}) =>
+      connection(
+        images.map((image) => ({
+          __typename: 'MediaImage',
+          id: String(image.id).replace('ProductImage', 'MediaImage'),
+          mediaContentType: 'IMAGE',
+          alt: image.altText,
+          image,
+          previewImage: image,
+        })),
+        args,
+      ),
     metafield: () => null,
     metafields: () => [],
     collections: () => connection([]),

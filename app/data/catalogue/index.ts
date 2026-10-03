@@ -41,23 +41,21 @@ export const COLLECTIONS: Record<
   {title: string; description: string; rule: string; release: Release}
 > = {
   all: {
-    title: 'All Products',
+    title: 'Shop All',
     description:
-      'Every Trenzora original — oversized tees, totes and 20oz tumblers, made to order in India.',
+      'Eight originals. Tee, tote, tumbler. Printed to order in India.',
     rule: 'Built-in Shopify collection',
     release: 'v1',
   },
   'mumbai-made': {
     title: 'Mumbai Made',
-    description:
-      'Every Trenzora design for Mumbai: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई, on tees, totes and tumblers.',
+    description: 'Drop 01. Four designs for the city that keeps moving.',
     rule: 'Product tag equals col:mumbai-made',
     release: 'v1',
   },
   drops: {
     title: 'Drops',
-    description:
-      'Original Trenzora designs, released in drops. New designs land every week.',
+    description: 'Original designs, released in drops.',
     rule: 'Product tag equals col:drops',
     release: 'v1',
   },
@@ -71,14 +69,13 @@ export const COLLECTIONS: Record<
   },
   gifts: {
     title: 'Gifts',
-    description:
-      'Gifts with personality: for besties, colleagues, coffee people, pet parents and anyone who misses Mumbai.',
+    description: 'For the people who get the joke.',
     rule: 'Product tag equals col:gifts',
     release: 'v1',
   },
   trending: {
-    title: 'Trending',
-    description: 'What people with personality are picking right now.',
+    title: 'The Edit',
+    description: 'Where to start.',
     rule: 'Product tag equals col:trending (editorial until sales data exists)',
     release: 'v1',
   },

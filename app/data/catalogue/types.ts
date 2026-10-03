@@ -67,6 +67,10 @@ export interface PersonalizationConfig {
 
 export interface DesignFamily {
   handle: DesignFamilyHandle;
+  /** The artwork's own line, set large as the editorial headline. */
+  headline: string;
+  /** One short editorial sentence in the Trenzora voice. */
+  line: string;
   /** Sort order + production master prefix (01..10). */
   number: number;
   name: string;

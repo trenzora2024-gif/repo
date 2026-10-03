@@ -166,6 +166,7 @@ while (queue.length) {
 await browser.close();
 
 /* --------------------------------------------------- dedupe inline images */
+const assets = new Set();
 const images = [];
 const imageIndex = new Map();
 const dedupe = (html) =>
@@ -173,6 +174,15 @@ const dedupe = (html) =>
     // Dev-server prefetch/module tags are meaningless outside the app.
     .replace(/<link\b[^>]*>/g, '')
     .replace(/<script\b[\s\S]*?<\/script>/g, '')
+    // Site images → files published next to the page (see files.json).
+    .replace(/\s(?:srcset|srcSet)="[^"]*"/g, '')
+    .replace(
+      /(?:https?:\/\/localhost:\d+)?\/(visuals\/[\w./-]+?\.webp)(?:\?[^"]*)?"/g,
+      (_, file) => {
+        assets.add(file);
+        return `${file}"`;
+      },
+    )
     .replace(/src="(data:[^"]+)"/g, (_, uri) => {
       if (!imageIndex.has(uri)) {
         imageIndex.set(uri, images.length);
@@ -237,7 +247,16 @@ ${chrome.drawers.join('\n')}
 
 mkdirSync(dirname(OUT), {recursive: true});
 writeFileSync(OUT, html);
+// Supporting files for the Artifact publish: {"visuals/x.webp": "public/visuals/x.webp"}
+writeFileSync(
+  join(dirname(OUT), 'files.json'),
+  JSON.stringify(
+    Object.fromEntries([...assets].sort().map((f) => [f, `public/${f}`])),
+    null,
+    2,
+  ),
+);
 // eslint-disable-next-line no-console
 console.log(
-  `Wrote ${OUT} (${(html.length / 1024).toFixed(0)} KB): ${Object.keys(pages).length} pages, ${Object.keys(products).length} products, ${images.length} images`,
+  `Wrote ${OUT} (${(html.length / 1024).toFixed(0)} KB): ${Object.keys(pages).length} pages, ${Object.keys(products).length} products, ${images.length} inline images, ${assets.size} image files`,
 );

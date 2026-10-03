@@ -4,7 +4,6 @@ import type {ProductCardFragment} from 'storefrontapi.generated';
 import {ProductCard} from '~/components/ProductCard';
 import {ProductMedia} from '~/components/ProductMedia';
 import {
-  DESIGN_FAMILIES,
   LAUNCH_FAMILIES,
   PRODUCT_TYPES,
   getDesignFamily,
@@ -12,132 +11,125 @@ import {
   type DesignFamily,
 } from '~/data/catalogue';
 import {SITE} from '~/data/site';
-import {posterArtSvg, svgDataUri} from '~/lib/art';
 import {track} from '~/lib/analytics';
+import {formatMoney} from '~/lib/money';
+import {DROP_DETAIL_VISUAL, HERO_VISUAL, familySetVisual} from '~/lib/visuals';
 
-const poster = (handle: string, ratio: 'portrait' | 'square' = 'portrait') => {
-  const family = getDesignFamily(handle)!;
-  return svgDataUri(posterArtSvg(family, ratio));
-};
+/** Section marker: "01 — The drop". */
+function Kicker({n, children}: {n?: string; children: React.ReactNode}) {
+  return (
+    <p className="kicker">
+      {n ? <span className="kicker__n">{n}</span> : null}
+      {children}
+    </p>
+  );
+}
 
 /* ---------------------------------------------------------------- hero */
 export function Hero() {
-  const collage = ['bestie-energy', 'mumbai-made', 'coffee-personality'];
   return (
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="container hero__grid">
-        <div className="hero__copy">
-          <p className="eyebrow reveal">Drop 01 is live — Mumbai Made</p>
-          <h1 id="hero-title" className="display hero__title reveal reveal--2">
-            Made for people <span className="serif">with</span> personality
-          </h1>
-          <p className="lede reveal reveal--3">
-            {SITE.supporting} Oversized tees, totes and tumblers — drawn
-            in-house, printed to order and shipped across India.
-          </p>
-          <div className="hero__ctas reveal reveal--3">
-            <Link
-              to="/collections/drops"
-              className="btn btn--primary btn--lg"
-              prefetch="intent"
-            >
-              Explore the drop
-            </Link>
-            <Link to="/personalize" className="btn btn--lg" prefetch="intent">
-              Make it yours
-            </Link>
-          </div>
-          <ul className="hero__proof">
-            <li>Original designs</li>
-            <li>Printed to order in India</li>
-            <li>Secure Shopify checkout</li>
-          </ul>
-        </div>
-        <div className="hero__collage" aria-hidden="true">
-          {collage.map((handle) => (
-            <div className="media" key={handle}>
-              <img
-                src={poster(handle)}
-                alt=""
-                width={600}
-                height={750}
-                decoding="async"
-              />
-            </div>
-          ))}
+    <section className="hero-ed" aria-labelledby="hero-title">
+      <div className="hero-ed__copy container">
+        <Kicker>Drop 01 · Mumbai Made</Kicker>
+        <h1 id="hero-title" className="hero-ed__title reveal reveal--2">
+          Made for people <span className="serif">with</span> personality.
+        </h1>
+        <p className="hero-ed__sub reveal reveal--3">{SITE.supporting}</p>
+        <div className="hero-ed__ctas reveal reveal--3">
+          <Link
+            to="/collections/mumbai-made"
+            className="btn btn--primary btn--lg"
+            prefetch="intent"
+          >
+            Explore Drop 01
+          </Link>
+          <Link to="/collections/all" className="link-arrow" prefetch="intent">
+            All eight designs
+          </Link>
         </div>
       </div>
+      <figure className="hero-ed__media">
+        <img
+          src={HERO_VISUAL.portrait.src}
+          width={HERO_VISUAL.portrait.width}
+          height={HERO_VISUAL.portrait.height}
+          alt={HERO_VISUAL.alt}
+          fetchPriority="high"
+          decoding="async"
+        />
+        <figcaption>Mumbai Made — tee, tote, tumbler</figcaption>
+      </figure>
     </section>
   );
 }
 
 export function Ticker() {
-  const names = LAUNCH_FAMILIES.map((family) => family.name);
+  const lines = LAUNCH_FAMILIES.map((family) => family.headline);
   // Duplicated once so the CSS loop is seamless.
   return (
     <div className="ticker" aria-hidden="true">
       <div className="ticker__track">
         {['a', 'b'].flatMap((pass) =>
-          names.map((name) => <span key={`${pass}-${name}`}>{name}</span>),
+          lines.map((line) => <span key={`${pass}-${line}`}>{line}</span>),
         )}
       </div>
     </div>
   );
 }
 
-/* ---------------------------------------------------------------- vibes */
+/* --------------------------------------------------------- personalities */
 export function VibeSection() {
-  const vibes = DESIGN_FAMILIES.filter((family) => family.vibe);
-  // Brief order: Mumbai, Bestie, Couple, Coffee, Office, Pet Parent.
-  const order = [
-    'Mumbai',
-    'Bestie',
-    'Couple',
-    'Coffee',
-    'Office',
-    'Pet Parent',
-  ];
-  vibes.sort((a, b) => order.indexOf(a.vibe!) - order.indexOf(b.vibe!));
-
   return (
     <section className="section" aria-labelledby="vibe-title">
       <div className="container">
         <div className="section-head">
           <div className="section-head__text">
-            <p className="eyebrow">Find your design</p>
-            <h2 id="vibe-title" className="h2">
-              What’s your <span className="serif">vibe?</span>
+            <Kicker n="01">The designs</Kicker>
+            <h2 id="vibe-title" className="h1">
+              Pick your <span className="serif">personality.</span>
             </h2>
           </div>
           <Link to="/collections/all" className="link-arrow">
-            See everything
+            See all eight
           </Link>
         </div>
-        <div className="vibe-grid">
-          {vibes.map((family) => (
+      </div>
+      <div className="persona-rail container">
+        {LAUNCH_FAMILIES.map((family) => {
+          const visual = familySetVisual(family);
+          return (
             <Link
               key={family.handle}
               to={`/designs/${family.handle}`}
-              className="vibe-tile"
+              className="persona-card"
               prefetch="intent"
-              style={
-                {
-                  '--tile-bg': family.palette.bg,
-                  '--tile-fg': family.palette.fg,
-                  '--tile-accent': family.palette.accent,
-                } as React.CSSProperties
-              }
+              style={{'--tone': family.palette.bg} as React.CSSProperties}
             >
-              <span className="vibe-tile__num">
-                {String(family.number).padStart(2, '0')} · {family.name}
-              </span>
-              <span>
-                <span className="vibe-tile__name">{family.vibe}</span>
-                <span className="vibe-tile__line block">{family.tagline}</span>
-              </span>
+              <div className="persona-card__media">
+                {visual ? (
+                  <img
+                    src={visual.src}
+                    width={visual.width}
+                    height={visual.height}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : null}
+                <span className="persona-card__num">
+                  {String(family.number).padStart(2, '0')}
+                </span>
+              </div>
+              <div className="persona-card__body">
+                <span className="persona-card__name">{family.name}</span>
+                <span className="persona-card__headline">
+                  {family.headline}
+                </span>
+                <span className="persona-card__line">{family.line}</span>
+              </div>
             </Link>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );
@@ -147,48 +139,49 @@ export function VibeSection() {
 export function FirstDrop({products}: {products: ProductCardFragment[]}) {
   const family = getDesignFamily('mumbai-made')!;
   return (
-    <section className="section section--sand" aria-labelledby="drop-title">
-      <div className="container split">
-        <div className="feature__art">
-          <div className="media">
-            <img
-              src={poster('mumbai-made')}
-              alt="Mumbai Made — Trenzora Drop 01 artwork poster"
-              width={600}
-              height={750}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-        </div>
-        <div className="feature__copy">
-          <p className="eyebrow">First drop · 01</p>
-          <h2 id="drop-title" className="h1">
-            {family.name}
+    <section className="drop" aria-labelledby="drop-title">
+      <figure className="drop__band">
+        <img
+          src={DROP_DETAIL_VISUAL.src}
+          width={DROP_DETAIL_VISUAL.width}
+          height={DROP_DETAIL_VISUAL.height}
+          alt={DROP_DETAIL_VISUAL.alt}
+          loading="lazy"
+          decoding="async"
+        />
+        <span className="drop__mark" aria-hidden="true">
+          01
+        </span>
+      </figure>
+      <div className="container drop__grid">
+        <div className="drop__copy">
+          <Kicker n="02">The first drop</Kicker>
+          <h2 id="drop-title" className="drop__title">
+            {family.headline}
           </h2>
-          <p className="serif h3">{family.tagline}</p>
-          <p className="lede">{family.story}</p>
-          {products.length ? (
-            <div className="feature__products">
-              {products.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  sizes="(min-width: 960px) 14vw, 30vw"
-                />
-              ))}
-            </div>
-          ) : null}
-          <div>
+          <p className="drop__line serif">{family.line}</p>
+          <p className="drop__story">{family.story}</p>
+          <div className="drop__ctas">
             <Link
               to="/collections/mumbai-made"
               className="btn btn--primary"
               prefetch="intent"
             >
-              Shop Mumbai Made
+              Explore Mumbai Made
             </Link>
           </div>
         </div>
+        {products.length ? (
+          <div className="drop__products">
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                sizes="(min-width: 960px) 18vw, 45vw"
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -203,20 +196,14 @@ export function MakeItYours() {
       <div className="container">
         <div className="miy split">
           <div className="stack">
-            <p className="eyebrow">Personalize · Coming soon</p>
+            <Kicker n="03">Coming soon</Kicker>
             <h2 id="miy-title" className="h1">
               Make it <span className="serif">yours.</span>
             </h2>
             <p className="lede">
-              Some designs are made to carry your words: names, a city, a date.
-              Personalized pieces are coming soon. Join the list to be first.
+              Your names, your city, your date. Printed on a Trenzora original.
             </p>
-            <ol className="miy__steps">
-              <li>Pick a personalization design: Us or Make It Yours.</li>
-              <li>Add your names, city or date.</li>
-              <li>We print it just for you, on a tee, tote or tumbler.</li>
-            </ol>
-            <div className="hero__ctas">
+            <div className="hero-ed__ctas">
               <Link
                 to="/personalize"
                 className="btn btn--light"
@@ -261,15 +248,10 @@ export function OneDesignYourWay({
       <div className="container">
         <div className="section-head">
           <div className="section-head__text">
-            <p className="eyebrow">One design, your way</p>
-            <h2 id="way-title" className="h2">
-              Tee <span aria-hidden="true">→</span> Tote{' '}
-              <span aria-hidden="true">→</span> Tumbler
+            <Kicker n="04">One design, three ways</Kicker>
+            <h2 id="way-title" className="h1">
+              Wear it. Carry it. <span className="serif">Sip it.</span>
             </h2>
-            <p className="lede">
-              Every Trenzora design is drawn once and made for all three. Wear
-              it, carry it, sip from it.
-            </p>
           </div>
         </div>
         <div
@@ -293,6 +275,9 @@ export function OneDesignYourWay({
           {PRODUCT_TYPES.map((type) => {
             const handle = productHandle(family, type);
             const product = imagesByHandle[handle];
+            const price =
+              product?.selectedOrFirstAvailableVariant?.price ??
+              product?.priceRange.minVariantPrice;
             return (
               <Link
                 key={handle}
@@ -306,14 +291,19 @@ export function OneDesignYourWay({
                   alt={`${family.name} ${type.shortName}`}
                   sizes="(min-width: 960px) 30vw, 33vw"
                 />
-                <span className="way__label">{type.shortName}</span>
+                <span className="way__label">
+                  {type.shortName}
+                  {price ? (
+                    <span className="way__price">{formatMoney(price)}</span>
+                  ) : null}
+                </span>
               </Link>
             );
           })}
         </div>
-        <p className="center way-foot">
+        <p className="way-foot">
           <Link to={`/designs/${family.handle}`} className="link-arrow">
-            See {family.name}
+            The {family.name} story
           </Link>
         </p>
       </div>
@@ -321,7 +311,7 @@ export function OneDesignYourWay({
   );
 }
 
-/* --------------------------------------------------------------- trending */
+/* --------------------------------------------------------------- the edit */
 export function Trending({products}: {products: ProductCardFragment[]}) {
   if (!products.length) return null;
   return (
@@ -329,13 +319,13 @@ export function Trending({products}: {products: ProductCardFragment[]}) {
       <div className="container">
         <div className="section-head">
           <div className="section-head__text">
-            <p className="eyebrow">Trending now</p>
-            <h2 id="trending-title" className="h2">
-              What people are <span className="serif">picking</span>
+            <Kicker n="05">The edit</Kicker>
+            <h2 id="trending-title" className="h1">
+              Where to <span className="serif">start.</span>
             </h2>
           </div>
           <Link to="/collections/trending" className="link-arrow">
-            Shop trending
+            See the edit
           </Link>
         </div>
         <div className="rail">
@@ -367,11 +357,8 @@ export type PeoplePost = {
 };
 
 const PEOPLE_PROMPTS = [
-  {
-    title: 'Your Mumbai Made fit',
-    body: 'Local train, sea face or office lift — show us.',
-  },
-  {title: 'Desk + tumbler', body: 'Your Corporate Survivor setup, unfiltered.'},
+  {title: 'The Mumbai Made fit', body: 'Local train, sea face, office lift.'},
+  {title: 'Desk + tumbler', body: 'Your Corporate Survivor setup.'},
   {title: 'Bestie twinning', body: 'Two tees, one inside joke.'},
   {title: 'Pet parent energy', body: 'Bonus points if the pet poses.'},
 ];
@@ -382,13 +369,13 @@ export function PeopleOfTrenzora({posts = []}: {posts?: PeoplePost[]}) {
       <div className="container">
         <div className="section-head">
           <div className="section-head__text">
-            <p className="eyebrow">People of Trenzora</p>
-            <h2 id="people-title" className="h2">
-              Worn by people with <span className="serif">personality</span>
+            <Kicker n="06">People of Trenzora</Kicker>
+            <h2 id="people-title" className="h1">
+              Your <span className="serif">turn.</span>
             </h2>
             <p className="lede">
-              Wear it, tag <strong>@trenzora.in</strong>, and you could be
-              featured here.
+              Wear it. Tag <strong>@trenzora.in</strong>. The best ones live
+              here.
             </p>
           </div>
           <a
@@ -397,7 +384,7 @@ export function PeopleOfTrenzora({posts = []}: {posts?: PeoplePost[]}) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Follow on Instagram
+            Instagram
           </a>
         </div>
         <div className="people-grid">
@@ -411,8 +398,11 @@ export function PeopleOfTrenzora({posts = []}: {posts?: PeoplePost[]}) {
                   <img src={post.imageUrl} alt={post.alt} loading="lazy" />
                 </figure>
               ))
-            : PEOPLE_PROMPTS.map((prompt) => (
+            : PEOPLE_PROMPTS.map((prompt, index) => (
                 <div key={prompt.title} className="people-card">
+                  <span className="people-card__n">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                   <span>
                     <strong>{prompt.title}</strong>
                     {prompt.body}
@@ -431,16 +421,13 @@ export function WeeklyDrop() {
     <section className="section section--ink" aria-labelledby="weekly-title">
       <div className="container weekly">
         <div className="stack">
-          <p className="eyebrow">Every week</p>
+          <Kicker>The list</Kicker>
           <h2 id="weekly-title" className="display weekly__title">
             New drop <span className="serif">every</span> week.
           </h2>
         </div>
         <div className="stack">
-          <p className="lede">
-            New designs, first. One email a week — no spam, unsubscribe any
-            time.
-          </p>
+          <p className="lede">New designs, first. One email a week.</p>
           <SignupForm />
         </div>
       </div>

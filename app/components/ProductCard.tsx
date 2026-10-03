@@ -29,6 +29,10 @@ export function ProductCard({
   const price =
     product.selectedOrFirstAvailableVariant?.price ??
     product.priceRange.minVariantPrice;
+  // Second image crossfades in on hover (pointer devices only).
+  const alt = product.images?.nodes.find(
+    (image) => image.url !== product.featuredImage?.url,
+  );
   const soldOut =
     product.selectedOrFirstAvailableVariant?.availableForSale === false;
 
@@ -38,14 +42,25 @@ export function ProductCard({
       to={`/products/${product.handle}`}
       prefetch="intent"
     >
-      <ProductMedia
-        image={product.featuredImage}
-        handle={product.handle}
-        tags={product.tags}
-        alt={product.featuredImage?.altText || product.title}
-        loading={loading}
-        sizes={sizes}
-      />
+      <div className="product-card__media">
+        <ProductMedia
+          image={product.featuredImage}
+          handle={product.handle}
+          tags={product.tags}
+          alt={product.featuredImage?.altText || product.title}
+          loading={loading}
+          sizes={sizes}
+        />
+        {alt ? (
+          <ProductMedia
+            image={alt}
+            handle={product.handle}
+            alt=""
+            sizes={sizes}
+            className="product-card__alt"
+          />
+        ) : null}
+      </div>
       <div className="product-card__body">
         <span className="product-card__design">{design}</span>
         {type ? <span className="product-card__type">{type}</span> : null}

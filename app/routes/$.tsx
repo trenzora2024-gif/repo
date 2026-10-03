@@ -23,7 +23,7 @@ export default function NotFound() {
       <p className="lede">
         The page you’re looking for doesn’t exist — but the drop does.
       </p>
-      <div className="hero__ctas">
+      <div className="hero-ed__ctas">
         <Link to="/collections/drops" className="btn btn--primary">
           Explore the drop
         </Link>

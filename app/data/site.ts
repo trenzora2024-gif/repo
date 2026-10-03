@@ -8,7 +8,7 @@ export const SITE = {
   domain: 'trenzora.in',
   url: 'https://trenzora.in',
   positioning: 'Made for people with personality.',
-  supporting: 'Original designs. Personalized products. Indian stories.',
+  supporting: 'Original designs. Indian stories. Printed to order.',
   description:
     'Trenzora makes original-design oversized tees, totes and tumblers in India. Made for people with personality — printed to order and delivered across India.',
   locale: 'en_IN',
@@ -88,10 +88,10 @@ export const PRIMARY_NAV = [
 
 export const FOOTER_NAV = {
   shop: [
-    {title: 'All products', to: '/collections/all'},
+    {title: 'Shop all', to: '/collections/all'},
     {title: 'Mumbai Made', to: '/collections/mumbai-made'},
     {title: 'Drops', to: '/collections/drops'},
-    {title: 'Trending', to: '/collections/trending'},
+    {title: 'The Edit', to: '/collections/trending'},
     {title: 'Gifts', to: '/collections/gifts'},
   ],
   help: [

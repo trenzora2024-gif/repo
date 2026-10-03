@@ -353,8 +353,107 @@
       });
     });
 
+    initGallery();
     stickyTarget = {atc: $('.atc', main), bar: $('.sticky-atc', main)};
     updateSticky();
+  }
+
+  /* --------------------------------------------- gallery + zoom viewer */
+  function pad(n) {
+    return (n < 10 ? '0' : '') + n;
+  }
+  function initGallery() {
+    var track = $('.gallery__track', main);
+    var counter = $('.gallery__count span', main);
+    if (track && counter) {
+      track.addEventListener(
+        'scroll',
+        function () {
+          counter.textContent = pad(
+            Math.round(track.scrollLeft / track.clientWidth) + 1,
+          );
+        },
+        {passive: true},
+      );
+    }
+    var items = $$('.gallery__item', main);
+    var sources = items.map(function (item) {
+      var img = $('img', item);
+      return {src: img.getAttribute('src'), alt: img.getAttribute('alt') || ''};
+    });
+    items.forEach(function (item, i) {
+      item.addEventListener('click', function () {
+        openViewer(sources, i);
+      });
+    });
+  }
+  function openViewer(sources, start) {
+    var i = start;
+    var zoomed = false;
+    var el = document.createElement('div');
+    el.className = 'viewer';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.innerHTML =
+      '<button type="button" class="viewer__stage" data-zoomed="false" aria-label="Zoom in"><img alt=""></button>' +
+      '<div class="viewer__bar"><span class="viewer__count"></span>' +
+      (sources.length > 1
+        ? '<span class="viewer__nav"><button type="button" data-step="-1" aria-label="Previous">←</button><button type="button" data-step="1" aria-label="Next">→</button></span>'
+        : '') +
+      '<button type="button" class="icon-btn viewer__close" aria-label="Close">✕</button></div>';
+    var stage = $('.viewer__stage', el);
+    var img = $('img', el);
+    function show() {
+      zoomed = false;
+      img.style.transform = '';
+      stage.setAttribute('data-zoomed', 'false');
+      img.setAttribute('src', sources[i].src);
+      img.setAttribute('alt', sources[i].alt);
+      $('.viewer__count', el).textContent =
+        pad(i + 1) + ' / ' + pad(sources.length);
+    }
+    function origin(e) {
+      var r = stage.getBoundingClientRect();
+      img.style.transformOrigin =
+        ((e.clientX - r.left) / r.width) * 100 +
+        '% ' +
+        ((e.clientY - r.top) / r.height) * 100 +
+        '%';
+    }
+    function close() {
+      document.removeEventListener('keydown', onKey);
+      document.body.classList.remove('is-locked');
+      el.remove();
+    }
+    function step(n) {
+      i = (i + n + sources.length) % sources.length;
+      show();
+    }
+    function onKey(e) {
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') step(1);
+      if (e.key === 'ArrowLeft') step(-1);
+    }
+    stage.addEventListener('click', function (e) {
+      zoomed = !zoomed;
+      origin(e);
+      img.style.transform = zoomed ? 'scale(2.2)' : '';
+      stage.setAttribute('data-zoomed', String(zoomed));
+    });
+    stage.addEventListener('pointermove', function (e) {
+      if (zoomed) origin(e);
+    });
+    $$('[data-step]', el).forEach(function (b) {
+      b.addEventListener('click', function () {
+        step(Number(b.getAttribute('data-step')));
+      });
+    });
+    $('.viewer__close', el).addEventListener('click', close);
+    document.addEventListener('keydown', onKey);
+    document.body.classList.add('is-locked');
+    document.body.appendChild(el);
+    show();
+    $('.viewer__close', el).focus();
   }
 
   // Sticky add-to-cart once the main button has scrolled above the viewport.

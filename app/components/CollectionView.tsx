@@ -1,4 +1,5 @@
 import {Pagination} from '@shopify/hydrogen';
+import {DROP_DETAIL_VISUAL, HERO_VISUAL} from '~/lib/visuals';
 import {Link, useNavigate, useSearchParams} from 'react-router';
 import type {ProductCardFragment} from 'storefrontapi.generated';
 import type {
@@ -8,6 +9,15 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import {ProductCard} from '~/components/ProductCard';
 import {COLLECTIONS, type CollectionHandle} from '~/data/catalogue';
+
+/** Editorial banners for collections that have one (public/visuals). */
+const COLLECTION_BANNERS: Record<
+  string,
+  {src: string; width: number; height: number} | undefined
+> = {
+  'mumbai-made': HERO_VISUAL.wide,
+  drops: DROP_DETAIL_VISUAL,
+};
 
 export const SORT_OPTIONS = [
   {value: 'featured', label: 'Featured'},
@@ -91,13 +101,28 @@ export function CollectionView({
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const sort = params.get('sort') ?? 'featured';
+  const banner = COLLECTION_BANNERS[handle];
 
   return (
     <div className="container page-end">
-      <header className="page-hero">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1>{title}</h1>
-        {description ? <p className="lede">{description}</p> : null}
+      <header className={`page-hero${banner ? ' page-hero--banner' : ''}`}>
+        <div className="page-hero__text">
+          <p className="kicker">{eyebrow}</p>
+          <h1>{title}</h1>
+          {description ? <p className="lede">{description}</p> : null}
+        </div>
+        {banner ? (
+          <figure className="page-hero__media">
+            <img
+              src={banner.src}
+              width={banner.width}
+              height={banner.height}
+              alt=""
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
+        ) : null}
       </header>
 
       <nav className="chip-row" aria-label="Collections">
@@ -108,6 +133,7 @@ export function CollectionView({
             className="chip"
             aria-current={item === handle ? 'page' : undefined}
             prefetch="intent"
+            viewTransition
           >
             {COLLECTIONS[item].title}
           </Link>

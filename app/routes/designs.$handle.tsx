@@ -8,6 +8,7 @@ import {
   getDesignFamily,
   tagQuery,
 } from '~/data/catalogue';
+import {familySetVisual} from '~/lib/visuals';
 import {posterArtSvg, svgDataUri} from '~/lib/art';
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {breadcrumbJsonLd, seoMeta} from '~/lib/seo';
@@ -57,45 +58,51 @@ export default function DesignFamilyPage() {
     (item) => item.handle !== family.handle,
   );
 
+  const visual = familySetVisual(family);
   return (
     <>
       <section
-        className="section"
-        style={{background: family.palette.bg, color: family.palette.fg}}
+        className="design-hero"
+        style={
+          {
+            '--tone': family.palette.bg,
+            '--tone-fg': family.palette.fg,
+          } as React.CSSProperties
+        }
         aria-labelledby="design-title"
       >
-        <div className="container split">
-          <div className="stack">
-            <p className="eyebrow" style={{color: 'inherit'}}>
-              Design {String(family.number).padStart(2, '0')} ·{' '}
+        <div className="container design-hero__grid">
+          <div className="design-hero__copy">
+            <p className="kicker">
+              <span className="kicker__n">
+                {String(family.number).padStart(2, '0')}
+              </span>
               {isLaunch ? `Drop ${family.drop}` : 'Coming with personalization'}
             </p>
-            <h1 id="design-title" className="display">
-              {family.name}
+            <h1 id="design-title" className="design-hero__title">
+              {family.headline}
             </h1>
-            <p className="serif h3">{family.tagline}</p>
+            <p className="design-hero__name">{family.name}</p>
+            <p className="serif h3">{family.line}</p>
           </div>
-          <div
-            className="media"
-            style={{'--ratio': '4/5'} as React.CSSProperties}
-          >
+          <figure className="design-hero__media">
             <img
-              src={svgDataUri(posterArtSvg(family))}
-              alt={`${family.name} design poster`}
-              width={600}
-              height={750}
+              src={visual?.src ?? svgDataUri(posterArtSvg(family))}
+              alt={visual?.alt ?? `${family.name} design poster`}
+              width={visual?.width ?? 600}
+              height={visual?.height ?? 750}
               loading="eager"
             />
-          </div>
+          </figure>
         </div>
       </section>
 
       <section className="section" aria-labelledby="story-title">
         <div className="container split">
           <div className="stack">
-            <p className="eyebrow">The story</p>
-            <h2 id="story-title" className="h2">
-              Why we drew it
+            <p className="kicker">The story</p>
+            <h2 id="story-title" className="h1">
+              Why we <span className="serif">drew it.</span>
             </h2>
           </div>
           <div className="prose">

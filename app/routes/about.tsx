@@ -1,4 +1,5 @@
 import {Link} from 'react-router';
+import {HERO_VISUAL} from '~/lib/visuals';
 import type {Route} from './+types/about';
 import {LAUNCH_FAMILIES} from '~/data/catalogue';
 import {SITE} from '~/data/site';
@@ -16,38 +17,51 @@ export const meta: Route.MetaFunction = () =>
 export default function About() {
   return (
     <>
-      <section className="section">
-        <div className="container stack">
-          <p className="eyebrow">About Trenzora</p>
-          <h1 className="display">
-            Made for people <span className="serif">with</span> personality
-          </h1>
-          <p className="lede">{SITE.supporting}</p>
+      <section
+        className="design-hero"
+        style={
+          {'--tone': '#B4432C', '--tone-fg': '#F6EFE4'} as React.CSSProperties
+        }
+      >
+        <div className="container design-hero__grid">
+          <div className="design-hero__copy">
+            <p className="kicker">About Trenzora</p>
+            <h1 className="design-hero__title">
+              Made for people <span className="serif">with</span> personality.
+            </h1>
+            <p className="serif h3">{SITE.supporting}</p>
+          </div>
+          <figure className="design-hero__media">
+            <img
+              src={HERO_VISUAL.portrait.src}
+              width={HERO_VISUAL.portrait.width}
+              height={HERO_VISUAL.portrait.height}
+              alt={HERO_VISUAL.alt}
+              loading="eager"
+            />
+          </figure>
         </div>
       </section>
 
-      <section className="section section--sand">
+      <section className="section">
         <div className="container split">
-          <h2 className="h2">
-            Part streetwear brand. Part design studio. Part{' '}
-            <span className="serif">gifting</span> brand.
+          <h2 className="h1">
+            Part fashion label. Part design{' '}
+            <span className="serif">studio.</span>
           </h2>
           <div className="prose">
             <p>
-              Trenzora started with a simple idea: the things we wear and carry
-              every day should say something about who we are — and where we’re
-              from.
+              Clothes and objects should say something about who you are, and
+              where you’re from.
             </p>
             <p>
-              Every design is drawn in-house around a real Indian story: the
-              city that raised you, the friend who knows the plan, the coffee
-              order that needs a paragraph. We don’t resell stock graphics and
-              we don’t do cheap meme tees.
+              Every Trenzora design is drawn in-house around a real Indian
+              story: the city that raised you, the friend who knows too much,
+              the coffee that starts the day. No stock graphics.
             </p>
             <p>
-              Each design is made to work across three pieces — a premium
-              oversized tee, an everyday tote and a 20oz tumbler — so you can
-              wear it, carry it, or gift it.
+              One design, three pieces: an oversized tee, a canvas tote, a 20oz
+              tumbler. Wear it, carry it, sip from it.
             </p>
           </div>
         </div>
@@ -59,28 +73,31 @@ export default function About() {
             <div className="info-card">
               <h2>Original designs</h2>
               <p className="muted">
-                {LAUNCH_FAMILIES.length} launch designs, from Mumbai Made to
-                Desi Roots. New designs drop every week.
+                {LAUNCH_FAMILIES.length} originals, from Mumbai Made to Desi
+                Roots. New drops every week.
               </p>
             </div>
             <div className="info-card">
               <h2>Printed to order</h2>
               <p className="muted">
-                Nothing is printed until you order it. Less waste, no dead
-                stock, and every piece made fresh for you in India.
+                Nothing is printed until you order. No dead stock. Made fresh in
+                India.
               </p>
             </div>
             <div className="info-card">
               <h2>Personal by design</h2>
               <p className="muted">
-                Designs like Us and Make It Yours are built to carry your names
-                and words. Personal text is launching soon.
+                Your names, your city, your date. Personalization is coming
+                soon.
               </p>
             </div>
           </div>
           <p className="center way-foot">
-            <Link to="/collections/drops" className="btn btn--primary btn--lg">
-              Explore the drop
+            <Link
+              to="/collections/mumbai-made"
+              className="btn btn--primary btn--lg"
+            >
+              Explore Drop 01
             </Link>
           </p>
         </div>

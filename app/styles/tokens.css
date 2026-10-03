@@ -39,10 +39,10 @@
   --fs-md: 1rem;
   --fs-lg: 1.125rem;
   --fs-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --fs-h3: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
-  --fs-h2: clamp(1.875rem, 1.4rem + 2.2vw, 3rem);
-  --fs-h1: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);
-  --fs-mega: clamp(3.25rem, 1.4rem + 8.6vw, 9rem);
+  --fs-h3: clamp(1.375rem, 1.15rem + 1vw, 1.875rem);
+  --fs-h2: clamp(2rem, 1.35rem + 2.8vw, 3.5rem);
+  --fs-h1: clamp(2.6rem, 1.4rem + 5.4vw, 6rem);
+  --fs-mega: clamp(3.25rem, 1rem + 10vw, 11rem);
 
   --lh-tight: 0.92;
   --lh-snug: 1.15;
@@ -68,9 +68,10 @@
   --measure: 38rem;
 
   /* Shape + depth */
-  --r-sm: 4px;
-  --r-md: 10px;
-  --r-lg: 18px;
+  /* Editorial: square image crops, barely-rounded controls. */
+  --r-sm: 2px;
+  --r-md: 3px;
+  --r-lg: 4px;
   --r-pill: 999px;
   --shadow-1: 0 1px 2px rgb(22 19 15 / 0.06), 0 4px 16px rgb(22 19 15 / 0.06);
   --shadow-2: 0 12px 48px rgb(22 19 15 / 0.18);
@@ -80,6 +81,8 @@
   --dur-1: 140ms;
   --dur-2: 260ms;
   --dur-3: 480ms;
+  --dur-slow: 1100ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Layout */
   --header-h: 3.75rem;
