@@ -50,6 +50,7 @@ npm run verify:store             # store identity (blocks MaternEase), INR, poli
 At this point products are expected to be "0/24 visible", since nothing has been imported yet.
 
 ### D. Import the 24 V1 products as DRAFTS
+Full procedure, both routes (Admin CSV or the API `productSet`), and the pre- and post-flight queries: **`catalogue/README.md`**.
 
 🔒 **GATE 2: authorize creating 24 draft products (56 variants) in the Trenzora store.** The CSV contains V1 only. Us and Make It Yours (V2) are never exported for import.
 

@@ -1,0 +1,35 @@
+# GATE 2 (API route) — create/update ONE V1 product as DRAFT. Run once per
+# entry in products.productSet.json ({identifier, input} = the variables).
+# Keyed by handle: re-running updates the same product, never duplicates.
+# productSet does not publish to any sales channel. Trenzora store only —
+# run store-identity.graphql first. Validated: Admin API 2026-04.
+mutation TrenzoraProductSet(
+  $input: ProductSetInput!
+  $identifier: ProductSetIdentifiers
+) {
+  productSet(input: $input, identifier: $identifier, synchronous: true) {
+    product {
+      id
+      handle
+      status
+      variantsCount {
+        count
+      }
+      variants(first: 10) {
+        nodes {
+          sku
+          price
+          inventoryPolicy
+        }
+      }
+      resourcePublicationsCount {
+        count
+      }
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}

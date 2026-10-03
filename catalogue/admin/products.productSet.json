@@ -1,0 +1,2268 @@
+[
+  {
+    "identifier": {
+      "handle": "mumbai-made-oversized-tee"
+    },
+    "input": {
+      "title": "Mumbai Made — Premium Oversized Tee",
+      "handle": "mumbai-made-oversized-tee",
+      "descriptionHtml": "<p>Two words, one city. For everyone Mumbai raised, wherever life goes next.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:mumbai-made",
+        "type:oversized-tee",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Mumbai Made — Premium Oversized Tee | Trenzora",
+        "description": "Built here. Worn everywhere. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-MUM-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-MUM-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-MUM-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-MUM-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-MUM-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "mumbai-made-tote"
+    },
+    "input": {
+      "title": "Mumbai Made — Everyday Tote",
+      "handle": "mumbai-made-tote",
+      "descriptionHtml": "<p>Two words, one city. For everyone Mumbai raised, wherever life goes next.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:mumbai-made",
+        "type:tote",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Mumbai Made — Everyday Tote | Trenzora",
+        "description": "Built here. Worn everywhere. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-MUM-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "mumbai-made-tumbler"
+    },
+    "input": {
+      "title": "Mumbai Made — 20oz Tumbler",
+      "handle": "mumbai-made-tumbler",
+      "descriptionHtml": "<p>Two words, one city. For everyone Mumbai raised, wherever life goes next.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:mumbai-made",
+        "type:tumbler",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Mumbai Made — 20oz Tumbler | Trenzora",
+        "description": "Built here. Worn everywhere. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-MUM-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "local-life-oversized-tee"
+    },
+    "input": {
+      "title": "Local Life — Premium Oversized Tee",
+      "handle": "local-life-oversized-tee",
+      "descriptionHtml": "<p>The fast local, the window seat you fought for, the compartment that knows your face. For the legends of the line.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:local-life",
+        "type:oversized-tee",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Local Life — Premium Oversized Tee | Trenzora",
+        "description": "Different station. Same story. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-LOC-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-LOC-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-LOC-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-LOC-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-LOC-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "local-life-tote"
+    },
+    "input": {
+      "title": "Local Life — Everyday Tote",
+      "handle": "local-life-tote",
+      "descriptionHtml": "<p>The fast local, the window seat you fought for, the compartment that knows your face. For the legends of the line.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:local-life",
+        "type:tote",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Local Life — Everyday Tote | Trenzora",
+        "description": "Different station. Same story. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-LOC-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "local-life-tumbler"
+    },
+    "input": {
+      "title": "Local Life — 20oz Tumbler",
+      "handle": "local-life-tumbler",
+      "descriptionHtml": "<p>The fast local, the window seat you fought for, the compartment that knows your face. For the legends of the line.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:local-life",
+        "type:tumbler",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Local Life — 20oz Tumbler | Trenzora",
+        "description": "Different station. Same story. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-LOC-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "corporate-survivor-oversized-tee"
+    },
+    "input": {
+      "title": "Corporate Survivor — Premium Oversized Tee",
+      "handle": "corporate-survivor-oversized-tee",
+      "descriptionHtml": "<p>Back-to-back calls, a calendar with no gaps. For everyone still standing.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:corporate-survivor",
+        "type:oversized-tee",
+        "drop:01",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Corporate Survivor — Premium Oversized Tee | Trenzora",
+        "description": "This meeting could have been an email. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COR-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COR-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COR-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COR-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COR-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "corporate-survivor-tote"
+    },
+    "input": {
+      "title": "Corporate Survivor — Everyday Tote",
+      "handle": "corporate-survivor-tote",
+      "descriptionHtml": "<p>Back-to-back calls, a calendar with no gaps. For everyone still standing.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:corporate-survivor",
+        "type:tote",
+        "drop:01",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Corporate Survivor — Everyday Tote | Trenzora",
+        "description": "This meeting could have been an email. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order in India"
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COR-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "corporate-survivor-tumbler"
+    },
+    "input": {
+      "title": "Corporate Survivor — 20oz Tumbler",
+      "handle": "corporate-survivor-tumbler",
+      "descriptionHtml": "<p>Back-to-back calls, a calendar with no gaps. For everyone still standing.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:corporate-survivor",
+        "type:tumbler",
+        "drop:01",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Corporate Survivor — 20oz Tumbler | Trenzora",
+        "description": "This meeting could have been an email. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COR-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "coffee-personality-oversized-tee"
+    },
+    "input": {
+      "title": "Coffee Personality — Premium Oversized Tee",
+      "handle": "coffee-personality-oversized-tee",
+      "descriptionHtml": "<p>Every plan worth making started over a cup. Membership to the Bombay Coffee Club.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:coffee-personality",
+        "type:oversized-tee",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Coffee Personality — Premium Oversized Tee | Trenzora",
+        "description": "Good ideas start with coffee. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COF-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COF-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COF-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COF-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COF-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "coffee-personality-tote"
+    },
+    "input": {
+      "title": "Coffee Personality — Everyday Tote",
+      "handle": "coffee-personality-tote",
+      "descriptionHtml": "<p>Every plan worth making started over a cup. Membership to the Bombay Coffee Club.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:coffee-personality",
+        "type:tote",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Coffee Personality — Everyday Tote | Trenzora",
+        "description": "Good ideas start with coffee. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COF-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "coffee-personality-tumbler"
+    },
+    "input": {
+      "title": "Coffee Personality — 20oz Tumbler",
+      "handle": "coffee-personality-tumbler",
+      "descriptionHtml": "<p>Every plan worth making started over a cup. Membership to the Bombay Coffee Club.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:coffee-personality",
+        "type:tumbler",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Coffee Personality — 20oz Tumbler | Trenzora",
+        "description": "Good ideas start with coffee. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-COF-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "bestie-energy-oversized-tee"
+    },
+    "input": {
+      "title": "Bestie Energy — Premium Oversized Tee",
+      "handle": "bestie-energy-oversized-tee",
+      "descriptionHtml": "<p>Every secret, every 2 a.m. voice note. She’s heard it all, and she’s still here.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:bestie-energy",
+        "type:oversized-tee",
+        "drop:01",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Bestie Energy — Premium Oversized Tee | Trenzora",
+        "description": "She knows too much. That’s why she’s my bestie. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order "
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-BES-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-BES-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-BES-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-BES-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-BES-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "bestie-energy-tote"
+    },
+    "input": {
+      "title": "Bestie Energy — Everyday Tote",
+      "handle": "bestie-energy-tote",
+      "descriptionHtml": "<p>Every secret, every 2 a.m. voice note. She’s heard it all, and she’s still here.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:bestie-energy",
+        "type:tote",
+        "drop:01",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Bestie Energy — Everyday Tote | Trenzora",
+        "description": "She knows too much. That’s why she’s my bestie. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order"
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-BES-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "bestie-energy-tumbler"
+    },
+    "input": {
+      "title": "Bestie Energy — 20oz Tumbler",
+      "handle": "bestie-energy-tumbler",
+      "descriptionHtml": "<p>Every secret, every 2 a.m. voice note. She’s heard it all, and she’s still here.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:bestie-energy",
+        "type:tumbler",
+        "drop:01",
+        "col:drops",
+        "col:trending",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Bestie Energy — 20oz Tumbler | Trenzora",
+        "description": "She knows too much. That’s why she’s my bestie. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India"
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-BES-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "pet-parent-oversized-tee"
+    },
+    "input": {
+      "title": "Pet Parent — Premium Oversized Tee",
+      "handle": "pet-parent-oversized-tee",
+      "descriptionHtml": "<p>Indie or pedigree, adopted or rescued. They run the house; you’re just the staff.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:pet-parent",
+        "type:oversized-tee",
+        "drop:01",
+        "col:drops",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Pet Parent — Premium Oversized Tee | Trenzora",
+        "description": "Proud member of the Pet Parent Club. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-PET-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-PET-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-PET-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-PET-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-PET-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "pet-parent-tote"
+    },
+    "input": {
+      "title": "Pet Parent — Everyday Tote",
+      "handle": "pet-parent-tote",
+      "descriptionHtml": "<p>Indie or pedigree, adopted or rescued. They run the house; you’re just the staff.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:pet-parent",
+        "type:tote",
+        "drop:01",
+        "col:drops",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Pet Parent — Everyday Tote | Trenzora",
+        "description": "Proud member of the Pet Parent Club. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-PET-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "pet-parent-tumbler"
+    },
+    "input": {
+      "title": "Pet Parent — 20oz Tumbler",
+      "handle": "pet-parent-tumbler",
+      "descriptionHtml": "<p>Indie or pedigree, adopted or rescued. They run the house; you’re just the staff.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:pet-parent",
+        "type:tumbler",
+        "drop:01",
+        "col:drops",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Pet Parent — 20oz Tumbler | Trenzora",
+        "description": "Proud member of the Pet Parent Club. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-PET-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "campus-energy-oversized-tee"
+    },
+    "input": {
+      "title": "Campus Energy — Premium Oversized Tee",
+      "handle": "campus-energy-oversized-tee",
+      "descriptionHtml": "<p>Canteen debates, 2 a.m. Maggi, the night-before-the-exam plan. The years you’ll talk about forever.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:campus-energy",
+        "type:oversized-tee",
+        "drop:01",
+        "col:drops"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Campus Energy — Premium Oversized Tee | Trenzora",
+        "description": "Attendance is a suggestion. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-CAM-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-CAM-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-CAM-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-CAM-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-CAM-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "campus-energy-tote"
+    },
+    "input": {
+      "title": "Campus Energy — Everyday Tote",
+      "handle": "campus-energy-tote",
+      "descriptionHtml": "<p>Canteen debates, 2 a.m. Maggi, the night-before-the-exam plan. The years you’ll talk about forever.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:campus-energy",
+        "type:tote",
+        "drop:01",
+        "col:drops"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Campus Energy — Everyday Tote | Trenzora",
+        "description": "Attendance is a suggestion. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-CAM-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "campus-energy-tumbler"
+    },
+    "input": {
+      "title": "Campus Energy — 20oz Tumbler",
+      "handle": "campus-energy-tumbler",
+      "descriptionHtml": "<p>Canteen debates, 2 a.m. Maggi, the night-before-the-exam plan. The years you’ll talk about forever.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:campus-energy",
+        "type:tumbler",
+        "drop:01",
+        "col:drops"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Campus Energy — 20oz Tumbler | Trenzora",
+        "description": "Attendance is a suggestion. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-CAM-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "desi-roots-oversized-tee"
+    },
+    "input": {
+      "title": "Desi Roots — Premium Oversized Tee",
+      "handle": "desi-roots-oversized-tee",
+      "descriptionHtml": "<p>“Maajhi Mumbai”: my Mumbai, written in Marathi. For everyone whose roots run through the city, here or far away.</p><p>A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape.</p>",
+      "vendor": "Trenzora",
+      "productType": "T-Shirt",
+      "tags": [
+        "design:desi-roots",
+        "type:oversized-tee",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Desi Roots — Premium Oversized Tee | Trenzora",
+        "description": "Same roots. New stories. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Size",
+          "values": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "M"
+            },
+            {
+              "name": "L"
+            },
+            {
+              "name": "XL"
+            },
+            {
+              "name": "XXL"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "S"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-DES-TEE-S",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "M"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-DES-TEE-M",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "L"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-DES-TEE-L",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-DES-TEE-XL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        },
+        {
+          "optionValues": [
+            {
+              "optionName": "Size",
+              "name": "XXL"
+            }
+          ],
+          "price": "999.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-DES-TEE-XXL",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 300,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "desi-roots-tote"
+    },
+    "input": {
+      "title": "Desi Roots — Everyday Tote",
+      "handle": "desi-roots-tote",
+      "descriptionHtml": "<p>“Maajhi Mumbai”: my Mumbai, written in Marathi. For everyone whose roots run through the city, here or far away.</p><p>A sturdy cotton canvas tote with long handles — laptop, groceries, life.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tote Bag",
+      "tags": [
+        "design:desi-roots",
+        "type:tote",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Desi Roots — Everyday Tote | Trenzora",
+        "description": "Same roots. New stories. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "599.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-DES-TOT",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 200,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "identifier": {
+      "handle": "desi-roots-tumbler"
+    },
+    "input": {
+      "title": "Desi Roots — 20oz Tumbler",
+      "handle": "desi-roots-tumbler",
+      "descriptionHtml": "<p>“Maajhi Mumbai”: my Mumbai, written in Marathi. For everyone whose roots run through the city, here or far away.</p><p>A 20oz insulated stainless steel tumbler, printed edge to edge.</p>",
+      "vendor": "Trenzora",
+      "productType": "Tumbler",
+      "tags": [
+        "design:desi-roots",
+        "type:tumbler",
+        "drop:01",
+        "col:mumbai-made",
+        "col:drops",
+        "col:gifts"
+      ],
+      "status": "DRAFT",
+      "seo": {
+        "title": "Desi Roots — 20oz Tumbler | Trenzora",
+        "description": "Same roots. New stories. A 20oz insulated stainless steel tumbler, printed edge to edge. Original Trenzora design, made to order in India."
+      },
+      "productOptions": [
+        {
+          "name": "Title",
+          "values": [
+            {
+              "name": "Default Title"
+            }
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "optionValues": [
+            {
+              "optionName": "Title",
+              "name": "Default Title"
+            }
+          ],
+          "price": "1099.00",
+          "compareAtPrice": null,
+          "taxable": true,
+          "inventoryPolicy": "CONTINUE",
+          "inventoryItem": {
+            "sku": "TRZ-DES-TMB",
+            "tracked": false,
+            "requiresShipping": true,
+            "measurement": {
+              "weight": {
+                "value": 450,
+                "unit": "GRAMS"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+]

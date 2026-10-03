@@ -1,0 +1,46 @@
+# After Gate 2/3 — confirm exactly 24 DRAFT V1 products, 56 variants, no V2
+# handles, nothing published, and the 4 collections with their rules.
+# Read-only. Validated: Admin API 2026-04.
+query TrenzoraPostImportCheck {
+  products(first: 50, query: "tag:\"drop:01\"") {
+    nodes {
+      handle
+      status
+      tags
+      variantsCount {
+        count
+      }
+      resourcePublicationsCount {
+        count
+      }
+    }
+  }
+  v2: products(first: 10, query: "handle:us-* OR handle:make-it-yours-*") {
+    nodes {
+      handle
+      status
+    }
+  }
+  collections(
+    first: 10
+    query: "handle:mumbai-made OR handle:drops OR handle:gifts OR handle:trending"
+  ) {
+    nodes {
+      handle
+      title
+      productsCount {
+        count
+      }
+      ruleSet {
+        rules {
+          column
+          relation
+          condition
+        }
+      }
+      resourcePublicationsCount {
+        count
+      }
+    }
+  }
+}

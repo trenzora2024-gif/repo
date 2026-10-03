@@ -294,7 +294,7 @@ const collections: Obj[] = LAUNCH_COLLECTIONS.map((handle, index) => {
     description: meta.description,
     descriptionHtml: `<p>${meta.description}</p>`,
     image: null,
-    seo: {title: null, description: null},
+    seo: {title: meta.seo.title, description: meta.seo.description},
     updatedAt: '2026-10-01T00:00:00Z',
     trackingParameters: null,
     metafield: () => null,

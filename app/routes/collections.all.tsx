@@ -9,8 +9,8 @@ import {breadcrumbJsonLd, seoMeta} from '~/lib/seo';
 /** "Shop" — every product. Shopify has no API collection for `all`. */
 export const meta: Route.MetaFunction = () =>
   seoMeta({
-    title: 'Shop All — Oversized Tees, Totes & Tumblers',
-    description: COLLECTIONS.all.description,
+    title: COLLECTIONS.all.seo.title,
+    description: COLLECTIONS.all.seo.description,
     path: '/collections/all',
     jsonLd: breadcrumbJsonLd([
       {name: 'Home', path: '/'},

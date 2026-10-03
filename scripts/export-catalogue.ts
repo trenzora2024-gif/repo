@@ -4,10 +4,15 @@
  *   catalogue/shopify-products.csv   Shopify Admin → Products → Import
  *   catalogue/supplier-map.csv       SKU → supplier → production master
  *   catalogue/collections.md         Smart-collection rules to create
+ *   catalogue/admin/products.productSet.json  Same 24 products for the Admin
+ *                                    API route (admin/product-set.graphql)
+ *   catalogue/MANIFEST.json          Counts, price status, SHA-256 of every
+ *                                    import file (what exactly was imported)
  *
  * Run: npm run catalogue:export
  */
-import {mkdirSync, writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {dirname, join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {
@@ -18,6 +23,7 @@ import {
   LAUNCH_COLLECTIONS,
   TAG,
 } from '../app/data/catalogue/index.ts';
+import {PRICE_STATUS} from '../app/data/catalogue/pricing.ts';
 import {
   ARTWORK_REVISIONS,
   SUPPLIERS,
@@ -95,6 +101,7 @@ const supplierRows = CATALOGUE.flatMap((product) =>
     'Supplier product ref': '', // fill after supplier product is created
     'Image alt text (use on upload)': product.imageAlt,
     'Retail price (INR)': variant.priceInr,
+    'Price status': PRICE_STATUS,
     'Personalization planned': product.family.personalization.planned,
   })),
 );
@@ -194,7 +201,7 @@ const collectionInputs = LAUNCH_COLLECTIONS.filter((handle) => handle !== 'all')
       title: c.title,
       handle,
       descriptionHtml: `<p>${c.description}</p>`,
-      seo: {title: `${c.title} | Trenzora`, description: c.description},
+      seo: c.seo,
       ruleSet: {
         appliedDisjunctively: false,
         rules: [
@@ -217,6 +224,127 @@ writeFileSync(join(outDir, 'shopify-custom-pixel.js'), pixel);
 writeFileSync(join(outDir, 'shopify-products.csv'), toCsv(productRows));
 writeFileSync(join(outDir, 'supplier-map.csv'), toCsv(supplierRows));
 writeFileSync(join(outDir, 'collections.md'), collectionsMd);
+
+// Per-supplier product lists for outreach/setup (ops only, V1 only).
+mkdirSync(join(outDir, 'supplier-orders'), {recursive: true});
+for (const key of [...new Set(Object.values(SUPPLIER_BY_PRODUCT_TYPE))]) {
+  const rows = LAUNCH_CATALOGUE.filter(
+    (p) => SUPPLIER_BY_PRODUCT_TYPE[p.type.handle] === key,
+  ).flatMap((product) =>
+    product.variants.map((variant) => ({
+      SKU: variant.sku,
+      'Shopify handle': product.handle,
+      Product: product.title,
+      Size: variant.option?.value ?? '',
+      'Production master': product.family.artworkFile,
+      'Artwork text (verify on proof)': product.family.artworkText,
+      Placement:
+        product.type.handle === 'tumbler'
+          ? 'Wrap, design centred on front face'
+          : product.type.handle === 'tote'
+            ? 'One side, centred'
+            : 'Front, centred, ~1 in below collar',
+      'Supplier product ref': '',
+      'Supplier variant ref': '',
+      'Mockup saved (artwork/mockups/…)': '',
+    })),
+  );
+  writeFileSync(join(outDir, 'supplier-orders', `${key}.csv`), toCsv(rows));
+}
+
+// Admin API route: one productSet call per product, keyed by handle so a
+// re-run updates instead of duplicating. Status DRAFT; productSet does not
+// publish to any sales channel.
+const productSetInputs = LAUNCH_CATALOGUE.map((product) => ({
+  identifier: {handle: product.handle},
+  input: {
+    title: product.title,
+    handle: product.handle,
+    descriptionHtml: product.descriptionHtml,
+    vendor: product.vendor,
+    productType: product.type.shopifyProductType,
+    tags: product.tags,
+    status: 'DRAFT',
+    seo: product.seo,
+    productOptions: product.type.option
+      ? [
+          {
+            name: product.type.option.name,
+            values: product.type.option.values.map((name) => ({name})),
+          },
+        ]
+      : [{name: 'Title', values: [{name: 'Default Title'}]}],
+    variants: product.variants.map((variant) => ({
+      optionValues: [
+        variant.option
+          ? {optionName: variant.option.name, name: variant.option.value}
+          : {optionName: 'Title', name: 'Default Title'},
+      ],
+      price: variant.priceInr.toFixed(2),
+      compareAtPrice: null,
+      taxable: true,
+      inventoryPolicy: 'CONTINUE',
+      inventoryItem: {
+        sku: variant.sku,
+        tracked: false,
+        requiresShipping: true,
+        measurement: {
+          weight: {value: product.type.weightGrams, unit: 'GRAMS'},
+        },
+      },
+    })),
+  },
+}));
+writeFileSync(
+  join(outDir, 'admin', 'products.productSet.json'),
+  JSON.stringify(productSetInputs, null, 2) + '\n',
+);
+
+const sha = (file: string) =>
+  createHash('sha256')
+    .update(readFileSync(join(outDir, file)))
+    .digest('hex');
+const packageFiles = [
+  'shopify-products.csv',
+  'supplier-orders/printrove.csv',
+  'supplier-orders/qikink.csv',
+  'admin/products.productSet.json',
+  'admin/collections.variables.json',
+  'collections.md',
+  'supplier-map.csv',
+];
+writeFileSync(
+  join(outDir, 'MANIFEST.json'),
+  JSON.stringify(
+    {
+      release: 'V1',
+      products: LAUNCH_CATALOGUE.length,
+      variants: productRows.length,
+      collections: collectionInputs.map((c) => ({
+        handle: c.input.handle,
+        title: c.input.title,
+        products: LAUNCH_CATALOGUE.filter((p) =>
+          p.collections.includes(c.input.handle as never),
+        ).length,
+      })),
+      excluded: CATALOGUE.filter((p) => p.family.release !== 'v1').map(
+        (p) => p.handle,
+      ),
+      priceStatus: PRICE_STATUS,
+      prices: Object.fromEntries(
+        [...new Set(LAUNCH_CATALOGUE.map((p) => p.type.handle))].map((t) => [
+          t,
+          LAUNCH_CATALOGUE.find((p) => p.type.handle === t)!.priceInr,
+        ]),
+      ),
+      productStatus: 'DRAFT',
+      published: false,
+      files: Object.fromEntries(packageFiles.map((f) => [f, sha(f)])),
+    },
+    null,
+    2,
+  ) + '\n',
+);
 
 // eslint-disable-next-line no-console
 console.log(

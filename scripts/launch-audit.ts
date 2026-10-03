@@ -7,6 +7,8 @@
 //   catalogue/image-replacement-map.csv  every temporary image + what replaces it
 // Exit code 1 if any check fails.
 import {execSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {join} from 'node:path';
 import {existsSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
 
 import {
@@ -19,7 +21,7 @@ import {
   PRODUCT_TYPES,
   TAG,
 } from '../app/data/catalogue/index.ts';
-import {RETAIL_PRICE_INR} from '../app/data/catalogue/pricing.ts';
+import {PRICE_STATUS, RETAIL_PRICE_INR} from '../app/data/catalogue/pricing.ts';
 import {SUPPLIERS, SUPPLIER_BY_PRODUCT_TYPE} from '../ops/suppliers.ts';
 import {SUPPLIER_TEMPLATES} from '../ops/supplier-templates.ts';
 
@@ -182,6 +184,135 @@ check(
 );
 check('export', !/printrove|qikink/i.test(csv), 'CSV has no supplier names');
 
+/* ------------------------------------------------- import package (API) */
+type SetEntry = {
+  identifier: {handle: string};
+  input: {
+    handle: string;
+    status: string;
+    variants: {
+      price: string;
+      compareAtPrice: null;
+      inventoryItem: {sku: string};
+    }[];
+  };
+};
+const setFile = 'catalogue/admin/products.productSet.json';
+const sets: SetEntry[] = existsSync(setFile)
+  ? (JSON.parse(readFileSync(setFile, 'utf8')) as SetEntry[])
+  : [];
+const setSkus = sets.flatMap((e) =>
+  e.input.variants.map((v) => v.inventoryItem.sku),
+);
+check(
+  'package',
+  sets.length === EXPECTED.products &&
+    setSkus.length === EXPECTED.variants &&
+    setSkus.every((sku) => skus.includes(sku)),
+  `products.productSet.json: ${sets.length} products / ${setSkus.length} variants, SKUs match the CSV`,
+);
+check(
+  'package',
+  sets.every(
+    (e) => e.input.status === 'DRAFT' && e.identifier.handle === e.input.handle,
+  ),
+  'API inputs: every product DRAFT, keyed by handle (re-runs update, never duplicate)',
+);
+check(
+  'package',
+  sets.every((e) =>
+    e.input.variants.every((v) => {
+      const product = LAUNCH_CATALOGUE.find((p) => p.handle === e.input.handle);
+      return v.compareAtPrice === null && Number(v.price) === product?.priceInr;
+    }),
+  ),
+  'API inputs: prices match pricing.ts, no compare-at prices',
+);
+check(
+  'package',
+  !sets.some((e) => /^(us|make-it-yours)-/.test(e.input.handle)),
+  'API inputs contain no V2 products',
+);
+const manifestFile = 'catalogue/MANIFEST.json';
+if (existsSync(manifestFile)) {
+  const pkg = JSON.parse(readFileSync(manifestFile, 'utf8')) as {
+    files: Record<string, string>;
+    priceStatus: string;
+  };
+  const stale = Object.entries(pkg.files).filter(
+    ([file, hash]) =>
+      createHash('sha256')
+        .update(readFileSync(join('catalogue', file)))
+        .digest('hex') !== hash,
+  );
+  check(
+    'package',
+    !stale.length,
+    stale.length
+      ? `MANIFEST.json out of date for ${stale.map(([f]) => f).join(', ')} (run catalogue:export)`
+      : `MANIFEST.json checksums match ${Object.keys(pkg.files).length} package files`,
+  );
+  check(
+    'package',
+    pkg.priceStatus === PRICE_STATUS,
+    `MANIFEST price status: ${pkg.priceStatus}`,
+  );
+} else {
+  check('package', false, 'MANIFEST.json missing (run catalogue:export)');
+}
+for (const handle of created) {
+  const seo = COLLECTIONS[handle].seo;
+  check(
+    'collections',
+    seo.title.length <= 60 &&
+      seo.description.length >= 70 &&
+      seo.description.length <= 160,
+    `${handle} SEO: title ${seo.title.length} chars, description ${seo.description.length} chars`,
+  );
+}
+
+/* ------------------------------------------------------------- pricing */
+const costs = existsSync('catalogue/landed-cost-report.md')
+  ? readFileSync('catalogue/landed-cost-report.md', 'utf8')
+  : '';
+const costsComplete =
+  costs.includes('## Complete rows') && !costs.includes('## Incomplete rows');
+check(
+  'pricing',
+  PRICE_STATUS === 'provisional' || costsComplete,
+  PRICE_STATUS === 'provisional'
+    ? `prices PROVISIONAL (₹${RETAIL_PRICE_INR['oversized-tee']} / ₹${RETAIL_PRICE_INR.tote} / ₹${RETAIL_PRICE_INR.tumbler}); landed costs ${costsComplete ? 'complete — ready for Gate 4' : 'incomplete'}`
+    : `prices APPROVED with complete landed costs`,
+);
+
+/* ------------------------------------------- temporary renders not shipped */
+const shippedRenders = execSync(
+  'git ls-files public | grep -E "visuals/products/" || true',
+  {encoding: 'utf8'},
+).trim();
+check(
+  'build',
+  !shippedRenders,
+  shippedRenders
+    ? `product renders under public/ would ship: ${shippedRenders.split('\n').length} files`
+    : 'no product renders under public/ (they live in mock-assets/, never built)',
+);
+if (existsSync('dist/client')) {
+  const built = execSync(
+    'find dist/client -path "*visuals/products*" | head -1',
+    {
+      encoding: 'utf8',
+    },
+  ).trim();
+  check(
+    'build',
+    !built,
+    built
+      ? `production build contains product renders (${built})`
+      : 'last production build contains no product renders',
+  );
+}
+
 /* -------------------------------------------------------------- artwork */
 const manifest: {file: string; sha256: string}[] = existsSync(
   'catalogue/artwork-manifest.json',
@@ -268,6 +399,7 @@ const map: string[][] = [
     'Replace with',
     'Source needed',
     'Priority',
+    'Save replacement as',
     'Status',
   ],
 ];
@@ -288,6 +420,7 @@ for (const p of LAUNCH_CATALOGUE) {
       use,
       source,
       priority,
+      `artwork/mockups/${p.handle}/${file.slice(0, 2)}-${file === '01-studio' ? 'front' : file === '02-detail' ? 'detail' : 'styled'}.jpg`,
       'open',
     ]);
   }
@@ -328,6 +461,7 @@ for (const [file, used, replace] of editorial) {
     replace,
     'Photo shoot with supplier samples',
     'P1 — launch decision (see LAUNCH-BLOCKERS.md)',
+    `public/visuals/editorial/${file} (same name, same aspect ratio)`,
     'open',
   ]);
 }

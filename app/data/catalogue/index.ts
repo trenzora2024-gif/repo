@@ -38,24 +38,46 @@ export function tagQuery(tag: string) {
 
 export const COLLECTIONS: Record<
   CollectionHandle,
-  {title: string; description: string; rule: string; release: Release}
+  {
+    title: string;
+    description: string;
+    /** Search title/description (Shopify collection SEO fields). */
+    seo: {title: string; description: string};
+    rule: string;
+    release: Release;
+  }
 > = {
   all: {
     title: 'Shop All',
     description:
       'Eight originals. Tee, tote, tumbler. Printed to order in India.',
+    seo: {
+      title: 'Shop All — Oversized Tees, Totes & Tumblers',
+      description:
+        'Shop all eight Trenzora originals: premium oversized tees, canvas totes and 20oz tumblers. Designed in India, printed to order and delivered across India.',
+    },
     rule: 'Built-in Shopify collection',
     release: 'v1',
   },
   'mumbai-made': {
     title: 'Mumbai Made',
     description: 'Drop 01. Four designs for the city that keeps moving.',
+    seo: {
+      title: 'Mumbai Made — Drop 01 Tees, Totes & Tumblers',
+      description:
+        'Drop 01: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई on oversized tees, totes and tumblers. Original designs, printed to order in India.',
+    },
     rule: 'Product tag equals col:mumbai-made',
     release: 'v1',
   },
   drops: {
     title: 'Drops',
     description: 'Original designs, released in drops.',
+    seo: {
+      title: 'Drops — Original Design Tees, Totes & Tumblers',
+      description:
+        'Original Trenzora designs, released in drops: premium oversized tees, canvas totes and 20oz tumblers, printed to order and delivered across India.',
+    },
     rule: 'Product tag equals col:drops',
     release: 'v1',
   },
@@ -63,6 +85,11 @@ export const COLLECTIONS: Record<
     title: 'Personalize',
     description:
       'Designs made to carry your names, city and date, launching with personalization.',
+    seo: {
+      title: 'Personalize — Coming Soon',
+      description:
+        'Personalized Trenzora designs that carry your names, city and date are coming soon. Join the list for early access.',
+    },
     rule: 'Product tag equals col:personalize',
     // V2: only personalization designs belong here; not created in V1.
     release: 'v2',
@@ -70,12 +97,22 @@ export const COLLECTIONS: Record<
   gifts: {
     title: 'Gifts',
     description: 'For the people who get the joke.',
+    seo: {
+      title: 'Gifts with Personality — Tees, Totes & Tumblers',
+      description:
+        'Gifts for besties, colleagues, coffee people, pet parents and Mumbaikars: original-design tees, totes and tumblers, printed to order in India.',
+    },
     rule: 'Product tag equals col:gifts',
     release: 'v1',
   },
   trending: {
     title: 'The Edit',
     description: 'Where to start.',
+    seo: {
+      title: 'The Edit — Trenzora Originals to Start With',
+      description:
+        'The Edit: four Trenzora originals to start with, from Mumbai Made to Corporate Survivor, on oversized tees, canvas totes and 20oz tumblers.',
+    },
     rule: 'Product tag equals col:trending (editorial until sales data exists)',
     release: 'v1',
   },

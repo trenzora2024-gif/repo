@@ -17,3 +17,10 @@ export const RETAIL_PRICE_INR: Record<ProductTypeHandle, number> = {
 
 /** Optional per-design overrides, e.g. {'make-it-yours:tumbler': 1199}. */
 export const PRICE_OVERRIDES_INR: Record<string, number> = {};
+
+/**
+ * Price status. Stays 'provisional' until `npm run costs:check` has complete,
+ * sourced rows for every product type AND the owner approves prices (Gate 4).
+ * `npm run launch:audit` fails if this is 'approved' while costs are incomplete.
+ */
+export const PRICE_STATUS: 'provisional' | 'approved' = 'provisional';
