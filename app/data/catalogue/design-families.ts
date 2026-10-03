@@ -20,6 +20,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Mumbai Made',
     code: 'MUM',
     artworkFile: '01_mumbai_made.png',
+    artworkText: 'MUMBAI MADE · EST. 1995 · BUILT HERE. WORN EVERYWHERE.',
     tagline: 'For everyone the city raised.',
     story:
       'Local trains, cutting chai and sea-face evenings. Mumbai Made is our love letter to the city that never asks where you are from — only where you are going.',
@@ -41,6 +42,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Local Life',
     code: 'LOC',
     artworkFile: '02_local_life.png',
+    artworkText: 'LOCAL LEGEND · MUMBAI · DIFFERENT STATION. SAME STORY.',
     tagline: 'Main character of the gully.',
     story:
       'The kirana uncle who knows your order, the auto that will “adjust”, the neighbourhood that runs on its own clock. Local Life celebrates the everyday India we actually live in.',
@@ -60,6 +62,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Corporate Survivor',
     code: 'COR',
     artworkFile: '03_corporate_survivor.png',
+    artworkText: 'THIS MEETING COULD HAVE BEEN AN EMAIL. · CORPORATE SURVIVOR',
     tagline: 'Survived another “quick call”.',
     story:
       'Back-to-back meetings, “per my last email”, and a Monday that started on Sunday night. Corporate Survivor is for everyone still standing.',
@@ -80,6 +83,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Coffee Personality',
     code: 'COF',
     artworkFile: '04_coffee_personality.png',
+    artworkText: 'GOOD IDEAS START WITH COFFEE · BOMBAY COFFEE CLUB',
     tagline: 'Filter kaapi to cold brew. It’s a personality.',
     story:
       'Some people drink coffee. Some people are coffee. From steel-tumbler filter kaapi to the third cold brew of the day, this one is for the second kind.',
@@ -100,6 +104,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Bestie Energy',
     code: 'BES',
     artworkFile: '05_bestie_energy.png',
+    artworkText: "SHE KNOWS TOO MUCH. · THAT'S WHY SHE'S MY BESTIE.",
     tagline: 'The one who already knows the plan.',
     story:
       'Voice notes longer than podcasts, inside jokes no one else gets, and a friend who shows up with snacks. Bestie Energy is made to be bought in pairs.',
@@ -120,6 +125,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Us',
     code: 'USS',
     artworkFile: '06_us.png',
+    artworkText: 'YOU + ME · US · ALWAYS. · NAMES • DATE • STORY',
     tagline: 'A design for two.',
     story:
       'For the couple who argues about where to eat and always ends up at the same place. Us is a quiet, confident design for two people who are a team.',
@@ -157,6 +163,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Pet Parent',
     code: 'PET',
     artworkFile: '07_pet_parent.png',
+    artworkText: "BRUNO'S HUMAN · PET PARENT CLUB",
     tagline: 'My child has four legs.',
     story:
       'Indie or pedigree, adopted or rescued — they run the house and you are just the staff. Pet Parent is for the people whose camera roll is 80% one face.',
@@ -177,6 +184,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Campus Energy',
     code: 'CAM',
     artworkFile: '08_campus_energy.png',
+    artworkText: 'ATTENDANCE IS A SUGGESTION · CAMPUS DAYS • FOREVER',
     tagline: 'Attendance: 75%. Energy: 100%.',
     story:
       'Canteen debates, hostel Maggi at 2 a.m., and the night-before-the-exam study plan. Campus Energy is for the years you will talk about forever.',
@@ -195,6 +203,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Desi Roots',
     code: 'DES',
     artworkFile: '09_desi_roots.png',
+    artworkText: 'माझी मुंबई · SAME ROOTS. NEW STORIES.',
     tagline: 'Wherever you go, you carry home.',
     story:
       'Ghar ka khaana, your nani’s advice and the language you still dream in. Desi Roots is a modern design rooted in the things that made us.',
@@ -215,6 +224,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     name: 'Make It Yours',
     code: 'MIY',
     artworkFile: '10_make_it_yours.png',
+    artworkText: 'MAKE IT YOURS · NAME • CITY • DATE · YOUR STORY. YOUR WAY.',
     tagline: 'Your name. Your story. Our design.',
     story:
       'A Trenzora original designed to carry a name, a nickname or a line that only makes sense to you. Launching as an original first — personal text is next.',

@@ -147,7 +147,7 @@ function buildProduct(
         ),
     },
     descriptionHtml: `<p>${escapeHtml(family.story)}</p><p>${escapeHtml(type.summary)}</p>`,
-    imageAlt: `${family.name} design printed on a Trenzora ${type.shortName.toLowerCase()}`,
+    imageAlt: `${family.name} — “${family.artworkText}” typographic design printed on a Trenzora ${type.shortName.toLowerCase()}`,
   };
 }
 

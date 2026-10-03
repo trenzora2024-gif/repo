@@ -1,0 +1,332 @@
+[
+  {
+    "family": "mumbai-made",
+    "name": "Mumbai Made",
+    "file": "01_mumbai_made.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        0,
+        4499
+      ],
+      "y": [
+        806,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 0,
+      "right": 0,
+      "top": 806,
+      "bottom": 460
+    },
+    "edgeClipped": true,
+    "rowsTouchingLeft": 25,
+    "rowsTouchingRight": 82,
+    "bytes": 216251,
+    "sha256": "798b70101c3886713b8e530db8118cc62e5d9b2ca793393bb58cf61f530b36b6"
+  },
+  {
+    "family": "local-life",
+    "name": "Local Life",
+    "file": "02_local_life.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        1,
+        4499
+      ],
+      "y": [
+        786,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 1,
+      "right": 0,
+      "top": 786,
+      "bottom": 460
+    },
+    "edgeClipped": true,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 148,
+    "bytes": 210187,
+    "sha256": "28224b301d979f5a04788d02783cd358e3efc6663fb1adccee46bcd36598c27b"
+  },
+  {
+    "family": "corporate-survivor",
+    "name": "Corporate Survivor",
+    "file": "03_corporate_survivor.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        0,
+        4499
+      ],
+      "y": [
+        764,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 0,
+      "right": 0,
+      "top": 764,
+      "bottom": 460
+    },
+    "edgeClipped": true,
+    "rowsTouchingLeft": 445,
+    "rowsTouchingRight": 245,
+    "bytes": 226966,
+    "sha256": "2db4fd07f5f2e7b917bb6a1cf42e76a4fda986332577aab6bd15802d4253f9a6"
+  },
+  {
+    "family": "coffee-personality",
+    "name": "Coffee Personality",
+    "file": "04_coffee_personality.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        0,
+        4499
+      ],
+      "y": [
+        772,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 0,
+      "right": 0,
+      "top": 772,
+      "bottom": 460
+    },
+    "edgeClipped": true,
+    "rowsTouchingLeft": 210,
+    "rowsTouchingRight": 76,
+    "bytes": 249155,
+    "sha256": "bdbb5f9477d6e010f14705938ec44ed291a534a64d4eca230848fad2db21fee6"
+  },
+  {
+    "family": "bestie-energy",
+    "name": "Bestie Energy",
+    "file": "05_bestie_energy.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        0,
+        4499
+      ],
+      "y": [
+        780,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 0,
+      "right": 0,
+      "top": 780,
+      "bottom": 460
+    },
+    "edgeClipped": true,
+    "rowsTouchingLeft": 484,
+    "rowsTouchingRight": 392,
+    "bytes": 227027,
+    "sha256": "41c0b705b42450528f871ea33e10b76a2f45821dd6bcdc322b50b526bc269361"
+  },
+  {
+    "family": "us",
+    "name": "Us",
+    "file": "06_us.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        124,
+        4304
+      ],
+      "y": [
+        792,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 124,
+      "right": 195,
+      "top": 792,
+      "bottom": 460
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 234861,
+    "sha256": "d2511186b591e9eefd3e43d825a47490a5f5728b3baadbe61d9d27b809cc9ff5"
+  },
+  {
+    "family": "pet-parent",
+    "name": "Pet Parent",
+    "file": "07_pet_parent.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        495,
+        4017
+      ],
+      "y": [
+        785,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 495,
+      "right": 482,
+      "top": 785,
+      "bottom": 460
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 205115,
+    "sha256": "56984c3a083fb6891ba026e7a1d559740b886772d512498576d0faeb7edf6615"
+  },
+  {
+    "family": "campus-energy",
+    "name": "Campus Energy",
+    "file": "08_campus_energy.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        0,
+        4499
+      ],
+      "y": [
+        777,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 0,
+      "right": 0,
+      "top": 777,
+      "bottom": 460
+    },
+    "edgeClipped": true,
+    "rowsTouchingLeft": 643,
+    "rowsTouchingRight": 992,
+    "bytes": 251484,
+    "sha256": "225402b0d0a723c6dd9a1fd3f31704d47b429701dc60bb7c44aa10338f329695"
+  },
+  {
+    "family": "desi-roots",
+    "name": "Desi Roots",
+    "file": "09_desi_roots.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        225,
+        4262
+      ],
+      "y": [
+        650,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 225,
+      "right": 237,
+      "top": 650,
+      "bottom": 460
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 194376,
+    "sha256": "8a6065b64fa07e6634fa6a840246407ab611507dab9bc2fa0e59a8c201be7439"
+  },
+  {
+    "family": "make-it-yours",
+    "name": "Make It Yours",
+    "file": "10_make_it_yours.png",
+    "width": 4500,
+    "height": 5400,
+    "bitDepth": 8,
+    "colorType": "RGBA",
+    "alpha": true,
+    "dpi": 300,
+    "transparentBackground": true,
+    "inkBounds": {
+      "x": [
+        426,
+        4050
+      ],
+      "y": [
+        806,
+        4939
+      ]
+    },
+    "margins": {
+      "left": 426,
+      "right": 449,
+      "top": 806,
+      "bottom": 460
+    },
+    "edgeClipped": false,
+    "rowsTouchingLeft": 0,
+    "rowsTouchingRight": 0,
+    "bytes": 246065,
+    "sha256": "56737c1689791a8166587aa4b75b20f67d39cac0b5d0a39b312c8df90d3bb79b"
+  }
+]

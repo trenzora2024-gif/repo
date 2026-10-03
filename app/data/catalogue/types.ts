@@ -72,6 +72,11 @@ export interface DesignFamily {
   code: string;
   /** Production master artwork filename (supplier upload, not a mockup). */
   artworkFile: string;
+  /**
+   * Text as it appears on the production master (verbatim, from the
+   * official pack). Used for image alt text and catalogue records.
+   */
+  artworkText: string;
   /** One-line hook. */
   tagline: string;
   /** Short product story (2–3 sentences). */
