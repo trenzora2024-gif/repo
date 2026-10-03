@@ -12,7 +12,7 @@ Nothing has been connected to, imported into or published on any Shopify store. 
 
 - Store created (India/INR) ✓. Gate 1 approved ✓.
 - **Identity verified via the Shopify connector (read-only, 2026-10-03):** one store with permanent ID `hetvyh-8e.myshopify.com`, alias `trenzora-in.myshopify.com`, primary domain `trenzora.in` (+ `www`). Name "Trenzora", INR, India, Asia/Kolkata, prices include tax. 0 products, 1 collection (Shopify's default `frontpage`). Not MaternEase.
-- Hydrogen: no Hydrogen storefront/publication is visible yet (publications: Online Store, Point of Sale).
+- Hydrogen storefront **"Trenzora" created** ✓ (its sales channel now appears next to Online Store and Point of Sale). Still 0 products and only the default `frontpage` collection.
 - DNS (checked from here): `trenzora.in` → 23.227.38.65 and `www.trenzora.in` → shops.myshopify.com. Both point at Shopify; it gets connected to the Hydrogen storefront at Gate 6.
 - **Blocked:** this cloud environment still gets 403 for every Shopify host (`trenzora-in.myshopify.com`, accounts, admin, cdn) and for `trenzora.in`. No connection has been made to any store.
 - When unblocked, Gate 1 runs: `npx shopify hydrogen link` (you approve the login code) → `npx shopify hydrogen env pull` → `npm run verify:store -- --gate1 --expect-store trenzora-in.myshopify.com,hetvyh-8e.myshopify.com --expect-domain trenzora.in`. It stops on any store other than trenzora-in, any MaternEase match, a non-INR currency, or products already visible.
