@@ -8,13 +8,13 @@ V1 = 8 design families × 3 products = **24 products / 56 variants**. Tee → Pr
 
 For each product type, fill these in from the supplier's spec sheet or designer tool, then run `npm run supplier:check`:
 
-| Field                            | Tee (Printrove)  | Tote (Qikink) | Tumbler (Qikink)  |
-| -------------------------------- | ---------------- | ------------- | ----------------- |
-| Blank name + ref                 | to confirm       | to confirm    | to confirm        |
-| Blank colour (**your decision**) | to confirm       | to confirm    | to confirm        |
-| Print area (in)                  | to confirm       | to confirm    | to confirm (wrap) |
-| Variant refs                     | S, M, L, XL, XXL | default       | default           |
-| Source + date                    | —                | —             | —                 |
+| Field                                    | Tee (Printrove)              | Tote (Qikink)                          | Tumbler (Qikink)                     |
+| ---------------------------------------- | ---------------------------- | -------------------------------------- | ------------------------------------ |
+| Blank name + ref                         | Oversized T-shirts (working) | Unisex Tote Bag Zipper, TbZp (working) | Tumbler Bottle 20 Oz, Tumb (working) |
+| Blank colour (owner decision 2026-10-03) | **White**                    | **White**                              | **White**                            |
+| Print area (in), from the supplier page  | 15.6 × 19.6 front            | 10 × 12, one side                      | 9.5 × 8 wrap                         |
+| Variant refs                             | S, M, L, XL, XXL             | default                                | default                              |
+| Source + date                            | —                            | —                                      | —                                    |
 
 When a print area is entered, `supplier:check` reports each master's printed size and effective DPI. It flags anything below 150 DPI and never touches the PNGs. The masters are 4500 × 5400 px at 300 DPI with transparent backgrounds. Placement and scale are set in the supplier's designer.
 

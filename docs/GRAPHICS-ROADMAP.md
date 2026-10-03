@@ -16,7 +16,7 @@ The renders place the locked master **whole and uniformly scaled** on drawn blan
 1. **Supplier mockups** for the confirmed blanks (`docs/SUPPLIER-SETUP.md`). These replace the 01 studio images on Shopify.
 2. **Real photography.** This replaces the 03 styled images and the homepage editorial.
 
-The blank colours in the renders (off-white tee, natural tote, white tumbler) follow the artwork: black ink with a red rule, made for light blanks. Confirm them against the supplier blanks.
+V1 blanks are **White** for all three products (owner decision 2026-10-03). The temporary renders show an off-white tee and a natural tote; the supplier mockups on the White blanks replace them. The renders are not regenerated.
 
 No reviews, testimonials or customer photos are invented. "People of Trenzora" stays as prompts until real posts exist.
 

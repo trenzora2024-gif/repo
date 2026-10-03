@@ -29,6 +29,7 @@ import {
   SUPPLIERS,
   SUPPLIER_BY_PRODUCT_TYPE,
 } from '../ops/suppliers.ts';
+import {SUPPLIER_TEMPLATES} from '../ops/supplier-templates.ts';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(root, 'catalogue');
@@ -230,12 +231,20 @@ mkdirSync(join(outDir, 'supplier-orders'), {recursive: true});
 for (const key of [...new Set(Object.values(SUPPLIER_BY_PRODUCT_TYPE))]) {
   const rows = LAUNCH_CATALOGUE.filter(
     (p) => SUPPLIER_BY_PRODUCT_TYPE[p.type.handle] === key,
-  ).flatMap((product) =>
-    product.variants.map((variant) => ({
+  ).flatMap((product) => {
+    const template = SUPPLIER_TEMPLATES[product.type.handle];
+    return product.variants.map((variant) => ({
       SKU: variant.sku,
       'Shopify handle': product.handle,
       Product: product.title,
       Size: variant.option?.value ?? '',
+      // Printrove sells 2XL; XXL = 2XL is still to be confirmed by Printrove.
+      'Supplier size':
+        variant.option?.value === 'XXL'
+          ? '2XL (confirm = XXL)'
+          : (variant.option?.value ?? ''),
+      'Supplier product': template.blankName ?? '',
+      'Blank colour': template.blankColour ?? '',
       'Production master': product.family.artworkFile,
       'Artwork text (verify on proof)': product.family.artworkText,
       Placement:
@@ -244,11 +253,11 @@ for (const key of [...new Set(Object.values(SUPPLIER_BY_PRODUCT_TYPE))]) {
           : product.type.handle === 'tote'
             ? 'One side, centred'
             : 'Front, centred, ~1 in below collar',
-      'Supplier product ref': '',
+      'Supplier product ref': template.blankRef ?? '',
       'Supplier variant ref': '',
       'Mockup saved (artwork/mockups/…)': '',
-    })),
-  );
+    }));
+  });
   writeFileSync(join(outDir, 'supplier-orders', `${key}.csv`), toCsv(rows));
 }
 

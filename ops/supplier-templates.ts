@@ -27,7 +27,7 @@ export type SupplierTemplate = {
   blankName: string | null;
   /** Supplier's product or template ID. */
   blankRef: string | null;
-  /** Blank colour (business decision; it must suit the transparent masters). */
+  /** Blank colour (owner decision; it must suit the transparent masters). */
   blankColour: string | null;
   /** Where the design sits. Our intent; confirm the supplier supports it. */
   placement: string;
@@ -51,7 +51,8 @@ export const SUPPLIER_TEMPLATES: Record<ProductTypeHandle, SupplierTemplate> = {
     // Working mapping (Gate 4D), pending Printrove's written quote.
     blankName: 'Oversized T-shirts',
     blankRef: null,
-    blankColour: null,
+    // Owner decision 2026-10-03: White only for V1 (no other colours).
+    blankColour: 'White',
     placement: 'Front, centred, below the collar',
     // "Design Template 15.60 x 19.60 inches (W x H) – Front".
     printArea: {widthIn: 15.6, heightIn: 19.6},
@@ -67,7 +68,8 @@ export const SUPPLIER_TEMPLATES: Record<ProductTypeHandle, SupplierTemplate> = {
     // Working mapping (Gate 4D), pending Qikink's written quote.
     blankName: 'Unisex Tote Bag Zipper (type Standard)',
     blankRef: 'TbZp',
-    blankColour: null,
+    // Owner decision 2026-10-03: White (Qikink's lightest colour) only for V1.
+    blankColour: 'White',
     placement: 'One side, centred',
     // "maxPrintableAreaInches": DTF, DTG "10 x 12 inches"; POD prints the front.
     printArea: {widthIn: 10, heightIn: 12},
@@ -79,11 +81,11 @@ export const SUPPLIER_TEMPLATES: Record<ProductTypeHandle, SupplierTemplate> = {
   tumbler: {
     productType: 'tumbler',
     supplier: SUPPLIER_BY_PRODUCT_TYPE.tumbler,
-    // Working mapping (Gate 4D). Qikink lists White as the only colour, but
-    // the blank colour stays an owner decision until confirmed.
+    // Working mapping (Gate 4D). Owner decision 2026-10-03: White, the only
+    // colour Qikink lists.
     blankName: 'Tumbler Bottle (20 Oz)',
     blankRef: 'Tumb',
-    blankColour: null,
+    blankColour: 'White',
     placement:
       'Wrap: design centred on the front face of the wrap, transparent elsewhere',
     // "maxPrintableAreaInches": "9.5 x 8 inches", printed around the tumbler.

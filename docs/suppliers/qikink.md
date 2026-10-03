@@ -6,7 +6,7 @@ Product list: `catalogue/supplier-orders/qikink.csv` (16 single-variant SKUs).
 
 > Hi Qikink team, we're launching **Trenzora** (trenzora.in), an Indian original-design brand on Shopify with a headless (Hydrogen) storefront. We'd like to use Qikink for **canvas totes** and **20oz tumblers**: 8 designs each, printed on demand with blind shipping across India.
 >
-> Could you share, for **(a) a natural cotton canvas tote** and **(b) a 20oz insulated stainless-steel tumbler with lid**:
+> Could you share, for **(a) a white cotton canvas tote** and **(b) a 20oz insulated stainless-steel tumbler with lid**:
 >
 > 1. Product names and IDs, materials, dimensions, colours and the spec sheet.
 > 2. **Print method** (tote: DTG/screen/other; tumbler: sublimation or other), **print area** in inches (tote: one side; tumbler: full wrap dimensions) and file spec. Ours are 4500 × 5400 px, 300 DPI, transparent PNG.
@@ -22,15 +22,15 @@ Product list: `catalogue/supplier-orders/qikink.csv` (16 single-variant SKUs).
 
 ## Facts to record (→ `ops/supplier-templates.ts`)
 
-| Field                                                                                                                        | Tote (`tote`) | Tumbler (`tumbler`) | Source + date |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------- | ------------- |
-| `blankName`                                                                                                                  |               |                     |               |
-| `blankRef`                                                                                                                   |               |                     |               |
-| `blankColour` (**owner decision**: natural tote / white tumbler suit the artwork)                                            |               |                     |               |
-| `printArea` `{widthIn, heightIn}`                                                                                            | one side      | full wrap           |               |
-| `variantRefs.default`                                                                                                        |               |                     |               |
-| Materials (the site says "natural cotton canvas, long handles" / "double-wall stainless steel, 20oz ≈ 590 ml, lid included") |               |                     |               |
-| Print method (the site says tote "printed to order on one side", tumbler "sublimation")                                      |               |                     |               |
+| Field                                                                                                                            | Tote (`tote`) | Tumbler (`tumbler`) | Source + date |
+| -------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------- | ------------- |
+| `blankName`                                                                                                                      |               |                     |               |
+| `blankRef`                                                                                                                       |               |                     |               |
+| `blankColour` (**owner decision 2026-10-03**: White tote, White tumbler)                                                         |               |                     |               |
+| `printArea` `{widthIn, heightIn}`                                                                                                | one side      | full wrap           |               |
+| `variantRefs.default`                                                                                                            |               |                     |               |
+| Materials (the site says "white cotton canvas, long handles" / "white double-wall stainless steel, 20oz ≈ 590 ml, lid included") |               |                     |               |
+| Print method (the site says tote "printed to order on one side", tumbler "sublimation")                                          |               |                     |               |
 
 ## Costs (→ `ops/landed-cost.csv`, rows `tote,default` and `tumbler,default`)
 

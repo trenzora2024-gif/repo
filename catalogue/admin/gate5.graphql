@@ -1,0 +1,94 @@
+# Gate 5 operations (Admin GraphQL). Run ONLY after the owner approves Gate 5,
+# against the Trenzora store confirmed by admin/store-identity.graphql.
+# Validated against the Shopify Admin schema on 2026-10-03.
+# Order: 1 → 2 → 3 (each product) → 4 (each product and collection).
+# Rollback: 5 (each), then 3 with status DRAFT.
+
+# 1. Find the Hydrogen storefront's publication (catalog title "Trenzora" /
+#    Hydrogen). Never use the Online Store or Point of Sale publication.
+query Gate5Publications {
+  publications(first: 25) {
+    nodes {
+      id
+      catalog {
+        title
+      }
+    }
+  }
+}
+
+# 2. Collect the 24 V1 product IDs and the 4 collection IDs.
+#    Variables: {"query": "tag:'type:oversized-tee' OR tag:'type:tote' OR tag:'type:tumbler'"}
+#    Expect exactly 24 products (V2 is never imported) and 4 collections.
+query Gate5ProductsByTag($query: String!) {
+  products(first: 50, query: $query) {
+    nodes {
+      id
+      handle
+      status
+      resourcePublicationsCount {
+        count
+      }
+    }
+  }
+  collections(
+    first: 10
+    query: "handle:mumbai-made OR handle:drops OR handle:gifts OR handle:trending"
+  ) {
+    nodes {
+      id
+      handle
+    }
+  }
+}
+
+# 3. Set status. Gate 5: ACTIVE. Rollback: DRAFT.
+mutation Gate5SetStatus($id: ID!, $status: ProductStatus!) {
+  productUpdate(product: {id: $id, status: $status}) {
+    product {
+      id
+      handle
+      status
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+# 4. Publish to the Hydrogen publication only.
+mutation Gate5PublishToHydrogen($id: ID!, $publicationId: ID!) {
+  publishablePublish(id: $id, input: [{publicationId: $publicationId}]) {
+    publishable {
+      ... on Product {
+        handle
+      }
+      ... on Collection {
+        handle
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+
+# 5. Rollback: unpublish from the Hydrogen publication.
+mutation Gate5UnpublishFromHydrogen($id: ID!, $publicationId: ID!) {
+  publishableUnpublish(id: $id, input: [{publicationId: $publicationId}]) {
+    publishable {
+      ... on Product {
+        handle
+      }
+      ... on Collection {
+        handle
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}

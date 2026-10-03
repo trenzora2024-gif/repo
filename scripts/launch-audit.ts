@@ -375,7 +375,7 @@ check(
 const productShots = [
   [
     '01-studio',
-    'Main product image: front, on the confirmed blank',
+    'Main product image: front, on the White V1 blank',
     'Supplier designer mockup (front)',
     'P0 — before launch',
   ],
@@ -412,7 +412,10 @@ const map: string[][] = [
 ];
 for (const p of LAUNCH_CATALOGUE) {
   const supplier = SUPPLIERS[SUPPLIER_BY_PRODUCT_TYPE[p.type.handle]].name;
-  const blank = SUPPLIER_TEMPLATES[p.type.handle].blankName ?? 'TO CONFIRM';
+  const template = SUPPLIER_TEMPLATES[p.type.handle];
+  const blank = template.blankName
+    ? `${template.blankName}${template.blankRef ? ` (${template.blankRef})` : ''}, ${template.blankColour ?? 'colour TO CONFIRM'}`
+    : 'TO CONFIRM';
   for (const [file, use, source, priority] of productShots) {
     map.push([
       `mock-assets/visuals/products/${p.handle}/${file}.webp`,

@@ -16,7 +16,7 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
     shopifyProductType: 'T-Shirt',
     skuCode: 'TEE',
     summary: 'A relaxed, boxy oversized tee in soft 100% cotton.',
-    materials: ['100% cotton', 'Relaxed, boxy oversized fit'],
+    materials: ['White, 100% cotton', 'Relaxed, boxy oversized fit'],
     fit: 'Oversized, relaxed boxy fit. Take your usual size for the intended oversized look, or size down for a closer fit.',
     printMethod: 'Printed to order in India.',
     care: [
@@ -36,7 +36,7 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
     skuCode: 'TOT',
     summary:
       'A sturdy cotton canvas tote with long handles — laptop, groceries, life.',
-    materials: ['Cotton canvas', 'Long handles'],
+    materials: ['White cotton canvas', 'Long handles'],
     printMethod: 'Printed to order on one side.',
     care: [
       'Spot clean where possible',
@@ -54,7 +54,7 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
     summary:
       'A 20oz insulated stainless steel tumbler with the design printed front and centre.',
     materials: [
-      'Double-wall stainless steel',
+      'White double-wall stainless steel',
       '20oz (approx. 590 ml) capacity',
       'Lid included',
     ],

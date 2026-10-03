@@ -81,7 +81,7 @@ The mapping is fixed in the catalogue: `NN_<family>.png` → design family → i
 
 ### G. Mockups
 
-**Decision needed from you:** confirm the exact supplier blank/template and colour for each product type (Printrove tee, Qikink tote, Qikink tumbler, or alternatives). Pipeline: `docs/SUPPLIER-SETUP.md` → `npm run supplier:check` (template + artwork DPI fit), `npm run mockups:check` (validates `artwork/mockups/`, writes the upload plan), then `catalogue/admin/product-media.graphql` attaches them to the draft products. Concept cards are never uploaded as product images. QA flags any page still showing one.
+**Decided (2026-10-03):** White blanks for all three products. The working supplier products are Printrove Oversized T-shirts, Qikink Unisex Tote Bag Zipper (TbZp) and Qikink Tumbler Bottle 20 Oz (Tumb); see `ops/supplier-templates.ts`. Pipeline: `docs/SUPPLIER-SETUP.md` → `npm run supplier:check` (template + artwork DPI fit), `npm run mockups:check` (validates `artwork/mockups/`, writes the upload plan), then `catalogue/admin/product-media.graphql` attaches them to the draft products. Concept cards are never uploaded as product images. QA flags any page still showing one.
 
 ### H. Approval gate
 

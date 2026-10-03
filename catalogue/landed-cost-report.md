@@ -10,11 +10,9 @@ From `ops/landed-cost.csv`: values stated on official supplier pages, or calcula
 | Product / variant | Product + print | Supplier GST on product | Shipping | GST on shipping | COD fee | GST on COD fee | RTO charge | Not stated by supplier | Source |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | oversized-tee / A floor (not expected): white blank / minimum print charge | ₹320 (₹240 + ₹80) | ₹16 (5%) | ₹60 | not stated | ₹50 | not stated | not stated | shipping_gst_pct, cod_fee_gst_pct, rto_charge_inr | https://printrove.com/products/oversized-t-shirts (2026-10-03) |
-| oversized-tee / A floor (not expected): coloured blank / minimum print charge | ₹360 (₹240 + ₹120) | ₹18 (5%) | ₹60 | not stated | ₹50 | not stated | not stated | shipping_gst_pct, cod_fee_gst_pct, rto_charge_inr | https://printrove.com/products/oversized-t-shirts (2026-10-03) |
 | oversized-tee / C conservative: white blank / full front 15.6x19.6 in | ₹485 (₹240 + ₹245) | ₹24 (5%) | ₹60 | not stated | ₹50 | not stated | not stated | shipping_gst_pct, cod_fee_gst_pct, rto_charge_inr | https://printrove.com/products/oversized-t-shirts (2026-10-03) |
-| oversized-tee / C conservative: coloured blank / full front 15.6x19.6 in | ₹699 (₹240 + ₹459) | ₹35 (5%) | ₹60 | not stated | ₹50 | not stated | not stated | shipping_gst_pct, cod_fee_gst_pct, rto_charge_inr | https://printrove.com/products/oversized-t-shirts (2026-10-03) |
-| tote / A floor (not expected): Zipper / DTF minimum print charge | ₹230 (₹150 + ₹80) | ₹12 (5%) | ₹54 | ₹10 | ₹34 | ₹6 | ₹0 | — | https://qikink.com/custom/bags/tote-bag/ (2026-10-03) |
-| tote / C conservative: Zipper / DTF full 10x12 in print area | ₹240 (₹150 + ₹90) | ₹12 (5%) | ₹54 | ₹10 | ₹34 | ₹6 | ₹0 | — | https://qikink.com/custom/bags/tote-bag/ (2026-10-03) |
+| tote / A floor (not expected): Zipper / White / DTF minimum print charge | ₹230 (₹150 + ₹80) | ₹12 (5%) | ₹54 | ₹10 | ₹34 | ₹6 | ₹0 | — | https://qikink.com/custom/bags/tote-bag/ (2026-10-03) |
+| tote / C conservative: Zipper / White / DTF full 10x12 in print area | ₹240 (₹150 + ₹90) | ₹12 (5%) | ₹54 | ₹10 | ₹34 | ₹6 | ₹0 | — | https://qikink.com/custom/bags/tote-bag/ (2026-10-03) |
 | tumbler / 20oz White | ₹440 (₹440 + ₹0) | ₹79 (18%) | ₹54 | ₹10 | ₹34 | ₹6 | ₹0 | — | https://qikink.com/custom/drinkware/tumbler-bottle/ (2026-10-03) |
 
 ## Contribution at current prices
@@ -24,9 +22,7 @@ Supplier = product + print + supplier shipping (ex GST when input tax credit is 
 | Product / variant | Retail (GST incl.) | Embedded output GST | Taxable value | Supplier | Prepaid, before payment fee | Payment fee → prepaid after fee | Extra COD cost | COD, before payment fee | Cost per RTO |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | oversized-tee / A floor (not expected): white blank / minimum print charge | ₹999 | ₹48 (5%) | ₹951 | ₹380 | ₹571 (60.1%) | payment fee inputs missing | ₹50 | ₹521 (54.8%) | not stated |
-| oversized-tee / A floor (not expected): coloured blank / minimum print charge | ₹999 | ₹48 (5%) | ₹951 | ₹420 | ₹531 (55.9%) | payment fee inputs missing | ₹50 | ₹481 (50.6%) | not stated |
 | oversized-tee / C conservative: white blank / full front 15.6x19.6 in | ₹999 | ₹48 (5%) | ₹951 | ₹545 | ₹407 (42.8%) | payment fee inputs missing | ₹50 | ₹357 (37.5%) | not stated |
-| oversized-tee / C conservative: coloured blank / full front 15.6x19.6 in | ₹999 | ₹48 (5%) | ₹951 | ₹759 | ₹193 (20.3%) | payment fee inputs missing | ₹50 | ₹143 (15.0%) | not stated |
 
 Margins are on taxable value (GST-inclusive price ÷ (1 + output GST)). Contribution is before marketing, overheads and income tax. An RTO costs the amount shown each time it happens; no RTO rate is assumed.
 
@@ -35,18 +31,14 @@ Margins are on taxable value (GST-inclusive price ÷ (1 + output GST)). Contribu
 | Product / variant | 50% | 55% | 60% |
 | --- | --- | --- | --- |
 | oversized-tee / A floor (not expected): white blank / minimum print charge | ₹798 @ 5% / ₹903 @ 5% | ₹887 @ 5% / ₹1,003 @ 5% | ₹998 @ 5% / ₹1,129 @ 5% |
-| oversized-tee / A floor (not expected): coloured blank / minimum print charge | ₹882 @ 5% / ₹987 @ 5% | ₹980 @ 5% / ₹1,097 @ 5% | ₹1,103 @ 5% / ₹1,234 @ 5% |
 | oversized-tee / C conservative: white blank / full front 15.6x19.6 in | ₹1,144 @ 5% / ₹1,249 @ 5% | ₹1,271 @ 5% / ₹1,387 @ 5% | ₹1,430 @ 5% / ₹1,561 @ 5% |
-| oversized-tee / C conservative: coloured blank / full front 15.6x19.6 in | ₹1,593 @ 5% / ₹1,698 @ 5% | ₹1,770 @ 5% / ₹1,887 @ 5% | ₹1,991 @ 5% / ₹2,123 @ 5% |
 
 ## GST per unit at current prices (prepaid)
 
 | Product / variant | Input tax credit | Taxable value | Output GST | Input GST on supplier charges | Net GST payable | GST source type (detail: `gst_source` in business-inputs) |
 | --- | --- | --- | --- | --- | --- | --- |
 | oversized-tee / A floor (not expected): white blank / minimum print charge | yes | ₹951 | ₹48 (5%) | ₹16 + unstated GST on shipping | ₹32 | owner-provided; not government-verified |
-| oversized-tee / A floor (not expected): coloured blank / minimum print charge | yes | ₹951 | ₹48 (5%) | ₹18 + unstated GST on shipping | ₹30 | owner-provided; not government-verified |
 | oversized-tee / C conservative: white blank / full front 15.6x19.6 in | yes | ₹951 | ₹48 (5%) | ₹24 + unstated GST on shipping | ₹23 | owner-provided; not government-verified |
-| oversized-tee / C conservative: coloured blank / full front 15.6x19.6 in | yes | ₹951 | ₹48 (5%) | ₹35 + unstated GST on shipping | ₹13 | owner-provided; not government-verified |
 
 ## Incomplete rows (no contribution shown)
 
@@ -54,8 +46,8 @@ Margins are on taxable value (GST-inclusive price ÷ (1 + output GST)). Contribu
 
 | Product / variant | Missing inputs |
 | --- | --- |
-| tote / A floor (not expected): Zipper / DTF minimum print charge | owner:output_gst_pct, owner:gst_threshold_inr |
-| tote / C conservative: Zipper / DTF full 10x12 in print area | owner:output_gst_pct, owner:gst_threshold_inr |
+| tote / A floor (not expected): Zipper / White / DTF minimum print charge | owner:output_gst_pct, owner:gst_threshold_inr |
+| tote / C conservative: Zipper / White / DTF full 10x12 in print area | owner:output_gst_pct, owner:gst_threshold_inr |
 | tumbler / 20oz White | owner:output_gst_pct, owner:gst_threshold_inr |
 
 Payment fees: gateway %, fixed fee, GST on the fee and any Shopify transaction fee are not provided, so no contribution after payment fee is shown.

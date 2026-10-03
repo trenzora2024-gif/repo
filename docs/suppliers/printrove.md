@@ -22,16 +22,16 @@ Product list to share or work from: `catalogue/supplier-orders/printrove.csv` (8
 
 ## Facts to record (→ `ops/supplier-templates.ts` → `'oversized-tee'`)
 
-| Field                                                                          | Value | Source + date |
-| ------------------------------------------------------------------------------ | ----- | ------------- |
-| `blankName` (exact catalogue name)                                             |       |               |
-| `blankRef` (product ID)                                                        |       |               |
-| `blankColour` (**owner decision**: light blank required; black ink + red rule) |       |               |
-| `printArea` front `{widthIn, heightIn}`                                        |       |               |
-| `variantRefs` S / M / L / XL / XXL                                             |       |               |
-| GSM / composition (for the site copy "heavyweight, 100% cotton")               |       |               |
-| Print method (the site says "DTG")                                             |       |               |
-| Size chart (chest × length per size)                                           |       |               |
+| Field                                                            | Value | Source + date |
+| ---------------------------------------------------------------- | ----- | ------------- |
+| `blankName` (exact catalogue name)                               |       |               |
+| `blankRef` (product ID)                                          |       |               |
+| `blankColour` (**owner decision 2026-10-03**: White)             |       |               |
+| `printArea` front `{widthIn, heightIn}`                          |       |               |
+| `variantRefs` S / M / L / XL / XXL                               |       |               |
+| GSM / composition (for the site copy "heavyweight, 100% cotton") |       |               |
+| Print method (the site says "DTG")                               |       |               |
+| Size chart (chest × length per size)                             |       |               |
 
 ## Costs (→ `ops/landed-cost.csv`, one row per size)
 
