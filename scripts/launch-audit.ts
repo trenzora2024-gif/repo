@@ -277,7 +277,8 @@ const costs = existsSync('catalogue/landed-cost-report.md')
   : '';
 const costsComplete =
   costs.includes('## Contribution at current prices') &&
-  !costs.includes('## Incomplete rows');
+  !costs.includes('## Incomplete rows') &&
+  !costs.includes('payment fee inputs missing');
 check(
   'pricing',
   PRICE_STATUS === 'provisional' || costsComplete,

@@ -32,10 +32,11 @@ Nothing has been connected to, imported into or published on any Shopify store. 
 - Unplanned, not changed: Shopify's default Home page collection (`frontpage`, manual, on 3 channels) contains `mumbai-made-oversized-tee`. Neither the import nor Gate 3 put it there. The product is a draft with no channels, so it isn't customer-visible. Decide before publishing (Gate 5/6) whether it stays.
 - Gate 4 (pricing, supplier economics, artwork and shipping approval) is next and needs separate approval.
 
-## Gate 4 status: economics model ready, prices still PROVISIONAL (revised 2026-10-03)
+## Gate 4 status: supplier data verified, GST not verified, prices still PROVISIONAL (2026-10-03)
 
-- Brief: `catalogue/gate4-economics.md`. Verified supplier values: none (the official supplier pages are blocked from the cloud environment). `ops/landed-cost.csv` stays blank; unverified search figures are listed but never used.
-- `npm run costs:check` now reports contribution before and after the payment fee, prepaid and COD, the GST split, and prices for 50 / 55 / 60% margin. Inputs requested in `docs/suppliers/data-request.md`.
+- Brief: `catalogue/gate4-economics.md`. Printrove tee and Qikink tumbler costs verified from the official pages (`ops/landed-cost.csv`). Qikink tote: exact product and costs not on the page.
+- Output GST/HSN not verified: the current CBIC rate source (taxinformation.cbic.gov.in) is blocked and cbic.gov.in fails TLS verification. Payment fees not finalised.
+- `npm run costs:check` shows verified supplier charges now; contribution and 50 / 55 / 60% target prices appear once output GST is entered from an official source.
 - SEO descriptions fixed in the catalogue source and re-exported (4 changed). Not yet applied in Shopify.
 
 ## A. Shopify account and access

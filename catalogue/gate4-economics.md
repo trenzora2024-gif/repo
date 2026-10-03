@@ -1,70 +1,106 @@
-# Gate 4: economics and launch data (revised 2026-10-03)
+# Gate 4: supplier economics and tax verification (2026-10-03)
 
-Prices stay **PROVISIONAL**: ₹999 tee / ₹599 tote / ₹1,099 tumbler (GST inclusive). `ops/landed-cost.csv` is blank because no supplier value is verified yet. Nothing in Shopify was changed for Gate 4.
+Prices stay **PROVISIONAL**: ₹999 tee / ₹599 tote / ₹1,099 tumbler (GST inclusive). Nothing in Shopify was changed for Gate 4. Not approved: awaiting owner review.
 
-## Data by category
+## Network check (2026-10-03)
 
-### A. Verified from a supplier source
+| Domain                     | Result                                                                                                                                             |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| printrove.com              | reachable                                                                                                                                          |
+| qikink.com                 | reachable                                                                                                                                          |
+| help.qikink.com            | reachable (redirects to qikink.com/help/)                                                                                                          |
+| cbic-gst.gov.in            | reachable                                                                                                                                          |
+| cbic.gov.in                | **not verified**: its server sends an incomplete certificate chain (Sectigo OV R36 intermediate missing), so TLS verification fails. Not bypassed. |
+| taxinformation.cbic.gov.in | **blocked** by the environment's network policy (CBIC's current rate finder; cbic-gst.gov.in links to it)                                          |
 
-**None.** The three official pages (Printrove oversized tees, Qikink tote bags, Qikink tumbler) are blocked by this cloud environment's network policy, and no dashboard figure, invoice or written reply is on file. Each page was tried once.
+## A. Verified official supplier data
 
-### B. Owner-confirmed operational knowledge
+Every value is in `ops/landed-cost.csv` with its source URL, date and notes.
 
-- Printrove can fulfil the oversized tees and Qikink can fulfil the totes and tumblers (owner has used both).
-- Not assumed from this: prices, GST treatment, weights, shipping, COD or RTO terms, or that the blanks match the site copy.
+### Printrove oversized tee: https://printrove.com/products/oversized-t-shirts
 
-### C. Unverified (not used for costs or pricing)
+| Item                    | Value on the page                                                 |
+| ----------------------- | ----------------------------------------------------------------- |
+| Base price              | ₹240, "upto 2XL" (all sizes XS–2XL)                               |
+| Printing, white tee     | ₹0.8 per sq in, minimum ₹80                                       |
+| Printing, other colours | ₹1.5 per sq in, minimum ₹120                                      |
+| GST                     | 5%, "applicable on product price (base price + printing charges)" |
+| Shipping (prepaid)      | ₹60 per 500 g; "each t-shirt weighs about 250 grams"              |
+| COD                     | flat ₹50 extra on standard shipping (₹110 total)                  |
+| GST on shipping / COD   | not stated                                                        |
+| RTO / return charge     | not stated                                                        |
+| Print methods listed    | Direct to garment, Direct to film, Screen print for bulk          |
 
-Search-result snippets of the supplier sites, never opened:
+Print cost depends on the blank colour (not chosen) and the billed area. The page doesn't say what area is billed. The CSV brackets it: minimum charge vs the full front template (15.60 × 19.60 in = 305.76 sq in → ₹244.61 white / ₹458.64 coloured).
 
-- **Printrove tee:** blank ₹240; DTG ₹0.8–0.9 per sq in, minimum ₹80–90; GST 5%; shipping ₹60 per 500 g.
-- **Qikink:** tote ₹210; tumbler ₹440; shipping ₹54 air / ₹42.37 surface per 500 g + 18% GST; COD ₹34 + 18% GST; no RTO charge.
+### Qikink 20 oz tumbler: https://qikink.com/custom/drinkware/tumbler-bottle/
 
-Also unverified: any payment-gateway rate, any output GST rate, and any Shopify transaction fee.
+| Item                | Value on the page                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------------- |
+| Exact product       | "Tumbler Bottle", 20 Oz, White (only colour listed)                                      |
+| Base price          | ₹440 ex GST; ₹519 shown = ₹440 + 18%                                                     |
+| Printing            | included ("18% GST with print charges included")                                         |
+| GST                 | 18% (product tax rate on the page)                                                       |
+| Shipping            | ₹54 (sample pricing table)                                                               |
+| COD                 | ₹34 (sample pricing table)                                                               |
+| GST in sample       | ₹95 on ₹440 + ₹54 + ₹34 (= 18% of ₹528; the rate on shipping/COD is implied, not stated) |
+| Total in sample     | ₹623                                                                                     |
+| Weight              | 450 g; shipping weight 500 g                                                             |
+| RTO / return charge | not stated                                                                               |
 
-## Owner business and tax inputs (`ops/business-inputs.csv`, separate from supplier pricing)
+### Qikink tote: https://qikink.com/custom-tote-bags/
 
-- **Confirmed:** GST registered and input-tax-credit eligible. No ITC percentage is assumed; supplier GST is modelled separately from output GST.
-- **Prices are GST inclusive** (₹999 / ₹599 / ₹1,099). The model uses taxable value = price ÷ (1 + output GST), never price + GST, and GST is never shown as a separate customer surcharge.
-- **Output GST rates aren't set yet.** The official CBIC/GST sites are blocked from this environment too, so no rate, HSN or threshold is entered.
-  - **Tee:** the model applies a per-piece threshold on taxable value once the official rate notification gives the threshold and both rates. ₹999 incl. GST is ₹951 taxable at the lower rate, so it sits below a ₹1,000 threshold either way. The rate itself still needs the current notification.
-  - **Tote and tumbler:** HSN and rate depend on the exact Qikink products (request items Q1/T1).
-- **Payment gateway:** not chosen yet.
+**Exact product not identified.** The page is a range/bulk page with six styles and "From" prices only: Unisex Tote Bag Zipper ₹130, Unisex Tote Bag Non-Zipper ₹100, Everyday Large Tote Bag ₹200, AOP Tote Bag Zipper ₹200, AOP Tote Bag Non-Zipper ₹200, AOP Large Tote Bag ₹270.
 
-## Economics model (`npm run costs:check`)
+It doesn't say whether print or GST is included. It gives no single-piece print charge, GST rate, shipping, COD, RTO or weight. Bulk tiers (50+ pcs, Zipper tote with 10×10 in DTF) don't apply to POD. Our "Everyday Tote" (cotton canvas, long handles, one side) is **not** assumed to be Qikink's "Everyday Large Tote Bag" (multiple compartments). Nothing is entered in the CSV.
 
-Per unit, from `ops/landed-cost.csv`:
+## B. Verified official GST/CBIC data
 
-- Selling price − product − print − supplier shipping = **contribution before payment fee**
-- − gateway fee = **prepaid contribution**
-- − supplier COD fee instead of the gateway fee = **COD contribution**
-- Margins are on net revenue (price ÷ (1 + output GST)).
-- **GST shown separately:** output GST collected, input GST on supplier charges, net payable (with or without input tax credit).
-- **Target prices:** the price for 50 / 55 / 60% margin, prepaid and COD.
-- **RTO:** shown as the cost of one failed delivery; no RTO rate is assumed.
+**None.** https://cbic-gst.gov.in/gst-goods-services-rates.html ("GST rates for Goods and Services as on 01.04.2023") offers only the 2017 schedules and says "Kindly visit the website" https://taxinformation.cbic.gov.in/, which is blocked here. The 2017 schedules aren't current and aren't used. No HSN, rate, threshold, threshold basis or effective date is entered.
 
-Every input needs a source and date. A row with a blank input shows no figures.
+Supplier-side rates (what the supplier charges us, not our output rate): Printrove 5% on the tee, Qikink 18% on the tumbler.
 
-## What the current prices can absorb (no supplier figures used)
+## C. Owner business inputs (`ops/business-inputs.csv`)
 
-Maximum product + print + supplier shipping per unit, before payment fee, for each target margin. Output GST isn't confirmed (CA), so both candidate rates are shown.
+GST registered; ITC eligible subject to normal rules (no ITC % assumed); retail prices GST inclusive, never added at checkout or shown as a surcharge. Payment gateway, gateway fixed fee and Shopify transaction fee: not finalised (blank).
 
-| Product | Price  | Output GST | Net revenue | 50%    | 55%    | 60%    |
-| ------- | ------ | ---------- | ----------- | ------ | ------ | ------ |
-| Tee     | ₹999   | 5%         | ₹951        | ≤ ₹476 | ≤ ₹428 | ≤ ₹381 |
-| Tee     | ₹999   | 18%        | ₹847        | ≤ ₹423 | ≤ ₹381 | ≤ ₹339 |
-| Tote    | ₹599   | 5%         | ₹570        | ≤ ₹285 | ≤ ₹257 | ≤ ₹228 |
-| Tote    | ₹599   | 18%        | ₹508        | ≤ ₹254 | ≤ ₹228 | ≤ ₹203 |
-| Tumbler | ₹1,099 | 5%         | ₹1,047      | ≤ ₹523 | ≤ ₹471 | ≤ ₹419 |
-| Tumbler | ₹1,099 | 18%        | ₹931        | ≤ ₹466 | ≤ ₹419 | ≤ ₹373 |
+## D. Unknown / not yet verified
 
-The payment fee comes on top. Costs count ex GST if you claim input tax credit, otherwise including GST.
+- Output GST rate, HSN, any per-piece threshold and its basis, and effective date: tee, tote, tumbler.
+- Tote: exact Qikink product and all its costs.
+- Tee: blank colour; billed print area; GST on shipping/COD; RTO charge; whether our XXL is Printrove's 2XL.
+- Tumbler: whether ₹54 shipping applies to every pin code (labelled "sample"); RTO charge.
+- Payment fees.
 
-## Missing inputs
+## Model (`npm run costs:check`)
 
-Every supplier value is still missing; see `docs/suppliers/data-request.md` (P1–P10, Q1–Q8, T1–T8, O1–O4). The fastest route is to allow the supplier domains in the environment's network settings so Claude can read the official pages itself.
+`catalogue/landed-cost-report.md` now shows the verified supplier charges per unit. Contribution, embedded GST and target prices appear for each row once the output GST rate (and any threshold) is entered from an official source. Payment fees may stay blank: contribution is then shown before payment fee only. Target prices are solved at the GST rate the resulting price attracts, including across a threshold.
 
-**Tee print cost:** Printrove's charge depends on how it bills print (per sq in of the placed design, or by template size) and on the template's dimensions (P5–P7). The approved masters' inked area at native 300 DPI is about 7.9 × 12.9 in to 10.9 × 13.3 in (`artwork-manifest.json`), but that alone is **not** the billed area. Print cost isn't calculated until P5–P7 are known.
+## Product specifications (for mockup validation)
+
+**Tee (Printrove):**
+
+- 100% combed cotton, single jersey, bio-washed, side-seamed, made in India.
+- **GSM conflict on the page:** "220 GSM" in the spec list vs "180 gsm" under Durable Fabric.
+- Fit: unisex, loose and boxy.
+- Colours: baby blue, black, dusty rose, iris lavender, navy blue, red, royal blue, white, bottle green, burgundy, steel grey.
+- Sizes: XS, S, M, L, XL, 2XL.
+- Design template 15.60 × 19.60 in front, and the same at back.
+- DTG with Epson Ultrachrome DG inks; PNG with transparent background, RGB, max 16 MB, max 5000 px.
+
+**Tote (Qikink):**
+
+- Exact product not identified.
+- Page-level facts: cotton totes in white, black, navy blue, bottle green, khaki, red, maroon; 200 GSM cotton canvas.
+- Print methods: DTG, DTF or embroidery on cotton; sublimation on polyester AOP totes.
+- Max print area: 10 × 12 in per side on the standard Unisex Tote, 12 × 14 in on the Everyday Large Tote.
+- Dimensions: not stated. "Natural" colour: not listed.
+
+**Tumbler (Qikink):**
+
+- 20 oz; 304 stainless steel; double-wall insulated (FAQ: double-wall vacuum insulation).
+- Splash-proof lid, metal straw; white.
+- Sublimation, printed around the tumbler; max printable area 9.5 × 8 in; PNG/JPEG at 300 DPI.
 
 ## SEO: corrected in the catalogue source (not yet in Shopify)
 
