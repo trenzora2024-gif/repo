@@ -44,7 +44,7 @@ export function seoMeta({
     ? image
     : {
         url: absoluteUrl('/brand/og-default.jpg', origin),
-        alt: `${SITE.name} wordmark`,
+        alt: `${SITE.name}: made for people with personality`,
         width: 1200,
         height: 630,
       };
