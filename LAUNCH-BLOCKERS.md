@@ -32,6 +32,12 @@ Nothing has been connected to, imported into or published on any Shopify store. 
 - Unplanned, not changed: Shopify's default Home page collection (`frontpage`, manual, on 3 channels) contains `mumbai-made-oversized-tee`. Neither the import nor Gate 3 put it there. The product is a draft with no channels, so it isn't customer-visible. Decide before publishing (Gate 5/6) whether it stays.
 - Gate 4 (pricing, supplier economics, artwork and shipping approval) is next and needs separate approval.
 
+## Gate 4 status: economics prepared, prices still PROVISIONAL (2026-10-03)
+
+- Full brief: `catalogue/gate4-economics.md`. No verified supplier cost is on file yet, so `ops/landed-cost.csv` stays blank. Indicative (unverified) figures suggest the tee is comfortable at ₹999, and the tote and tumbler reach ~33% / 32% margin in the worst case (no input tax credit, plus a 2% Shopify fee).
+- Needed before prices can be approved: supplier dashboard prices, GST treatment, packed weights and shipping/COD/RTO for Printrove and Qikink; GST registration and output rates (CA); payment gateway; shipping and COD policy.
+- 4 corrected SEO descriptions prepared (not applied). Nothing changed in Shopify.
+
 ## A. Shopify account and access
 
 | #   | What                                                                         | Why it blocks                                                                                                                                                      | What to do                                                                                                                                                                                                                                                                                                                                              |
