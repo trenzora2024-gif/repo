@@ -3,10 +3,10 @@
     "input": {
       "title": "Mumbai Made",
       "handle": "mumbai-made",
-      "descriptionHtml": "<p>Every Trenzora design for Mumbai: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई, on tees, totes and tumblers.</p>",
+      "descriptionHtml": "<p>Drop 01. Four designs for the city that keeps moving.</p>",
       "seo": {
         "title": "Mumbai Made | Trenzora",
-        "description": "Every Trenzora design for Mumbai: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई, on tees, totes and tumblers."
+        "description": "Drop 01. Four designs for the city that keeps moving."
       },
       "ruleSet": {
         "appliedDisjunctively": false,
@@ -24,10 +24,10 @@
     "input": {
       "title": "Drops",
       "handle": "drops",
-      "descriptionHtml": "<p>Original Trenzora designs, released in drops. New designs land every week.</p>",
+      "descriptionHtml": "<p>Original designs, released in drops.</p>",
       "seo": {
         "title": "Drops | Trenzora",
-        "description": "Original Trenzora designs, released in drops. New designs land every week."
+        "description": "Original designs, released in drops."
       },
       "ruleSet": {
         "appliedDisjunctively": false,
@@ -45,10 +45,10 @@
     "input": {
       "title": "Gifts",
       "handle": "gifts",
-      "descriptionHtml": "<p>Gifts with personality: for besties, colleagues, coffee people, pet parents and anyone who misses Mumbai.</p>",
+      "descriptionHtml": "<p>For the people who get the joke.</p>",
       "seo": {
         "title": "Gifts | Trenzora",
-        "description": "Gifts with personality: for besties, colleagues, coffee people, pet parents and anyone who misses Mumbai."
+        "description": "For the people who get the joke."
       },
       "ruleSet": {
         "appliedDisjunctively": false,
@@ -64,12 +64,12 @@
   },
   {
     "input": {
-      "title": "Trending",
+      "title": "The Edit",
       "handle": "trending",
-      "descriptionHtml": "<p>What people with personality are picking right now.</p>",
+      "descriptionHtml": "<p>Where to start.</p>",
       "seo": {
-        "title": "Trending | Trenzora",
-        "description": "What people with personality are picking right now."
+        "title": "The Edit | Trenzora",
+        "description": "Where to start."
       },
       "ruleSet": {
         "appliedDisjunctively": false,

@@ -251,7 +251,16 @@ writeFileSync(OUT, html);
 writeFileSync(
   join(dirname(OUT), 'files.json'),
   JSON.stringify(
-    Object.fromEntries([...assets].sort().map((f) => [f, `public/${f}`])),
+    Object.fromEntries(
+      [...assets]
+        .sort()
+        .map((f) => [
+          f,
+          f.startsWith('visuals/products/')
+            ? `mock-assets/${f}`
+            : `public/${f}`,
+        ]),
+    ),
     null,
     2,
   ),

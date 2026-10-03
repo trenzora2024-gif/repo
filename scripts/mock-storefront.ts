@@ -70,10 +70,12 @@ function connection<T>(items: T[], args: {first?: number; last?: number} = {}) {
   };
 }
 
-// Studio renders from `npm run visuals:render` (public/visuals/), served by
-// the Hydrogen dev server, stand in for supplier product photography.
+// Studio renders from `npm run visuals:render` (mock-assets/visuals/products/),
+// served by this mock, stand in for supplier product photography. They are
+// never part of the production build.
 // MOCK_RENDERS=0 simulates a store with no product images yet.
-const ASSET_BASE = process.env.MOCK_ASSET_BASE ?? 'http://localhost:3000';
+const ASSET_BASE = process.env.MOCK_ASSET_BASE ?? `http://localhost:${PORT}`;
+const ASSET_DIR = 'mock-assets';
 const RENDER_SHOTS = [
   ['01-studio', ''],
   ['02-detail', ' — print detail'],
@@ -92,7 +94,7 @@ const products: Obj[] = SOURCE.map((item, index) =>
 
 function productImages(item: CatalogueProduct, n: number): Obj[] {
   if (process.env.MOCK_RENDERS === '0') return [];
-  const dir = `public/visuals/products/${item.handle}`;
+  const dir = `${ASSET_DIR}/visuals/products/${item.handle}`;
   if (!existsSync(dir)) return [];
   return RENDER_SHOTS.filter(([file]) => existsSync(`${dir}/${file}.webp`)).map(
     ([file, suffix], i) => ({
@@ -642,6 +644,20 @@ const typeResolver: GraphQLTypeResolver<unknown, unknown> = (value) =>
 
 async function handle(req: IncomingMessage, res: ServerResponse) {
   const url = new URL(req.url ?? '/', `http://localhost:${PORT}`);
+
+  if (/^\/visuals\/products\/[\w-]+\/[\w-]+\.webp$/.test(url.pathname)) {
+    const file = `${ASSET_DIR}${url.pathname}`;
+    if (!existsSync(file)) {
+      res.writeHead(404).end('Not found');
+      return;
+    }
+    res.writeHead(200, {
+      'content-type': 'image/webp',
+      'cache-control': 'public, max-age=3600',
+    });
+    res.end(readFileSync(file));
+    return;
+  }
 
   if (url.pathname === '/checkout') {
     res.writeHead(200, {'content-type': 'text/html; charset=utf-8'});

@@ -30,13 +30,3 @@ export function familySetVisual(family: DesignFamily) {
     alt: `${family.name}: oversized tee, tote and tumbler`,
   };
 }
-
-export function familyTrioVisual(family: DesignFamily) {
-  if (family.release !== 'v1') return null;
-  return {
-    src: `${BASE}/${family.handle}-trio.webp`,
-    width: 2100,
-    height: 1000,
-    alt: `${family.name} on a tee, a tote and a tumbler`,
-  };
-}

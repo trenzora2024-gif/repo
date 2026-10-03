@@ -20,6 +20,7 @@
     "qa:storefront": "node scripts/qa-storefront.mjs",
     "preview:snapshot": "node scripts/preview-snapshot.mjs",
     "visuals:render": "node scripts/render-visuals.mjs",
+    "launch:audit": "node scripts/launch-audit.ts",
     "supplier:check": "node scripts/supplier-check.ts",
     "costs:check": "node scripts/landed-cost.ts",
     "mockups:check": "node scripts/mockups.ts"

@@ -1,6 +1,6 @@
 # Trenzora go-live checklist
 
-The step-by-step store connection, with authorization gates, is in `docs/STORE-CONNECTION.md`.
+Owner actions: `LAUNCH-BLOCKERS.md`. The step-by-step store connection, with authorization gates, is in `docs/STORE-CONNECTION.md`. Pre-flight: `npm run launch:audit`.
 
 ## 1. Shopify store (owner action)
 

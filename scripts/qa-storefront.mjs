@@ -28,6 +28,24 @@ const BASE = (process.env.BASE_URL ?? 'http://localhost:3000').replace(
   '',
 );
 const EXPECT_CHECKOUT_HOST = process.env.QA_EXPECT_CHECKOUT_HOST;
+// QA_STUB_CONSENT=1: answer Shopify's consent-tracking and perf-kit scripts
+// with stubs (consent granted), so the analytics funnel can be verified where
+// cdn.shopify.com is unreachable (sandbox / mock). Never affects the site.
+const STUB_CONSENT = process.env.QA_STUB_CONSENT === '1';
+const CONSENT_STUB = `(() => {
+  const s = (window.Shopify = window.Shopify || {});
+  const p = (s.customerPrivacy = s.customerPrivacy || {});
+  const yes = () => true;
+  Object.assign(p, {
+    consentStatus: 'loaded',
+    analyticsProcessingAllowed: yes, marketingAllowed: yes,
+    saleOfDataAllowed: yes, preferencesProcessingAllowed: yes,
+    userCanBeTracked: yes, shouldShowBanner: () => false,
+    currentVisitorConsent: () => ({analytics: 'yes', marketing: 'yes', preferences: 'yes', sale_of_data: 'yes'}),
+    setTrackingConsent: (c, cb) => cb && cb({}), getRegion: () => 'IN',
+  });
+  document.dispatchEvent(new Event('consentTrackingApiLoaded'));
+})();`;
 const PATHS = [
   '/',
   '/collections/all',
@@ -76,6 +94,26 @@ for (const [label, viewport] of [
     isMobile: label === 'mobile',
     hasTouch: label === 'mobile',
   });
+  if (STUB_CONSENT) {
+    await ctx.route('**/consent-tracking-api.js', (route) =>
+      route.fulfill({contentType: 'text/javascript', body: CONSENT_STUB}),
+    );
+    // Shopify's own analytics beacons (monorail): accept, don't send.
+    await ctx.route(/monorail|produce_batch/, (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: '{"result":[]}',
+      }),
+    );
+    // Hydrogen holds analytics events until Shopify's perf-kit has loaded.
+    await ctx.route('**/shopify-perf-kit-spa.min.js', (route) =>
+      route.fulfill({
+        contentType: 'text/javascript',
+        body: 'window.PerfKit={navigate(){},setPageType(){}};',
+      }),
+    );
+  }
   const page = await ctx.newPage();
   const pageErrors = [];
   page.on('pageerror', (e) => pageErrors.push(e.message));
@@ -110,6 +148,10 @@ for (const [label, viewport] of [
         .map((i) => i.currentSrc.slice(0, 80)),
       placeholders: document.querySelectorAll('img[data-placeholder="concept"]')
         .length,
+      // Studio renders (npm run visuals:render) are temporary preview assets.
+      renders: [...document.images].filter((i) =>
+        /\/visuals\/(products|editorial)\//.test(i.currentSrc || i.src),
+      ).length,
       noAlt: [...document.images].filter((i) => !i.hasAttribute('alt')).length,
     }));
     const problems = [];
@@ -126,6 +168,11 @@ for (const [label, viewport] of [
     if (problems.length)
       note('block', `[${label}] ${path}: ${problems.join('; ')}`);
     else note('ok', `[${label}] ${path} — ${r.title}`);
+    if (r.renders)
+      note(
+        'warn',
+        `[${label}] ${path}: ${r.renders} studio render image(s) — replace with supplier mockups/photography before launch`,
+      );
     if (r.placeholders)
       note(
         'warn',
@@ -169,12 +216,25 @@ for (const [label, viewport] of [
           'ok',
           `[${label}] flow: checkout URL ${host}${new URL(href).pathname.slice(0, 30)}…`,
         );
+      if (STUB_CONSENT && href) {
+        // Keep the page: answer the checkout hand-off with 204, then read
+        // the begin_checkout event. Nothing is submitted.
+        await page.route(href.split('?')[0] + '**', (route) =>
+          route.fulfill({status: 204}),
+        );
+        await page.locator('.drawer.is-open a.btn--accent').click();
+        await page.waitForTimeout(500);
+      }
       const events = await page.evaluate(() =>
         (window.dataLayer ?? []).map((e) => e.event).filter(Boolean),
       );
+      const expected = STUB_CONSENT
+        ? ['page_view', 'view_item', 'add_to_cart', 'begin_checkout']
+        : ['add_to_cart'];
+      const missing = expected.filter((e) => !events.includes(e));
       note(
-        events.includes('add_to_cart') ? 'ok' : 'warn',
-        `[${label}] dataLayer events: ${events.join(', ') || 'none (Shopify consent API may be blocked)'}`,
+        missing.length ? (STUB_CONSENT ? 'block' : 'warn') : 'ok',
+        `[${label}] dataLayer events: ${events.join(', ') || 'none (Shopify consent API blocked; run with QA_STUB_CONSENT=1)'}${missing.length ? ` — missing ${missing.join(', ')}` : ''}`,
       );
     } catch {
       note('block', `[${label}] flow: add to cart did not open the cart`);

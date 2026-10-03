@@ -150,7 +150,7 @@ async function main() {
 
   // ----------------------------------------------------------- products
   const productFields = `id handle title tags availableForSale
-    images(first: 1) { nodes { url } }
+    images(first: 10) { nodes { url } }
     variants(first: 10) { nodes { sku availableForSale price { amount currencyCode } compareAtPrice { amount } selectedOptions { name value } } }`;
   const productQuery = `query { ${CATALOGUE.map((p, i) => `p${i}: product(handle: "${p.handle}") { ${productFields} }`).join('\n')} }`;
   type SfProduct = {
@@ -171,6 +171,7 @@ async function main() {
 
   let visible = 0;
   let withImages = 0;
+  let renderOnly = 0;
   CATALOGUE.forEach((expected, i) => {
     const product = products[`p${i}`];
     if (!product) return;
@@ -183,8 +184,13 @@ async function main() {
       return;
     }
     visible++;
-    if (product.images.nodes.length) withImages++;
-    else
+    const isRender = (url: string) => /\/visuals\/products\//.test(url);
+    if (product.images.nodes.length) {
+      withImages++;
+      if (product.images.nodes.every((image) => isRender(image.url))) {
+        renderOnly++;
+      }
+    } else
       report(
         'block',
         'images',
@@ -233,7 +239,13 @@ async function main() {
     report(
       withImages === visible ? 'ok' : 'block',
       'images',
-      `${withImages}/${visible} visible products have real images`,
+      `${withImages}/${visible} visible products have images`,
+    );
+  if (renderOnly)
+    report(
+      'warn',
+      'images',
+      `${renderOnly}/${visible} products only have studio renders (temporary) — replace with supplier mockups before launch (catalogue/image-replacement-map.csv)`,
     );
 
   // -------------------------------------------------------- collections

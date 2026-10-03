@@ -15,8 +15,14 @@ export default async function handleRequest(
   context: HydrogenRouterContextProvider,
 ) {
   const {nonce, header, NonceProvider} = createContentSecurityPolicy({
-    // Brand concept art renders as inline SVG data URIs.
-    imgSrc: ["'self'", 'https://cdn.shopify.com', 'data:'],
+    // Brand concept art renders as inline SVG data URIs. In development the
+    // mock storefront serves preview product renders from localhost.
+    imgSrc: [
+      "'self'",
+      'https://cdn.shopify.com',
+      'data:',
+      ...(import.meta.env.DEV ? ['http://localhost:*'] : []),
+    ],
     shop: {
       checkoutDomain: context.env.PUBLIC_CHECKOUT_DOMAIN,
       storeDomain: context.env.PUBLIC_STORE_DOMAIN,
