@@ -264,7 +264,7 @@ for (const row of parseCsv(SUPPLIER_INPUT)) {
     ).join(' | ')} |`,
   );
   gstRows.push(
-    `| ${label} | ${itc ? 'yes' : 'no'} | ${inr(r.net)} | ${inr(r.outputGst)} (${r.rate}%) | ${inr(m.inputGst)}${unstated.some((k) => k !== 'rto_charge_inr') ? ' + unstated GST on shipping' : ''} | ${inr(itc ? r.outputGst - m.inputGst : r.outputGst)} | ${biz.gst_source} |`,
+    `| ${label} | ${itc ? 'yes' : 'no'} | ${inr(r.net)} | ${inr(r.outputGst)} (${r.rate}%) | ${inr(m.inputGst)}${unstated.some((k) => k !== 'rto_charge_inr') ? ' + unstated GST on shipping' : ''} | ${inr(itc ? r.outputGst - m.inputGst : r.outputGst)} | ${biz.gst_source_type || biz.gst_source} |`,
   );
 }
 
@@ -300,7 +300,7 @@ if (complete.length) {
     '',
     '## GST per unit at current prices (prepaid)',
     '',
-    '| Product / variant | Input tax credit | Taxable value | Output GST | Input GST on supplier charges | Net GST payable | GST source |',
+    '| Product / variant | Input tax credit | Taxable value | Output GST | Input GST on supplier charges | Net GST payable | GST source type (detail: `gst_source` in business-inputs) |',
     '| --- | --- | --- | --- | --- | --- | --- |',
     ...gstRows,
     '',

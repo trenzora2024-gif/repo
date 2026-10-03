@@ -102,6 +102,47 @@ GST registered; ITC eligible subject to normal rules (no ITC % assumed); retail 
 - Splash-proof lid, metal straw; white.
 - Sublimation, printed around the tumbler; max printable area 9.5 × 8 in; PNG/JPEG at 300 DPI.
 
+## Gate 4B: follow-up (2026-10-03)
+
+**Apparel GST.** The tee is modelled at **5% up to ₹2,500 per piece, 18% above, effective 22 Sep 2025**. This is the owner-provided rule; the old ₹1,000 threshold is not used. No official text could be read here:
+
+- cbic-gst.gov.in has no 2025 rate material (61 pages and 282 linked PDFs checked).
+- pib.gov.in, gstcouncil.gov.in, taxinformation.cbic.gov.in and egazette.gov.in are blocked by the network policy.
+- cbic.gov.in fails TLS verification.
+
+Classification: HSN 6109, chapter 61 (knitted T-shirts). This is reasoned from Printrove's "single jersey" 100% cotton description, not verified. At ₹999 the rate is 5% whether the threshold uses the GST-inclusive price (₹999) or the taxable value (₹951). Every tee target price below is also under ₹2,500 on either basis.
+
+**Tote: best match, owner to confirm.** Qikink "Unisex Tote Bag Zipper" (product 19): https://qikink.com/custom/bags/tote-bag/ (`/custom/bags/19/` redirects there).
+
+| Item           | Value on the page                                                                                                         |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Material       | 100% cotton woven canvas, minimum 200 GSM; double-stitched; long handles                                                  |
+| Colours        | white, black, navy blue, bottle green, red, maroon, khaki                                                                 |
+| Base price     | ₹150 ex GST, all colours (₹158 shown incl. 5%; "Print & shipping charges extra")                                          |
+| Print methods  | DTG, DTF, embroidery; POD prints the front only                                                                           |
+| Max print area | DTF/DTG 10 × 12 in; embroidery 3.5 × 3.5 in                                                                               |
+| Artwork        | PNG/JPEG, 300 DPI, trim extra space                                                                                       |
+| Weight         | 135 g white / 150 g other colours; shipping weight 150–160 g                                                              |
+| Sample table   | Non Zipper DTF ₹115 + print ₹80 + ship ₹54 + COD ₹34 + GST ₹32 = ₹315; Zipper DTF ₹150 + ₹80 + ₹54 + ₹34 + GST ₹36 = ₹354 |
+| Not stated     | dimensions; print charge for a given size (the ₹80 has no size); RTO; HSN                                                 |
+
+The sample GST doesn't reconcile with a single stated rate, so GST on print, shipping and COD is left blank. Non Zipper appears only in that sample table; the page's only orderable type is "Standard". All ten V7 masters fit 10 × 12 in at 322 DPI or better.
+
+Alternative ruled out as the default: "Unisex Everyday Large Tote bag" (https://qikink.com/custom/bags/large-tote-bag/). It's ₹210, white/black only, nylon-lined with compartments, 16.5 × 14.5 in. Its page gives two different print areas: 10 × 10 in in its design guidelines and 10 × 12 in in its FAQ.
+
+**Tote economics are not calculated**: the print cost is unverified.
+
+**Tee GSM.** The "220 GSM bio-washed fabric" line is the product-specific spec. The conflicting "180 gsm … Lasts up to 20 washes" block is word-for-word the same on Printrove's round-neck tee page (180 GSM) and oversized hoodie page (320 GSM). So it is shared template copy: likely a page error, not a variant. Confirm with the sample.
+
+**Tee sizes.** Printrove lists XS, S, M, L, XL, 2XL and never mentions "XXL". The size guide loads from framerusercontent.com, which is blocked. **XXL = 2XL needs confirmation**; the catalogue is unchanged.
+
+**Tee print cost.** The page gives a rate per sq in and a minimum charge but doesn't define the billed area (design bounding box, placed size, or template). Both scenarios stay as separate rows; launch economics must not assume the cheaper one.
+
+- For information only, not used: V1 masters at native 300 DPI have ink bounds of 90–145 sq in.
+- At ₹0.8/sq in (white) that would be ₹80–₹116; at ₹1.5/sq in (coloured) ₹135–₹218. This holds only if billing uses the ink bounding box at native size.
+
+**Tumbler.** Qikink's page gives no HSN or classification. Its 18% is the supplier's charge to us and is kept separate; our output GST stays unverified.
+
 ## SEO: corrected in the catalogue source (not yet in Shopify)
 
 `app/data/catalogue/index.ts` now builds the search description from the longest closing that fits in 160 characters, so it always ends on a full sentence. Re-exported: only these 4 descriptions changed (all 24 now end with a full stop, longest 160).
