@@ -1,4 +1,4 @@
-product_type,variant,supplier_unit_cost_inr,supplier_cost_includes_gst,supplier_gst_pct,itc_claimable,shipping_to_customer_inr,packaging_inr,gateway_fee_pct,gateway_fixed_inr,cod_share_pct,cod_fee_inr,rto_rate_pct,rto_cost_inr,reprint_rate_pct,output_gst_pct,source,quote_date
+product_type,variant,product_cost_inr,print_cost_inr,supplier_prices_include_gst,supplier_gst_pct,shipping_inr,shipping_gst_pct,cod_fee_inr,cod_fee_gst_pct,rto_charge_inr,gateway_fee_pct,gateway_fixed_inr,gateway_fee_gst_pct,output_gst_pct,itc_claimable,source,quote_date
 oversized-tee,S,,,,,,,,,,,,,,,,
 oversized-tee,M,,,,,,,,,,,,,,,,
 oversized-tee,L,,,,,,,,,,,,,,,,

@@ -41,10 +41,10 @@
   "productStatus": "DRAFT",
   "published": false,
   "files": {
-    "shopify-products.csv": "06c5a0fb9958598dd390e47a13993a832373ec28ddc2c1e71d2b99e49f7cdf5d",
+    "shopify-products.csv": "eee4894dcd655c0111b0011d9aebffec8ca27b197d6ca229dbe11c15a2175232",
     "supplier-orders/printrove.csv": "63fbf304a2db517d1eea343bdce20330303715914e47a24528d69bfc0173f1e4",
     "supplier-orders/qikink.csv": "ee317d5e37ba3bc323bf5a60809fb6d80aa17a331804391db4b0127e1b3e5c2f",
-    "admin/products.productSet.json": "ed622361057d6c58d64e0d8df44f44f1970766df8bfb3ac1fc716e3d1740e3bc",
+    "admin/products.productSet.json": "4a162bd92c91cafb47442b4a9e7f373dc9ca9a3ed2c04ef382f6f5ce96910c57",
     "admin/collections.variables.json": "851679a9bae888da0ea887ac9815baf8d5c0d86d650bf0442fa1d66565cff7a4",
     "collections.md": "0c2f35e79e2c495e18cf14a5aa30dcc126241402c4f6de10d5a814ed0695c422",
     "supplier-map.csv": "e0ca95f66b88609e20cda4760523f0f29f9cf140c543b6f267dca74888da880d"

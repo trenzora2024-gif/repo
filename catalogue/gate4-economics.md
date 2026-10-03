@@ -1,85 +1,75 @@
-# Gate 4: economics and launch data (2026-10-03)
+# Gate 4: economics and launch data (revised 2026-10-03)
 
-Status: **prices stay PROVISIONAL** (₹999 tee / ₹599 tote / ₹1,099 tumbler, GST inclusive). `ops/landed-cost.csv` stays blank: there is still no written quote, rate card or dashboard figure on file, so `npm run costs:check` correctly shows no margin. Nothing in Shopify was changed for Gate 4.
+Prices stay **PROVISIONAL**: ₹999 tee / ₹599 tote / ₹1,099 tumbler (GST inclusive). `ops/landed-cost.csv` is blank because no supplier value is verified yet. Nothing in Shopify was changed for Gate 4.
 
-## 1. Verified landed costs
+## Data by category
 
-None yet. Printrove and Qikink both fulfil (owner-confirmed capability), but no price, GST treatment, weight or shipping figure has been read from a supplier's own dashboard, rate card or quote. Their websites are blocked from the Claude cloud environment, so nothing could be checked from there.
+### A. Verified from a supplier source
 
-## 2. Indicative only (unverified, not in `ops/landed-cost.csv`)
+**None.** The three official pages (Printrove oversized tees, Qikink tote bags, Qikink tumbler) are blocked by this cloud environment's network policy, and no dashboard figure, invoice or written reply is on file. Each page was tried once.
 
-These figures come from web-search snippets of the suppliers' public pages. The pages themselves couldn't be opened, so they may be stale or wrong. Use them only to see roughly where prices land, and confirm each one in the supplier dashboard.
+### B. Owner-confirmed operational knowledge
 
-| Item                          | Unverified public figure                      | Source shown in search                     |
-| ----------------------------- | --------------------------------------------- | ------------------------------------------ |
-| Printrove oversized tee blank | ₹240 (up to 2XL)                              | printrove.com product-tag/oversizedtshirts |
-| Printrove DTG print           | ₹0.8–0.9 per sq in, minimum ₹80–90            | same                                       |
-| Printrove GST on apparel      | 5%                                            | same                                       |
-| Printrove shipping            | ₹60 per 500 g (domestic flat)                 | same                                       |
-| Qikink Everyday Large tote    | ₹210                                          | help.qikink.com pricing                    |
-| Qikink Tumbler Bottle (20 oz) | ₹440                                          | same                                       |
-| Qikink shipping               | ₹54 air / ₹42.37 surface per 500 g, + 18% GST | qikink.com help: product weight            |
-| Qikink COD fee                | ₹34 per order + 18% GST                       | same                                       |
-| Qikink RTO                    | no RTO charge, prepaid or COD                 | qikink.com help: no RTO charges            |
+- Printrove can fulfil the oversized tees and Qikink can fulfil the totes and tumblers (owner has used both).
+- Not assumed from this: prices, GST treatment, weights, shipping, COD or RTO terms, or that the blanks match the site copy.
 
-Print area for the tee, from `artwork-manifest.json` ink bounds at native 300 DPI: about 7.9 × 12.9 in (≈100 sq in) up to 10.9 × 13.3 in (≈145 sq in, Corporate Survivor). That puts the tee print at roughly ₹80–131.
+### C. Unverified (not used for costs or pricing)
 
-### Indicative contribution at current prices (per prepaid order)
+Search-result snippets of the supplier sites, never opened:
 
-Assumptions, all labelled: prepaid gateway 2% + 18% GST on the fee (typical, gateway not chosen); output GST 5% tee, 18% tote and tumbler (CA to confirm); shipping absorbed by Trenzora; no packaging insert, COD, RTO or reprint allowance.
+- **Printrove tee:** blank ₹240; DTG ₹0.8–0.9 per sq in, minimum ₹80–90; GST 5%; shipping ₹60 per 500 g.
+- **Qikink:** tote ₹210; tumbler ₹440; shipping ₹54 air / ₹42.37 surface per 500 g + 18% GST; COD ₹34 + 18% GST; no RTO charge.
 
-- **Best case:** GST-registered, input tax credit on supplier invoices, low print cost, no Shopify fee.
-- **Worst case:** no input tax credit (GST is a cost), high print cost, plus 2% Shopify third-party-gateway fee.
+Also unverified: any payment-gateway rate, any output GST rate, and any Shopify transaction fee.
 
-| Product       | Retail | Net of GST | Landed (best → worst) | Contribution (best → worst) | Margin (best → worst) | Price for 35% margin, worst case |
-| ------------- | ------ | ---------- | --------------------- | --------------------------- | --------------------- | -------------------------------- |
-| Oversized tee | ₹999   | ₹951       | ₹404 → ₹503           | ₹548 → ₹448                 | 58% → 47%             | ₹799                             |
-| Tote          | ₹599   | ₹508       | ₹278 → ₹338           | ₹229 → ₹170                 | 45% → 33%             | ₹614                             |
-| 20oz tumbler  | ₹1,099 | ₹931       | ₹520 → ₹631           | ₹411 → ₹301                 | 44% → 32%             | ₹1,149                           |
+## Economics model (`npm run costs:check`)
 
-A COD order adds about ₹40 on Qikink items (₹34 + GST). Printrove's COD and RTO charges are unknown.
+Per unit, from `ops/landed-cost.csv`:
 
-## 3. Supplier inputs still missing (cannot be assumed)
+- Selling price − product − print − supplier shipping = **contribution before payment fee**
+- − gateway fee = **prepaid contribution**
+- − supplier COD fee instead of the gateway fee = **COD contribution**
+- Margins are on net revenue (price ÷ (1 + output GST)).
+- **GST shown separately:** output GST collected, input GST on supplier charges, net payable (with or without input tax credit).
+- **Target prices:** the price for 50 / 55 / 60% margin, prepaid and COD.
+- **RTO:** shown as the cost of one failed delivery; no RTO rate is assumed.
 
-From the Printrove and Qikink dashboards or a written quote, with date:
+Every input needs a source and date. A row with a blank input shows no figures.
 
-1. **Exact blank and ID** per product: tee (GSM, 100% cotton?), tote (cotton canvas, size), tumbler (double-wall insulated steel with lid?). The site copy claims these, so they must match.
-2. **Unit price per size** (tee S–XXL; check whether XXL costs more) and **print price at our print size**, and whether GST is **included**.
-3. **Packed weight** per product, which sets the shipping slab.
-4. **Shipping rate** by zone and air/surface, and whether it is ex GST.
-5. **Printrove COD fee and RTO policy/charge.** Qikink's COD fee and no-RTO policy need confirming in the dashboard.
-6. **Print areas** (`ops/supplier-templates.ts`) so `npm run supplier:check` can confirm print resolution.
-7. **Blind shipping / white-label invoice** confirmation, and the cost of any branded insert.
+## What the current prices can absorb (no supplier figures used)
 
-From you or your CA:
+Maximum product + print + supplier shipping per unit, before payment fee, for each target margin. Output GST isn't confirmed (CA), so both candidate rates are shown.
 
-8. **GST registration** (yes/no) and therefore whether input tax credit applies. This is the single biggest swing in the table above.
-9. **Output GST rates:** apparel 5% (≤ ₹2,500); cotton tote and steel tumbler rates (HSN) after the 2025 rate changes.
-10. **Payment gateway** and its rate; **Shopify's transaction fee** for that gateway on the Basic plan (Admin → Settings → Plan).
-11. **Shipping policy:** customer pays at checkout (current site copy says "calculated at checkout") or free shipping absorbed into price.
-12. **COD:** offer it or not; if yes, any COD fee to the customer.
+| Product | Price  | Output GST | Net revenue | 50%    | 55%    | 60%    |
+| ------- | ------ | ---------- | ----------- | ------ | ------ | ------ |
+| Tee     | ₹999   | 5%         | ₹951        | ≤ ₹476 | ≤ ₹428 | ≤ ₹381 |
+| Tee     | ₹999   | 18%        | ₹847        | ≤ ₹423 | ≤ ₹381 | ≤ ₹339 |
+| Tote    | ₹599   | 5%         | ₹570        | ≤ ₹285 | ≤ ₹257 | ≤ ₹228 |
+| Tote    | ₹599   | 18%        | ₹508        | ≤ ₹254 | ≤ ₹228 | ≤ ₹203 |
+| Tumbler | ₹1,099 | 5%         | ₹1,047      | ≤ ₹523 | ≤ ₹471 | ≤ ₹419 |
+| Tumbler | ₹1,099 | 18%        | ₹931        | ≤ ₹466 | ≤ ₹419 | ≤ ₹373 |
 
-## 4. Pricing recommendation
+The payment fee comes on top. Costs count ex GST if you claim input tax credit, otherwise including GST.
 
-- **Tee ₹999: keep.** Healthy even in the worst case.
-- **Tote ₹599 and tumbler ₹1,099: keep for now, but decide once costs are verified.** Under the unverified figures they reach ~33% / 32% only when no input tax credit applies _and_ Shopify charges 2%. If verified costs confirm that, move to **tote ₹649** and **tumbler ₹1,199**. Both are inside the agreed target ranges (₹499–₹699 and ₹899–₹1,199).
-- If you offer free shipping or COD, rerun with those costs before approving.
+## Missing inputs
 
-Final prices come from `npm run costs:check` once `ops/landed-cost.csv` has sourced rows. Then set `PRICE_STATUS = 'approved'`.
+Every supplier value is still missing; see `docs/suppliers/data-request.md` (P1–P10, Q1–Q8, T1–T8, O1–O4). The fastest route is to allow the supplier domains in the environment's network settings so Claude can read the official pages itself.
 
-## 5. SEO descriptions cut at 160 characters (prepared, not applied)
+**Tee print cost:** Printrove's charge depends on how it bills print (per sq in of the placed design, or by template size) and on the template's dimensions (P5–P7). The approved masters' inked area at native 300 DPI is about 7.9 × 12.9 in to 10.9 × 13.3 in (`artwork-manifest.json`), but that alone is **not** the billed area. Print cost isn't calculated until P5–P7 are known.
 
-The export truncates `tagline + summary + "Original Trenzora design, made to order in India."` at 160 characters (`app/data/catalogue/index.ts`). Corrected text, ≤ 160 characters and ending on a full sentence:
+## SEO: corrected in the catalogue source (not yet in Shopify)
 
-| Handle                        | Live (cut)              | Corrected (chars)                                                                                                                                              |
-| ----------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `corporate-survivor-tote`     | …made to order in India | This meeting could have been an email. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Original Trenzora design, made in India. (152) |
-| `bestie-energy-oversized-tee` | …made to order          | She knows too much. That’s why she’s my bestie. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Made to order in India. (143)          |
-| `bestie-energy-tote`          | …made to order          | She knows too much. That’s why she’s my bestie. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Made to order in India. (144)         |
-| `bestie-energy-tumbler`       | …made to order in India | She knows too much. That’s why she’s my bestie. A 20oz insulated stainless steel tumbler, printed edge to edge. Made to order in India. (135)                  |
+`app/data/catalogue/index.ts` now builds the search description from the longest closing that fits in 160 characters, so it always ends on a full sentence. Re-exported: only these 4 descriptions changed (all 24 now end with a full stop, longest 160).
 
-Applying them means a small change to the SEO builder in `app/data/catalogue/index.ts` (drop the closing clause when it doesn't fit), a re-export, and 4 `productSet` SEO updates. That needs your approval.
+| Handle                        | Corrected description (chars)                                                                                                                          |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `corporate-survivor-tote`     | This meeting could have been an email. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Made to order in India. (135)          |
+| `bestie-energy-oversized-tee` | She knows too much. That’s why she’s my bestie. A heavyweight, relaxed-fit tee with dropped shoulders and a boxy drape. Made to order in India. (143)  |
+| `bestie-energy-tote`          | She knows too much. That’s why she’s my bestie. A sturdy cotton canvas tote with long handles — laptop, groceries, life. Made to order in India. (144) |
+| `bestie-energy-tumbler`       | She knows too much. That’s why she’s my bestie. A 20oz insulated stainless steel tumbler, printed edge to edge. Made to order in India. (135)          |
 
-## 6. Unchanged by design
+Applying them to the live store means 4 `productSet` updates (SEO description only, same handles; still DRAFT and unpublished). That needs your approval.
 
-24 draft products, 4 unpublished collections (customer name **The Edit**, handle `trending`), no images, no publishing, payments and shipping not activated, the default Home page collection left as is, no other store touched.
+## Unchanged by design
+
+24 draft products, 4 unpublished collections (customer name **The Edit**, handle `trending`), no images, nothing published, payments/shipping/policies/domains untouched, default Home page collection left as is, no other store touched.

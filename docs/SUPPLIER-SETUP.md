@@ -50,17 +50,20 @@ For each row of `catalogue/supplier-map.csv` with **Release = V1 launch**:
 
 Fill `ops/landed-cost.csv` per product type (per size for the tee) from **written quotes and rate cards only**:
 
-| Column                                            | Meaning                                                     |
-| ------------------------------------------------- | ----------------------------------------------------------- |
-| `supplier_unit_cost_inr`                          | Blank + print, per unit, as quoted                          |
-| `supplier_cost_includes_gst` / `supplier_gst_pct` | Whether the quote includes GST, and the rate                |
-| `itc_claimable`                                   | yes if you're GST-registered and can claim input tax credit |
-| `shipping_to_customer_inr`, `packaging_inr`       | Per-order average actually paid                             |
-| `gateway_fee_pct`, `gateway_fixed_inr`            | Prepaid gateway fee (include GST on the fee)                |
-| `cod_share_pct`, `cod_fee_inr`                    | Expected COD share and the COD charge per order             |
-| `rto_rate_pct`, `rto_cost_inr`                    | Expected return-to-origin rate and cost per RTO             |
-| `reprint_rate_pct`                                | Expected misprint/damage replacements                       |
-| `output_gst_pct`                                  | GST rate on the sale (confirm HSN/rate with your CA)        |
-| `source`, `quote_date`                            | Where the numbers came from                                 |
+| Column                                                        | Meaning                                                                                       |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `product_cost_inr`                                            | Product (blank) price per unit, as shown by the supplier                                      |
+| `print_cost_inr`                                              | Print charge per unit at our print size (0 if the product price includes print)               |
+| `supplier_prices_include_gst`                                 | Whether the supplier's product, print, shipping and COD amounts include GST                   |
+| `supplier_gst_pct`                                            | GST rate on product + print                                                                   |
+| `shipping_inr`, `shipping_gst_pct`                            | Supplier shipping for one packed unit, and its GST rate                                       |
+| `cod_fee_inr`, `cod_fee_gst_pct`                              | Supplier COD charge per order, and its GST rate (0 if none)                                   |
+| `rto_charge_inr`                                              | What one return-to-origin costs you (0 if the supplier confirms none). No RTO rate is assumed |
+| `gateway_fee_pct`, `gateway_fixed_inr`, `gateway_fee_gst_pct` | Prepaid gateway fee from its rate card, ex GST, and the GST on the fee                        |
+| `output_gst_pct`                                              | GST rate on the sale (confirm HSN/rate with your CA)                                          |
+| `itc_claimable`                                               | yes if you're GST-registered and can claim input tax credit                                   |
+| `source`, `quote_date`                                        | Supplier page/dashboard/invoice/written reply, and date                                       |
+
+Enter a value only when it comes from the supplier's own page, dashboard, invoice or written reply (gateway: its rate card; GST: your CA). A value confirmed to be zero is entered as `0`. The report shows contribution before and after the payment fee, prepaid and COD, the price needed for 50 / 55 / 60% margin, and the GST split.
 
 The report (`catalogue/landed-cost-report.md`) shows contribution and margin **only for rows with every input filled**. Incomplete rows list what's missing. Prices in `app/data/catalogue/pricing.ts` stay provisional until this report is complete and you approve them at Gate 4.

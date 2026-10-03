@@ -276,7 +276,8 @@ const costs = existsSync('catalogue/landed-cost-report.md')
   ? readFileSync('catalogue/landed-cost-report.md', 'utf8')
   : '';
 const costsComplete =
-  costs.includes('## Complete rows') && !costs.includes('## Incomplete rows');
+  costs.includes('## Contribution at current prices') &&
+  !costs.includes('## Incomplete rows');
 check(
   'pricing',
   PRICE_STATUS === 'provisional' || costsComplete,

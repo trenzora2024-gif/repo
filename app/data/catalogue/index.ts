@@ -144,6 +144,27 @@ function escapeHtml(value: string) {
     .replace(/>/g, '&gt;');
 }
 
+const SEO_DESCRIPTION_MAX = 160;
+
+/**
+ * Search description that always ends on a full sentence: the longest
+ * closing that fits within 160 characters, never a cut-off string.
+ */
+function seoDescription(tagline: string, summary: string) {
+  const closings = [
+    ' Original Trenzora design, made to order in India.',
+    ' Made to order in India.',
+    '',
+  ];
+  for (const closing of closings) {
+    const text = `${tagline} ${summary}${closing}`;
+    if (text.length <= SEO_DESCRIPTION_MAX) return text;
+  }
+  throw new Error(
+    `SEO description over ${SEO_DESCRIPTION_MAX} characters: "${tagline} ${summary}"`,
+  );
+}
+
 function buildProduct(
   family: DesignFamily,
   type: ProductTypeSpec,
@@ -181,11 +202,7 @@ function buildProduct(
     variants,
     seo: {
       title: `${title} | Trenzora`,
-      description:
-        `${family.tagline} ${type.summary} Original Trenzora design, made to order in India.`.slice(
-          0,
-          160,
-        ),
+      description: seoDescription(family.tagline, type.summary),
     },
     descriptionHtml: `<p>${escapeHtml(family.story)}</p><p>${escapeHtml(type.summary)}</p>`,
     imageAlt: `${family.name} — “${family.artworkText}” typographic design printed on a Trenzora ${type.shortName.toLowerCase()}`,
