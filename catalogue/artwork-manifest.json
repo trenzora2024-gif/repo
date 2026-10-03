@@ -27,21 +27,21 @@
       "bottom": 535
     },
     "rule": {
-      "top": 1752,
-      "bottom": 1769,
+      "top": 1764,
+      "bottom": 1781,
       "x": [
         1725,
         2775
       ],
       "overlapRows": 0,
-      "clearAbove": 32,
-      "clearBelow": 93
+      "clearAbove": 44,
+      "clearBelow": 81
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 173784,
-    "sha256": "b3299b222214ecf26f9208e0dd3fcb1568125656bb1d763c4fac68ef7b26c84c"
+    "bytes": 173785,
+    "sha256": "36d53398be6317abfc12bfc3fa23ba317a91cc9beeaee205b918da18bf7d7914"
   },
   {
     "family": "local-life",
@@ -71,21 +71,21 @@
       "bottom": 535
     },
     "rule": {
-      "top": 1732,
-      "bottom": 1749,
+      "top": 1747,
+      "bottom": 1764,
       "x": [
         1725,
         2775
       ],
       "overlapRows": 0,
-      "clearAbove": 28,
-      "clearBelow": 104
+      "clearAbove": 43,
+      "clearBelow": 89
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
     "bytes": 168070,
-    "sha256": "a2812c3bff79548cda7b15a4e2e29037cb5255bfefe0c434b1afcab1ac09297c"
+    "sha256": "228de52c41d466726087a62d5505496020bf83f44a3a864b152bcf163a8ee339"
   },
   {
     "family": "corporate-survivor",
@@ -115,21 +115,21 @@
       "bottom": 535
     },
     "rule": {
-      "top": 1912,
-      "bottom": 1929,
+      "top": 1932,
+      "bottom": 1949,
       "x": [
         1525,
         2975
       ],
       "overlapRows": 0,
-      "clearAbove": 27,
-      "clearBelow": 111
+      "clearAbove": 47,
+      "clearBelow": 91
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 200561,
-    "sha256": "d8c627c31074b7d6b5b613ee573e7d7d4951caa778a8467851cfcd6d591c7c3a"
+    "bytes": 200565,
+    "sha256": "c2bc169cdbf7aa470cbba5e7ff668bdc794f361fa9a64b6f9300b85fc5465e13"
   },
   {
     "family": "coffee-personality",
@@ -159,21 +159,21 @@
       "bottom": 535
     },
     "rule": {
-      "top": 1902,
-      "bottom": 1919,
+      "top": 1982,
+      "bottom": 1999,
       "x": [
         1700,
         2800
       ],
-      "overlapRows": 18,
-      "clearAbove": 0,
-      "clearBelow": 0
+      "overlapRows": 0,
+      "clearAbove": 41,
+      "clearBelow": 31
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 195067,
-    "sha256": "fb7dd0dfa3588368db646c2407595ea9545ae4919c1350ab4e530e659e5a091b"
+    "bytes": 195151,
+    "sha256": "c54f2200c587ad7a47c156fab36bc826055c31af5a2fc54caeff0065d37d6aa6"
   },
   {
     "family": "bestie-energy",
@@ -203,21 +203,21 @@
       "bottom": 535
     },
     "rule": {
-      "top": 1732,
-      "bottom": 1749,
+      "top": 1767,
+      "bottom": 1784,
       "x": [
         1675,
         2825
       ],
       "overlapRows": 0,
-      "clearAbove": 8,
-      "clearBelow": 111
+      "clearAbove": 43,
+      "clearBelow": 76
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
     "bytes": 187409,
-    "sha256": "9b4aa5dcf9722c0dcfec1d903142899411f47b67d446cf88c380df4ecebdcbf1"
+    "sha256": "f3128ecc53b217a65757a124fedaaac83ef31c89af66d3b6d21bc59e54628c6e"
   },
   {
     "family": "us",
@@ -335,21 +335,21 @@
       "bottom": 535
     },
     "rule": {
-      "top": 1912,
-      "bottom": 1929,
+      "top": 1982,
+      "bottom": 1999,
       "x": [
         1600,
         2900
       ],
       "overlapRows": 0,
-      "clearAbove": 0,
-      "clearBelow": 0
+      "clearAbove": 41,
+      "clearBelow": 41
     },
     "edgeClipped": false,
     "rowsTouchingLeft": 0,
     "rowsTouchingRight": 0,
-    "bytes": 193887,
-    "sha256": "68d843a2a67ea15af5833eecee53857234288f13258c55aca1d1caf35e487ba2"
+    "bytes": 193945,
+    "sha256": "38e01ec9399a7e6d1f38cbc8feabb6c75c89d1e274c8c255ec03ab9fc6d95833"
   },
   {
     "family": "desi-roots",

@@ -1,27 +1,23 @@
-# Artwork revision brief: round 3 (V1 masters)
+# Artwork revision brief: round 4 (V1 masters)
 
-Source pack under revision: `Trenzora_V1_10_Corrected_Production_Design_Masters_v2.zip` (sha256 `6094aba5…80e3`).
+Source pack under revision: `Trenzora_V1_10_Corrected_Production_Design_Masters_v3.zip` (sha256 `5b5c833e…6322`).
 
-## Revise these 6 files (same filenames)
+## Approved in v3 (do not change)
+01, 02, 03, 05 (rule fixed, glyphs intact), plus the previously approved 07 and 09. 06 and 10 stay V2 and unchanged.
 
-| File | Current red-rule clearance (measured at 4500×5400) | Problem |
-| --- | --- | --- |
-| 01_mumbai_made.png | 32 px above | under the 40 px minimum |
-| 02_local_life.png | 28 px above | under the 40 px minimum |
-| 03_corporate_survivor.png | 27 px above | under the 40 px minimum |
-| 04_coffee_personality.png | rule runs through "COFFEE" (18 rows overlap) | collision |
-| 05_bestie_energy.png | 8 px above | effectively touching |
-| 08_campus_energy.png | 0 px; rule sits inside "SUGGESTION" | collision |
+## Revise these 2 files (same filenames)
 
-## Requirements
-- At least **40 px** of clear space between the red rule and any text, above and below.
-- No letters touching or crossing the rule.
-- No artwork touching the canvas edges.
-- Keep the concept, wording, hierarchy and visual style. No new copy.
+| File | Problem found |
+| --- | --- |
+| 04_coffee_personality.png | Horizontal strips erased through the bottom of “COFFEE” where the old rule sat: the letters have visible cuts. The rule is also only 31 px above “BOMBAY COFFEE CLUB” (40 px minimum). |
+| 08_campus_energy.png | Horizontal strips erased through the bottom of “SUGGESTION” (G G E S T I): the letters have visible cuts. |
+
+## How to fix
+Re-set the affected headline line from intact type. Don't erase or patch the old rule out of existing pixels. Then place the red rule with **at least 40 px** clear of the text above and below.
+
+## Requirements (unchanged)
+- No canvas-edge clipping. Keep the concept, wording, hierarchy and style. No new copy.
 - 4500×5400 px, 300 DPI, RGBA PNG, transparent background. Same filenames.
 
-## Do not change
-`06_us.png`, `07_pet_parent.png`, `09_desi_roots.png` and `10_make_it_yours.png` are locked by checksum. `npm run verify:artwork` fails if any of them changes. A revised ZIP may include them unchanged or leave them out.
-
 ## Acceptance
-`npm run verify:artwork` reports **0 problems**, followed by a visual review of all 6 revised files.
+`npm run verify:artwork` reports **0 problems**, and a visual review confirms intact letterforms in 04 and 08.

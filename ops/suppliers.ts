@@ -52,9 +52,12 @@ export const SUPPLIER_BY_PRODUCT_TYPE: Record<ProductTypeHandle, SupplierKey> =
  * automatically by `npm run verify:artwork`.)
  */
 export const ARTWORK_REVISIONS: Partial<Record<DesignFamilyHandle, string>> = {
-  // v2 pack (2026-10-03): 07 Pet Parent (generic, no pet name) and
-  // 09 Desi Roots (clearance) reviewed visually and approved. Red-rule
-  // collisions are now detected automatically by verify:artwork.
+  // v3 pack (2026-10-03), visual review. Not detectable by the rule check,
+  // because the remaining ink measures clear of the new rule position.
+  'coffee-personality':
+    'Glyph damage: where the old red rule crossed “COFFEE”, horizontal strips were erased to transparent, so the bottoms of the letters are cut through (visible gaps). The rule clearance below is also 31px (40px minimum) above “BOMBAY COFFEE CLUB”. Re-set “COFFEE” from intact type; keep the rule ≥40px from both lines.',
+  'campus-energy':
+    'Glyph damage: where the old red rule crossed “SUGGESTION”, horizontal strips were erased to transparent, so the bottoms of “GGESTI” are cut through (visible gaps). Re-set “SUGGESTION” from intact type; keep the rule ≥40px from text.',
 };
 
 /**
