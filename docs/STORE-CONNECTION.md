@@ -7,6 +7,7 @@ The storefront is ready. This runbook covers steps A–I. Each 🔒 **GATE** is 
 - The Shopify connector in Claude sessions is currently signed in to MaternEase. Before any Admin call, the active shop must be switched to Trenzora and confirmed with `catalogue/admin/store-identity.graphql`. If the result isn't Trenzora, stop.
 - Products stay **DRAFT** and collections stay **unpublished** until you approve pricing, supplier economics, artwork and shipping.
 - Personalization stays OFF (`personalization.enabled: false` for every family).
+- **V1 = 8 design families × 3 products = 24 SKUs.** Us and Make It Yours are V2 personalization concepts. They're kept as design records but are never imported, published or sold in V1. `verify:store` fails if either becomes visible, and their product pages show no Add to Cart even if published by mistake.
 - Prices in `app/data/catalogue/pricing.ts` are **provisional**.
 - Supplier data lives only in `ops/suppliers.ts` and `catalogue/supplier-map.csv`. Neither is imported by the storefront, and `qa:storefront` fails if a supplier name or internal note appears in page HTML.
 
@@ -28,18 +29,18 @@ npx shopify hydrogen env pull     # writes .env (gitignored, never committed)
 ```
 npm run verify:store             # store identity (blocks MaternEase), INR, policies, products, collections, tag search
 ```
-At this point products are expected to be "0/30 visible", since nothing has been imported yet.
+At this point products are expected to be "0/24 visible", since nothing has been imported yet.
 
-### D. Import the 30 products as DRAFTS
-🔒 **GATE 2: authorize creating 30 draft products (70 variants) in the Trenzora store.**
-1. Pre-flight: run `catalogue/admin/existing-check.graphql`. It must return no products tagged `drop:01` and none of the 5 collection handles, so nothing gets overwritten.
+### D. Import the 24 V1 products as DRAFTS
+🔒 **GATE 2: authorize creating 24 draft products (56 variants) in the Trenzora store.** The CSV contains V1 only. Us and Make It Yours (V2) are never exported for import.
+1. Pre-flight: run `catalogue/admin/existing-check.graphql`. It must return no products tagged `drop:01` and none of the 4 V1 collection handles, so nothing gets overwritten.
 2. `npm run catalogue:export`, then Shopify Admin → Products → Import → `catalogue/shopify-products.csv`.
    Every product imports with `Status=draft` and `Published=FALSE`, no compare-at prices, untracked inventory with "continue selling" (POD), and the SKUs and tags the storefront relies on.
-3. Re-run the pre-flight query and confirm 30 handles, all with `status: DRAFT`.
+3. Re-run the pre-flight query and confirm 24 handles, all with `status: DRAFT`, and no `us-*` or `make-it-yours-*` handles.
 
 ### E. Create the collections
-🔒 **GATE 3: authorize creating 5 smart collections (unpublished).** This can be approved together with Gate 2.
-Run `catalogue/admin/collection-create.graphql` once per entry in `catalogue/admin/collections.variables.json` (`mumbai-made`, `drops`, `personalize`, `gifts`, `trending`; rule: tag equals `col:<handle>`). "All products" is built into Hydrogen and needs no collection.
+🔒 **GATE 3: authorize creating 4 smart collections (unpublished).** This can be approved together with Gate 2.
+Run `catalogue/admin/collection-create.graphql` once per entry in `catalogue/admin/collections.variables.json` (`mumbai-made`, `drops`, `gifts`, `trending`; rule: tag equals `col:<handle>`). `personalize` is V2 and isn't created in V1: the Personalize nav item goes to the `/personalize` coming-soon page. "All products" is built into Hydrogen and needs no collection.
 
 ### F. Map the 10 production masters
 Put the official pack in `artwork/masters/` (it's gitignored) and run:

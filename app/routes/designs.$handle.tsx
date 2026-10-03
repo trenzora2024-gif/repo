@@ -1,8 +1,9 @@
 import {Link, useLoaderData} from 'react-router';
 import type {Route} from './+types/designs.$handle';
 import {ProductCard} from '~/components/ProductCard';
+import {SignupForm} from '~/components/home/HomeSections';
 import {
-  DESIGN_FAMILIES,
+  LAUNCH_FAMILIES,
   TAG,
   getDesignFamily,
   tagQuery,
@@ -17,9 +18,12 @@ import {breadcrumbJsonLd, seoMeta} from '~/lib/seo';
  */
 export const meta: Route.MetaFunction = ({data}) => {
   if (!data) return [{title: 'Design not found | Trenzora'}];
-  const {family} = data;
+  const family = getDesignFamily(data.handle)!;
   return seoMeta({
-    title: `${family.name} — Tees, Totes & Tumblers`,
+    title:
+      family.release === 'v1'
+        ? `${family.name} — Tees, Totes & Tumblers`
+        : `${family.name} — Personalized, Coming Soon`,
     description: `${family.tagline} ${family.story}`,
     path: `/designs/${family.handle}`,
     jsonLd: breadcrumbJsonLd([
@@ -34,17 +38,22 @@ export async function loader({params, context}: Route.LoaderArgs) {
   const family = getDesignFamily(params.handle);
   if (!family) throw new Response('Design not found', {status: 404});
 
+  // V2 personalization designs are not sold in V1: never list products.
+  if (family.release !== 'v1') return {handle: family.handle, products: []};
+
   const {products} = await context.storefront.query(DESIGN_PRODUCTS_QUERY, {
     variables: {query: tagQuery(TAG.design(family.handle))},
     cache: context.storefront.CacheShort(),
   });
 
-  return {family, products: products.nodes};
+  return {handle: family.handle, products: products.nodes};
 }
 
 export default function DesignFamilyPage() {
-  const {family, products} = useLoaderData<typeof loader>();
-  const others = DESIGN_FAMILIES.filter(
+  const {handle, products} = useLoaderData<typeof loader>();
+  const family = getDesignFamily(handle)!;
+  const isLaunch = family.release === 'v1';
+  const others = LAUNCH_FAMILIES.filter(
     (item) => item.handle !== family.handle,
   );
 
@@ -58,8 +67,8 @@ export default function DesignFamilyPage() {
         <div className="container split">
           <div className="stack">
             <p className="eyebrow" style={{color: 'inherit'}}>
-              Design {String(family.number).padStart(2, '0')} · Drop{' '}
-              {family.drop}
+              Design {String(family.number).padStart(2, '0')} ·{' '}
+              {isLaunch ? `Drop ${family.drop}` : 'Coming with personalization'}
             </p>
             <h1 id="design-title" className="display">
               {family.name}
@@ -106,30 +115,57 @@ export default function DesignFamilyPage() {
         </div>
       </section>
 
-      <section
-        className="section section--sand"
-        aria-labelledby="products-title"
-      >
-        <div className="container">
-          <div className="section-head">
-            <div className="section-head__text">
-              <p className="eyebrow">One design, your way</p>
-              <h2 id="products-title" className="h2">
-                Wear it. Carry it. <span className="serif">Sip from it.</span>
+      {isLaunch ? (
+        <section
+          className="section section--sand"
+          aria-labelledby="products-title"
+        >
+          <div className="container">
+            <div className="section-head">
+              <div className="section-head__text">
+                <p className="eyebrow">One design, your way</p>
+                <h2 id="products-title" className="h2">
+                  Wear it. Carry it. <span className="serif">Sip from it.</span>
+                </h2>
+              </div>
+            </div>
+            {products.length ? (
+              <div className="grid-products">
+                {products.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            ) : (
+              <p className="muted">This design is coming to the store soon.</p>
+            )}
+          </div>
+        </section>
+      ) : (
+        <section
+          className="section section--ink"
+          aria-labelledby="waitlist-title"
+        >
+          <div className="container weekly">
+            <div className="stack">
+              <p className="eyebrow">Personalize · Coming soon</p>
+              <h2 id="waitlist-title" className="h2">
+                {family.name} launches with{' '}
+                <span className="serif">personalization.</span>
               </h2>
             </div>
-          </div>
-          {products.length ? (
-            <div className="grid-products">
-              {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+            <div className="stack">
+              <p className="lede">
+                It isn’t available to order yet. Leave your email and we’ll tell
+                you the day personalized pieces go live.
+              </p>
+              <SignupForm
+                source={`personalize_${family.handle}`}
+                cta="Notify me"
+              />
             </div>
-          ) : (
-            <p className="muted">This design is coming to the store soon.</p>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       <section className="section" aria-labelledby="more-title">
         <div className="container">

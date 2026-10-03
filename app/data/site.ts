@@ -69,7 +69,7 @@ export const FAQ = [
   },
   {
     q: 'Can I add my own name?',
-    a: 'Not yet. Adding names, a city or a date is coming soon on the Us and Make It Yours designs. For now every design ships exactly as shown.',
+    a: 'Not yet. Personalized designs, Us and Make It Yours, are coming soon. Every design available today is a Trenzora original, printed exactly as shown.',
   },
   {
     q: 'Is the design original?',
@@ -81,7 +81,7 @@ export const FAQ = [
 export const PRIMARY_NAV = [
   {title: 'Shop', to: '/collections/all'},
   {title: 'Drops', to: '/collections/drops'},
-  {title: 'Personalize', to: '/collections/personalize'},
+  {title: 'Personalize', to: '/personalize'},
   {title: 'Gifts', to: '/collections/gifts'},
   {title: 'About', to: '/about'},
 ] as const;

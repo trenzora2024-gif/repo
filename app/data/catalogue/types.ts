@@ -29,6 +29,8 @@ export type ProductTypeHandle = 'oversized-tee' | 'tote' | 'tumbler';
 export type CollectionHandle =
   'all' | 'mumbai-made' | 'drops' | 'personalize' | 'gifts' | 'trending';
 
+export type Release = 'v1' | 'v2';
+
 export type SupplierKey = 'printrove' | 'qikink' | 'vistaprint' | 'kraftix';
 
 export interface Palette {
@@ -96,6 +98,11 @@ export interface DesignFamily {
   keywords: string[];
   personalization: PersonalizationConfig;
   drop: string;
+  /**
+   * `v1`: sellable at launch. `v2`: kept as a design record and
+   * personalization-ready concept, but never imported or sold in V1.
+   */
+  release: Release;
 }
 
 export interface ProductTypeSpec {

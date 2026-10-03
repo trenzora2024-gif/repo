@@ -27,6 +27,8 @@ import {
 import {
   CATALOGUE,
   COLLECTIONS,
+  LAUNCH_CATALOGUE,
+  LAUNCH_COLLECTIONS,
   type CatalogueProduct,
   type CollectionHandle,
 } from '../app/data/catalogue/index.ts';
@@ -69,7 +71,12 @@ function connection<T>(items: T[], args: {first?: number; last?: number} = {}) {
 }
 
 // ---------------------------------------------------------------- products
-const products: Obj[] = CATALOGUE.map((item, index) =>
+// Mirrors the real V1 import: only the 24 launch products exist.
+// MOCK_INCLUDE_V2=1 simulates V2 products being wrongly published, to test
+// that verify:store blocks it and the product page refuses to sell them.
+const SOURCE =
+  process.env.MOCK_INCLUDE_V2 === '1' ? CATALOGUE : LAUNCH_CATALOGUE;
+const products: Obj[] = SOURCE.map((item, index) =>
   buildProduct(item, index + 1),
 );
 
@@ -233,33 +240,31 @@ function sortProducts(
 }
 
 // ------------------------------------------------------------- collections
-const collections: Obj[] = (Object.keys(COLLECTIONS) as CollectionHandle[]).map(
-  (handle, index) => {
-    const meta = COLLECTIONS[handle];
-    const members = products.filter((p) =>
-      (p._catalogue as CatalogueProduct).collections.includes(handle),
-    );
-    return {
-      __typename: 'Collection',
-      id: `gid://shopify/Collection/${500 + index}`,
-      handle,
-      title: meta.title,
-      description: meta.description,
-      descriptionHtml: `<p>${meta.description}</p>`,
-      image: null,
-      seo: {title: null, description: null},
-      updatedAt: '2026-10-01T00:00:00Z',
-      trackingParameters: null,
-      metafield: () => null,
-      products: (args: {
-        first?: number;
-        last?: number;
-        sortKey?: string;
-        reverse?: boolean;
-      }) => connection(sortProducts(members, args), args),
-    };
-  },
-);
+const collections: Obj[] = LAUNCH_COLLECTIONS.map((handle, index) => {
+  const meta = COLLECTIONS[handle];
+  const members = products.filter((p) =>
+    (p._catalogue as CatalogueProduct).collections.includes(handle),
+  );
+  return {
+    __typename: 'Collection',
+    id: `gid://shopify/Collection/${500 + index}`,
+    handle,
+    title: meta.title,
+    description: meta.description,
+    descriptionHtml: `<p>${meta.description}</p>`,
+    image: null,
+    seo: {title: null, description: null},
+    updatedAt: '2026-10-01T00:00:00Z',
+    trackingParameters: null,
+    metafield: () => null,
+    products: (args: {
+      first?: number;
+      last?: number;
+      sortKey?: string;
+      reverse?: boolean;
+    }) => connection(sortProducts(members, args), args),
+  };
+});
 
 // -------------------------------------------------------------------- cart
 type MockLine = {

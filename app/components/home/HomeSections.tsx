@@ -1,10 +1,11 @@
-import {useEffect, useMemo, useState} from 'react';
+import {useEffect, useId, useMemo, useState} from 'react';
 import {Link, useFetcher} from 'react-router';
 import type {ProductCardFragment} from 'storefrontapi.generated';
 import {ProductCard} from '~/components/ProductCard';
 import {ProductMedia} from '~/components/ProductMedia';
 import {
   DESIGN_FAMILIES,
+  LAUNCH_FAMILIES,
   PRODUCT_TYPES,
   getDesignFamily,
   productHandle,
@@ -42,11 +43,7 @@ export function Hero() {
             >
               Explore the drop
             </Link>
-            <Link
-              to="/collections/personalize"
-              className="btn btn--lg"
-              prefetch="intent"
-            >
+            <Link to="/personalize" className="btn btn--lg" prefetch="intent">
               Make it yours
             </Link>
           </div>
@@ -75,7 +72,7 @@ export function Hero() {
 }
 
 export function Ticker() {
-  const names = DESIGN_FAMILIES.map((family) => family.name);
+  const names = LAUNCH_FAMILIES.map((family) => family.name);
   // Duplicated once so the CSS loop is seamless.
   return (
     <div className="ticker" aria-hidden="true">
@@ -206,29 +203,26 @@ export function MakeItYours() {
       <div className="container">
         <div className="miy split">
           <div className="stack">
-            <p className="eyebrow">Personalize</p>
+            <p className="eyebrow">Personalize · Coming soon</p>
             <h2 id="miy-title" className="h1">
               Make it <span className="serif">yours.</span>
             </h2>
             <p className="lede">
               Some designs are made to carry your words: names, a city, a date.
-              Personalization is coming soon. For now these designs ship exactly
-              as shown.
+              Personalized pieces are coming soon. Join the list to be first.
             </p>
             <ol className="miy__steps">
-              <li>Pick a personalization-ready design: Us or Make It Yours.</li>
-              <li>
-                Today: order it as the original, on a tee, tote or tumbler.
-              </li>
-              <li>Soon: add your names, city and date before we print.</li>
+              <li>Pick a personalization design: Us or Make It Yours.</li>
+              <li>Add your names, city or date.</li>
+              <li>We print it just for you, on a tee, tote or tumbler.</li>
             </ol>
             <div className="hero__ctas">
               <Link
-                to="/collections/personalize"
+                to="/personalize"
                 className="btn btn--light"
                 prefetch="intent"
               >
-                See the designs
+                Get early access
               </Link>
             </div>
           </div>
@@ -283,7 +277,7 @@ export function OneDesignYourWay({
           role="group"
           aria-label="Choose a design"
         >
-          {DESIGN_FAMILIES.map((item) => (
+          {LAUNCH_FAMILIES.map((item) => (
             <button
               key={item.handle}
               type="button"
@@ -454,22 +448,31 @@ export function WeeklyDrop() {
   );
 }
 
-export function SignupForm() {
+export function SignupForm({
+  source = 'weekly_drop',
+  cta = 'Get the drop',
+}: {
+  /** Button label. */
+  cta?: string;
+  /** Reported as the `method` of the email_signup analytics event. */
+  source?: string;
+}) {
   const fetcher = useFetcher<{ok: boolean; message: string}>({
-    key: 'newsletter',
+    key: `newsletter-${source}`,
   });
+  const inputId = useId();
   const done = fetcher.data?.ok;
   useEffect(() => {
-    if (done) track('email_signup', {method: 'weekly_drop'});
-  }, [done]);
+    if (done) track('email_signup', {method: source});
+  }, [done, source]);
   return (
     <fetcher.Form method="post" action="/newsletter" className="signup">
-      <label htmlFor="signup-email" className="sr-only">
+      <label htmlFor={inputId} className="sr-only">
         Email address
       </label>
       <div className="signup__row">
         <input
-          id="signup-email"
+          id={inputId}
           className="input"
           type="email"
           name="email"
@@ -483,11 +486,7 @@ export function SignupForm() {
           className="btn btn--light"
           disabled={fetcher.state !== 'idle' || done}
         >
-          {fetcher.state !== 'idle'
-            ? 'Joining…'
-            : done
-              ? 'You’re in'
-              : 'Get the drop'}
+          {fetcher.state !== 'idle' ? 'Joining…' : done ? 'You’re in' : cta}
         </button>
       </div>
       <p className={`form-note${done ? ' form-note--ok' : ''}`} role="status">

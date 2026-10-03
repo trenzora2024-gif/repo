@@ -7,6 +7,10 @@ import type {DesignFamily, PersonalizationConfig} from './types.ts';
  * Source of truth: the official production masters
  * (catalogue/artwork-source.json). Copy describes what is actually on the
  * artwork. Never describe motifs that aren't there.
+ *
+ * V1 launch = 8 families (24 SKUs). `us` and `make-it-yours` are V2
+ * personalization concepts: their masters carry template wording, so they
+ * are kept as records but never imported or sold in V1.
  */
 
 const STATIC: PersonalizationConfig = {
@@ -37,6 +41,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     keywords: ['mumbai', 'bombay', 'mumbaikar', 'mumbai made', 'city'],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'local-life',
@@ -64,6 +69,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     ],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'corporate-survivor',
@@ -85,6 +91,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     keywords: ['office', 'corporate', 'work', 'colleague gift', 'meeting'],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'coffee-personality',
@@ -113,6 +120,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     ],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'bestie-energy',
@@ -141,6 +149,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     ],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'us',
@@ -153,7 +162,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     story:
       'For the two of you who argue about where to eat and always end up at the same place. Us says it plainly: you + me, always.',
     concept:
-      '“YOU + ME · US · ALWAYS.”: a couple design created to carry your names, date and story later. For now it ships exactly as shown.',
+      '“YOU + ME · US · ALWAYS.”: a couple design created to carry your names, date and story.',
     forWho:
       'Couples, newlyweds, and anniversaries that deserve more than a card.',
     artWords: ['US'],
@@ -165,7 +174,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       enabled: false,
       planned: true,
       comingSoonNote:
-        'Adding your names and date is coming soon. For now this design ships exactly as shown.',
+        'Us is launching with personalization: your names and date, printed just for you. Not available to order yet.',
       fields: [
         {key: 'Name 1', label: 'First name', maxLength: 12, required: true},
         {key: 'Name 2', label: 'Second name', maxLength: 12, required: true},
@@ -179,6 +188,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       ],
     },
     drop: '01',
+    release: 'v2',
   },
   {
     handle: 'pet-parent',
@@ -202,6 +212,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     keywords: ['pet parent', 'dog', 'cat', 'indie dog', 'pet lover gift'],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'campus-energy',
@@ -222,6 +233,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     keywords: ['college', 'campus', 'hostel', 'student', 'attendance'],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'desi-roots',
@@ -249,6 +261,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     ],
     personalization: STATIC,
     drop: '01',
+    release: 'v1',
   },
   {
     handle: 'make-it-yours',
@@ -257,13 +270,13 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
     code: 'MIY',
     artworkFile: '10_make_it_yours.png',
     artworkText: 'MAKE IT YOURS · NAME • CITY • DATE · YOUR STORY. YOUR WAY.',
-    tagline: 'Your story. Your way. Coming soon.',
+    tagline: 'Your story. Your way.',
     story:
-      'Make It Yours is the Trenzora design built for personalization, with a layout made to carry a name, a city and a date. Personalization isn’t live yet: for now this design ships exactly as shown, as a Trenzora original.',
+      'Make It Yours is the Trenzora design built for personalization, with a layout made to carry a name, a city and a date. It launches together with personalization and isn’t available to order yet.',
     concept:
-      '“MAKE IT YOURS · NAME • CITY • DATE · YOUR STORY. YOUR WAY.”: the template for our upcoming personalization service, shown as designed.',
+      '“MAKE IT YOURS · NAME • CITY • DATE · YOUR STORY. YOUR WAY.”: the template for our upcoming personalization service.',
     forWho:
-      'Early fans of personalised gifting, and anyone who wants the original template design.',
+      'Anyone who wants a piece that is one of one: your name, your city, your date.',
     artWords: ['MAKE IT', 'YOURS'],
     palette: {bg: '#16130F', fg: '#FFF6EA', accent: '#F2B705'},
     collections: ['drops', 'personalize'],
@@ -272,7 +285,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       enabled: false,
       planned: true,
       comingSoonNote:
-        'Adding your own name, city and date is coming soon. For now this design ships exactly as shown.',
+        'Make It Yours is launching with personalization: your name, city and date, printed just for you. Not available to order yet.',
       fields: [
         {key: 'Name', label: 'Name', maxLength: 14, required: true},
         {key: 'City', label: 'City', maxLength: 14, required: false},
@@ -286,6 +299,7 @@ export const DESIGN_FAMILIES: DesignFamily[] = [
       ],
     },
     drop: '01',
+    release: 'v2',
   },
 ];
 

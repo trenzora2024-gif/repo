@@ -6,7 +6,7 @@ import type {
   ProductCardFragment,
 } from 'storefrontapi.generated';
 import {ProductCard} from '~/components/ProductCard';
-import {DESIGN_FAMILIES} from '~/data/catalogue';
+import {LAUNCH_FAMILIES} from '~/data/catalogue';
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
 import {seoMeta} from '~/lib/seo';
 
@@ -117,7 +117,7 @@ export default function SearchPage() {
           ) : null}
           <p className="muted">Browse by design:</p>
           <div className="option-grid">
-            {DESIGN_FAMILIES.map((family) => (
+            {LAUNCH_FAMILIES.map((family) => (
               <Link
                 key={family.handle}
                 to={`/designs/${family.handle}`}

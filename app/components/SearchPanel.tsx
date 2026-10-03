@@ -3,7 +3,7 @@ import {Form, Link, useFetcher} from 'react-router';
 import {useDrawer} from '~/components/Drawer';
 import {ProductMedia} from '~/components/ProductMedia';
 import {productNameParts} from '~/components/ProductCard';
-import {DESIGN_FAMILIES} from '~/data/catalogue';
+import {LAUNCH_FAMILIES} from '~/data/catalogue';
 import {formatMoney} from '~/lib/money';
 import type {PredictiveResult} from '~/routes/search';
 
@@ -107,7 +107,7 @@ export function SearchPanel() {
           <>
             <p className="eyebrow">Browse by design</p>
             <div className="option-grid">
-              {DESIGN_FAMILIES.map((family) => (
+              {LAUNCH_FAMILIES.map((family) => (
                 <Link
                   key={family.handle}
                   to={`/designs/${family.handle}`}

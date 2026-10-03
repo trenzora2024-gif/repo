@@ -10,7 +10,7 @@ Put the **official Trenzora production master pack** here, exactly as supplied:
 05_bestie_energy.png      10_make_it_yours.png
 ```
 
-Then run `npm run verify:artwork`.
+Then run `npm run verify:artwork`. The goal is 10/10 passing. 06 (Us) and 10 (Make It Yours) are V2 personalization masters: checked and kept, but not sold in V1.
 
 - These are supplier print files, not mockups. Never replace them with AI-generated or placeholder art.
 - No moodboards in this folder.

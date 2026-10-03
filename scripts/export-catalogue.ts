@@ -14,6 +14,8 @@ import {
   CATALOGUE,
   COLLECTIONS,
   DESIGN_FAMILIES,
+  LAUNCH_CATALOGUE,
+  LAUNCH_COLLECTIONS,
   TAG,
 } from '../app/data/catalogue/index.ts';
 import {
@@ -43,8 +45,9 @@ function toCsv(
   );
 }
 
-// Shopify product CSV (one row per variant; product fields on first row).
-const productRows = CATALOGUE.flatMap((product) =>
+// Shopify product CSV — V1 launch catalogue ONLY (24 products). V2 designs
+// (Us, Make It Yours) are never exported for import.
+const productRows = LAUNCH_CATALOGUE.flatMap((product) =>
   product.variants.map((variant, index) => {
     const first = index === 0;
     return {
@@ -81,6 +84,8 @@ const supplierRows = CATALOGUE.flatMap((product) =>
     Handle: product.handle,
     Title: product.title,
     Variant: variant.option?.value ?? '',
+    Release:
+      product.family.release === 'v1' ? 'V1 launch' : 'V2 — not for sale',
     'Design family': product.family.name,
     'Product type': product.type.name,
     Supplier: SUPPLIERS[SUPPLIER_BY_PRODUCT_TYPE[product.type.handle]].name,
@@ -95,23 +100,29 @@ const supplierRows = CATALOGUE.flatMap((product) =>
 );
 
 const collectionsMd = [
-  '# Shopify collections (launch)',
+  '# Shopify collections (V1 launch)',
   '',
-  'Create these as **smart collections** in Shopify Admin so products join automatically via tags.',
+  'Create the V1 collections as **smart collections** in Shopify Admin so products join automatically via tags. Counts are V1 launch products only.',
   '',
-  '| Handle | Title | Rule | Products |',
-  '| --- | --- | --- | --- |',
+  '| Handle | Title | Rule | V1 products | Release |',
+  '| --- | --- | --- | --- | --- |',
   ...Object.entries(COLLECTIONS).map(([handle, c]) => {
-    const count = CATALOGUE.filter((p) =>
+    const count = LAUNCH_CATALOGUE.filter((p) =>
       p.collections.includes(handle as keyof typeof COLLECTIONS),
     ).length;
-    return `| \`${handle}\` | ${c.title} | ${c.rule} | ${count} |`;
+    const release =
+      handle === 'all'
+        ? 'V1: built in (do not create)'
+        : c.release === 'v1'
+          ? 'V1: create'
+          : 'V2: do not create in V1';
+    return `| \`${handle}\` | ${c.title} | ${c.rule} | ${count} | ${release} |`;
   }),
   '',
   'Collection descriptions (paste into Shopify):',
   '',
-  ...Object.entries(COLLECTIONS).map(
-    ([handle, c]) => `- **${handle}** — ${c.description}`,
+  ...LAUNCH_COLLECTIONS.map(
+    (handle) => `- **${handle}** — ${COLLECTIONS[handle].description}`,
   ),
   '',
 ].join('\n');
@@ -176,8 +187,8 @@ analytics.subscribe('checkout_completed', (event) => {
 `;
 
 // Inputs for catalogue/admin/collection-create.graphql (step E).
-const collectionInputs = Object.entries(COLLECTIONS)
-  .filter(([handle]) => handle !== 'all')
+const collectionInputs = LAUNCH_COLLECTIONS.filter((handle) => handle !== 'all')
+  .map((handle) => [handle, COLLECTIONS[handle]] as const)
   .map(([handle, c]) => ({
     input: {
       title: c.title,
@@ -209,5 +220,5 @@ writeFileSync(join(outDir, 'collections.md'), collectionsMd);
 
 // eslint-disable-next-line no-console
 console.log(
-  `Exported ${CATALOGUE.length} products / ${productRows.length} variants to catalogue/`,
+  `Exported ${LAUNCH_CATALOGUE.length} V1 products / ${productRows.length} variants for import (${CATALOGUE.length - LAUNCH_CATALOGUE.length} V2 design records excluded) to catalogue/`,
 );

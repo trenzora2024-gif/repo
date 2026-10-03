@@ -27,7 +27,8 @@ Node 22+. Never commit secrets: `.env` is gitignored. `.env.mock` holds only dum
 
 ```
 app/
-  data/catalogue/       Single source of truth for the 30-SKU catalogue
+  data/catalogue/       Single source of truth: 10 design records; V1 launch = 8 designs × 3 = 24 SKUs
+                        (Us + Make It Yours are V2 personalization concepts, never sold in V1)
     design-families.ts    10 design concepts: story, concept, palette, personalization config
     product-types.ts      Tee / tote / tumbler specs, care, supplier key
     pricing.ts            Retail prices (one place to change after landed-cost validation)

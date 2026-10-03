@@ -31,6 +31,8 @@ export async function loader({context, params, request}: Route.LoaderArgs) {
   const {handle} = params;
   const {storefront} = context;
   if (!handle) throw redirect('/collections/all');
+  // V1: personalization is a coming-soon page, not a shoppable collection.
+  if (handle === 'personalize') throw redirect('/personalize', 302);
 
   const {sortKey, reverse} = collectionSort(request);
   const pagination = getPaginationVariables(request, {pageBy: 24});

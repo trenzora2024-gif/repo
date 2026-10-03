@@ -17,9 +17,10 @@ import {existsSync, readFileSync} from 'node:fs';
 import {
   CATALOGUE,
   COLLECTIONS,
+  LAUNCH_CATALOGUE,
+  LAUNCH_COLLECTIONS,
   TAG,
   tagQuery,
-  type CollectionHandle,
 } from '../app/data/catalogue/index.ts';
 import {isBlockedStore} from '../app/lib/store-guard.ts';
 
@@ -173,6 +174,14 @@ async function main() {
   CATALOGUE.forEach((expected, i) => {
     const product = products[`p${i}`];
     if (!product) return;
+    if (expected.family.release !== 'v1') {
+      report(
+        'block',
+        'release',
+        `${expected.handle}: V2 design is visible on the storefront — V2 (Us, Make It Yours) must not be published or sold in V1`,
+      );
+      return;
+    }
     visible++;
     if (product.images.nodes.length) withImages++;
     else
@@ -216,9 +225,9 @@ async function main() {
     }
   });
   report(
-    visible === CATALOGUE.length ? 'ok' : 'info',
+    visible === LAUNCH_CATALOGUE.length ? 'ok' : 'info',
     'catalogue',
-    `${visible}/${CATALOGUE.length} catalogue products visible to the storefront (drafts/unpublished are hidden)`,
+    `${visible}/${LAUNCH_CATALOGUE.length} V1 launch products visible to the storefront (drafts/unpublished are hidden)`,
   );
   if (visible)
     report(
@@ -228,9 +237,7 @@ async function main() {
     );
 
   // -------------------------------------------------------- collections
-  const handles = (Object.keys(COLLECTIONS) as CollectionHandle[]).filter(
-    (h) => h !== 'all',
-  );
+  const handles = LAUNCH_COLLECTIONS.filter((h) => h !== 'all');
   const colQuery = `query { ${handles.map((h, i) => `c${i}: collection(handle: "${h}") { handle products(first: 100) { nodes { handle } } }`).join('\n')} }`;
   const cols =
     await gql<
@@ -241,7 +248,7 @@ async function main() {
     >(colQuery);
   handles.forEach((handle, i) => {
     const col = cols[`c${i}`];
-    const expected = CATALOGUE.filter((p) =>
+    const expected = LAUNCH_CATALOGUE.filter((p) =>
       p.collections.includes(handle),
     ).length;
     if (!col)
@@ -265,7 +272,7 @@ async function main() {
     `query($q: String!) { products(first: 100, query: $q) { nodes { handle } } }`,
     {q: tagQuery(TAG.drop('01'))},
   );
-  const expectedDrop = CATALOGUE.filter((p) =>
+  const expectedDrop = LAUNCH_CATALOGUE.filter((p) =>
     p.tags.includes(TAG.drop('01')),
   ).length;
   report(

@@ -270,13 +270,28 @@ export default function ProductPage() {
             </div>
           ) : null}
 
-          <ProductForm
-            productTitle={product.title}
-            productOptions={productOptions}
-            selectedVariant={selectedVariant}
-            family={family}
-            type={type}
-          />
+          {family && family.release !== 'v1' ? (
+            // Backstop: V2 personalization designs are never sold in V1,
+            // even if a product is accidentally published in Shopify.
+            <div className="personalize">
+              <p className="personalize__title">
+                <span className="badge">Coming soon</span> Not available to
+                order yet
+              </p>
+              <p className="meta">{family.personalization.comingSoonNote}</p>
+              <Link to="/personalize" className="btn btn--primary">
+                Get early access
+              </Link>
+            </div>
+          ) : (
+            <ProductForm
+              productTitle={product.title}
+              productOptions={productOptions}
+              selectedVariant={selectedVariant}
+              family={family}
+              type={type}
+            />
+          )}
 
           <ul className="assurance">
             <li>

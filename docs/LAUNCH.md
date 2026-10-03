@@ -10,8 +10,8 @@ The step-by-step store connection, with authorization gates, is in `docs/STORE-C
 - [ ] Policies: Refund, Privacy, Terms, Shipping (Settings → Policies). The footer already links to them. Make the refund policy match `RETURNS` in `app/data/site.ts`.
 
 ## 2. Catalogue
-- [ ] Run `npm run catalogue:export`, then go to Shopify Admin → Products → Import → `catalogue/shopify-products.csv`. This imports 30 products as **draft** and unpublished.
-- [ ] Create the 5 smart collections in `catalogue/collections.md` (`mumbai-made`, `drops`, `personalize`, `gifts`, `trending`).
+- [ ] Run `npm run catalogue:export`, then go to Shopify Admin → Products → Import → `catalogue/shopify-products.csv`. This imports the 24 V1 products as **draft** and unpublished. V2 designs (Us, Make It Yours) aren't in the file.
+- [ ] Create the 4 V1 smart collections in `catalogue/collections.md` (`mumbai-made`, `drops`, `gifts`, `trending`).
 - [ ] Create each product with the supplier using the production masters (`01_mumbai_made.png` … `10_make_it_yours.png`). Record the supplier product refs in `catalogue/supplier-map.csv`.
 - [ ] Upload real supplier mockups/photography to each Shopify product. Until then the site shows clearly labelled brand concept cards, not fake mockups.
 - [ ] Validate landed cost, then update `app/data/catalogue/pricing.ts` and re-export. Current prices: Tee ₹999, Tote ₹599, Tumbler ₹1,099.

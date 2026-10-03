@@ -63,7 +63,6 @@ const NAV_ORDER: CollectionHandle[] = [
   'all',
   'mumbai-made',
   'drops',
-  'personalize',
   'gifts',
   'trending',
 ];

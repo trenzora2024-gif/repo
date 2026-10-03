@@ -188,6 +188,11 @@ if (!existsSync(dir)) {
     lines.push(
       `✓ ${family.artworkFile} — ${info.width}×${info.height}px, ${info.colorType}${info.alpha ? ' (transparent bg possible)' : ' (no alpha)'}, ${info.bitDepth}-bit, ${info.dpi ? `${info.dpi} DPI` : 'no DPI metadata'}, ${mb} MB`,
     );
+    if (family.release !== 'v1') {
+      lines.push(
+        '  · V2 personalization-ready master: kept and checked, not for V1 sale',
+      );
+    }
     const revision = ARTWORK_REVISIONS[family.handle];
     if (revision) {
       lines.push(`  ✗ content revision required: ${revision}`);

@@ -1,6 +1,6 @@
 import {Link} from 'react-router';
 import type {Route} from './+types/about';
-import {DESIGN_FAMILIES} from '~/data/catalogue';
+import {LAUNCH_FAMILIES} from '~/data/catalogue';
 import {SITE} from '~/data/site';
 import {organizationJsonLd, seoMeta} from '~/lib/seo';
 
@@ -59,7 +59,7 @@ export default function About() {
             <div className="info-card">
               <h2>Original designs</h2>
               <p className="muted">
-                {DESIGN_FAMILIES.length} launch designs, from Mumbai Made to
+                {LAUNCH_FAMILIES.length} launch designs, from Mumbai Made to
                 Desi Roots. New designs drop every week.
               </p>
             </div>

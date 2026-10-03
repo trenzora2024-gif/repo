@@ -6,6 +6,7 @@ import type {
   CollectionHandle,
   DesignFamily,
   ProductTypeSpec,
+  Release,
 } from './types.ts';
 
 export * from './types.ts';
@@ -37,42 +38,49 @@ export function tagQuery(tag: string) {
 
 export const COLLECTIONS: Record<
   CollectionHandle,
-  {title: string; description: string; rule: string}
+  {title: string; description: string; rule: string; release: Release}
 > = {
   all: {
     title: 'All Products',
     description:
       'Every Trenzora original — oversized tees, totes and 20oz tumblers, made to order in India.',
     rule: 'Built-in Shopify collection',
+    release: 'v1',
   },
   'mumbai-made': {
     title: 'Mumbai Made',
     description:
       'Every Trenzora design for Mumbai: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई, on tees, totes and tumblers.',
     rule: 'Product tag equals col:mumbai-made',
+    release: 'v1',
   },
   drops: {
     title: 'Drops',
     description:
       'Original Trenzora designs, released in drops. New designs land every week.',
     rule: 'Product tag equals col:drops',
+    release: 'v1',
   },
   personalize: {
     title: 'Personalize',
     description:
-      'Designs made to carry your names, city and date. Personalization is coming soon. For now these designs ship exactly as shown.',
+      'Designs made to carry your names, city and date, launching with personalization.',
     rule: 'Product tag equals col:personalize',
+    // V2: only personalization designs belong here; not created in V1.
+    release: 'v2',
   },
   gifts: {
     title: 'Gifts',
     description:
-      'Gifts with personality — for besties, couples, colleagues, pet parents and anyone who misses home.',
+      'Gifts with personality: for besties, colleagues, coffee people, pet parents and anyone who misses Mumbai.',
     rule: 'Product tag equals col:gifts',
+    release: 'v1',
   },
   trending: {
     title: 'Trending',
     description: 'What people with personality are picking right now.',
     rule: 'Product tag equals col:trending (editorial until sales data exists)',
+    release: 'v1',
   },
 };
 
@@ -150,10 +158,25 @@ function buildProduct(
   };
 }
 
-/** The 30 launch products: 10 designs × 3 hero products. */
+/** Every design record: 10 designs × 3 hero products (V1 + V2). */
 export const CATALOGUE: CatalogueProduct[] = DESIGN_FAMILIES.flatMap((family) =>
   PRODUCT_TYPES.map((type) => buildProduct(family, type)),
 );
+
+/** V1 design families (8) — the only ones sold at launch. */
+export const LAUNCH_FAMILIES = DESIGN_FAMILIES.filter(
+  (f) => f.release === 'v1',
+);
+
+/** The V1 sellable catalogue: 8 designs × 3 products = 24 products. */
+export const LAUNCH_CATALOGUE = CATALOGUE.filter(
+  (product) => product.family.release === 'v1',
+);
+
+/** Collections that exist in Shopify at launch. */
+export const LAUNCH_COLLECTIONS = (
+  Object.keys(COLLECTIONS) as CollectionHandle[]
+).filter((handle) => COLLECTIONS[handle].release === 'v1');
 
 export function getCatalogueProduct(handle: string | undefined | null) {
   return CATALOGUE.find((product) => product.handle === handle);

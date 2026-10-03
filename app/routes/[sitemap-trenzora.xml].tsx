@@ -5,6 +5,7 @@ import {DESIGN_FAMILIES} from '~/data/catalogue';
 const STATIC_PATHS = [
   '/',
   '/collections/all',
+  '/personalize',
   '/about',
   '/shipping',
   '/contact',
