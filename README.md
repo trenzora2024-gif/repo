@@ -31,7 +31,6 @@ app/
     design-families.ts    10 design concepts: story, concept, palette, personalization config
     product-types.ts      Tee / tote / tumbler specs, care, supplier key
     pricing.ts            Retail prices (one place to change after landed-cost validation)
-    suppliers.ts          Supplier registry (exports/docs only, never rendered)
     index.ts              Builds handles, titles, SKUs, tags, SEO; joins Shopify ↔ editorial
   data/site.ts          Brand copy, shipping/returns promises, FAQ, navigation
   styles/tokens.css     Design tokens (colour, type, space, motion, breakpoints)
@@ -44,6 +43,8 @@ app/
   routes/               Home, /collections/*, /designs/:handle, /products/:handle,
                         /cart, /search, /about, /shipping, /contact, policies, sitemaps
 catalogue/              Generated: shopify-products.csv, supplier-map.csv, collections.md
+ops/suppliers.ts        OPS-ONLY: suppliers, product→supplier map, artwork revisions.
+                        Never imported by app/ (keeps supplier data out of the site)
 scripts/                export-catalogue.ts, mock-storefront.ts (dev only), dev-mock.mjs
 docs/                   STORE-CONNECTION.md (runbook), LAUNCH.md, PERSONALIZATION.md
 artwork/masters/        Official production masters go here (gitignored binaries)

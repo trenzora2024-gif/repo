@@ -48,7 +48,10 @@ export async function loader({context, params, request}: Route.LoaderArgs) {
 
   return {
     collection,
-    editorial: COLLECTIONS[handle as CollectionHandle] ?? null,
+    // Only customer-facing fields (not the internal smart-collection rule).
+    editorial: COLLECTIONS[handle as CollectionHandle]
+      ? {description: COLLECTIONS[handle as CollectionHandle].description}
+      : null,
   };
 }
 

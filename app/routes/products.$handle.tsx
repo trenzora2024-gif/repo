@@ -27,7 +27,9 @@ import {absoluteUrl, breadcrumbJsonLd, seoMeta} from '~/lib/seo';
 
 export const meta: Route.MetaFunction = ({data}) => {
   if (!data) return [{title: 'Product not found | Trenzora'}];
-  const {product, entry} = data;
+  const {product} = data;
+  // Resolved from the catalogue (bundled), not sent through loader data.
+  const entry = resolveCatalogueEntry(product);
   const variant = product.selectedOrFirstAvailableVariant;
   const image = product.images.nodes[0];
   const path = `/products/${product.handle}`;
@@ -117,11 +119,14 @@ export async function loader({context, params, request}: Route.LoaderArgs) {
     .then((res) => (res.productRecommendations ?? []).slice(0, 4))
     .catch(() => []);
 
-  return {product, entry, related, siblings: await siblings};
+  // Only Shopify data crosses the wire. Editorial content is resolved from
+  // the catalogue on render, so no internal catalogue fields reach the HTML.
+  return {product, related, siblings: await siblings};
 }
 
 export default function ProductPage() {
-  const {product, entry, related, siblings} = useLoaderData<typeof loader>();
+  const {product, related, siblings} = useLoaderData<typeof loader>();
+  const entry = resolveCatalogueEntry(product);
   const family = entry?.family;
   const type = entry?.type;
 

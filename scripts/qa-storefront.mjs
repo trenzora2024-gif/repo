@@ -53,6 +53,9 @@ const PATHS = [
   '/robots.txt',
 ];
 
+// Internal data that must never reach customers (page HTML or bundle).
+const FORBIDDEN = /printrove|qikink|vistaprint|kraftix|bruno/i;
+
 const issues = [];
 const note = (level, msg) => {
   console.log(
@@ -109,6 +112,8 @@ for (const [label, viewport] of [
       noAlt: [...document.images].filter((i) => !i.hasAttribute('alt')).length,
     }));
     const problems = [];
+    const leak = (await page.content()).match(FORBIDDEN);
+    if (leak) problems.push(`internal term in HTML: "${leak[0]}"`);
     if (r.h1 !== 1) problems.push(`${r.h1} H1s`);
     if (!r.title) problems.push('no title');
     if (!r.desc) problems.push('no meta description');

@@ -113,7 +113,6 @@ export interface ProductTypeSpec {
   care: string[];
   /** Variant option — only apparel has sizes at launch. */
   option?: {name: string; values: string[]};
-  supplier: SupplierKey;
   /** Grams, used for Shopify shipping weight. Confirm with supplier. */
   weightGrams: number;
 }
@@ -132,7 +131,6 @@ export interface CatalogueProduct {
   vendor: string;
   tags: string[];
   collections: CollectionHandle[];
-  supplier: SupplierKey;
   priceInr: number;
   variants: CatalogueVariant[];
   seo: {title: string; description: string};

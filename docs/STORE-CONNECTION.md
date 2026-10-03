@@ -8,7 +8,7 @@ The storefront is ready. This runbook covers steps A–I. Each 🔒 **GATE** is 
 - Products stay **DRAFT** and collections stay **unpublished** until you approve pricing, supplier economics, artwork and shipping.
 - Personalization stays OFF (`personalization.enabled: false` for every family).
 - Prices in `app/data/catalogue/pricing.ts` are **provisional**.
-- Supplier data lives only in `catalogue/supplier-map.csv` and `app/data/catalogue/suppliers.ts`. It is never rendered.
+- Supplier data lives only in `ops/suppliers.ts` and `catalogue/supplier-map.csv`. Neither is imported by the storefront, and `qa:storefront` fails if a supplier name or internal note appears in page HTML.
 
 ---
 

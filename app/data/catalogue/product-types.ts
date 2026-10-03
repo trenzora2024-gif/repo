@@ -24,7 +24,6 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
       'Line dry in shade',
     ],
     option: {name: 'Size', values: ['S', 'M', 'L', 'XL', 'XXL']},
-    supplier: 'printrove',
     weightGrams: 300,
   },
   {
@@ -42,7 +41,6 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
       'Hand wash cold if needed, inside out',
       'Do not iron on the print',
     ],
-    supplier: 'qikink',
     weightGrams: 200,
   },
   {
@@ -63,7 +61,6 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
       'Not dishwasher or microwave safe',
       'Avoid abrasive scrubbers on the print',
     ],
-    supplier: 'qikink',
     weightGrams: 450,
   },
 ];

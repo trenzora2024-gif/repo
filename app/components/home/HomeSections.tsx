@@ -211,16 +211,16 @@ export function MakeItYours() {
               Make it <span className="serif">yours.</span>
             </h2>
             <p className="lede">
-              Some designs are made to carry your words — names, dates, the
-              nickname only your people use. The originals are ready now;
-              personal text is launching soon.
+              Some designs are made to carry your words: names, a city, a date.
+              Personalization is coming soon. For now these designs ship exactly
+              as shown.
             </p>
             <ol className="miy__steps">
+              <li>Pick a personalization-ready design: Us or Make It Yours.</li>
               <li>
-                Pick a design made for personalizing — Us or Make It Yours.
+                Today: order it as the original, on a tee, tote or tumbler.
               </li>
-              <li>Choose a tee, a tote or a tumbler.</li>
-              <li>We print it for you and ship it across India.</li>
+              <li>Soon: add your names, city and date before we print.</li>
             </ol>
             <div className="hero__ctas">
               <Link
@@ -228,7 +228,7 @@ export function MakeItYours() {
                 className="btn btn--light"
                 prefetch="intent"
               >
-                Shop personalizable designs
+                See the designs
               </Link>
             </div>
           </div>

@@ -3,10 +3,10 @@
     "input": {
       "title": "Mumbai Made",
       "handle": "mumbai-made",
-      "descriptionHtml": "<p>The first Trenzora drop. A love letter to Mumbai on a tee, a tote and a tumbler.</p>",
+      "descriptionHtml": "<p>Every Trenzora design for Mumbai: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई, on tees, totes and tumblers.</p>",
       "seo": {
         "title": "Mumbai Made | Trenzora",
-        "description": "The first Trenzora drop. A love letter to Mumbai on a tee, a tote and a tumbler."
+        "description": "Every Trenzora design for Mumbai: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई, on tees, totes and tumblers."
       },
       "ruleSet": {
         "appliedDisjunctively": false,
@@ -45,10 +45,10 @@
     "input": {
       "title": "Personalize",
       "handle": "personalize",
-      "descriptionHtml": "<p>Designs made to carry your names, dates and words. Originals available now; personal text coming soon.</p>",
+      "descriptionHtml": "<p>Designs made to carry your names, city and date. Personalization is coming soon. For now these designs ship exactly as shown.</p>",
       "seo": {
         "title": "Personalize | Trenzora",
-        "description": "Designs made to carry your names, dates and words. Originals available now; personal text coming soon."
+        "description": "Designs made to carry your names, city and date. Personalization is coming soon. For now these designs ship exactly as shown."
       },
       "ruleSet": {
         "appliedDisjunctively": false,

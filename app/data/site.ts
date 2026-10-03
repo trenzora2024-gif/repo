@@ -69,7 +69,7 @@ export const FAQ = [
   },
   {
     q: 'Can I add my own name?',
-    a: 'Personal names and text are coming soon on the Us and Make It Yours designs. Right now every design ships as the Trenzora original.',
+    a: 'Not yet. Adding names, a city or a date is coming soon on the Us and Make It Yours designs. For now every design ships exactly as shown.',
   },
   {
     q: 'Is the design original?',

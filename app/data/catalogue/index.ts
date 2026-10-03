@@ -48,7 +48,7 @@ export const COLLECTIONS: Record<
   'mumbai-made': {
     title: 'Mumbai Made',
     description:
-      'The first Trenzora drop. A love letter to Mumbai on a tee, a tote and a tumbler.',
+      'Every Trenzora design for Mumbai: Mumbai Made, Local Legend, Bombay Coffee Club and माझी मुंबई, on tees, totes and tumblers.',
     rule: 'Product tag equals col:mumbai-made',
   },
   drops: {
@@ -60,7 +60,7 @@ export const COLLECTIONS: Record<
   personalize: {
     title: 'Personalize',
     description:
-      'Designs made to carry your names, dates and words. Originals available now; personal text coming soon.',
+      'Designs made to carry your names, city and date. Personalization is coming soon. For now these designs ship exactly as shown.',
     rule: 'Product tag equals col:personalize',
   },
   gifts: {
@@ -135,7 +135,6 @@ function buildProduct(
     vendor: VENDOR,
     tags,
     collections,
-    supplier: type.supplier,
     priceInr: price,
     variants,
     seo: {

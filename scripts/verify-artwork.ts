@@ -16,6 +16,7 @@ import {existsSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {inflateSync} from 'node:zlib';
 import {DESIGN_FAMILIES} from '../app/data/catalogue/index.ts';
+import {ARTWORK_REVISIONS} from '../ops/suppliers.ts';
 
 const args = process.argv.slice(2);
 const dir = args.includes('--dir')
@@ -187,6 +188,11 @@ if (!existsSync(dir)) {
     lines.push(
       `✓ ${family.artworkFile} — ${info.width}×${info.height}px, ${info.colorType}${info.alpha ? ' (transparent bg possible)' : ' (no alpha)'}, ${info.bitDepth}-bit, ${info.dpi ? `${info.dpi} DPI` : 'no DPI metadata'}, ${mb} MB`,
     );
+    const revision = ARTWORK_REVISIONS[family.handle];
+    if (revision) {
+      lines.push(`  ✗ content revision required: ${revision}`);
+      problems++;
+    }
     if (!pixels) {
       lines.push('  ! pixel checks skipped (expected 8-bit RGBA)');
     } else {

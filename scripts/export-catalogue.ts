@@ -16,7 +16,11 @@ import {
   DESIGN_FAMILIES,
   TAG,
 } from '../app/data/catalogue/index.ts';
-import {SUPPLIERS} from '../app/data/catalogue/suppliers.ts';
+import {
+  ARTWORK_REVISIONS,
+  SUPPLIERS,
+  SUPPLIER_BY_PRODUCT_TYPE,
+} from '../ops/suppliers.ts';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(root, 'catalogue');
@@ -79,8 +83,10 @@ const supplierRows = CATALOGUE.flatMap((product) =>
     Variant: variant.option?.value ?? '',
     'Design family': product.family.name,
     'Product type': product.type.name,
-    Supplier: SUPPLIERS[product.supplier].name,
+    Supplier: SUPPLIERS[SUPPLIER_BY_PRODUCT_TYPE[product.type.handle]].name,
     'Production master': product.family.artworkFile,
+    'Artwork text (launch)': product.family.artworkText,
+    'Artwork revision required': ARTWORK_REVISIONS[product.family.handle] ?? '',
     'Supplier product ref': '', // fill after supplier product is created
     'Image alt text (use on upload)': product.imageAlt,
     'Retail price (INR)': variant.priceInr,
