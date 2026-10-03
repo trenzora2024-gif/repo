@@ -1,6 +1,6 @@
 import {createHydrogenContext} from '@shopify/hydrogen';
 import {AppSession} from '~/lib/session';
-import {assertStoreEnv} from '~/lib/store-guard';
+import {assertStoreEnv, withCheckoutDomain} from '~/lib/store-guard';
 import {CART_QUERY_FRAGMENT} from '~/lib/fragments';
 import type {CartApiQueryFragment} from 'storefrontapi.generated';
 
@@ -30,9 +30,10 @@ declare global {
  * */
 export async function createHydrogenRouterContext(
   request: Request,
-  env: Env,
+  rawEnv: Env,
   executionContext: ExecutionContext,
 ) {
+  const env = withCheckoutDomain(rawEnv);
   /**
    * Open a cache instance in the worker and a custom session instance.
    */

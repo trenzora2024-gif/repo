@@ -55,11 +55,7 @@ export function assertStoreEnv(
 
   if (production) {
     const missing = (
-      [
-        'PUBLIC_STORE_DOMAIN',
-        'PUBLIC_STOREFRONT_API_TOKEN',
-        'PUBLIC_CHECKOUT_DOMAIN',
-      ] as const
+      ['PUBLIC_STORE_DOMAIN', 'PUBLIC_STOREFRONT_API_TOKEN'] as const
     ).filter((key) => !env[key]);
     if (missing.length) {
       throw new Error(
@@ -67,4 +63,15 @@ export function assertStoreEnv(
       );
     }
   }
+}
+
+/**
+ * Oxygen doesn't set PUBLIC_CHECKOUT_DOMAIN automatically. Without it, use
+ * the store's own .myshopify.com domain (Shopify's checkout serves there too)
+ * instead of refusing to start. Set it in the Hydrogen channel to use the
+ * custom checkout domain.
+ */
+export function withCheckoutDomain<T extends StoreEnv>(env: T): T {
+  if (env.PUBLIC_CHECKOUT_DOMAIN || !env.PUBLIC_STORE_DOMAIN) return env;
+  return {...env, PUBLIC_CHECKOUT_DOMAIN: env.PUBLIC_STORE_DOMAIN};
 }
