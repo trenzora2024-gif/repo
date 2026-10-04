@@ -1,0 +1,580 @@
+{
+ "_note": "Lowest comparable US retail price for the SAME product (same maker, model, size), from web search results read 2026-10-04. Retail sites (vevor.com, Walmart, Home Depot, Amazon) were blocked for direct fetching from the research environment, so prices are the search engine's extract of each listing page; re-check before pricing. eBay/marketplace resellers are excluded from 'low'.",
+ "WMKkQoJtTeqD": {
+  "low": 167.9,
+  "lowAt": "VEVOR / Best Buy",
+  "lowUrl": "https://www.vevor.com/truck-tents-c_45132/vevor-large-suv-tent-for-5-9-person-10-6-x-8-ft-all-season-suv-tailgate-tent-with-ventilated-door-mesh-windows-pu3000mm-waterproof-dual-use-car-rear-hatch-tents-for-outdoor-camping-hiking-p_010884465180",
+  "high": 196.99,
+  "highAt": "Lowe's"
+ },
+ "jAqdKQyGwobR": {
+  "low": 136.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/truck-tent-c_11508/vevor-suv-camping-tent-8-8-suv-tent-attachment-for-camping-with-carry-bag-waterproof-pu2000mm-double-layer-truck-tent-accommodate-6-8-person-rear-tent-for-van-hatch-tailgate-p_010359774655",
+  "high": 159.99,
+  "highAt": "Walmart",
+  "note": "Walmart third-party listing (BENTISM/VEVOR) seen on promo at $97.90 (reg. $138.90) on 2026-10-04 \u2014 below our Doba cost; if that price persists the product fails. Home Depot $155.00."
+ },
+ "dleDFrCjkKVa": {
+  "low": 122.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/truck-tents-c_45132/vevor-large-suv-tent-for-6-person-10-x-9-ft-3-season-suv-tailgate-tent-with-ventilated-doors-mesh-windows-pu2000mm-waterproof-dual-use-car-rear-hatch-tents-for-outdoor-camping-hiking-p_010173834041",
+  "high": 147.99,
+  "highAt": "Best Buy"
+ },
+ "IFecQrCyBKDJ": {
+  "low": 240.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/other-c_45583/vevor-inflatable-suv-tent-with-awning-8-x-6-7-ft-3-season-suv-tailgate-tent-with-ventilated-doors-mesh-window-pu2000mm-waterproof-car-rear-hatch-tents-for-outdoor-camping-air-pump-included-p_010761017628",
+  "high": 290.99,
+  "highAt": "Best Buy"
+ },
+ "LJDpCoyNePvc": {
+  "low": 73.99,
+  "lowAt": "Walmart",
+  "lowUrl": "https://www.walmart.com/ip/VEVOR-Truck-Bed-Tent-5-5-6-Pickup-Truck-Tent-Rain-Layer-Carry-Bag-Waterproof-PU2000mm-Double-Layer-Truck-Tent-Camping-Accommodate-2-3-Person-for-Camp/16502462988",
+  "high": 88.4,
+  "highAt": "Lowe's"
+ },
+ "mcVLbJdSnFDj": {
+  "low": 131.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/awning-c_12491/vevor-car-side-awning-large-6-6-x-8-2-shade-coverage-vehicle-awning-pu3000mm-uv50-retractable-car-awning-with-waterproof-storage-bag-height-adjustable-suitable-for-truck-suv-van-campers-p_010582913386",
+  "high": 155.99,
+  "highAt": "Walmart"
+ },
+ "ywvPVcNinQDa": {
+  "low": 94.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/awning-c_12491/vevor-vehicle-awning-large-10-x-7-shade-coverage-car-side-awning-pu2000mm-uv50-car-awning-with-extended-side-canopies-and-portable-storage-bag-suitable-for-truck-suv-van-campers-p_010515891156",
+  "high": 114.99,
+  "highAt": "Home Depot"
+ },
+ "GzFmQdovKevf": {
+  "low": 353.9,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-270-degree-awning-133-sq-ft-driver-side-vehicle-awning-waterproof-uv50-car-side-awnings-with-carry-bag-beige/JJGHKKVL5P/sku/12108076",
+  "high": 369.9,
+  "highAt": "VEVOR",
+  "note": "VEVOR shows $269.90 to registered members."
+ },
+ "mzqdDYNFkQvb": {
+  "low": 243.9,
+  "lowAt": "Wayfair",
+  "lowUrl": "https://www.wayfair.com/outdoor/pdp/vevor-canvas-bell-tent-4-season-camping-yurt-tent-with-stove-jack-fxnu4020.html",
+  "high": 330.99,
+  "highAt": "Best Buy",
+  "note": "Wayfair $243.90 (was $256.77); VEVOR $320.90; Best Buy $330.99"
+ },
+ "TZqbFWPfweVi": {
+  "low": 243.9,
+  "lowAt": "VEVOR / Wayfair",
+  "lowUrl": "https://www.vevor.com/yurt-tent-c_10246/4-season3-m-9-8ft-waterproof-cotton-canvas-bell-tent-with-zipped-ground-sheet-p_010432929912",
+  "high": 296.0,
+  "highAt": "Home Depot"
+ },
+ "mVDgvoIQuQbP": {
+  "low": 390.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/yurt-tent-c_10246/4-season-waterproof-cotton-canvas-bell-tent-large-family-camp-hunting-yurt-tents-p_010312030446",
+  "high": 394.9,
+  "highAt": "Walmart"
+ },
+ "VHQdbfWOFovj": {
+  "low": 80.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/yurt-tent-c_10246/vevor-cabin-hot-tent-with-stove-jack-lightweight-waterproof-2-persons-camping-p_010139824325",
+  "high": 89.99,
+  "highAt": "Best Buy"
+ },
+ "VjQtvcrBeJDC": {
+  "low": 92.99,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-screen-house-tent-10-x-9-2-ft-4-8-person-pop-up-screen-tent-portable-screened-in-canopy-with-carry-bag-netting-sides-beige/JJGHKKVYVQ",
+  "high": 122.9,
+  "highAt": "VEVOR"
+ },
+ "qICevaBRVPDN": {
+  "low": 79.71,
+  "lowAt": "Walmart",
+  "lowUrl": "https://www.walmart.com/ip/VEVOR-Screen-House-Tent-6-x-6-ft-4-6-Person-Pop-Screen-Tent-Portable-Screened-Canopy-Carry-Bag-Netting-Sides-Ground-Stakes-Garden-Patio-Backyard-Outd/18999617053",
+  "high": 88.9,
+  "highAt": "Best Buy"
+ },
+ "hMCFetooyKbq": {
+  "low": 149.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/other-c_45583/vevor-camping-tent-4-person-inflatable-cabin-tent-with-rechargeable-pump-tpu-air-tube-5-large-mesh-windows-portable-easy-setup-waterproof-with-carry-bag-for-family-outdoor-camping-hiking-beige-p_010380686950",
+  "high": 149.9,
+  "highAt": "VEVOR"
+ },
+ "cGKveqogJQbH": {
+  "low": 1149.99,
+  "lowAt": "Walmart",
+  "lowUrl": "https://www.walmart.com/ip/VEVOR-Rooftop-Tent-Hard-Shell-2-3-Person-Aluminum-Roof-Top-Tent-Hardshell-Tri-Color-LED-Light-Thick-Mattress-Waterproof-Windproof-Overland-Camping-Ca/19402107202",
+  "high": 1461.99,
+  "highAt": "Best Buy"
+ },
+ "AoerVWdoEFvK": {
+  "low": 162.99,
+  "lowAt": "Aosom (Outsunny)",
+  "lowUrl": "https://www.wayfair.com/outdoor/pdp/outsunny-2-person-foldable-camping-cot-with-tent-bedspread-and-thick-air-mattress-4-in-1-elevated-camping-bed-tent-otsu1851.html",
+  "high": 210.99,
+  "highAt": "Wayfair"
+ },
+ "mrVkDKNQvCbR": {
+  "low": 86.68,
+  "lowAt": "Lowe's",
+  "lowUrl": "https://www.lowes.com/pd/VEVOR-Truck-Bed-Air-Mattress-for-6-to-6-5-ft-Full-Size-Truck-Beds-Inflatable-Air-Mattress-Camping-Bed-with-12V-Air-Pump-2-Pillows-Carry-Bag-for-Chevrolet-Silverado-Dodge-Ram/5015163431",
+  "high": 91.9,
+  "highAt": "VEVOR"
+ },
+ "ByebFdCjaKqA": {
+  "low": 41.99,
+  "lowAt": "VEVOR / Walmart (comparable universal model)",
+  "lowUrl": "https://www.vevor.com/air-mattresses-c_12540/car-air-mattress-inflatable-camping-travel-sleeping-bed-air-pump-suv-mpv-sedan-p_010382011827",
+  "high": 76.9,
+  "highAt": "VEVOR (Oxford version)"
+ },
+ "MGQpDPkRwcVf": {
+  "low": 62.98,
+  "lowAt": "Walmart (comparable 75\" 600 lb cot)",
+  "lowUrl": "https://www.walmart.com/ip/75-Portable-Camping-Cot-600LBS-Max-Load-Extra-Wide-Thick-Mattress-1200-D-Layer-Oxford-Folding-Heavy-Duty-Bed-Mat-Carrying-Bag-Indoor-Outdoor-1-Set-Gr/12649567712",
+  "high": 69.0,
+  "highAt": "eBay",
+  "note": "Unbranded; comparable not identical."
+ },
+ "eAqMCSIvJoVj": {
+  "low": 65.99,
+  "lowAt": "VEVOR (promo)",
+  "lowUrl": "https://www.vevor.com/outdoor-camping-kitchen-c_43724",
+  "high": 93.9,
+  "highAt": "VEVOR (list)"
+ },
+ "KbDWelSiocvI": {
+  "low": 87.99,
+  "lowAt": "Home Depot",
+  "lowUrl": "https://www.homedepot.com/p/VEVOR-Camping-Kitchen-Table-Folding-Outdoor-Cooking-Table-with-Storage-Carrying-Bag-Aluminum-Cook-Station-3-Cupboard-Black-DFBKYDCFHSHSBD243V0-0816/332235421",
+  "high": 136.9,
+  "highAt": "VEVOR"
+ },
+ "QiDZCIlLYJqN": {
+  "low": 233.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/activity-tables-c_10621/vevor-camping-cooking-station-foldable-outdoor-kitchen-w-stove-table-organizer-p_010875698910",
+  "high": 290.0,
+  "highAt": "Home Depot"
+ },
+ "CIQRKBYRleVF": {
+  "low": 154.9,
+  "lowAt": "VEVOR / Best Buy",
+  "lowUrl": "https://www.vevor.com/outdoor-gas-stove-c_43477/vevor-2-burner-outdoor-propane-gas-stove-150-000-btu-propane-lpg-gas-camping-stove-foldable-heavy-duty-carbon-steel-outdoor-cooker-with-wheels-shield-20-psi-regulator-for-bbq-camp-home-patio-p_010769011541",
+  "high": 154.9,
+  "highAt": "Best Buy"
+ },
+ "hTqwPGDooYVc": {
+  "low": 32.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/commercial-outdoor-grills-c_10585/vevor-folding-campfire-grill-heavy-duty-steel-mesh-grate-22-4-portable-camping-grates-over-fire-pit-camp-fire-cooking-equipment-with-legs-carrying-bag-grilling-rack-for-outdoor-open-flame-cooking-p_010715205358",
+  "high": 39.08,
+  "highAt": "Sears"
+ },
+ "ftFwKLcOQCDJ": {
+  "low": 43.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/folding-plastic-crate-c_44010/vevor-plastic-collapsible-storage-bins-with-lids-65l-2-packs-stackable-folding-storage-crates-with-handles-holds-84-lbs-per-bin-heavy-duty-containers-space-saving-baskets-for-home-organizing-p_010446778267",
+  "high": 43.9,
+  "highAt": "VEVOR"
+ },
+ "OCFHeCQgKCqC": {
+  "low": 203.9,
+  "lowAt": "VEVOR / Lowe's",
+  "lowUrl": "https://www.lowes.com/pd/VEVOR-12-Volt-Car-Refrigerator-42-3QT-40L-Car-Fridge-Portable-Electric-Cooler-with-4degrees-fahrenheit-to-68degrees-fahrenheit-Adjustable-Temperature-12-24V-DC-and-100-240V-AC-Compressor-Freezer-for-Outdoor-Camping-Travel-RV/7576812",
+  "high": 213.9,
+  "highAt": "Walmart"
+ },
+ "rFCeqVBBpJbf": {
+  "low": 152.9,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-12-volt-refrigerator-42-3-qt-40l-car-fridge-portable-ultra-light-epp-freezer-app-control-electric-compressor-gray/JJGHKZ6FQ2/sku/12644593",
+  "high": 199.99,
+  "highAt": "Best Buy (regular)"
+ },
+ "zDQmFaJcfKvl": {
+  "low": 165.9,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-12-volt-refrigerator-21-1-qt-20l-car-fridge-portable-ultra-light-epp-freezer-app-control-electric-compressor-gray/JJGHKZ6F6Q/sku/12644699",
+  "high": 179.99,
+  "highAt": "Walmart",
+  "note": "VEVOR shows $109.90 to registered members."
+ },
+ "hEqGYvDMgJbF": {
+  "low": 309.9,
+  "lowAt": "VEVOR / Walmart / Best Buy",
+  "lowUrl": "https://www.vevor.com/car-refrigerator-c_10723/vevor-portable-car-refrigerator-freezer-compressor-50-l-dual-zone-for-home-car-p_010912072735",
+  "high": 309.9,
+  "highAt": "Best Buy"
+ },
+ "DbQtVcZowovy": {
+  "low": 545.9,
+  "lowAt": "VEVOR / Lowe's",
+  "lowUrl": "https://www.vevor.com/whole-house-portable-solar-power-generator-c_44909/vevor-portable-power-station-1800w-solar-generator-power-station-1008wh-lifepo4-battery-backup-with-9-output-ports-for-for-home-emergency-outdoor-camping-rv-travel-solar-panel-not-included--p_010790472307",
+  "high": 545.9,
+  "highAt": "Lowe's"
+ },
+ "rgQkvcdqqKDH": {
+  "low": 129.99,
+  "lowAt": "Flashfish (official)",
+  "lowUrl": "https://www.flashfishtech.com/products/flashfish-e103-portable-power-station-300w-179-2wh",
+  "high": 169.99,
+  "highAt": "Flashfish (regular)"
+ },
+ "NjFPQrKWYCbf": {
+  "low": 43.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/solar-panels-c_13594/vevor-60w-foldable-solar-panel-charger-16bb-n-type-monocrystalline-solar-panel-24-efficiency-lightweight-portable-with-mc4-output-type-c-usb-a-dc-ports-for-power-stations-camping-hiking-p_010985240169",
+  "high": 50.99,
+  "highAt": "Best Buy"
+ },
+ "UdegqhNlQFDz": {
+  "low": 85.99,
+  "lowAt": "Walmart",
+  "lowUrl": "https://www.walmart.com/ip/VEVOR-Wood-Stove-80-inch-Stainless-Steel-Camping-Tent-Stove-Portable-Wood-Burning-Stove-Chimney-Pipes-Gloves-700in-Firebox-Hot-Tent-Stove-Outdoor-Coo/17491612785",
+  "high": 88.9,
+  "highAt": "VEVOR / Lowe's / Best Buy"
+ },
+ "mZqwvYNfnFVD": {
+  "low": 147.99,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-wood-stove-86-inch-stainless-steel-camping-tent-stove-portable-wood-burning-stove-with-chimney-pipes-gloves-silver/JJGHK4KTZX",
+  "high": 170.9,
+  "highAt": "VEVOR",
+  "note": "Factory Pure (refurb/liquidation) $131.99 excluded."
+ },
+ "ZbCHVAIyRKqv": {
+  "low": 76.99,
+  "lowAt": "Aosom (clearance)",
+  "lowUrl": "https://www.aosom.com/item/outsunny-smokeless-fire-pit-portable-camping-bonfire-stove-with-mat-for-backyard-patio-picnic-magnesium-oxide-brown~1KR3UU8VK7001.html",
+  "high": 91.99,
+  "highAt": "Walmart"
+ },
+ "ARQbqcuDePVo": {
+  "low": 120.9,
+  "lowAt": "VEVOR / Walmart / Lowe's",
+  "lowUrl": "https://www.walmart.com/ip/VEVOR-Collapsible-Folding-Wagon-550lb-Load-220L-2-1-Foldable-Wagon-Cart-Converts-Bench-Utility-Wagon-Adjustable-Handle-Outdoor-Cart-Groceries-Shoppin/17477269946",
+  "high": 122.99,
+  "highAt": "Best Buy"
+ },
+ "iwqIbPdcoQvu": {
+  "low": 35.03,
+  "lowAt": "Home Depot",
+  "lowUrl": "https://www.homedepot.com/p/VEVOR-Camping-Folding-Chair-for-Adults-Portable-Heavy-Duty-Outdoor-Quad-Lumbar-Back-Padded-Arm-Chairs-in-Black-HWZDYCY450LBSFODNV0/326908574",
+  "high": 45.9,
+  "highAt": "Best Buy"
+ },
+ "gpKMCYJEoebF": {
+  "low": 50.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/camping-folding-chair-c_43726/vevor-oversized-camping-chairs-450-lbs-heavy-duty-support-portable-padded-folding-camp-chairs-with-dual-cup-holders-wine-glass-holders-carry-bag-for-outdoor-fishing-black-gray-1-pack-p_010437165146",
+  "high": 56.9,
+  "highAt": "Best Buy",
+  "note": "Walmart listed $46.02 in search results (marketplace seller unverified)."
+ },
+ "URqpKWPBCFVQ": {
+  "low": 59.99,
+  "lowAt": "Amazon",
+  "lowUrl": "https://www.amazon.com/VEVOR-Reclining-Headrest-Adjustable-Activities/dp/B0DK8ZRX35",
+  "high": 79.99,
+  "highAt": "Home Depot"
+ },
+ "FhCaQDRCbevV": {
+  "low": 99.99,
+  "lowAt": "Target / Amazon",
+  "lowUrl": "https://www.target.com/s/heated+portable+chairs",
+  "high": 109.99,
+  "highAt": "Target",
+  "note": "Amazon $99.99 after coupon; Target $109.99."
+ },
+ "TteMDQIOoFqp": {
+  "low": 80.99,
+  "lowAt": "Walmart",
+  "lowUrl": "https://www.walmart.com/ip/Outsunny-Padded-Zero-Gravity-Chair-w-Cup-Holder-Tray-Gray/972499914",
+  "high": 94.99,
+  "highAt": "Walmart (regular)"
+ },
+ "ZhCWVBIveQvp": {
+  "low": 199.99,
+  "lowAt": "Outsunny (black)",
+  "lowUrl": "https://outsunny.com/products/outsunny-outdoor-rocking-chairs-foldable-reclining-zero-gravity-lounge-rocker-with-pillow-cup-phone-holder-combo",
+  "high": 264.99,
+  "highAt": "Walmart"
+ },
+ "pkQZbOWNnYvV": {
+  "low": 41.99,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-folding-camping-table-portable-roll-up-side-tables-small-lightweight-aluminum-beach-table-compact-with-carry-bag-silver/JJGHKZPV2W",
+  "high": 47.99,
+  "highAt": "VEVOR (36-inch)"
+ },
+ "ehKvqRtQyJDP": {
+  "low": 65.99,
+  "lowAt": "Walmart (comparable 680 lb wagon)",
+  "lowUrl": "https://www.walmart.com/ip/220-450-680-LBS-Heavy-Duty-Folding-Wagon-Cart-All-Terrain-Utility-Cart-with-600D-Oxford-Fabric-for-Camping-Garden-Beach-Shopping-Black/20027916856",
+  "high": 94.99,
+  "highAt": "eBay",
+  "note": "Unbranded; comparable not identical."
+ },
+ "RzetFCcqKQVa": {
+  "low": 80.99,
+  "lowAt": "Walmart",
+  "lowUrl": "https://www.walmart.com/ip/18792553445",
+  "high": 89.99,
+  "highAt": "Home Depot"
+ },
+ "rbFtqdSLIQDj": {
+  "low": 74.99,
+  "lowAt": "Aosom",
+  "lowUrl": "https://www.aosom.com/item/outsunny-camping-shower-tent-portable-privacy-shelter-with-solar-shower-bag-removable-floor-and-carrying-bag-black~1LMPNQBNS3801.html",
+  "high": 74.99,
+  "highAt": "Aosom"
+ },
+ "uHCdQMeyOFbV": {
+  "low": 89.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/water-heaters-c_12270/portable-propane-water-heater-6l-tankless-with-accessory-regulator-for-rv-p_010160697291",
+  "high": 108.33,
+  "highAt": "Home Depot"
+ },
+ "dreWCTFWQKbg": {
+  "low": 78.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/composting-toilets-c_40595/vevor-portable-toilet-5-3-gallon-detachable-waste-tank-120-flushes-camping-toilet-for-adults-outdoor-travel-potty-with-level-indicator-carry-bag-suitable-for-rv-travel-camping-hiking-boating-p_010420683242",
+  "high": 79.99,
+  "highAt": "Home Depot",
+  "note": "Walmart listed $77.90 in search results."
+ },
+ "OeQgvcSoFCDz": {
+  "low": 26.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/flashlight-c_12611/led-camping-lanterns-portable-rechargeable-lights-as-battery-bank-4-pcs-p_010417373513",
+  "high": 29.99,
+  "highAt": "Amazon"
+ },
+ "hODWVblfiFqe": {
+  "low": 94.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/truck-tent-c_10954",
+  "high": 102.99,
+  "highAt": "Walmart"
+ },
+ "iyqQbcIWnCDH": {
+  "low": 105.99,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/",
+  "high": 122.9,
+  "highAt": "VEVOR",
+  "note": "Walmart/Home Depot 112.99"
+ },
+ "WceHDgIyFCqQ": {
+  "low": 117.99,
+  "lowAt": "AOSOM",
+  "lowUrl": "https://www.aosom.com/",
+  "high": 124.99,
+  "highAt": "Best Buy"
+ },
+ "RJetCMoBuQvF": {
+  "low": 59.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/",
+  "high": 70.37,
+  "highAt": "Home Depot"
+ },
+ "EuFZQeJECKvG": {
+  "low": 31.9,
+  "lowAt": "Amazon",
+  "lowUrl": "https://www.amazon.com/",
+  "high": 36.99,
+  "highAt": "VEVOR"
+ },
+ "qtCcvfZolJDb": {
+  "low": 645.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/"
+ },
+ "sKFwDGSFheqO": {
+  "low": 92.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/truck-tents-c_45132",
+  "high": 121.9,
+  "highAt": "VEVOR (awning version)",
+  "note": "Several VEVOR 5.0-5.2 ft variants $92.90-$121.90; Walmart $113.66. Exact model match not confirmed."
+ },
+ "srFmbEdZhKDM": {
+  "low": 155.0,
+  "lowAt": "Home Depot",
+  "lowUrl": "https://www.homedepot.com/",
+  "high": 195.99,
+  "highAt": "Walmart / VEVOR list",
+  "note": "VEVOR member price $158.99"
+ },
+ "RiCWKQcyDFVf": {
+  "low": 275.9,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-270-degree-awning-52-sq-ft-driver-side-vehicle-awning-waterproof-uv50-car-side-awnings-with-carry-bag-beige/JJGHKKVY74",
+  "high": 289.9,
+  "highAt": "VEVOR"
+ },
+ "LGCgDElSSFVQ": {
+  "low": 487.99,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-canvas-bell-tent-4-seasons-6-m-19-68-ft-yurt-tent-canvas-tent-for-camping-with-stove-jack-tent-holds-up-to-10-people-beige/JJGHK4G2FQ",
+  "high": 505.9,
+  "highAt": "VEVOR"
+ },
+ "zgvpqKSRbFDW": {
+  "low": 43.96,
+  "lowAt": "Home Depot",
+  "lowUrl": "https://www.homedepot.com/p/VEVOR-Truck-Bed-Air-Mattress-for-5-5-5-8-ft-Full-Size-Short-Truck-Beds-Inflatable-Air-Mattress-Bed-with-Air-Pump-KCCQCD5558FTTKNM6V9/329504823",
+  "high": 66.9,
+  "highAt": "VEVOR",
+  "note": "VEVOR member $55.99; Walmart $60.21"
+ },
+ "MwCkQqFCeKDK": {
+  "low": 226.9,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-12-volt-car-refrigerator-52-8qt-50l-car-fridge-portable-electric-cooler-with-4F68F-adjustable-temperature-black/JJGHKZK83R",
+  "high": 239.9,
+  "highAt": "VEVOR / Lowe's"
+ },
+ "vVCwKJbYteDM": {
+  "low": 154.89,
+  "lowAt": "Walmart",
+  "lowUrl": "https://www.walmart.com/ip/17694873092",
+  "high": 162.99,
+  "highAt": "Best Buy",
+  "note": "VEVOR $154.99"
+ },
+ "zoCtFfJimeDn": {
+  "low": 173.99,
+  "lowAt": "Best Buy",
+  "lowUrl": "https://www.bestbuy.com/product/vevor-oxford-bell-tent-4-seasons-9-84-ft-yurt-tent-for-camping-with-stove-jack-waterproof-breathable-holds-up-to-3-people-light-beige/JJGHK4R6XZ",
+  "high": 193.99,
+  "highAt": "Best Buy (comp. value)"
+ },
+ "iNbvcGDRJYqj": {
+  "low": 31.99,
+  "lowAt": "Home Depot",
+  "lowUrl": "https://www.homedepot.com/p/334760139",
+  "high": 39.9,
+  "highAt": "VEVOR",
+  "note": "Amazon ~$31.25"
+ },
+ "aobWCtJUMQDV": {
+  "low": 17.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/flashlight-c_12611/vevor-led-camping-lantern-battery-powered-all-in-one-for-exceptional-experience-p_010630456438",
+  "high": 23.13,
+  "highAt": "Walmart",
+  "note": "Amazon deal seen at $9.90"
+ },
+ "jDFtKRoypCVG": {
+  "low": 29.99,
+  "lowAt": "Walmart (comparable 3-in-1 10000mAh)",
+  "lowUrl": "https://www.walmart.com/ip/3897787684",
+  "note": "Generic category; not identical product"
+ },
+ "vdbyYPeWHoVi": {
+  "low": 23.99,
+  "lowAt": "eBay (identical 16-pc set)",
+  "lowUrl": "https://www.ebay.com/itm/117147249312",
+  "high": 39.59,
+  "highAt": "Walmart (comparable)"
+ },
+ "nKqFVcmUwYvG": {
+  "low": 119.99,
+  "lowAt": "Flashfish official",
+  "lowUrl": "https://www.flashfishtech.com/products/flashfish-100w-18v-foldable-solar-panel",
+  "high": 149.0,
+  "highAt": "Wellbots"
+ },
+ "uACtQbeqyKqG": {
+  "low": 99.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/water-heaters-c_12270/portable-propane-water-heater-5l-tankless-with-accessory-regulator-for-rv-p_010292961471",
+  "high": 127.99,
+  "highAt": "Home Depot"
+ },
+ "ALeNDqBWGovE": {
+  "low": 136.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/other-c_45583/vevor-camping-tent-4-person-pop-up-instant-cabin-tent-with-large-mesh-windows-60-seconds-easy-setup-portable-cabin-hub-tents-with-carry-bag-for-family-outdoor-camping-hiking-upgraded-ventilation-p_010230420738"
+ },
+ "GjCbqFNRMeVs": {
+  "low": 84.99,
+  "lowAt": "AOSOM (Outsunny)",
+  "lowUrl": "https://www.aosom.com/item/outsunny-76-two-persons-double-wide-folding-camping-cot-with-bag-green~A20-030GN.html",
+  "high": 144.95,
+  "highAt": "Walmart"
+ },
+ "NwKRFgCOHevE": {
+  "low": 25.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/other-c_45583/vevor-portable-toilet-for-camping-350-lbs-weight-capacity-stainless-steel-foldable-camp-travel-toilet-with-soft-seat-for-adults-suitable-for-truckers-rv-travel-camping-road-trips-outdoor-use-p_010593449296",
+  "high": 29.99,
+  "highAt": "Walmart"
+ },
+ "mzeRViBmwPqf": {
+  "low": 389.99,
+  "lowAt": "Flashfish official",
+  "lowUrl": "https://www.flashfishtech.com/products/flashfish-t1200s-portable-power-station-1200w-768wh-lfp"
+ },
+ "OBFtqRpGScVN": {
+  "low": 61.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/activity-tables-c_10621/camping-kitchen-table-folding-portable-cook-station-3-adjustable-height-aluminum-p_010260522352",
+  "high": 69.99,
+  "highAt": "VEVOR (black)",
+  "note": "eBay $55.99; Best Buy $64.90"
+ },
+ "MoekDOWBHcVb": {
+  "low": 61.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/activity-tables-c_10621/camping-kitchen-table-folding-portable-cook-station-3-adjustable-height-aluminum-p_010260522352",
+  "high": 69.99,
+  "highAt": "VEVOR (black)",
+  "note": "eBay $55.99; Best Buy $64.90"
+ },
+ "kUCMvIWLiJqj": {
+  "low": 47.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/patio-chaise-lounges-c_13333/vevor-reclining-camping-chair-portable-folding-lounger-footrest-cushion-blue-p_010674157294",
+  "high": 56.15,
+  "highAt": "eBay",
+  "note": "Variant match (footrest, 4-position) assumed"
+ },
+ "GoeQKdctYCvO": {
+  "low": 82.9,
+  "lowAt": "VEVOR / Lowe's",
+  "lowUrl": "https://www.vevor.com/privacy-tents-c_14277/vevor-camping-shower-tent-1-room-foldable-privacy-tent-changing-room-with-ground-stakes-ropes-carry-bag-and-crossbar-210d-oxford-fabric-with-silver-coating-for-camping-beach-and-fishing-p_010457739890"
+ },
+ "hsvjPDbWkJVW": {
+  "low": 252.9,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/car-refrigerator-c_10723/vevor-portable-car-refrigerator-freezer-compressor-40-l-dual-zone-for-car-home-p_010354326077",
+  "high": 279.9,
+  "highAt": "VEVOR (AC/DC version)",
+  "note": "Home Depot $258.00 promo"
+ },
+ "sdKvqpNFECDL": {
+  "low": 43.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/air-mattresses-c_12540/car-air-mattress-inflatable-car-camping-travel-bed-sleeping-pad-built-in-pump-p_010850487573"
+ },
+ "jteZbJIjoCvR": {
+  "low": 130.99,
+  "lowAt": "VEVOR",
+  "lowUrl": "https://www.vevor.com/water-heaters-c_12270/portable-propane-water-heater-10l-tankless-with-accessory-regulator-for-rv-p_010622281198",
+  "high": 146.99,
+  "highAt": "Walmart"
+ }
+}

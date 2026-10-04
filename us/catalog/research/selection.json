@@ -1,0 +1,1591 @@
+[
+ {
+  "skuId": "jAqdKQyGwobR",
+  "product": "SUV Tailgate Tent 8\u00d78 ft (sleeps 6\u20138)",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Tailgate & SUV Camping",
+   "Family Campground Comfort"
+  ],
+  "persona": "SUV/minivan family car camper",
+  "problem": "Sleep beside the car with the cargo area as a dry room; no separate tent pitch",
+  "decision": "HERO",
+  "season": "Mar\u2013Oct (peak May\u2013Aug)",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 5,
+   "competition": 3,
+   "meta": 5,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 5
+  },
+  "vehicleFit": "SUVs, crossovers, minivans and hatchbacks with an upward-opening rear liftgate (sleeve wraps the open hatch). Not for swing-out doors.",
+  "metaAngle": "Turn your SUV into a 6-person basecamp in 10 minutes",
+  "videoIdea": "Time-lapse pitch on a mid-size SUV, then walk-through from the cargo area",
+  "crossSells": [
+   "zgvpqKSRbFDW",
+   "iwqIbPdcoQvu",
+   "zDQmFaJcfKvl"
+  ],
+  "bundle": "Tailgate Weekend Setup",
+  "rank": 1
+ },
+ {
+  "skuId": "WMKkQoJtTeqD",
+  "product": "Large SUV Tent 10.6\u00d78 ft, all-season (5\u20139 people)",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Tailgate & SUV Camping",
+   "Family Campground Comfort"
+  ],
+  "persona": "Larger family / group car camper",
+  "problem": "More floor space and weather protection than the 8\u00d78 for bigger groups",
+  "decision": "CORE",
+  "season": "Mar\u2013Nov",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 5
+  },
+  "vehicleFit": "SUVs/minivans with upward liftgate",
+  "crossSells": [
+   "jAqdKQyGwobR",
+   "AoerVWdoEFvK"
+  ]
+ },
+ {
+  "skuId": "dleDFrCjkKVa",
+  "product": "SUV Tent 10\u00d79 ft, 3-season (6 people)",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Family car camper",
+  "problem": "Mid-size alternative SUV tent",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 4
+  },
+  "vehicleFit": "SUVs/minivans with upward liftgate",
+  "notes": "Only 18 units in Doba stock; revisit when restocked"
+ },
+ {
+  "skuId": "IFecQrCyBKDJ",
+  "product": "Inflatable SUV Tent with Awning 8\u00d76.7 ft",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Convenience-first car camper",
+  "problem": "Air-beam pitch with no poles",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 4,
+   "meta": 5,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 5
+  },
+  "vehicleFit": "SUVs/minivans with upward liftgate",
+  "notes": "Only 17 units in stock; strongest video demo of the range"
+ },
+ {
+  "skuId": "iTCkeaYFSQVG",
+  "product": "SUV Tent 13\u00d710 ft (5\u20139 people)",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "Out of stock on Doba (0 units)"
+ },
+ {
+  "skuId": "tPCjDFIfUevY",
+  "product": "Waterproof SUV Tent 5\u20136 person (non-VEVOR)",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 3,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 3,
+   "video": 3
+  },
+  "notes": "13 units in stock, unbranded, no comparable retail price found; VEVOR listings preferred"
+ },
+ {
+  "skuId": "hODWVblfiFqe",
+  "product": "Truck Bed Tent for 6.4\u20136.7 ft beds",
+  "category": "Truck Bed Camping",
+  "missions": [
+   "Truck Bed Camping"
+  ],
+  "persona": "Full-size pickup owner (standard bed)",
+  "problem": "Sleep off the ground in the truck bed; no rocks or mud",
+  "decision": "CORE",
+  "season": "Apr\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 4,
+   "video": 4
+  },
+  "vehicleFit": "6.4\u20136.7 ft beds: e.g. Ford F-150 6.5 ft, Ram 1500 6.4 ft, Silverado/Sierra 1500 6.6 ft standard beds. Customer must measure bed (bulkhead to tailgate).",
+  "crossSells": [
+   "mrVkDKNQvCbR",
+   "ywvPVcNinQDa"
+  ],
+  "bundle": "Truck Bed Camping Setup",
+  "rank": null
+ },
+ {
+  "skuId": "LJDpCoyNePvc",
+  "product": "Truck Bed Tent for 5.5\u20136 ft beds",
+  "category": "Truck Bed Camping",
+  "missions": [
+   "Truck Bed Camping"
+  ],
+  "persona": "Short-bed pickup owner",
+  "problem": "Sleep in the truck bed (short beds)",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 4,
+   "video": 4
+  },
+  "vehicleFit": "5.5\u20136 ft beds (F-150 5.5 ft, Ram 5.7 ft, Silverado 5.8 ft, Tacoma/Tundra 6 ft)",
+  "notes": "Doba cost $69.67 vs market low $73.99: contribution negative at market price. Highest stock (1,221) \u2014 revisit only if logged-in cost is lower."
+ },
+ {
+  "skuId": "sKFwDGSFheqO",
+  "product": "Truck Bed Tent for 5.0\u20135.2 ft beds",
+  "category": "Truck Bed Camping",
+  "missions": [
+   "Truck Bed Camping"
+  ],
+  "persona": "Mid-size pickup owner",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 3,
+   "video": 3
+  },
+  "vehicleFit": "5.0\u20135.2 ft beds (Tacoma/Colorado/Ranger short beds)",
+  "notes": "Derived cost $98.87 is above the $92.90 VEVOR retail price"
+ },
+ {
+  "skuId": "srFmbEdZhKDM",
+  "product": "Truck Bed Tent for 8.0\u20138.2 ft beds",
+  "category": "Truck Bed Camping",
+  "missions": [
+   "Truck Bed Camping"
+  ],
+  "persona": "Long-bed / work-truck owner",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 4,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 3,
+   "video": 3
+  },
+  "vehicleFit": "8 ft long beds",
+  "notes": "Cost $150.79 vs $155 retail: no margin"
+ },
+ {
+  "skuId": "mcVLbJdSnFDj",
+  "product": "Car Side Awning 6.6\u00d78.2 ft",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Shade & Day Basecamp",
+   "Tailgate & SUV Camping",
+   "Truck Bed Camping"
+  ],
+  "persona": "Overlanding-curious SUV/truck owner",
+  "problem": "Instant shade and rain cover off the roof rack",
+  "decision": "HERO",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 4,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "vehicleFit": "Requires roof rack crossbars or rails; mounting brackets included per listing. Customer must confirm rack load rating.",
+  "crossSells": [
+   "iwqIbPdcoQvu",
+   "eAqMCSIvJoVj"
+  ],
+  "rank": null
+ },
+ {
+  "skuId": "ywvPVcNinQDa",
+  "product": "Vehicle Awning 10\u00d77 ft",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Shade & Day Basecamp",
+   "Truck Bed Camping"
+  ],
+  "persona": "SUV/truck owner wanting more shade",
+  "problem": "Larger fixed side awning",
+  "decision": "CORE",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 4,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "vehicleFit": "Requires roof rack crossbars/rails",
+  "crossSells": [
+   "mcVLbJdSnFDj"
+  ]
+ },
+ {
+  "skuId": "RiCWKQcyDFVf",
+  "product": "270\u00b0 Awning 52 sq ft (driver side)",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Shade & Day Basecamp"
+  ],
+  "persona": "Overlander",
+  "problem": "Wrap-around shade",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 5
+  },
+  "vehicleFit": "Roof rack with rated load; driver-side mount",
+  "notes": "Contribution ~13% at most; 65 units"
+ },
+ {
+  "skuId": "GzFmQdovKevf",
+  "product": "270\u00b0 Awning 133 sq ft (driver side)",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Shade & Day Basecamp"
+  ],
+  "persona": "Overlander",
+  "problem": "Large wrap-around shade",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 5
+  },
+  "vehicleFit": "Heavy-duty roof rack required",
+  "notes": "~12% contribution; $353.90 ticket raises CAC"
+ },
+ {
+  "skuId": "TZqbFWPfweVi",
+  "product": "Canvas Bell Tent 3 m with stove jack",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Bell Tent Glamping",
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "Couple glamper / hunter",
+  "problem": "Stand-up canvas tent that breathes and can take a stove",
+  "decision": "CORE",
+  "season": "Year-round (peak Sep\u2013Nov for hot tent)",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting",
+   "Memorial Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 4,
+   "meta": 5,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 5
+  },
+  "crossSells": [
+   "UdegqhNlQFDz",
+   "AoerVWdoEFvK"
+  ],
+  "safety": "Stove use only with the included stove jack and a heat shield; recommend CO alarm."
+ },
+ {
+  "skuId": "mzqdDYNFkQvb",
+  "product": "Canvas Bell Tent 4 m",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Bell Tent Glamping"
+  ],
+  "persona": "Family glamper",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 4,
+   "meta": 5,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 5
+  },
+  "notes": "Derived cost $260 exceeds the $243.90 market low"
+ },
+ {
+  "skuId": "mVDgvoIQuQbP",
+  "product": "Canvas Bell Tent 5 m",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Bell Tent Glamping"
+  ],
+  "persona": "Group glamper",
+  "problem": "Big canvas basecamp",
+  "decision": "PHASE 2",
+  "season": "Year-round",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 4,
+   "meta": 5,
+   "seo": 5,
+   "crossSell": 4,
+   "video": 5
+  },
+  "notes": "~9% contribution at market; 479 units in stock"
+ },
+ {
+  "skuId": "LGCgDElSSFVQ",
+  "product": "Canvas Bell Tent 6 m",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Bell Tent Glamping"
+  ],
+  "persona": "Event / group",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 2,
+   "competition": 4,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 3,
+   "video": 4
+  },
+  "notes": "~9% at most; $488+ ticket, 84 units"
+ },
+ {
+  "skuId": "zoCtFfJimeDn",
+  "product": "Oxford Bell Tent 3 m with stove jack (non-canvas)",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Bell Tent Glamping",
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "Budget glamper",
+  "problem": "Lighter, cheaper bell tent",
+  "decision": "PHASE 2",
+  "season": "Year-round",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 4,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "~17% contribution at the Best Buy comp; 101 units"
+ },
+ {
+  "skuId": "VHQdbfWOFovj",
+  "product": "2-Person Hot Tent with Stove Jack",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "Hunter / winter camper",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "Cost $80.22 vs $80.90 retail: no margin"
+ },
+ {
+  "skuId": "VjQtvcrBeJDC",
+  "product": "Screen House 10\u00d79.2 ft",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Shade & Day Basecamp",
+   "Family Campground Comfort"
+  ],
+  "persona": "Family camper",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "Cost $99.69 above $92.99 market low"
+ },
+ {
+  "skuId": "qICevaBRVPDN",
+  "product": "Screen House 6\u00d76 ft pop-up",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Shade & Day Basecamp"
+  ],
+  "persona": "Couple / beach",
+  "problem": "Bug-free shade",
+  "decision": "BUNDLE ONLY",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "~13% max contribution; sell inside Shade setup only"
+ },
+ {
+  "skuId": "ALeNDqBWGovE",
+  "product": "4-Person Instant Cabin Tent",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "First-time family camper",
+  "problem": "60-second pitch",
+  "decision": "TEST",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 5
+  }
+ },
+ {
+  "skuId": "hMCFetooyKbq",
+  "product": "4-Person Inflatable Cabin Tent with pump",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "Convenience camper",
+  "problem": "Air-beam pitch",
+  "decision": "TEST",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 5,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 5
+  }
+ },
+ {
+  "skuId": "cGKveqogJQbH",
+  "product": "Hard-Shell Rooftop Tent",
+  "category": "Vehicle Shelter",
+  "missions": [
+   "Tailgate & SUV Camping",
+   "Truck Bed Camping"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 3,
+   "video": 5
+  },
+  "notes": "Cost $1,265 above $1,150 market; freight-damage risk"
+ },
+ {
+  "skuId": "AoerVWdoEFvK",
+  "product": "2-Person Folding Camping Cot with bedding",
+  "category": "Sleep",
+  "missions": [
+   "Family Campground Comfort",
+   "Bell Tent Glamping",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Couple car camper",
+  "problem": "Two people off the cold ground on one frame",
+  "decision": "HERO",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 4,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "crossSells": [
+   "TZqbFWPfweVi",
+   "jAqdKQyGwobR"
+  ],
+  "notes": "AOSOM supplier (30% Doba rate)"
+ },
+ {
+  "skuId": "WceHDgIyFCqQ",
+  "product": "Elevated Tent Cot (all-in-one)",
+  "category": "Sleep",
+  "missions": [
+   "Cold-Weather Hot Tent",
+   "Family Campground Comfort"
+  ],
+  "persona": "Solo hunter / angler",
+  "problem": "Tent + cot in one",
+  "decision": "PHASE 2",
+  "season": "Mar\u2013Nov",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 4,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 3,
+   "video": 4
+  },
+  "notes": "~11% max contribution"
+ },
+ {
+  "skuId": "MGQpDPkRwcVf",
+  "product": "75 in Heavy-Duty Cot with mattress",
+  "category": "Sleep",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 3,
+   "video": 3
+  },
+  "notes": "Out of stock (0)"
+ },
+ {
+  "skuId": "mrVkDKNQvCbR",
+  "product": "Truck Bed Air Mattress 6\u20136.5 ft",
+  "category": "Sleep",
+  "missions": [
+   "Truck Bed Camping"
+  ],
+  "persona": "Pickup camper",
+  "problem": "Flat, wheel-well-shaped bed for the truck",
+  "decision": "BUNDLE ONLY",
+  "season": "Apr\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 3,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 3
+  },
+  "vehicleFit": "6\u20136.5 ft full-size beds (F-150, Ram, Silverado standard beds); check wheel-well cutouts",
+  "notes": "~10% contribution; sell in Truck Bed setup only"
+ },
+ {
+  "skuId": "zgvpqKSRbFDW",
+  "product": "Truck Bed Air Mattress 5.5\u20135.8 ft",
+  "category": "Sleep",
+  "missions": [
+   "Truck Bed Camping"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 3,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "Cost $54.26 above $43.96 Home Depot price"
+ },
+ {
+  "skuId": "KOFgeoYYQCvp",
+  "product": "20\u00b0F Mummy Sleeping Bag",
+  "category": "Sleep",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 2
+  },
+  "notes": "Out of stock (0)"
+ },
+ {
+  "skuId": "eAqMCSIvJoVj",
+  "product": "One-Piece Folding Camp Kitchen Table",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Cost $75.35 above $65.99 market low (was a hero in the previous list)"
+ },
+ {
+  "skuId": "KbDWelSiocvI",
+  "product": "Camp Kitchen Table with cupboards",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Cost $99.69 above $87.99 market low"
+ },
+ {
+  "skuId": "CIQRKBYRleVF",
+  "product": "2-Burner Propane Stove 150,000 BTU with legs",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "Group camp cook",
+  "problem": "Big-pot cooking (boils, fry, griddle)",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: propane appliance. No CSA/ANSI certification shown on the Doba listing; request certificate from supplier before listing. Outdoor use only; no indoor/tent-use claims.",
+  "notes": "~9% at market; gas compliance unverified"
+ },
+ {
+  "skuId": "hTqwPGDooYVc",
+  "product": "Folding Campfire Grill 22 in",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen",
+   "Family Campground Comfort"
+  ],
+  "persona": "Campfire cook",
+  "problem": "Cook over the fire ring safely",
+  "decision": "CORE",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "Fire use: include campfire safety guidance; no certification claims.",
+  "crossSells": [
+   "ftFwKLcOQCDJ"
+  ],
+  "notes": "Low ticket; best in bundles"
+ },
+ {
+  "skuId": "ftFwKLcOQCDJ",
+  "product": "Collapsible Storage Bins 65 L (2-pack)",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Camp Kitchen",
+   "Tailgate & SUV Camping",
+   "Family Campground Comfort"
+  ],
+  "persona": "Organized car camper",
+  "problem": "Pack the car in labeled bins",
+  "decision": "BUNDLE ONLY",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 2,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "~8% contribution; add-on only"
+ },
+ {
+  "skuId": "zDQmFaJcfKvl",
+  "product": "12V Car Fridge 20 L (21 qt)",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling",
+   "Tailgate & SUV Camping",
+   "Truck Bed Camping"
+  ],
+  "persona": "Weekend road-tripper",
+  "problem": "No more melted ice or soggy food",
+  "decision": "HERO",
+  "season": "Apr\u2013Sep (gift Nov\u2013Dec)",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 5,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 4
+  },
+  "vehicleFit": "12/24V car socket; fits most SUV cargo areas and truck cabs",
+  "crossSells": [
+   "DbQtVcZowovy"
+  ],
+  "rank": null
+ },
+ {
+  "skuId": "rFCeqVBBpJbf",
+  "product": "12V Car Fridge 40 L EPP",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Cost $145.92 vs $152.90 market: no margin"
+ },
+ {
+  "skuId": "OCFHeCQgKCqC",
+  "product": "12V Car Fridge 40 L",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Family road-tripper",
+  "problem": "Family-size fridge",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "24 units only; ~9% contribution"
+ },
+ {
+  "skuId": "hEqGYvDMgJbF",
+  "product": "12V Dual-Zone Car Fridge 50 L",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "Overlander",
+  "problem": "Fridge + freezer",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "25 units; ~9% contribution"
+ },
+ {
+  "skuId": "iYbHoVDyuJvj",
+  "product": "12V Car Fridge 40 L (old listing)",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Out of stock (0) \u2014 this was the previous report's fridge"
+ },
+ {
+  "skuId": "DbQtVcZowovy",
+  "product": "1800W Portable Power Station",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "Off-grid camper",
+  "problem": "Run a fridge, lights and devices for days",
+  "decision": "PHASE 2",
+  "season": "Year-round (outage gifting)",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only.",
+  "notes": "~9% contribution, $546 ticket"
+ },
+ {
+  "skuId": "KCFcVEMdHJDP",
+  "product": "300W Power Station (non-VEVOR)",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only.",
+  "notes": "Out of stock (0)"
+ },
+ {
+  "skuId": "UdegqhNlQFDz",
+  "product": "Tent Wood Stove 80 in pipe, stainless",
+  "category": "Warmth",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "Hunter / winter camper",
+  "problem": "Heat a canvas tent",
+  "decision": "PHASE 2",
+  "season": "Sep\u2013Feb",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 5
+  },
+  "safety": "MANUAL REVIEW: wood-burning tent stove. No certification on listing; require spark arrestor + CO-alarm guidance, tent stove jack/heat-shield instructions; never claim safe for any tent without a fire-rated stove jack.",
+  "notes": "~9% contribution; fire-safety manual review"
+ },
+ {
+  "skuId": "iyqQbcIWnCDH",
+  "product": "Tent Wood Stove 86 in, alloy steel",
+  "category": "Warmth",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 5
+  },
+  "safety": "MANUAL REVIEW: wood-burning tent stove. No certification on listing; require spark arrestor + CO-alarm guidance, tent stove jack/heat-shield instructions; never claim safe for any tent without a fire-rated stove jack.",
+  "notes": "Cost $99.69 vs $105.99 market: no margin"
+ },
+ {
+  "skuId": "mZqwvYNfnFVD",
+  "product": "Tent Wood Stove 86 in, stainless",
+  "category": "Warmth",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 5,
+   "crossSell": 5,
+   "video": 5
+  },
+  "safety": "MANUAL REVIEW: wood-burning tent stove. No certification on listing; require spark arrestor + CO-alarm guidance, tent stove jack/heat-shield instructions; never claim safe for any tent without a fire-rated stove jack.",
+  "notes": "Cost $138.62 vs $147.99 market: no margin"
+ },
+ {
+  "skuId": "tmeYFZJoKQbu",
+  "product": "Foldable Wood Tent Stove (non-VEVOR)",
+  "category": "Warmth",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 2,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: wood-burning tent stove. No certification on listing; require spark arrestor + CO-alarm guidance, tent stove jack/heat-shield instructions; never claim safe for any tent without a fire-rated stove jack.",
+  "notes": "No comparable retail price; 47% Doba rate implies inflated MSRP"
+ },
+ {
+  "skuId": "FhCaQDRCbevV",
+  "product": "Heated Double Camping Chair",
+  "category": "Warmth",
+  "missions": [
+   "Cold-Weather Hot Tent",
+   "Family Campground Comfort"
+  ],
+  "persona": "Cold-weather sports parent / couple",
+  "problem": "Stay warm at the campfire or sideline",
+  "decision": "TEST",
+  "season": "Sep\u2013Feb",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 3,
+   "meta": 5,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: battery-heated product; request UL/FCC documentation.",
+  "notes": "AOSOM; ~9% at cap"
+ },
+ {
+  "skuId": "wFbReroyECVB",
+  "product": "Knife & Hatchet Combo",
+  "category": "Warmth",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 2,
+   "meta": 2,
+   "seo": 3,
+   "crossSell": 3,
+   "video": 3
+  },
+  "safety": "Blades: age-gating and state shipping rules apply.",
+  "notes": "Out of stock (0)"
+ },
+ {
+  "skuId": "LCVWevdQEYqn",
+  "product": "20 in Fire Bowl",
+  "category": "Warmth",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 2,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 3,
+   "video": 3
+  },
+  "notes": "Out of stock (0)"
+ },
+ {
+  "skuId": "iwqIbPdcoQvu",
+  "product": "Heavy-Duty Folding Camp Chair",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Every camper",
+  "problem": "Comfortable seat that packs flat",
+  "decision": "BUNDLE ONLY",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 3,
+   "demand": 5,
+   "competition": 1,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "Cost $32.36 vs $35.03 market: only works inside setups (5,187 units)"
+ },
+ {
+  "skuId": "gpKMCYJEoebF",
+  "product": "Oversized Camp Chair 450 lb",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Big & tall camper",
+  "problem": "Wide, strong seat",
+  "decision": "BUNDLE ONLY",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "~8% at cap; 2,494 units"
+ },
+ {
+  "skuId": "URqpKWPBCFVQ",
+  "product": "Reclining Camp Chair",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 3
+  },
+  "notes": "Out of stock (0) \u2014 was a hero in the previous list"
+ },
+ {
+  "skuId": "TteMDQIOoFqp",
+  "product": "Padded Zero-Gravity Chair",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 3
+  },
+  "notes": "Cost $85.63 above $80.99 market"
+ },
+ {
+  "skuId": "ARQbqcuDePVo",
+  "product": "Collapsible Folding Wagon 550 lb",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Family camper / beach",
+  "problem": "Haul gear from car to site in one trip",
+  "decision": "CORE",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Already on trenzora.com (D0102X3YK0U) \u2014 the calibration product"
+ },
+ {
+  "skuId": "RzetFCcqKQVa",
+  "product": "2-Room Shower & Privacy Tent",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Cost $82.65 above $80.99 market"
+ },
+ {
+  "skuId": "uHCdQMeyOFbV",
+  "product": "Propane Water Heater 6 L",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: propane appliance. No CSA/ANSI certification shown on the Doba listing; request certificate from supplier before listing. Outdoor use only; no indoor/tent-use claims.",
+  "notes": "Out of stock (0) \u2014 was in the previous list"
+ },
+ {
+  "skuId": "dreWCTFWQKbg",
+  "product": "Portable Flush Toilet 5.3 gal",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "Family / remote camper",
+  "problem": "Private toilet at camp",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 3
+  },
+  "notes": "24 units; ~10% contribution"
+ },
+ {
+  "skuId": "OeQgvcSoFCDz",
+  "product": "Rechargeable LED Lanterns 4-pack",
+  "category": "Light",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 4,
+   "competition": 1,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "Out of stock (0)"
+ }
+]
