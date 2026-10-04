@@ -25,8 +25,6 @@ export default [
   {
     ignores: [
       '**/node_modules/',
-      // trenzora.com (US) storefront: its own package and lint config.
-      'us/**',
       '**/build/',
       '**/dist/',
       '**/*.graphql.d.ts',

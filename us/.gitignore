@@ -1,0 +1,23 @@
+node_modules
+/.cache
+/build
+/dist
+/public/build
+/.mf
+.env
+.env.*
+!.env.example
+!.env.mock
+.shopify
+.react-router
+*.log
+.DS_Store
+*.tsbuildinfo
+
+# Production artwork (see artwork/masters/README.md)
+artwork/masters/*
+!artwork/masters/README.md
+.preview/
+
+# Supplier mockups (see scripts/mockups.ts)
+artwork/mockups/*
