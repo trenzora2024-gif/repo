@@ -4,7 +4,7 @@ import {Breadcrumbs} from '~/components/Blocks';
 import {ProductGrid} from '~/components/ProductCard';
 import {CATALOG_BY_HANDLE} from '~/data/catalog';
 import {getCuratedProducts} from '~/lib/curated';
-import {seoMeta} from '~/lib/seo';
+import {breadcrumbJsonLd, seoMeta} from '~/lib/seo';
 
 export const meta: Route.MetaFunction = () =>
   seoMeta({
@@ -12,6 +12,10 @@ export const meta: Route.MetaFunction = () =>
     description:
       'Every product in the Trenzora assortment: tents, sleep, camp kitchen, heat, power and light, hand-picked for car camping and basecamps.',
     path: '/collections/all',
+    jsonLd: breadcrumbJsonLd([
+      {name: 'Home', path: '/'},
+      {name: 'All gear', path: '/collections/all'},
+    ]),
   });
 
 export async function loader({context}: Route.LoaderArgs) {

@@ -21,3 +21,5 @@ artwork/masters/*
 
 # Supplier mockups (see scripts/mockups.ts)
 artwork/mockups/*
+!.env.qa
+.qa/

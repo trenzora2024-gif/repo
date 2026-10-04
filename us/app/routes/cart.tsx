@@ -1,7 +1,11 @@
 import {useLoaderData, data, type HeadersFunction} from 'react-router';
 import type {Route} from './+types/cart';
-import type {CartQueryDataReturn} from '@shopify/hydrogen';
-import {Analytics, CartForm, type OptimisticCartLineInput} from '@shopify/hydrogen';
+import {
+  Analytics,
+  CartForm,
+  type CartQueryDataReturn,
+  type OptimisticCartLineInput,
+} from '@shopify/hydrogen';
 import {CartMain} from '~/components/CartMain';
 import {BUNDLE_ADD} from '~/lib/cart-actions';
 import {seoMeta} from '~/lib/seo';

@@ -98,7 +98,7 @@ function buildProduct(item: MockItem, n: number): Obj {
     tags: item.tags,
     productType: item.gear,
     description,
-    descriptionHtml: `<p>${description}</p><p>[Mock] The supplier description imported from Doba appears here — rewrite it before launch.</p>`,
+    descriptionHtml: `<p>${description}</p><p>[Mock] The manufacturer description from the supplier listing appears here — rewrite it before launch.</p>`,
     availableForSale: true,
     publishedAt: '2026-10-01T00:00:00Z',
     updatedAt: '2026-10-01T00:00:00Z',

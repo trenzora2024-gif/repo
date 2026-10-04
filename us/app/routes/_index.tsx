@@ -38,9 +38,13 @@ export async function loader({context}: Route.LoaderArgs) {
 }
 
 export default function Home() {
-  const {curated, popular, demo, showSavings} = useLoaderData<typeof loader>();
+  const {curated, popular: bestSelling, demo, showSavings} = useLoaderData<typeof loader>();
   const products = byHandle(curated);
   const picks = pickProducts(HERO_HANDLES, products);
+  // Only show "most popular" when sales data adds products not already featured.
+  const featured = new Set(picks.slice(0, 8).map((p) => p.handle));
+  const fresh = bestSelling.filter((p) => !featured.has(p.handle));
+  const popular = fresh.length >= 2 ? fresh : [];
   const seasonalPicks = pickProducts(
     ['canvas-bell-tent-5m', 'tent-wood-stove', 'folding-cot-with-mattress', 'cold-weather-sleeping-bag'],
     products,
@@ -118,7 +122,7 @@ export default function Home() {
               <div className="stack-sm">
                 <p className="eyebrow">Featured solutions</p>
                 <h2 id="picks-title" className="h2">
-                  The ten pieces that solve the most camp problems
+                  The pieces that solve the most camp problems
                 </h2>
               </div>
               <Link to="/collections/all" className="link">
@@ -267,7 +271,7 @@ export default function Home() {
                 </h2>
               </div>
             </div>
-            <ProductGrid products={popular} />
+            <ProductGrid products={popular.slice(0, 4)} />
           </div>
         </section>
       ) : null}
@@ -366,7 +370,7 @@ function Topo() {
 const HOME_QUERY = `#graphql
   query Home($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    popular: products(first: 4, sortKey: BEST_SELLING, query: "tag:curated") {
+    popular: products(first: 12, sortKey: BEST_SELLING, query: "tag:curated") {
       nodes {
         ...ProductCard
       }
