@@ -34,7 +34,9 @@ Owner actions: `LAUNCH-BLOCKERS.md` → **ACTION REQUIRED FROM ME**. The step-by
 ## 4. Deploy
 
 - [ ] `npx shopify hydrogen deploy` (Oxygen) to a **private preview**, or connect the GitHub repo in the Hydrogen channel. _(needs Shopify access: your machine, or Shopify hosts allowed in this environment)_
-- [ ] Gate 6: point `trenzora.in` at the Hydrogen storefront and connect `checkout.trenzora.in`.
+- [x] `checkout.trenzora.in` DNS points at Shopify (2026-10-04); Hydrogen defaults to it.
+- [ ] Settings → Domains: set `checkout.trenzora.in` as the **primary** domain, so checkout stops showing `hetvyh-8e.myshopify.com`. _(you)_
+- [ ] Gate 6: point `trenzora.in` at the Hydrogen storefront.
 - [ ] Submit `https://trenzora.in/sitemap.xml` in Google Search Console.
 - [ ] Shopify **Customer Events**: paste `catalogue/shopify-custom-pixel.js` (emits `purchase`), then optionally set GTM_ID or add GA4/Meta.
 

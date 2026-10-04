@@ -37,12 +37,12 @@ Prepared 2026-10-03. Nothing here has been run. Every step that changes the stor
 | 6   | Publish the 24 products and 4 collections to the **Hydrogen publication only**                                               | `Gate5PublishToHydrogen`                                                                                                                         | Yes                |
 | 7   | Deploy a **private** Oxygen preview                                                                                          | `npx shopify hydrogen deploy` (preview environment)                                                                                              | Deploy only        |
 | 8   | Verify real data: products, variants, prices, tags, collections, checkout URL                                                | `npm run verify:store -- --cart`                                                                                                                 | No                 |
-| 9   | Browser QA on the preview, mobile and desktop                                                                                | `BASE_URL=https://<preview-url> QA_EXPECT_CHECKOUT_HOST=trenzora.in npm run qa:storefront`                                                       | No                 |
+| 9   | Browser QA on the preview, mobile and desktop                                                                                | `BASE_URL=https://<preview-url> QA_EXPECT_CHECKOUT_HOST=checkout.trenzora.in npm run qa:storefront`                                              | No                 |
 | 10  | Install the purchase pixel                                                                                                   | Paste `catalogue/shopify-custom-pixel.js` into Settings → Customer events                                                                        | Yes: settings      |
 | 11  | **One test order** with the test gateway, end to end. Check the order reaches the supplier app; cancel it before fulfilment. | Manual                                                                                                                                           | Test order only    |
 | 12  | Lighthouse (mobile) on home, a collection and a product page                                                                 | Chrome DevTools or `npx lighthouse <url>`                                                                                                        | No                 |
 
-`PUBLIC_CHECKOUT_DOMAIN` stays `trenzora.in` while the Online Store serves that domain. Switch to `checkout.trenzora.in` before Gate 6.
+`PUBLIC_CHECKOUT_DOMAIN` defaults to `checkout.trenzora.in` (`app/lib/store-guard.ts`). Checkout links show that host only once it is the store's primary domain in Settings → Domains.
 
 ## Rollback (any time)
 

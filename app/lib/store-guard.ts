@@ -65,13 +65,15 @@ export function assertStoreEnv(
   }
 }
 
+/** Shopify checkout's custom domain (CNAME to shops.myshopify.com). */
+export const DEFAULT_CHECKOUT_DOMAIN = 'checkout.trenzora.in';
+
 /**
  * Oxygen doesn't set PUBLIC_CHECKOUT_DOMAIN automatically. Without it, use
- * the store's own .myshopify.com domain (Shopify's checkout serves there too)
- * instead of refusing to start. Set it in the Hydrogen channel to use the
- * custom checkout domain.
+ * the store's checkout domain instead of refusing to start. Set
+ * PUBLIC_CHECKOUT_DOMAIN in the Hydrogen channel to override it.
  */
 export function withCheckoutDomain<T extends StoreEnv>(env: T): T {
   if (env.PUBLIC_CHECKOUT_DOMAIN || !env.PUBLIC_STORE_DOMAIN) return env;
-  return {...env, PUBLIC_CHECKOUT_DOMAIN: env.PUBLIC_STORE_DOMAIN};
+  return {...env, PUBLIC_CHECKOUT_DOMAIN: DEFAULT_CHECKOUT_DOMAIN};
 }
