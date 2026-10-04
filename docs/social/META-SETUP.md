@@ -73,3 +73,10 @@ Steps:
 ## After setup (back in the repo)
 
 Tell Claude the final Instagram handle. It goes in `SITE.instagram` in `app/data/site.ts` (`{handle, url}`), which brings back the Instagram links in the footer, on the Contact page and on the homepage.
+
+## Result (2026-10-04)
+
+- Facebook Page **Trenzora India**, `https://www.facebook.com/trenzora.india`, Page ID `1355971747600023`.
+- Business portfolio **Trenzora.india** (`1629558161009074`, renamed from "theepicread"); it owns only the Trenzora India Page.
+- Instagram **@trenzora.india** (owner-confirmed). The Instagram ↔ Page link can't be read with the current tools; confirm in Page settings → Linked accounts.
+- Website links updated: footer (Instagram, Facebook), Contact page, homepage, Organization JSON-LD `sameAs`.

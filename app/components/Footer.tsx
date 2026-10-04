@@ -27,6 +27,18 @@ export function Footer() {
                   </a>
                 </>
               ) : null}
+              {SITE.facebook ? (
+                <>
+                  {' · '}
+                  <a
+                    href={SITE.facebook}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Facebook
+                  </a>
+                </>
+              ) : null}
             </p>
           </div>
           <div className="footer-grid">

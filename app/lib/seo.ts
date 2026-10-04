@@ -104,7 +104,7 @@ export function organizationJsonLd() {
     slogan: SITE.positioning,
     email: SITE.contactEmail,
     telephone: BUSINESS.phone,
-    sameAs: SITE.instagram ? [SITE.instagram.url] : [],
+    sameAs: [SITE.instagram?.url, SITE.facebook].filter(Boolean),
   };
 }
 
