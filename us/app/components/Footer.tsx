@@ -55,6 +55,9 @@ export function Footer() {
                 <Link to="/guides">Guides</Link>
               </li>
               <li>
+                <a href="/account">Your account &amp; orders</a>
+              </li>
+              <li>
                 <Link to="/policies">Policies</Link>
               </li>
             </ul>

@@ -1,6 +1,7 @@
 import type {Storefront} from '@shopify/hydrogen';
 import type {ProductCardFragment} from 'storefrontapi.generated';
 import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
+import {CURATED_TAG} from '~/lib/curated-tag';
 
 /**
  * Products tagged `curated` are the Trenzora US assortment. Legacy products
@@ -8,7 +9,7 @@ import {PRODUCT_CARD_FRAGMENT} from '~/lib/fragments';
  * working) but never appear in listings, search grids or bundles unless
  * they're tagged. Curating = adding the tag; nothing is deleted.
  */
-export const CURATED_TAG = 'curated';
+export {CURATED_TAG};
 
 export async function getCuratedProducts(storefront: Storefront) {
   const {products} = await storefront.query(CURATED_PRODUCTS_QUERY, {

@@ -1,0 +1,359 @@
+[
+  {
+    "input": {
+      "handle": "weekend-car-camping",
+      "title": "Weekend Car Camping",
+      "descriptionHtml": "<p>Everything you need to drive in, set up before dark and actually sleep — chosen to work with the vehicle you already own.</p>",
+      "seo": {
+        "title": "Car Camping Gear for Weekend Trips",
+        "description": "Car camping essentials that work with your SUV or truck: tailgate tents, cots, camp kitchens and lights, hand-picked and grouped into ready setups."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:weekend-car-camping"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "camp-kitchen",
+      "title": "Camp Kitchen",
+      "descriptionHtml": "<p>A standing-height kitchen, cold storage that lasts the whole trip, water on tap and a bin that keeps it all packed between trips.</p>",
+      "seo": {
+        "title": "Camp Kitchen Gear: Tables, 12V Fridges & More",
+        "description": "Build a camp kitchen that works: folding cook stations, 12V car fridges, water jugs and storage, with honest advice on what you need."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:camp-kitchen"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "sleep-better-outside",
+      "title": "Sleep Better Outside",
+      "descriptionHtml": "<p>Bad sleep ends more camping hobbies than bad weather. Get off the ground, stay warm and wake up ready.</p>",
+      "seo": {
+        "title": "Camping Cots, Sleeping Bags & Car Mattresses",
+        "description": "Sleep well at camp: camping cots with mattresses, cold-weather sleeping bags and SUV mattresses, with advice on what actually helps."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:sleep-better-outside"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "cold-weather-camping",
+      "title": "Cold-Weather & Hot-Tent Camping",
+      "descriptionHtml": "<p>Canvas tents with stove jacks, tent wood stoves, warm sleep systems and the tools to keep a fire going — for fall hunting camps and winter basecamps.</p>",
+      "seo": {
+        "title": "Hot Tent Camping: Canvas Tents & Tent Wood Stoves",
+        "description": "Cold-weather and hunting camp setups: canvas bell tents with stove jacks, tent wood stoves, cots and cold-rated sleeping bags, plus the safety rules."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:cold-weather-camping"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "power-and-light",
+      "title": "Power & Light",
+      "descriptionHtml": "<p>Lanterns, headlamps, a quiet power station and solar to recharge it — gear that works at the campsite and during the next outage.</p>",
+      "seo": {
+        "title": "Camping Lanterns, Power Stations & Solar Panels",
+        "description": "Light and power for camp and outages: rechargeable lanterns, headlamps, 300W power stations and foldable solar panels, sized honestly."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:power-and-light"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "tailgate-and-backyard",
+      "title": "Tailgate & Backyard",
+      "descriptionHtml": "<p>Haul it in one trip, cook standing up, keep drinks cold and give people a chair worth sitting in — at the lot, the campsite or the backyard.</p>",
+      "seo": {
+        "title": "Tailgating Gear: Wagons, Camp Kitchens & Chairs",
+        "description": "Tailgate and backyard gear that earns its trunk space: collapsible wagons, folding cook stations, 12V fridges, recliners and fire pits."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:tailgate-and-backyard"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "family-campsite",
+      "title": "Family Campsite",
+      "descriptionHtml": "<p>The comfort pieces that make family camping work: room, a bathroom, a hot shower, light for every kid and one-trip hauling.</p>",
+      "seo": {
+        "title": "Family Camping Gear: Privacy Tents, Showers & More",
+        "description": "Family camping essentials: big tents, privacy and shower tents, camp toilets, hot water and lights so the first trip isn’t the last."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:family-campsite"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "gifts-for-campers",
+      "title": "Gifts for Campers",
+      "descriptionHtml": "<p>Gifts campers actually use, sorted by budget — the upgrades people rarely buy for themselves.</p>",
+      "seo": {
+        "title": "Gifts for Campers: Under $50, $100 and $200",
+        "description": "Camping gift ideas people actually use, by budget: lanterns, recliners, hatchet sets, fire pits, 12V fridges and power stations."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "mission:gifts-for-campers"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "shelter",
+      "title": "Shelter",
+      "descriptionHtml": "<p>SUV and truck tents, canvas bell tents and vehicle awnings.</p>",
+      "seo": {
+        "title": "Shelter for Car Camping",
+        "description": "SUV and truck tents, canvas bell tents and vehicle awnings. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:shelter"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "sleep",
+      "title": "Sleep",
+      "descriptionHtml": "<p>Cots, sleeping bags and car mattresses.</p>",
+      "seo": {
+        "title": "Sleep for Car Camping",
+        "description": "Cots, sleeping bags and car mattresses. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:sleep"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "camp-kitchen-gear",
+      "title": "Camp Kitchen Gear",
+      "descriptionHtml": "<p>Cook stations, 12V fridges, cookware and water.</p>",
+      "seo": {
+        "title": "Camp Kitchen Gear for Car Camping",
+        "description": "Cook stations, 12V fridges, cookware and water. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:camp-kitchen-gear"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "seating-tables",
+      "title": "Chairs & Tables",
+      "descriptionHtml": "<p>Recliners, camp tables and hammocks.</p>",
+      "seo": {
+        "title": "Chairs & Tables for Car Camping",
+        "description": "Recliners, camp tables and hammocks. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:seating-tables"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "heat-fire",
+      "title": "Heat & Fire",
+      "descriptionHtml": "<p>Tent stoves, fire pits, heaters and fire tools.</p>",
+      "seo": {
+        "title": "Heat & Fire for Car Camping",
+        "description": "Tent stoves, fire pits, heaters and fire tools. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:heat-fire"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "power-light",
+      "title": "Power & Lighting",
+      "descriptionHtml": "<p>Lanterns, headlamps, power stations and solar.</p>",
+      "seo": {
+        "title": "Power & Lighting for Car Camping",
+        "description": "Lanterns, headlamps, power stations and solar. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:power-light"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "haul-storage",
+      "title": "Haul & Storage",
+      "descriptionHtml": "<p>Wagons and camp bins.</p>",
+      "seo": {
+        "title": "Haul & Storage for Car Camping",
+        "description": "Wagons and camp bins. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:haul-storage"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "campsite-comfort",
+      "title": "Campsite Comfort",
+      "descriptionHtml": "<p>Privacy tents, camp toilets and hot showers.</p>",
+      "seo": {
+        "title": "Campsite Comfort for Car Camping",
+        "description": "Privacy tents, camp toilets and hot showers. Hand-picked for car camping and basecamp setups by Trenzora."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "gear:campsite-comfort"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "input": {
+      "handle": "trenzora-picks",
+      "title": "Trenzora Picks",
+      "descriptionHtml": "<p>Hero products.</p>",
+      "seo": {
+        "title": "Trenzora Picks",
+        "description": "The products that solve the most camp problems."
+      },
+      "ruleSet": {
+        "appliedDisjunctively": false,
+        "rules": [
+          {
+            "column": "TAG",
+            "relation": "EQUALS",
+            "condition": "tier:hero"
+          }
+        ]
+      }
+    }
+  }
+]

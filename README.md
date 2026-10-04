@@ -1,5 +1,7 @@
 # Trenzora storefront
 
+> **trenzora.com (US)** is a separate Hydrogen app in [`us/`](us/README.md): strategy in `us/docs/STRATEGY.md`, owner steps in `us/docs/LAUNCH-CHECKLIST.md`. Everything below is the trenzora.in project.
+
 **Made for people with personality.** The trenzora.in storefront: Hydrogen (React Router 7, TypeScript) on top of Shopify's Storefront API, cart and checkout. Fulfilment is print-on-demand and handled outside the frontend.
 
 ```
