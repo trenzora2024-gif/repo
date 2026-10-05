@@ -1,12 +1,43 @@
 {
   "dir": "artwork/mockups",
   "products": 24,
-  "productsWithImages": 0,
+  "productsWithImages": 8,
   "plan": [
     {
       "handle": "mumbai-made-oversized-tee",
       "title": "Mumbai Made — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "mumbai-made-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Mumbai Made — “MUMBAI MADE · EST. 1995 · BUILT HERE. WORN EVERYWHERE.” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 177753,
+          "sha256": "97d01971abb0577fd09ad72a313958e83e2e5ed815f6e96bbb742cb8bbac5639",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "mumbai-made-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Mumbai Made — “MUMBAI MADE · EST. 1995 · BUILT HERE. WORN EVERYWHERE.” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 239233,
+          "sha256": "c7785645dc15bd40844f26b46ebf70913a70dd552b5c60c02fe51d3ce8ca36f9",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "mumbai-made-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Mumbai Made — “MUMBAI MADE · EST. 1995 · BUILT HERE. WORN EVERYWHERE.” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "mumbai-made-tote",
@@ -21,7 +52,38 @@
     {
       "handle": "local-life-oversized-tee",
       "title": "Local Life — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "local-life-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Local Life — “LOCAL LEGEND · MUMBAI · DIFFERENT STATION. SAME STORY.” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 175911,
+          "sha256": "e1b2bed2c58b17dfc69b61987811ea8be6b45946326a77d2c17d5dee8c9ec545",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "local-life-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Local Life — “LOCAL LEGEND · MUMBAI · DIFFERENT STATION. SAME STORY.” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 236196,
+          "sha256": "65740f66171e4218827af0abf9b164c3d6ffebdc1497fe6e702e39b122007813",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "local-life-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Local Life — “LOCAL LEGEND · MUMBAI · DIFFERENT STATION. SAME STORY.” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "local-life-tote",
@@ -36,7 +98,38 @@
     {
       "handle": "corporate-survivor-oversized-tee",
       "title": "Corporate Survivor — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "corporate-survivor-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Corporate Survivor — “THIS MEETING COULD HAVE BEEN AN EMAIL. · CORPORATE SURVIVOR” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 186272,
+          "sha256": "0051a6fac843506d9a5bd778c321d04c6a652257377ce452f346948948236276",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "corporate-survivor-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Corporate Survivor — “THIS MEETING COULD HAVE BEEN AN EMAIL. · CORPORATE SURVIVOR” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 254034,
+          "sha256": "383f8ab0ae03f069e60087014f566f00b12f3f636cdac2ec17da69ff96e2e61f",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "corporate-survivor-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Corporate Survivor — “THIS MEETING COULD HAVE BEEN AN EMAIL. · CORPORATE SURVIVOR” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "corporate-survivor-tote",
@@ -51,7 +144,38 @@
     {
       "handle": "coffee-personality-oversized-tee",
       "title": "Coffee Personality — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "coffee-personality-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Coffee Personality — “GOOD IDEAS START WITH COFFEE · BOMBAY COFFEE CLUB” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 181777,
+          "sha256": "ae10551a33f7825f43f011fbf20dbcbab5900cd69b5b33c6da9c1c8af4762912",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "coffee-personality-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Coffee Personality — “GOOD IDEAS START WITH COFFEE · BOMBAY COFFEE CLUB” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 266948,
+          "sha256": "28b52a93f69c8ccb2cd91026f6a2e1cf51c269c02f38f720e16bfed7f87b5bc2",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "coffee-personality-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Coffee Personality — “GOOD IDEAS START WITH COFFEE · BOMBAY COFFEE CLUB” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "coffee-personality-tote",
@@ -66,7 +190,38 @@
     {
       "handle": "bestie-energy-oversized-tee",
       "title": "Bestie Energy — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "bestie-energy-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Bestie Energy — “SHE KNOWS TOO MUCH. · THAT'S WHY SHE'S MY BESTIE.” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 180538,
+          "sha256": "ae41a0b3e3978b2dc24509fd55792ad5b62ee2ed0eb178af7a38632fe4b58f51",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "bestie-energy-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Bestie Energy — “SHE KNOWS TOO MUCH. · THAT'S WHY SHE'S MY BESTIE.” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 251023,
+          "sha256": "f898bf01e2d320238522e5c7b9975c8bb1028e40803376615e47a7870d1acf4d",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "bestie-energy-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Bestie Energy — “SHE KNOWS TOO MUCH. · THAT'S WHY SHE'S MY BESTIE.” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "bestie-energy-tote",
@@ -81,7 +236,38 @@
     {
       "handle": "pet-parent-oversized-tee",
       "title": "Pet Parent — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "pet-parent-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Pet Parent — “PET PARENT CLUB · PROUD MEMBER OF THE PET PARENT CLUB.” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 175974,
+          "sha256": "bff0693420405729c04b8603fb94c04a84406ba35cc9b3682fcb383885b02921",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "pet-parent-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Pet Parent — “PET PARENT CLUB · PROUD MEMBER OF THE PET PARENT CLUB.” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 227307,
+          "sha256": "00f2076f54b13f1ac4137ee3e0db94fb0b59298d654ac598620623672528cfa8",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "pet-parent-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Pet Parent — “PET PARENT CLUB · PROUD MEMBER OF THE PET PARENT CLUB.” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "pet-parent-tote",
@@ -96,7 +282,38 @@
     {
       "handle": "campus-energy-oversized-tee",
       "title": "Campus Energy — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "campus-energy-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Campus Energy — “ATTENDANCE IS A SUGGESTION · CAMPUS DAYS • FOREVER” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 181507,
+          "sha256": "6b4834b37128eb2c8a53e0e423d31728ca1067bb1f61da1872e5dc4825baeadc",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "campus-energy-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Campus Energy — “ATTENDANCE IS A SUGGESTION · CAMPUS DAYS • FOREVER” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 258772,
+          "sha256": "38a0eab4e0f731ed7be95fbabd6effc0b0c88fb37a7718a00826f9641e0a4a77",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "campus-energy-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Campus Energy — “ATTENDANCE IS A SUGGESTION · CAMPUS DAYS • FOREVER” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "campus-energy-tote",
@@ -111,7 +328,38 @@
     {
       "handle": "desi-roots-oversized-tee",
       "title": "Desi Roots — Premium Oversized Tee",
-      "images": []
+      "images": [
+        {
+          "file": "desi-roots-oversized-tee/01-front.jpg",
+          "position": 1,
+          "alt": "Desi Roots — “माझी मुंबई · SAME ROOTS. NEW STORIES.” typographic design printed on a Trenzora oversized tee",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 174558,
+          "sha256": "a9dce9e06837daf8f90e925dbb0c7a6821f097f0e74cd220d8f43a26a6ca5360",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "desi-roots-oversized-tee/02-detail.jpg",
+          "position": 2,
+          "alt": "Desi Roots — “माझी मुंबई · SAME ROOTS. NEW STORIES.” typographic design printed on a Trenzora oversized tee (detail)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 250722,
+          "sha256": "7401ae9f250bc9bdb0dc1de92ea9aaddb74b856ec3bb26c099791b52c797d3b1",
+          "mimeType": "image/jpeg"
+        },
+        {
+          "file": "desi-roots-oversized-tee/03-back.jpg",
+          "position": 3,
+          "alt": "Desi Roots — “माझी मुंबई · SAME ROOTS. NEW STORIES.” typographic design printed on a Trenzora oversized tee (back)",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 155151,
+          "sha256": "12f0d14da6c71d69f19e3eef85ca5991c040bab23ed046a34e2b24783aec19b3",
+          "mimeType": "image/jpeg"
+        }
+      ]
     },
     {
       "handle": "desi-roots-tote",

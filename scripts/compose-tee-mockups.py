@@ -79,16 +79,27 @@ def place(garment: Image.Image, master: Image.Image, k: float, dx: int):
     inked = ImageChops.multiply(garment, layer)
     out = Image.composite(inked, garment, alpha)
 
-    bx = master.getchannel('A').getbbox()
+    bx = main_block(master)
     s = w / master.width
     ink = (x + bx[0] * s, y + bx[1] * s, x + bx[2] * s, y + bx[3] * s)
     return out, ink
 
 
+def main_block(master: Image.Image):
+    """Ink box of the main design, without the small wordmark below it."""
+    a = master.getchannel('A')
+    rows = [y for y in range(0, a.height, 4) if a.crop((0, y, a.width, y + 4)).getbbox()]
+    # Split at the largest vertical gap between inked rows.
+    gaps = [(rows[i + 1] - rows[i], i) for i in range(len(rows) - 1)]
+    size, i = max(gaps)
+    top_end = rows[i] + 4 if size > 300 else rows[-1] + 4
+    return a.crop((0, 0, a.width, top_end)).getbbox()
+
+
 def detail(img: Image.Image, ink) -> Image.Image:
     """Square crop around the print with a margin, enlarged back to OUT."""
     cx, cy = (ink[0] + ink[2]) / 2, (ink[1] + ink[3]) / 2
-    side = max(ink[2] - ink[0], ink[3] - ink[1]) * 1.35
+    side = max(ink[2] - ink[0], ink[3] - ink[1]) * 1.3
     box = (cx - side / 2, cy - side / 2, cx + side / 2, cy + side / 2)
     return img.crop(tuple(round(v) for v in box)).resize((OUT, OUT), Image.LANCZOS)
 
@@ -129,7 +140,7 @@ def main():
         detail(hero, ink).save(d / '02-detail.jpg', quality=92, subsampling=0)
         back_sq.save(d / '03-back.jpg', quality=92, subsampling=0)
         sheet.paste(hero.resize((512, 512)), ((i % 4) * 512, (i // 4) * 512))
-        print(f'{handle}: ok (ink {round((ink[2]-ink[0])/(SRC_PX_PER_IN*k),1)} x '
+        print(f'{handle}: ok (design {round((ink[2]-ink[0])/(SRC_PX_PER_IN*k),1)} x '
               f'{round((ink[3]-ink[1])/(SRC_PX_PER_IN*k),1)} in on the garment)')
     sheet.save(out_dir / f'qa-sheet-{args.colour}.jpg', quality=88)
 

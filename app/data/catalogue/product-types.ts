@@ -2,8 +2,9 @@ import type {ProductTypeSpec} from './types.ts';
 
 /**
  * The three hero products. Customer-facing copy states only what the working
- * supplier blanks publish (Printrove: 100% cotton, loose boxy fit; Qikink:
- * cotton canvas tote with long handles, double-wall stainless steel tumbler,
+ * supplier blanks publish (tee: Qikink Terry Oversized T-shirt, 260 GSM,
+ * 90/10 cotton/polyester terry, drop shoulders, per the owner's reference
+ * listing, 2026-10-05; Qikink: cotton canvas tote with long handles, double-wall stainless steel tumbler,
  * sublimation, front-centred placement). Unconfirmed construction details
  * (GSM, neck rib, zip closure, dimensions) stay internal until a sample or a
  * written supplier answer confirms them.
@@ -15,8 +16,12 @@ export const PRODUCT_TYPES: ProductTypeSpec[] = [
     shortName: 'Oversized Tee',
     shopifyProductType: 'T-Shirt',
     skuCode: 'TEE',
-    summary: 'A relaxed, boxy oversized tee in soft 100% cotton.',
-    materials: ['White, 100% cotton', 'Relaxed, boxy oversized fit'],
+    summary:
+      'A relaxed, drop-shoulder oversized tee in soft 260 GSM cotton-rich terry.',
+    materials: [
+      'White, 260 GSM terry knit, 90% cotton / 10% polyester',
+      'Relaxed, unisex oversized fit with drop shoulders',
+    ],
     fit: 'Oversized, relaxed boxy fit. Take your usual size for the intended oversized look, or size down for a closer fit.',
     printMethod: 'Printed to order in India.',
     care: [
