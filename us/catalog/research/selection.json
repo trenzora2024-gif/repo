@@ -31,9 +31,9 @@
   "metaAngle": "Turn your SUV into a 6-person basecamp in 10 minutes",
   "videoIdea": "Time-lapse pitch on a mid-size SUV, then walk-through from the cargo area",
   "crossSells": [
-   "zgvpqKSRbFDW",
+   "zDQmFaJcfKvl",
    "iwqIbPdcoQvu",
-   "zDQmFaJcfKvl"
+   "aobWCtJUMQDV"
   ],
   "bundle": "Tailgate Weekend Setup",
   "rank": 1
@@ -48,7 +48,7 @@
   ],
   "persona": "Larger family / group car camper",
   "problem": "More floor space and weather protection than the 8\u00d78 for bigger groups",
-  "decision": "CORE",
+  "decision": "HERO",
   "season": "Mar\u2013Nov",
   "events": [
    "Memorial Day",
@@ -326,7 +326,7 @@
   ],
   "persona": "SUV/truck owner wanting more shade",
   "problem": "Larger fixed side awning",
-  "decision": "CORE",
+  "decision": "HERO",
   "season": "Apr\u2013Sep",
   "events": [
    "Memorial Day",
@@ -385,7 +385,7 @@
   ],
   "persona": "Overlander",
   "problem": "Large wrap-around shade",
-  "decision": "PHASE 2",
+  "decision": "REJECT",
   "season": "Apr\u2013Sep",
   "events": [
    "Memorial Day",
@@ -402,7 +402,7 @@
    "video": 5
   },
   "vehicleFit": "Heavy-duty roof rack required",
-  "notes": "~12% contribution; $353.90 ticket raises CAC"
+  "notes": "Reserve: contribution under 10% at market prices; reconsider only if the logged-in cost is lower. ~12% contribution; $353.90 ticket raises CAC"
  },
  {
   "skuId": "TZqbFWPfweVi",
@@ -414,7 +414,7 @@
   ],
   "persona": "Couple glamper / hunter",
   "problem": "Stand-up canvas tent that breathes and can take a stove",
-  "decision": "CORE",
+  "decision": "HERO",
   "season": "Year-round (peak Sep\u2013Nov for hot tent)",
   "events": [
    "Labor Day",
@@ -469,7 +469,7 @@
   ],
   "persona": "Group glamper",
   "problem": "Big canvas basecamp",
-  "decision": "PHASE 2",
+  "decision": "REJECT",
   "season": "Year-round",
   "events": [
    "Labor Day",
@@ -485,7 +485,7 @@
    "crossSell": 4,
    "video": 5
   },
-  "notes": "~9% contribution at market; 479 units in stock"
+  "notes": "Reserve: contribution under 10% at market prices; reconsider only if the logged-in cost is lower. ~9% contribution at market; 479 units in stock"
  },
  {
   "skuId": "LGCgDElSSFVQ",
@@ -520,7 +520,7 @@
   ],
   "persona": "Budget glamper",
   "problem": "Lighter, cheaper bell tent",
-  "decision": "PHASE 2",
+  "decision": "CORE",
   "season": "Year-round",
   "events": [
    "Labor Day",
@@ -621,7 +621,7 @@
   ],
   "persona": "First-time family camper",
   "problem": "60-second pitch",
-  "decision": "TEST",
+  "decision": "REJECT",
   "season": "Apr\u2013Sep",
   "events": [
    "Memorial Day",
@@ -636,7 +636,8 @@
    "seo": 4,
    "crossSell": 4,
    "video": 5
-  }
+  },
+  "notes": "Out of stock on Doba (0 units)."
  },
  {
   "skuId": "hMCFetooyKbq",
@@ -647,7 +648,7 @@
   ],
   "persona": "Convenience camper",
   "problem": "Air-beam pitch",
-  "decision": "TEST",
+  "decision": "PHASE 2",
   "season": "Apr\u2013Sep",
   "events": [
    "Memorial Day",
@@ -904,7 +905,7 @@
   ],
   "persona": "Group camp cook",
   "problem": "Big-pot cooking (boils, fry, griddle)",
-  "decision": "PHASE 2",
+  "decision": "REJECT",
   "season": "Apr\u2013Oct",
   "events": [
    "Memorial Day",
@@ -921,7 +922,7 @@
    "video": 4
   },
   "safety": "MANUAL REVIEW: propane appliance. No CSA/ANSI certification shown on the Doba listing; request certificate from supplier before listing. Outdoor use only; no indoor/tent-use claims.",
-  "notes": "~9% at market; gas compliance unverified"
+  "notes": "Reserve: contribution under 10% at market prices; reconsider only if the logged-in cost is lower. ~9% at market; gas compliance unverified"
  },
  {
   "skuId": "hTqwPGDooYVc",
@@ -1058,7 +1059,7 @@
   ],
   "persona": "Family road-tripper",
   "problem": "Family-size fridge",
-  "decision": "PHASE 2",
+  "decision": "REJECT",
   "season": "Apr\u2013Sep",
   "events": [
    "Memorial Day",
@@ -1074,7 +1075,7 @@
    "crossSell": 5,
    "video": 4
   },
-  "notes": "24 units only; ~9% contribution"
+  "notes": "Reserve: contribution under 10% at market prices; reconsider only if the logged-in cost is lower. 24 units only; ~9% contribution"
  },
  {
   "skuId": "hEqGYvDMgJbF",
@@ -1085,7 +1086,7 @@
   ],
   "persona": "Overlander",
   "problem": "Fridge + freezer",
-  "decision": "PHASE 2",
+  "decision": "REJECT",
   "season": "Apr\u2013Sep",
   "events": [
    "Memorial Day",
@@ -1101,7 +1102,7 @@
    "crossSell": 4,
    "video": 4
   },
-  "notes": "25 units; ~9% contribution"
+  "notes": "Reserve: contribution under 10% at market prices; reconsider only if the logged-in cost is lower. 25 units; ~9% contribution"
  },
  {
   "skuId": "iYbHoVDyuJvj",
@@ -1135,7 +1136,7 @@
   ],
   "persona": "Off-grid camper",
   "problem": "Run a fridge, lights and devices for days",
-  "decision": "PHASE 2",
+  "decision": "REJECT",
   "season": "Year-round (outage gifting)",
   "events": [
    "Labor Day",
@@ -1152,7 +1153,7 @@
    "video": 4
   },
   "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only.",
-  "notes": "~9% contribution, $546 ticket"
+  "notes": "Reserve: contribution under 10% at market prices; reconsider only if the logged-in cost is lower. ~9% contribution, $546 ticket"
  },
  {
   "skuId": "KCFcVEMdHJDP",
@@ -1288,7 +1289,7 @@
   ],
   "persona": "Cold-weather sports parent / couple",
   "problem": "Stay warm at the campfire or sideline",
-  "decision": "TEST",
+  "decision": "PHASE 2",
   "season": "Sep\u2013Feb",
   "events": [
    "Labor Day",
@@ -1471,7 +1472,7 @@
   ],
   "persona": "Family camper / beach",
   "problem": "Haul gear from car to site in one trip",
-  "decision": "CORE",
+  "decision": "BUNDLE ONLY",
   "season": "Year-round",
   "events": [
    "Memorial Day",
@@ -1547,7 +1548,7 @@
   ],
   "persona": "Family / remote camper",
   "problem": "Private toilet at camp",
-  "decision": "PHASE 2",
+  "decision": "REJECT",
   "season": "Apr\u2013Oct",
   "events": [
    "Memorial Day",
@@ -1563,7 +1564,7 @@
    "crossSell": 4,
    "video": 3
   },
-  "notes": "24 units; ~10% contribution"
+  "notes": "Reserve: contribution under 10% at market prices; reconsider only if the logged-in cost is lower. 24 units; ~10% contribution"
  },
  {
   "skuId": "OeQgvcSoFCDz",
@@ -1587,5 +1588,1106 @@
    "video": 3
   },
   "notes": "Out of stock (0)"
+ },
+ {
+  "skuId": "GjCbqFNRMeVs",
+  "product": "2-Person Folding Cot 50 in wide",
+  "category": "Sleep",
+  "missions": [
+   "Family Campground Comfort",
+   "Bell Tent Glamping"
+  ],
+  "persona": "Couple car camper (budget)",
+  "problem": "Two-person cot without the bedding kit",
+  "decision": "CORE",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 4,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "AOSOM; 64 units"
+ },
+ {
+  "skuId": "aNDgbmviLPVe",
+  "product": "Portable Folding Cot RHB-03A",
+  "category": "Sleep",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 2,
+   "meta": 2,
+   "seo": 3,
+   "crossSell": 3,
+   "video": 2
+  },
+  "notes": "No comparable retail price verified; 20 units; 47% Doba rate implies inflated MSRP"
+ },
+ {
+  "skuId": "ByebFdCjaKqA",
+  "product": "Car Air Mattress (universal)",
+  "category": "Sleep",
+  "missions": [
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 3
+  }
+ },
+ {
+  "skuId": "sdKvqpNFECDL",
+  "product": "Back-Seat Car Air Mattress",
+  "category": "Sleep",
+  "missions": [
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 3
+  },
+  "notes": "Was rank 27 in the previous list"
+ },
+ {
+  "skuId": "JqQYFdPqwKvW",
+  "product": "Lightweight Sleeping Bag",
+  "category": "Sleep",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 1,
+   "meta": 2,
+   "seo": 3,
+   "crossSell": 3,
+   "video": 2
+  },
+  "notes": "Backpacking item, off-mission; no identical retail benchmark verified"
+ },
+ {
+  "skuId": "OBFtqRpGScVN",
+  "product": "Folding Camp Kitchen Table, 3 heights, aluminum",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Car camper who cooks",
+  "problem": "A stable, waist-height cooking surface with storage",
+  "decision": "HERO",
+  "season": "Mar\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "crossSells": [
+   "hTqwPGDooYVc",
+   "aobWCtJUMQDV"
+  ],
+  "notes": "Replaces the rejected one-piece kitchen table; 659 units"
+ },
+ {
+  "skuId": "MoekDOWBHcVb",
+  "product": "Folding Camp Kitchen Table (variant B)",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Same product family as OBFtqRpGScVN at a higher cost"
+ },
+ {
+  "skuId": "QiDZCIlLYJqN",
+  "product": "Mobile Camp Kitchen Box with wheels",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "Serious camp cook / overlander",
+  "problem": "All-in-one rolling kitchen",
+  "decision": "CORE",
+  "season": "Mar\u2013Oct",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 4,
+   "meta": 5,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 5
+  },
+  "notes": "Only 45 units; $269 ticket"
+ },
+ {
+  "skuId": "vdbyYPeWHoVi",
+  "product": "16-pc Camp Cookware Set",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 1,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "Doba cost $36.72 vs $23.99 retail (inQ Boutique)"
+ },
+ {
+  "skuId": "iNbvcGDRJYqj",
+  "product": "Swivel Campfire Grill",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Cost $33.17 vs $31.99 retail"
+ },
+ {
+  "skuId": "MJKjVkgUCPbe",
+  "product": "Cast-Iron Reversible Grill/Griddle 14\u00d78.5 in",
+  "category": "Camp Kitchen",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 1,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 3
+  },
+  "notes": "No identical retail benchmark verified; comparable cast-iron griddles retail ~$20\u201330 vs $23.44 cost"
+ },
+ {
+  "skuId": "MwCkQqFCeKDK",
+  "product": "12V Car Fridge 50 L",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "Family overlander",
+  "problem": "Bigger fridge",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "~9% contribution; 266 units"
+ },
+ {
+  "skuId": "hsvjPDbWkJVW",
+  "product": "12V Dual-Zone Car Fridge 40 L",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "Overlander",
+  "problem": "Fridge + freezer",
+  "decision": "PHASE 2",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "~9% contribution; 111 units"
+ },
+ {
+  "skuId": "vVCwKJbYteDM",
+  "product": "12V Car Fridge 25 L",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "29 units; ~5% contribution"
+ },
+ {
+  "skuId": "ynvhPFbWToDB",
+  "product": "12V Fridge 35 L with app",
+  "category": "Cooling",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "27 units; no retail benchmark verified"
+ },
+ {
+  "skuId": "rgQkvcdqqKDH",
+  "product": "Flashfish E103 300W Power Station (LiFePO4)",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Weekend camper powering lights, phones, CPAP-free small loads",
+  "problem": "Quiet power for lights, phones and a fan at camp",
+  "decision": "CORE",
+  "season": "Year-round (outage + gifting)",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only.",
+  "crossSells": [
+   "nKqFVcmUwYvG",
+   "zDQmFaJcfKvl"
+  ],
+  "notes": "List only after UL/UN38.3 documents are on file"
+ },
+ {
+  "skuId": "diCeVyWLgPbm",
+  "product": "300W Power Station + 100W Panel kit",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only.",
+  "notes": "No identical retail benchmark verified"
+ },
+ {
+  "skuId": "mzeRViBmwPqf",
+  "product": "Flashfish 1200W Power Station",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only."
+ },
+ {
+  "skuId": "qtCcvfZolJDb",
+  "product": "1200W Power Station + 200W Solar Panel",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "Off-grid basecamp",
+  "problem": "Multi-day power with solar recharge",
+  "decision": "PHASE 2",
+  "season": "Year-round",
+  "events": [
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only.",
+  "notes": "$646 ticket; 91 units"
+ },
+ {
+  "skuId": "nKqFVcmUwYvG",
+  "product": "Flashfish 100W Foldable Solar Panel",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "Off-grid camper",
+  "problem": "Recharge the power station in the sun",
+  "decision": "CORE",
+  "season": "Mar\u2013Oct",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 3,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "crossSells": [
+   "rgQkvcdqqKDH"
+  ],
+  "notes": "796 units"
+ },
+ {
+  "skuId": "NjFPQrKWYCbf",
+  "product": "60W Foldable Solar Panel",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 2,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 3
+  },
+  "notes": "Cost $45.34 above $43.99 retail"
+ },
+ {
+  "skuId": "ZbCHVAIyRKqv",
+  "product": "Smokeless Fire Pit (magnesium oxide)",
+  "category": "Warmth",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 2,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 3,
+   "video": 3
+  },
+  "notes": "Cost $111.39 vs $76.99 retail"
+ },
+ {
+  "skuId": "pQFHDodEVCqJ",
+  "product": "16-in-1 Survival Shovel/Axe",
+  "category": "Warmth",
+  "missions": [
+   "Cold-Weather Hot Tent"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 2,
+   "demand": 3,
+   "competition": 1,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 3,
+   "video": 3
+  },
+  "safety": "Blade/axe item: age and shipping rules"
+ },
+ {
+  "skuId": "AmKZeFPfiCvn",
+  "product": "Oversized Padded Camp Chair 450 lb",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "Cost $63.19 vs $46\u201357 retail for the single padded chair"
+ },
+ {
+  "skuId": "kUCMvIWLiJqj",
+  "product": "Reclining Chair with Footrest",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 3
+  }
+ },
+ {
+  "skuId": "ZhCWVBIveQvp",
+  "product": "Zero-Gravity Rocking Chair Set (2)",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort",
+   "Bell Tent Glamping"
+  ],
+  "persona": "Couple at the campsite / patio",
+  "problem": "Two recliners that rock \u2014 the evening-at-camp upgrade",
+  "decision": "HERO",
+  "season": "Apr\u2013Sep (gift Nov\u2013Dec)",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day",
+   "Christmas gifting"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 3,
+   "meta": 5,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "AOSOM; only 51 units \u2014 watch stock"
+ },
+ {
+  "skuId": "pkQZbOWNnYvV",
+  "product": "Roll-Up Aluminum Side Table",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 4,
+   "competition": 1,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "Cost $47.77 above $41.99 retail"
+ },
+ {
+  "skuId": "WBFrVckNOYqQ",
+  "product": "Roll-Up Aluminum Table 46 in",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Camp Kitchen"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 4,
+   "competition": 1,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "Cost $51.02 vs Best Buy $56.61"
+ },
+ {
+  "skuId": "ehKvqRtQyJDP",
+  "product": "680 lb Folding Wagon",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  }
+ },
+ {
+  "skuId": "EuFZQeJECKvG",
+  "product": "Pop-Up Shower/Privacy Tent",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 2,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "Cost $32.36 vs $31.90 retail \u2014 the previous list's rank-10 product"
+ },
+ {
+  "skuId": "GoeQKdctYCvO",
+  "product": "Shower & Privacy Tent, 1 room with crossbar",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy",
+   "Family Campground Comfort"
+  ],
+  "persona": "Family / dispersed camper",
+  "problem": "Private changing and shower space at any site",
+  "decision": "HERO",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 4,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "crossSells": [
+   "aobWCtJUMQDV"
+  ],
+  "notes": "168 units"
+ },
+ {
+  "skuId": "rbFtqdSLIQDj",
+  "product": "Shower Tent with Solar Shower Bag",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "Dispersed camper",
+  "problem": "Shower without hookups",
+  "decision": "CORE",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "notes": "AOSOM; 55 units"
+ },
+ {
+  "skuId": "uACtQbeqyKqG",
+  "product": "Propane Water Heater 5 L",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: propane appliance. No CSA/ANSI certification shown on the Doba listing; request certificate from supplier before listing. Outdoor use only; no indoor/tent-use claims."
+ },
+ {
+  "skuId": "jteZbJIjoCvR",
+  "product": "Propane Water Heater 10 L",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 5,
+   "demand": 3,
+   "competition": 3,
+   "meta": 4,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 4
+  },
+  "safety": "MANUAL REVIEW: propane appliance. No CSA/ANSI certification shown on the Doba listing; request certificate from supplier before listing. Outdoor use only; no indoor/tent-use claims."
+ },
+ {
+  "skuId": "MPegCGHNNQVD",
+  "product": "Propane Water Heater with pump",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 2,
+   "competition": 3,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 3
+  },
+  "safety": "MANUAL REVIEW: propane appliance. No CSA/ANSI certification shown on the Doba listing; request certificate from supplier before listing. Outdoor use only; no indoor/tent-use claims."
+ },
+ {
+  "skuId": "NwKRFgCOHevE",
+  "product": "Folding Camp Toilet 350 lb",
+  "category": "Hygiene",
+  "missions": [
+   "Campsite Hygiene & Privacy"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 3
+  },
+  "notes": "Cost $25.87 vs $25.99 retail"
+ },
+ {
+  "skuId": "aobWCtJUMQDV",
+  "product": "1000 lm LED Lantern (360\u00b0)",
+  "category": "Light",
+  "missions": [
+   "Family Campground Comfort",
+   "Camp Kitchen",
+   "Tailgate & SUV Camping"
+  ],
+  "persona": "Every camper",
+  "problem": "Bright camp light in one tap",
+  "decision": "CORE",
+  "season": "Year-round",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day",
+   "Black Friday / Cyber Monday",
+   "Father's Day"
+  ],
+  "scores": {
+   "problem": 3,
+   "demand": 4,
+   "competition": 2,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "896 units; add-on / bundle filler"
+ },
+ {
+  "skuId": "vkePDQTUuYqL",
+  "product": "Rechargeable Lantern (non-VEVOR)",
+  "category": "Light",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 4,
+   "competition": 1,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 5,
+   "video": 3
+  }
+ },
+ {
+  "skuId": "jDFtKRoypCVG",
+  "product": "3-in-1 Tent Fan with Lantern",
+  "category": "Light",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 1,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "notes": "inQ Boutique cost $41.32 vs ~$30 comparable"
+ },
+ {
+  "skuId": "KsegvVAUCcDB",
+  "product": "Screen House 10\u00d79.2 ft (variant)",
+  "category": "Basecamp Tents",
+  "missions": [
+   "Shade & Day Basecamp"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 3,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 4,
+   "video": 4
+  },
+  "notes": "~9% at most"
+ },
+ {
+  "skuId": "QkeRqufYKYbV",
+  "product": "Camping Fan with Lantern 10000 mAh",
+  "category": "Light",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 1,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only."
+ },
+ {
+  "skuId": "pVKHevkUUFDZ",
+  "product": "Motion-Sensor Headlamp 2-pack",
+  "category": "Light",
+  "missions": [
+   "Family Campground Comfort"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 4,
+   "competition": 1,
+   "meta": 2,
+   "seo": 3,
+   "crossSell": 5,
+   "video": 2
+  },
+  "notes": "No identical retail benchmark verified; comparable 2-packs retail ~$15\u201320 vs $17.70 cost (inQ Boutique)"
+ },
+ {
+  "skuId": "JVCZqHaqnPvU",
+  "product": "40,000 mAh Solar/Crank Power Bank",
+  "category": "Power",
+  "missions": [
+   "Off-Grid Power & Cooling"
+  ],
+  "persona": "\u2014",
+  "problem": "\u2014",
+  "decision": "REJECT",
+  "season": "\u2014",
+  "events": [],
+  "scores": {
+   "problem": 3,
+   "demand": 3,
+   "competition": 1,
+   "meta": 3,
+   "seo": 3,
+   "crossSell": 4,
+   "video": 3
+  },
+  "safety": "MANUAL REVIEW: lithium battery. No UL/UN38.3 documents on the Doba listing; request UL 2743 / UN38.3 / FCC docs; ships ground only.",
+  "notes": "Off-mission and lithium; no benchmark verified"
+ },
+ {
+  "skuId": "RJetCMoBuQvF",
+  "product": "Rooftop Cargo Bag 20 cu ft",
+  "category": "Comfort & Haul",
+  "missions": [
+   "Tailgate & SUV Camping",
+   "Family Campground Comfort"
+  ],
+  "persona": "Family car camper out of space",
+  "problem": "Carry bulky gear on the roof",
+  "decision": "CORE",
+  "season": "Apr\u2013Sep",
+  "events": [
+   "Memorial Day",
+   "4th of July",
+   "Labor Day"
+  ],
+  "scores": {
+   "problem": 4,
+   "demand": 4,
+   "competition": 2,
+   "meta": 3,
+   "seo": 4,
+   "crossSell": 5,
+   "video": 3
+  },
+  "vehicleFit": "Works with or without roof rack per listing (straps through door frame); check vehicle roof load",
+  "notes": "Only 41 units"
  }
 ]

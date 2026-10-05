@@ -20,16 +20,18 @@
  * vs. MSRP as an amount (maxPriceProfitDiff) and a rate (…Rate). Then
  * MSRP = amount / rate and cost = MSRP − amount. This reproduced the cost
  * implied by trenzora.com's own price for the VEVOR 550 lb wagon (item
- * D0102X3YK0U) within 1.4% ($98.06 derived vs $96.72). Every cost below is
- * labelled "derived"; replace it with the logged-in price in
- * doba-cost-inputs.csv when available (column doba_cost_usd overrides).
+ * D0102X3YK0U) within 1.4% ($98.06 derived vs $96.72), and 9 store items in
+ * total (cost-calibration.json): VEVOR consistently +1.4% (corrected below),
+ * other suppliers −7.7% to +0.3%. Every cost below is
+ * labelled "derived"; enter the logged-in price in
+ * catalog/research/doba-logged-in-costs.csv (doba_cost_usd overrides).
  */
 import {readFileSync, writeFileSync} from 'node:fs';
 
 const R = (f: string) => new URL(`../catalog/research/${f}`, import.meta.url);
-const listings: Record<string, Listing> = JSON.parse(readFileSync(R('doba-listings.json'), 'utf8'));
-const market: Record<string, Market> = JSON.parse(readFileSync(R('market-prices.json'), 'utf8'));
-const selection: Pick[] = JSON.parse(readFileSync(R('selection.json'), 'utf8'));
+const listings: Record<string, Listing> = JSON.parse(readFileSync(R('doba-listings.json'), 'utf8')) as never;
+const market: Record<string, Market> = JSON.parse(readFileSync(R('market-prices.json'), 'utf8')) as never;
+const selection: Pick[] = JSON.parse(readFileSync(R('selection.json'), 'utf8')) as never;
 
 type Listing = {
   url: string; skuId: string; name: string; brand: string; seller: string; itemNo: string; upc?: string;
@@ -63,7 +65,7 @@ export const ASSUME = {
 // Manual cost overrides from a logged-in Doba session (preferred when filled).
 const overrides = new Map<string, number>();
 try {
-  const [head, ...rows] = readFileSync(new URL('../catalog/doba-cost-inputs.csv', import.meta.url), 'utf8').trim().split(/\r?\n/);
+  const [head, ...rows] = readFileSync(R('doba-logged-in-costs.csv'), 'utf8').trim().split(/\r?\n/);
   const cols = head.split(',');
   for (const row of rows) {
     const c = row.split(',');
@@ -75,12 +77,17 @@ try {
   /* optional */
 }
 
+const VEVOR_CALIBRATION = 1.014;
+
 export function derivedCost(l: Listing) {
   const diff = Number(l.profitDiff);
   const rate = Number(l.profitRate) / 100;
   if (!diff || !rate) return null;
   const msrp = diff / rate;
-  return {msrp, cost: msrp - diff};
+  // VEVOR: the derived cost ran 1.4% above the cost implied by trenzora.com's own
+  // prices on 5 of 6 VEVOR store items (catalog/research/cost-calibration.json), so correct it.
+  const k = l.seller === 'vevor' ? VEVOR_CALIBRATION : 1;
+  return {msrp, cost: (msrp - diff) / k};
 }
 
 const charm = (x: number) => Math.max(0.99, Math.floor(x + 0.01) - 0.01);
@@ -126,7 +133,7 @@ function scoreOf(p: Pick, l: Listing, contributionPct: number) {
 const marketLink = (m?: Market) =>
   !m ? '' : /\/(p|ip|pd|product|item|itm|dp)\/|-p_\d+|\/pdp\//.test(m.lowUrl) ? m.lowUrl : `${m.lowUrl} (retailer/category page; exact product page not captured)`;
 const imageScore = (n: number) => (n >= 12 ? 5 : n >= 10 ? 4 : n >= 7 ? 3 : n >= 4 ? 2 : 1);
-const usd = (n: number) => (Number.isFinite(n) ? `$${n.toFixed(2)}` : '—');
+const usd = (n: number) => (Number.isFinite(n) ? `${n < 0 ? '−' : ''}$${Math.abs(n).toFixed(2)}` : '—');
 const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
 
 export const rows = selection.map((p) => {
@@ -135,13 +142,18 @@ export const rows = selection.map((p) => {
   const m = market[p.skuId];
   const d = derivedCost(l);
   const cost = overrides.get(p.skuId) ?? d?.cost ?? NaN;
-  const costSource = overrides.has(p.skuId) ? 'Doba (logged in)' : 'derived from Doba profit fields';
+  const costSource = overrides.has(p.skuId) ? 'Doba (logged in)' : l.seller === 'vevor' ? 'derived from Doba profit fields, calibrated vs trenzora.com (VEVOR −1.4%)' : 'derived from Doba profit fields';
   const rec = m ? recommendPrice(cost, m) : {price: NaN, rule: 'no market price'};
   const u = unit(rec.price, cost);
   const parity = m ? unit(m.low, cost) : null;
   const sc = scoreOf(p, l, u.contributionPct);
   return {p, l, m, cost, costSource, msrp: d?.msrp ?? NaN, rec, u, parity, score: sc, img: imageScore(l.imgs)};
 });
+
+// Rank: decision tier first, then score (rejects are not ranked).
+const TIER: Pick['decision'][] = ['HERO', 'CORE', 'PHASE 2', 'TEST', 'BUNDLE ONLY', 'REJECT'];
+rows.sort((a, b) => TIER.indexOf(a.p.decision) - TIER.indexOf(b.p.decision) || b.score.total - a.score.total);
+rows.forEach((r, i) => (r.p.rank = r.p.decision === 'REJECT' ? undefined : i + 1));
 
 // ---------------------------------------------------------------- CSV
 const csvCell = (v: unknown) => {
@@ -201,7 +213,7 @@ md.push('');
 
 // ------------------------------------------------------------ setups
 type Setup = {name: string; mission: string; status: string; items: string[]; discountPct: number; why: string};
-const setups: Setup[] = JSON.parse(readFileSync(R('setups.json'), 'utf8'));
+const setups: Setup[] = JSON.parse(readFileSync(R('setups.json'), 'utf8')) as never;
 const bySku = new Map(rows.map((r) => [r.p.skuId, r]));
 export const setupRows = setups.map((s) => {
   const parts = s.items.map((id) => {

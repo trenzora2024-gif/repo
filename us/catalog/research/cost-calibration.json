@@ -1,0 +1,110 @@
+[
+ {
+  "itemNo": "D0102X3YK0U",
+  "skuId": "ARQbqcuDePVo",
+  "supplier": "vevor",
+  "rate": 27.0,
+  "storePrice": 125.74,
+  "implied": 96.72,
+  "derived": 98.06,
+  "err": 0.0139,
+  "url": "https://www.doba.com/product/ARQbqcuDePVo/x.html",
+  "name": "Collapsible Folding Wagon, 550lb Load & 220L, 2 in 1 Foldabl"
+ },
+ {
+  "itemNo": "D0102X3YK0G",
+  "skuId": "BeQRDPkCCYqc",
+  "supplier": "vevor",
+  "rate": 27.0,
+  "storePrice": 146.54,
+  "implied": 112.72,
+  "derived": 114.29,
+  "err": 0.0139,
+  "url": "https://www.doba.com/product/BeQRDPkCCYqc/x.html",
+  "name": "Double Decker Wagon Collapsible, 400L Heavy Duty Folding Wag"
+ },
+ {
+  "itemNo": "D0102HPC4E8",
+  "skuId": "mBDdqClSJQVM",
+  "supplier": "vevor",
+  "rate": 27.0,
+  "storePrice": 401.34,
+  "implied": 308.72,
+  "derived": 313.01,
+  "err": 0.0139,
+  "url": "https://www.doba.com/product/mBDdqClSJQVM/x.html",
+  "name": "Underbody Truck Box, 60\" x 17\" x 18\" Pickup Storage Box, Hea"
+ },
+ {
+  "itemNo": "D0102HPBEST",
+  "skuId": "zCDBboliOFqi",
+  "supplier": "vevor",
+  "rate": 27.0,
+  "storePrice": 123.66,
+  "implied": 95.12,
+  "derived": 96.44,
+  "err": 0.0139,
+  "url": "https://www.doba.com/product/zCDBboliOFqi/x.html",
+  "name": "Beach Dolly with Big Wheels for Sand, 29.9\" x 15.4\" Cargo De"
+ },
+ {
+  "itemNo": "D01027EA4K2",
+  "skuId": "ykKHQiJSOeqL",
+  "supplier": "Yapai Home",
+  "rate": 46.0,
+  "storePrice": 106.11,
+  "implied": 81.62,
+  "derived": 75.38,
+  "err": -0.0765,
+  "url": "https://www.doba.com/product/ykKHQiJSOeqL/x.html",
+  "name": "Ultra Thin Flip Shoe Cabinet, 8.66\" Deep Narrow Freestanding"
+ },
+ {
+  "itemNo": "D0102HPBXR6",
+  "skuId": "maVMbQIAdevj",
+  "supplier": "vevor",
+  "rate": 27.0,
+  "storePrice": 172.54,
+  "implied": 132.72,
+  "derived": 134.56,
+  "err": 0.0139,
+  "url": "https://www.doba.com/product/maVMbQIAdevj/x.html",
+  "name": "Hydraulic Wood Log Splitter Pump Kit, 13 GPM, 2 Stage 4000 P"
+ },
+ {
+  "itemNo": "D01027HGGR7",
+  "skuId": "rlCybsAvGYDv",
+  "supplier": "Munora",
+  "rate": 38.0,
+  "storePrice": 175.67,
+  "implied": 135.13,
+  "derived": 135.58,
+  "err": 0.0034,
+  "url": "https://www.doba.com/product/rlCybsAvGYDv/x.html",
+  "name": "78\"H 5-Tier Adjustable Heavy-Duty Storage Shelving with Pegb"
+ },
+ {
+  "itemNo": "D0102HQ7FBV",
+  "skuId": "tyDeFnSGuYql",
+  "supplier": "Hooya Imp.& Exp. ",
+  "rate": 45.0,
+  "storePrice": 102.62,
+  "implied": 78.94,
+  "derived": 77.66,
+  "err": -0.0162,
+  "url": "https://www.doba.com/product/tyDeFnSGuYql/x.html",
+  "name": "Outdoor Plant Container with Seat for Garden Yard Balcony De"
+ },
+ {
+  "itemNo": "D01027R8TUJ",
+  "skuId": "cKCtQqYgvFVe",
+  "supplier": "vevor",
+  "rate": 27.0,
+  "storePrice": 120.99,
+  "implied": 93.07,
+  "derived": 84.27,
+  "err": -0.0945,
+  "url": "https://www.doba.com/product/cKCtQqYgvFVe/x.html",
+  "name": "Portable Cordless Pressure Washer with 2.64 Gal Tank, Foldab"
+ }
+]
