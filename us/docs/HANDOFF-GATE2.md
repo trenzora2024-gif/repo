@@ -2,58 +2,56 @@
 
 Last updated: 13 Oct 2026, after the first implementation session. **Start with section 0.**
 
-## 0. Status on 13 Oct 2026: done and remaining
+## 0. Status (updated late on 13 Oct 2026, after the owner imported the 8 Trendsi products)
 
-### Done in the store (each change verified through the Admin API)
+### Done in the store (all verified through the Admin API)
 
 | # | Change | Result |
 |---|---|---|
-| 1 | US shipping | The General profile's US rate is now "Free US Shipping (3–7 business days)" at $0.00. It replaces "Standard" ($5.75, free at $40 and over). |
-| 2 | Shipping zones | The General and Doba profiles now ship to the United States only. Store-wide `shipsToCountries` = US. |
-| 3 | Tax | The United States market is set to "Add taxes at checkout". The store-level `taxesIncluded` flag still reads true, but the market setting overrides it. **Confirm at checkout during QA.** |
-| 4–6 | Store pages | New approved copy is on the Shipping Policy page (/pages/shipping-policy), Returns & Refunds (/pages/returns-policy) and FAQ (/pages/faq). |
-| — | About page | Changed "30-day returns" to "14-day returns" and linked it to the returns page. The page still describes home and garden products; rewrite it after the import. |
-| 18 | Fit Guide | Page created at /pages/fit-guide, **unpublished**. Publish it after the import. |
-| 12 | New collections | Created three smart collections, **unpublished** and empty: Jeans That Fit (`jeans-that-fit`, tag `jeans-that-fit`), Cozy Layers (`cozy-layers`, tag `cozy-layers`) and Bundles (`bundles`, tag `bundle`). |
+| 1–3 | Shipping and tax | Every US order ships free ("Free US Shipping (3–7 business days)", $0). Store ships to the US only. The US market adds tax at checkout (**confirm at checkout during QA**). |
+| 4–6 | Pages | New copy on /pages/shipping-policy, /pages/returns-policy and /pages/faq. The About page now says 14-day returns, but the rest still describes home and garden products (rewrite pending). |
+| 9 | Old catalogue | All **166 old products set to Draft** (not deleted). IDs are in `old-catalogue-drafted-2026-10-13.txt`. Doba drafts were already Draft. |
+| 10 | Compare-at prices | Removed from all 8 new products. The Trendsi app had set fake "was" prices of about 2×. |
+| 12 | Collections (live) | Jeans That Fit, Bootcut Jeans, Straight Leg Jeans, Wide Leg Jeans and Cozy Layers: smart collections by tag, published to the Online Store and Shop. Bundles exists but is unpublished and empty. |
+| 13 | Import | 8 products imported by the owner. Their titles, vendor (now the brand instead of "Trendsi"), type, tags and SEO were cleaned up. |
+| 14 | Product pages | Each description starts with "Free US shipping · arrives in 3–7 business days" and the returns and Fit Guide links, followed by fit notes, details and the size chart. Alt text was added to all 71 images. |
+| — | Prices | Planned price for core sizes; plus sizes cost the Trendsi cost difference more (rounded up). Bootcut $64.99/$67.99; JB straight $69.99; JB wide $69.99/$72.99; RISEN crop $66.99/$68.99; RISEN straight $64.99/$66.99; Umgee $59.99/$61.99; SO ME $51.99; Zenana $34.99/$36.99. |
+| — | Channels | The 8 products are published to Online Store, Shop, Google & YouTube, and Facebook & Instagram (catalogue only, no campaigns). |
+| 17 | Navigation | Main menu: Home · Jeans That Fit · Cozy Layers · Fit Guide · Shipping & Returns. A Fit Guide link was added to the footer menu. |
+| 18 | Fit Guide | /pages/fit-guide is **published**. |
+| 16 | Theme | **"Denim launch - REVIEW BEFORE PUBLISH"** (theme ID 158927618188) is **UNPUBLISHED**. It has the new homepage (hero "Jeans that fit. Sizes 0–24W.", shop-by-fit tiles, jeans and cozy carousels, Fit Guide call to action). It also updates the header, mobile menu, top bar, footer, the product page's shipping/returns blocks and tab, the cart note and the cart recommendations. Preview: https://trenzora.com/?preview_theme_id=158927618188 |
 | 20 | Order #1003 | Left as is. |
 
-Backups of everything changed are in `us/docs/policy-backup-2026-10-13.md` and `us/docs/page-backup-2026-10-13/`.
+Backups: `policy-backup-2026-10-13.md`, `page-backup-2026-10-13/`, `trendsi-import-backup-2026-10-13.md` (original titles, prices and menus) and `old-catalogue-drafted-2026-10-13.txt`.
+
+### URGENT: owner, do this first
+
+**The live theme still shows the old wording.** Customers see "Free shipping on orders $40+", "5–12 business days" and "30-day returns" on the new product pages, a home and garden homepage, and a header menu that points to empty collections. This contradicts the new policy. The API cannot edit the live theme.
+
+**Fix:** open the preview link above, check it on mobile, then go to Online Store → Themes → "Denim launch - REVIEW BEFORE PUBLISH" → Publish. The old theme stays in the library, so you can switch back.
 
 ### Blocked for the API: the owner must do these in Shopify admin
 
-- **#4, #5, #7, #8: legal policies.** The API connector lacks the `write_legal_policies` permission. In Settings → Policies:
-  - Paste the approved Shipping and Refund policies from section 5 of the Gate 2 doc.
-  - Fix the three "[LINK]" placeholders in the Terms of service, and change `/pages/returns-policy` to `/policies/refund-policy`.
-  - In the Contact information, remove "( Only For Documentation)".
-  - Until this is done, the old 30-day, international policy text is still live under /policies/.
+1. **Settings → Policies:**
+   - Paste the approved Shipping and Refund policies (Gate 2 doc, section 5).
+   - Fix the three "[LINK]" placeholders in the Terms of service.
+   - In the Contact information, remove "( Only For Documentation)".
+2. **Online Store → Preferences:** change the homepage title and meta description from "Smart Finds for Home, Garden & Outdoor" to, for example, "Trenzora | Jeans That Fit, Sizes 0–24W | Free US Shipping".
+3. **Optional:** hide the 10 old collections from the Online Store (the API blocks unpublishing). They are empty, and nothing in the new theme links to them.
 
-### Remaining, in this order
+### Remaining, in order
 
-1. **Owner: Trendsi setup.** Upload a seller's permit or tax ID, turn on auto-checkout and add a payment card.
-2. **Owner: import the 8 products** (section 4) with the Trendsi app. Re-check stock and price first.
-3. **Next session, right after the import:**
-   - Tag the products `jeans-that-fit`, `cozy-layers` or `bundle`.
-   - Set prices from section 4, with no compare-at prices.
-   - Clean titles and add alt text.
-   - Add the line "Free US shipping · arrives in 3–7 business days".
-   - **Do not unpublish the old catalogue before the import**, or the live store will be empty.
-4. **Next session: unpublish (never delete)**
-   - the 166 old products and the Doba drafts, from Online Store and Google (#9);
-   - the "Best Sellers" and "New & Trending" collections (#11).
-5. **Next session: publish** the 3 new collections and the Fit Guide, then rewrite the About page for denim.
-6. **#15 Bundles:**
-   - Use the free Shopify Bundles app (the owner installs it), or
-   - use a product with fixed components, tagged `bundle`.
-7. **#16 Homepage:**
-   - Duplicate the live theme (Online Store → Themes → … → Duplicate). The API can edit only unpublished themes.
-   - Build the hero ("Jeans that fit. Sizes 0–24W."), fit tiles, Cozy Layers, Bundles and a Fit Guide link.
-   - The owner reviews it before publishing.
-8. **#17 Navigation:** Jeans That Fit · Cozy Layers · Bundles · Fit Guide · Shipping & Returns. Do this through the `menuUpdate` API or Online Store → Navigation, after the import.
-9. **#8 Footer:** make the contact details match the Contact policy.
-10. **#19 Shopify Email:** owner turns on the abandoned-checkout automation and the welcome email (free tier).
-11. **Owner: Meta and samples.** See section 7.
-12. **QA** (section 6).
-13. **Separate launch approval**, then the ₹10,000 test (section 8).
+1. Publish the review theme (above).
+2. **Trendsi app settings.** Turn **off** any automatic price sync or price rule, so the app does not overwrite the prices or add compare-at prices back. Keep inventory sync on. Confirm the app still routes orders after the vendor change; the first test order will show this.
+3. **Trendsi account.** Upload a seller's permit or tax ID, turn on auto-checkout and add a payment card.
+4. **Check the supplier data on the Umgee top.** Trendsi lists it as "55% linen, 45% cotton, semi-sheer", although the title says French terry. Confirm with a sample before advertising it.
+5. **Stock is thin.** Several sizes show 0 in Shopify, for example most bootcut sizes from 0 to 9. Check that the Trendsi app syncs full stock, and only advertise styles with broad size coverage.
+6. **#15 Bundles.** Install the free Shopify Bundles app. Create Bootcut + Umgee ($119.99), Bootcut + SO ME ($109.99) and Bootcut + Zenana ($94.99), and tag each bundle `bundle`. Then publish the Bundles collection and add it to the menu and the theme header. Zenana is tagged `bundle-addon` and kept out of the collections on purpose.
+7. Rewrite the About page for denim.
+8. **#19 Shopify Email:** turn on the abandoned-checkout automation and the welcome email.
+9. **Meta:** settle the balances or use account 1780797503299545, and link Instagram. Samples (section 8).
+10. **QA (section 6).** Place one real order, then refund it, and check that Trendsi creates the order.
+11. Separate launch approval, then the ₹10,000 test.
 
 ## 1. Where things stand
 
