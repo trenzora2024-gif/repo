@@ -1,6 +1,59 @@
 # Trenzora USA — handoff for the next working session
 
-Last updated: 13 Oct 2026. Nothing below has been implemented in the store yet.
+Last updated: 13 Oct 2026, after the first implementation session. **Start with section 0.**
+
+## 0. Status on 13 Oct 2026: done and remaining
+
+### Done in the store (each change verified through the Admin API)
+
+| # | Change | Result |
+|---|---|---|
+| 1 | US shipping | The General profile's US rate is now "Free US Shipping (3–7 business days)" at $0.00. It replaces "Standard" ($5.75, free at $40 and over). |
+| 2 | Shipping zones | The General and Doba profiles now ship to the United States only. Store-wide `shipsToCountries` = US. |
+| 3 | Tax | The United States market is set to "Add taxes at checkout". The store-level `taxesIncluded` flag still reads true, but the market setting overrides it. **Confirm at checkout during QA.** |
+| 4–6 | Store pages | New approved copy is on the Shipping Policy page (/pages/shipping-policy), Returns & Refunds (/pages/returns-policy) and FAQ (/pages/faq). |
+| — | About page | Changed "30-day returns" to "14-day returns" and linked it to the returns page. The page still describes home and garden products; rewrite it after the import. |
+| 18 | Fit Guide | Page created at /pages/fit-guide, **unpublished**. Publish it after the import. |
+| 12 | New collections | Created three smart collections, **unpublished** and empty: Jeans That Fit (`jeans-that-fit`, tag `jeans-that-fit`), Cozy Layers (`cozy-layers`, tag `cozy-layers`) and Bundles (`bundles`, tag `bundle`). |
+| 20 | Order #1003 | Left as is. |
+
+Backups of everything changed are in `us/docs/policy-backup-2026-10-13.md` and `us/docs/page-backup-2026-10-13/`.
+
+### Blocked for the API: the owner must do these in Shopify admin
+
+- **#4, #5, #7, #8: legal policies.** The API connector lacks the `write_legal_policies` permission. In Settings → Policies:
+  - Paste the approved Shipping and Refund policies from section 5 of the Gate 2 doc.
+  - Fix the three "[LINK]" placeholders in the Terms of service, and change `/pages/returns-policy` to `/policies/refund-policy`.
+  - In the Contact information, remove "( Only For Documentation)".
+  - Until this is done, the old 30-day, international policy text is still live under /policies/.
+
+### Remaining, in this order
+
+1. **Owner: Trendsi setup.** Upload a seller's permit or tax ID, turn on auto-checkout and add a payment card.
+2. **Owner: import the 8 products** (section 4) with the Trendsi app. Re-check stock and price first.
+3. **Next session, right after the import:**
+   - Tag the products `jeans-that-fit`, `cozy-layers` or `bundle`.
+   - Set prices from section 4, with no compare-at prices.
+   - Clean titles and add alt text.
+   - Add the line "Free US shipping · arrives in 3–7 business days".
+   - **Do not unpublish the old catalogue before the import**, or the live store will be empty.
+4. **Next session: unpublish (never delete)**
+   - the 166 old products and the Doba drafts, from Online Store and Google (#9);
+   - the "Best Sellers" and "New & Trending" collections (#11).
+5. **Next session: publish** the 3 new collections and the Fit Guide, then rewrite the About page for denim.
+6. **#15 Bundles:**
+   - Use the free Shopify Bundles app (the owner installs it), or
+   - use a product with fixed components, tagged `bundle`.
+7. **#16 Homepage:**
+   - Duplicate the live theme (Online Store → Themes → … → Duplicate). The API can edit only unpublished themes.
+   - Build the hero ("Jeans that fit. Sizes 0–24W."), fit tiles, Cozy Layers, Bundles and a Fit Guide link.
+   - The owner reviews it before publishing.
+8. **#17 Navigation:** Jeans That Fit · Cozy Layers · Bundles · Fit Guide · Shipping & Returns. Do this through the `menuUpdate` API or Online Store → Navigation, after the import.
+9. **#8 Footer:** make the contact details match the Contact policy.
+10. **#19 Shopify Email:** owner turns on the abandoned-checkout automation and the welcome email (free tier).
+11. **Owner: Meta and samples.** See section 7.
+12. **QA** (section 6).
+13. **Separate launch approval**, then the ₹10,000 test (section 8).
 
 ## 1. Where things stand
 
@@ -16,7 +69,7 @@ Research documents (claude.ai):
 
 ## 2. Owner decisions (13 Oct 2026)
 
-- Implement **all 20 Gate 2 store changes** (list below) in the next session.
+- Implement **all 20 Gate 2 store changes** (list below). Progress is in section 0.
 - Turn **"prices include tax" off** (the US default).
 - **Leave order #1003 as is.** It is the owner's own order: $47.91, paid, unfulfilled. Do not fulfil or refund it.
 - Pause the entity and tax work for now. The DBA "Trenzora" under MaternEase LLC, the Form 5472 filing and the CPA review are parked.

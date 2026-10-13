@@ -1,0 +1,25 @@
+<p>We stand behind every product we sell. If something isn't right, we'll make it right.</p>
+<h2>Return Window</h2>
+<p>You may return most items within <strong>30 days</strong> of delivery for a refund or exchange, provided the item is unused and in its original condition and packaging.</p>
+<h2>How to Start a Return</h2>
+<p>To initiate a return, please email us at <a href="mailto:support@trenzora.com">support@trenzora.com</a> with:</p>
+<ul>
+<li>Your order number</li>
+<li>The item(s) you wish to return</li>
+<li>The reason for the return</li>
+</ul>
+<p>We will respond within 1–2 business days with return instructions.</p>
+<h2>Refunds</h2>
+<p>Once we receive and inspect your return, we will process your refund within <strong>5–7 business days</strong>. Refunds are issued to your original payment method.</p>
+<h2>Damaged or Incorrect Items</h2>
+<p>If your item arrives damaged or you received the wrong product, please contact us immediately with photos. We will arrange a replacement or full refund at no cost to you — no need to return the item.</p>
+<h2>Non-Returnable Items</h2>
+<p>The following items are not eligible for return:</p>
+<ul>
+<li>Items returned after 30 days</li>
+<li>Items that have been used, assembled, or are not in original condition</li>
+<li>Items without original packaging where packaging is required for resale</li>
+</ul>
+<h2>Return Shipping Costs</h2>
+<p>For change-of-mind returns, the customer is responsible for return shipping costs. For damaged, defective or incorrect items, Trenzora will cover all return shipping.</p>
+<p>Questions? Contact us at <a href="mailto:support@trenzora.com">support@trenzora.com</a> — we're here to help.</p>

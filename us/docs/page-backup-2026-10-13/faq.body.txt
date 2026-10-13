@@ -1,0 +1,26 @@
+<h2>Orders &amp; Payment</h2>
+<h3>How do I place an order?</h3>
+<p>Simply browse our collections, add the items you want to your cart, and proceed to checkout. We accept all major credit cards, Shop Pay, Apple Pay and Google Pay.</p>
+<h3>Can I change or cancel my order?</h3>
+<p>We process orders quickly, so please contact us at <a href="mailto:support@trenzora.com">support@trenzora.com</a> as soon as possible if you need to make changes. We cannot guarantee changes can be made once an order is in processing, but we'll do our best.</p>
+<h3>Will I receive an order confirmation?</h3>
+<p>Yes — a confirmation email is sent immediately after your order is placed. Check your spam folder if you don't see it within a few minutes.</p>
+<h2>Shipping</h2>
+<h3>How long does delivery take?</h3>
+<p>Most US orders arrive within 5–12 business days. International orders typically take 10–20 business days. See our full <a href="/pages/shipping-policy">Shipping Policy</a> for details.</p>
+<h3>Do you ship internationally?</h3>
+<p>Yes, we ship to a range of countries worldwide, and shipping is free on every order. Delivery times vary by destination — see our <a href="/pages/shipping-policy">Shipping Policy</a> for estimates.</p>
+<h3>How do I track my order?</h3>
+<p>Once your order ships, you'll receive a tracking number by email. Use it to track your delivery directly with the carrier.</p>
+<h2>Returns &amp; Refunds</h2>
+<h3>What is your returns policy?</h3>
+<p>We offer a 30-day return window on most items. See our full <a href="/pages/returns-policy">Returns &amp; Refunds Policy</a> for details.</p>
+<h3>My item arrived damaged — what do I do?</h3>
+<p>We're sorry to hear that. Please email <a href="mailto:support@trenzora.com">support@trenzora.com</a> with your order number and photos of the damage. We'll arrange a replacement or refund promptly.</p>
+<h2>Products</h2>
+<h3>Are your products branded by Trenzora?</h3>
+<p>Trenzora is a curated store — we source quality products from reliable suppliers and present them under the Trenzora brand. We focus on selecting products that genuinely solve problems and are worth buying.</p>
+<h3>How do you choose your products?</h3>
+<p>Every product is evaluated for practicality, build quality, value for money, and customer relevance. We don't list products just to fill space — everything is chosen with purpose.</p>
+<h2>Still Have Questions?</h2>
+<p>We're happy to help. Email us at <a href="mailto:support@trenzora.com">support@trenzora.com</a> and we'll get back to you within 1–2 business days.</p>
