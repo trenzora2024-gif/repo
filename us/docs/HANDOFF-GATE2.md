@@ -30,6 +30,18 @@ Last updated: 13 Oct 2026, after the first implementation session. **Start with 
 - **Review theme:** the cart section was fixed (14-day returns; the old script that rewrote the shipping note to "$40+ to qualify" was removed; new empty-cart text). A preview crawl of the homepage, collections, pages, a product, cart and search found no "30-day", "$40", "garden", "Trendsi" or "Doba". The only exception is the homepage `<title>`, which is an admin setting.
 - **Steps left for a browser session:** `us/docs/REMOTE-AGENT-PROMPT.md` is a ready-to-paste prompt covering publishing the theme, policies, homepage SEO, hiding old collections, Trendsi app settings, bundles, Shopify Email and a final checkout check.
 
+**Browser session run, verified 14 Oct through the API and the live site:**
+- The denim theme is now **MAIN (live)**. The old theme "theme-export-trenzora" is kept, unpublished.
+- Live policies: Refund (14 days), Shipping (free, 3–7 days), Contact (no "Only For Documentation"), Terms (no [LINK]; links go to /policies/refund-policy and /policies/privacy-policy).
+- The homepage title is "Trenzora | Jeans That Fit, Sizes 0–24W | Free US Shipping".
+- The old collections are off the Online Store (/collections/garden, /home, /new-arrivals, /featured-smart-finds and /tools-diy all return 404).
+- Three bundles are live in the Bundles collection and the main menu: $119.99, $109.99 and $94.99. Customers choose inseam, jeans size and top size. No compare-at prices.
+- A scan of the homepage, collections, a product, cart, About and all four policies found no "30-day", "$40", "garden", "Trendsi", "Doba", "[LINK]" or "Only For Documentation".
+- **Not done:**
+  - The header still shows the old `Trenzora_Logo.png`, and there is no favicon tag. The new denim files are uploaded to Settings → Files but are not applied in the theme.
+  - The bundles are not published to the Shop channel (minor).
+  - The social profiles cannot be checked through the API; the owner should confirm them.
+
 Backups: `policy-backup-2026-10-13.md`, `page-backup-2026-10-13/`, `trendsi-import-backup-2026-10-13.md` (original titles, prices and menus) and `old-catalogue-drafted-2026-10-13.txt`.
 
 ### URGENT: owner, do this first
