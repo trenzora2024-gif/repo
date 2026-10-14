@@ -87,9 +87,78 @@ In **Marketing → Automations**, using Shopify's own templates and the free Sho
 2. Turn on **Welcome new subscribers** (one email). Subject: `Welcome to Trenzora – jeans that fit, sizes 0–24W`. Body: link to Jeans That Fit and the Fit Guide. **No discount code.**
 3. Do not send any one-off email campaign.
 
-## Task 8: Final check
+## Task 8: Logo and brand assets
+
+Brand files are in my GitHub repo `trenzora2024-gif/repo`, branch `ccr-fee08e85-quy025`, folder `us/brand/`. If I have already downloaded them, they are in my Downloads folder. The files are:
+- `trenzora-logo.png` (dark wordmark, transparent background)
+- `trenzora-logo-white.png` (white wordmark, for dark backgrounds)
+- `trenzora-icon.png` (1080×1080 square "T" icon, used for social profile pictures)
+- `trenzora-favicon-512.png` (browser tab icon)
+- `trenzora-cover-facebook.png` (1640×624 Facebook cover)
+
+Brand colours: dark green `#1f3a2e`, cream `#f6f5f1`, denim blue `#3b5b7a`.
+
+1. **Settings → Brand:**
+   - Upload `trenzora-logo.png` as the default logo and `trenzora-icon.png` as the square logo.
+   - Set the primary colour to `#1f3a2e` and the accent colour to `#3b5b7a`.
+   - Short description: `Jeans that fit, sizes 0–24W. Free US shipping.`
+   - Fill in the social links only for accounts that exist (see Task 9).
+2. **Online Store → Themes → the newly published denim theme → Customize:**
+   - Set the header logo to `trenzora-logo.png`, at a desktop width of about 180–220 px, so the header does not get taller than before.
+   - Set the mobile-menu logo the same way.
+   - In Theme settings, set the favicon to `trenzora-favicon-512.png`.
+   - Save.
+   - If the theme has already been published, this is a live change: check the result on desktop and on a phone-sized screen. If the logo looks wrong, undo it and tell me.
+3. **Settings → Checkout → Customize:** set the checkout logo to `trenzora-logo.png` and save. Do not change any checkout fields or payment settings.
+4. **Shopify Email:** check that the logo shows in the two automations from Task 7.
+
+## Task 9: Social media accounts (profiles only, no posting, no ads)
+
+Use only the **existing Trenzora accounts**. The Facebook Page to use is **"Trenzora" (Page ID 491950360668226)**. Do **not** touch any India pages or any MaternEase accounts.
+
+Rules for this task:
+- Do not create new accounts.
+- Do not change any username or handle, or the Page name, without asking me first.
+- Do not buy followers or likes.
+- Do not publish posts, stories or ads; drafts only.
+- Do not change Business Manager users, roles, payment methods or ad accounts.
+
+1. **Facebook Page "Trenzora"** (Meta Business Suite → Settings → Page info):
+   - Profile picture: `trenzora-icon.png`. Cover photo: `trenzora-cover-facebook.png`.
+   - Category: "Women's Clothing Store", or "Clothing (Brand)" if that one is not available.
+   - Bio or intro: `Jeans that fit, sizes 0–24W. Tummy-control and high-rise denim from Judy Blue and RISEN, plus cozy layers. Free US shipping · 14-day returns.`
+   - Website: `https://trenzora.com/?utm_source=facebook&utm_medium=social&utm_campaign=profile`
+   - Email: `support@trenzora.com`
+   - Leave the phone number and address as they are, and report what they currently show.
+   - Action button: "Shop now", linking to `https://trenzora.com/collections/jeans-that-fit?utm_source=facebook&utm_medium=social&utm_campaign=button`
+2. **Instagram:**
+   - First, tell me which Instagram account (if any) is linked to the Trenzora Page, and its handle. If none is linked and a Trenzora Instagram account exists that I am signed in to, ask me before linking it to the Page.
+   - Profile picture: `trenzora-icon.png`. Name field: `Trenzora | Jeans That Fit 0–24W`.
+   - Bio:
+     ```
+     Jeans that fit, sizes 0–24W 👖
+     Tummy-control denim · Judy Blue & RISEN
+     Free US shipping · 14-day returns
+     Find your size ↓
+     ```
+   - Link: `https://trenzora.com/pages/fit-guide?utm_source=instagram&utm_medium=social&utm_campaign=bio`
+   - Category: "Clothing (Brand)" or "Shopping & retail". If the account is personal, report this; do not switch it to a professional account without asking me.
+3. **Pinterest** (only if a Trenzora Pinterest account already exists):
+   - Profile picture: `trenzora-icon.png`. Name: `Trenzora`.
+   - About: `Jeans that fit, sizes 0–24W. Tummy-control denim, cozy layers, fit tips. Free US shipping.`
+   - Website: `https://trenzora.com`. Do not claim the website or add any code to the store.
+4. **Shopify social links:**
+   - Add the URLs of the accounts above to Settings → Brand → Social links.
+   - If the theme footer has a social-icons option, turn on only the accounts that exist.
+5. **Draft three Instagram/Facebook posts as drafts or scheduled-off. Do NOT publish.**
+   - Use product photos from the store's product pages (Judy Blue bootcut, RISEN crop wide, Umgee top). For each post, write a caption with the fit info from the product page (rise, inseam, stretch, sizes), "Free US shipping · 14-day returns", and the product link with UTM tags.
+   - No "sale" or "% off" claims, no fake urgency, and no mention of suppliers.
+   - Show me the drafts.
+
+## Task 10: Final check
 
 1. In a private window, open trenzora.com on a phone-sized screen. Check the homepage, a jeans product page, the Fit Guide and the cart.
 2. Add one item to the cart and go to checkout. Enter a US test address (for example 1500 Marilla St, Dallas, TX 75201).
 3. Confirm that shipping shows **$0.00 "Free US Shipping (3–7 business days)"** and that tax is shown separately. **Stop before paying.**
-4. Report anything that still shows old home and garden content, "$40", "30-day", or the word Trendsi, Doba or dropshipping.
+4. Check that the logo shows in the header, the browser tab and checkout.
+5. Report anything that still shows old home and garden content, "$40", "30-day", or the word Trendsi, Doba or dropshipping.
