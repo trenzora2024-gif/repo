@@ -27,3 +27,9 @@ Search · Your Privacy Choices · About Us · Shipping Policy · Returns & Refun
 ## Old collections: still published (the API blocks unpublishing). They are empty now that their products are Draft, and no menu links to them. Owner can hide them in Shopify admin.
 
 Home (`home`), Garden, Outdoor, Tools & DIY, Garden & Outdoor, Workshop & Tools, Cleaning & Maintenance, Home & Kitchen, Featured Smart Finds, New & Trending (`new-arrivals`). "Home page" (`frontpage`) was not changed.
+
+## 14 Oct changes to the bootcut and wide-leg options
+
+- Bootcut: the option was named "Color" with values REG INSEAM / SHORT INSEAM / LONG INSEAM. It is now named "Inseam" with values Regular 32" / Short 30" / Long 34".
+- Judy Blue wide: the colour value was MD. It is now "Medium Wash".
+- About page: the old body is in `page-backup-2026-10-13/about.body.txt`. The old SEO title was "About Trenzora – Smart Finds for Better Everyday Living".

@@ -22,6 +22,14 @@ Last updated: 13 Oct 2026, after the first implementation session. **Start with 
 | 16 | Theme | **"Denim launch - REVIEW BEFORE PUBLISH"** (theme ID 158927618188) is **UNPUBLISHED**. It has the new homepage (hero "Jeans that fit. Sizes 0–24W.", shop-by-fit tiles, jeans and cozy carousels, Fit Guide call to action). It also updates the header, mobile menu, top bar, footer, the product page's shipping/returns blocks and tab, the cart note and the cart recommendations. Preview: https://trenzora.com/?preview_theme_id=158927618188 |
 | 20 | Order #1003 | Left as is. |
 
+**Added on 14 Oct (Admin API, verified):**
+- **Checkout check:** a draft calculation for a Dallas, TX address offers only "Free US Shipping (3–7 business days)" at $0.00, and `taxesIncluded` is false. Tax came to $0 because the store has no state tax registrations, which is normal below economic-nexus thresholds; review with a CPA later.
+- **Google fields:** product categories set (Jeans ×5, Shirts, Sweaters, Sweatshirts). The Google channel fields are set to gender female, age group adult, condition new.
+- **Bootcut option:** renamed from "Color: REG/SHORT/LONG INSEAM" to "Inseam: Regular 32" / Short 30" / Long 34"". The Judy Blue wide colour "MD" is now "Medium Wash".
+- **About page:** rewritten for denim, and its SEO title and description updated. The Fit Guide got an SEO title and description too.
+- **Review theme:** the cart section was fixed (14-day returns; the old script that rewrote the shipping note to "$40+ to qualify" was removed; new empty-cart text). A preview crawl of the homepage, collections, pages, a product, cart and search found no "30-day", "$40", "garden", "Trendsi" or "Doba". The only exception is the homepage `<title>`, which is an admin setting.
+- **Steps left for a browser session:** `us/docs/REMOTE-AGENT-PROMPT.md` is a ready-to-paste prompt covering publishing the theme, policies, homepage SEO, hiding old collections, Trendsi app settings, bundles, Shopify Email and a final checkout check.
+
 Backups: `policy-backup-2026-10-13.md`, `page-backup-2026-10-13/`, `trendsi-import-backup-2026-10-13.md` (original titles, prices and menus) and `old-catalogue-drafted-2026-10-13.txt`.
 
 ### URGENT: owner, do this first
