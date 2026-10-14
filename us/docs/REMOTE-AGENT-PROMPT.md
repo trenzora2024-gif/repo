@@ -89,32 +89,33 @@ In **Marketing → Automations**, using Shopify's own templates and the free Sho
 
 ## Task 8: Logo and brand assets
 
-Brand files are in my GitHub repo `trenzora2024-gif/repo`, branch `ccr-fee08e85-quy025`, folder `us/brand/`. If I have already downloaded them, they are in my Downloads folder. The files are:
-- `trenzora-logo.png` (dark wordmark, transparent background)
-- `trenzora-logo-white.png` (white wordmark, for dark backgrounds)
-- `trenzora-icon.png` (1080×1080 square "T" icon, used for social profile pictures)
-- `trenzora-favicon-512.png` (browser tab icon)
-- `trenzora-cover-facebook.png` (1640×624 Facebook cover)
+The US logo is the same "trenzora." logo as Trenzora India, recoloured for denim. Files are in my GitHub repo `trenzora2024-gif/repo`, branch `ccr-fee08e85-quy025`, folder `us/brand/us-kit/` (or in my Downloads folder):
+- `trenzora-logo-denim.png`: indigo logo with a copper dot, for light backgrounds.
+- `trenzora-logo-white-copper.png`: white logo with a copper dot, for dark backgrounds.
+- `trenzora-profile-1080-denim.png`: the "t." icon, used as the social profile picture.
+- `trenzora-favicon-denim.png`: browser-tab icon.
+- `trenzora-facebook-cover-1640x624-denim.png`: Facebook cover.
+- `ig-highlight-jeans.png`, `ig-highlight-fit.png`, `ig-highlight-layers.png`, `ig-highlight-shipping.png`, `ig-highlight-help.png`: Instagram highlight covers.
 
-Brand colours: dark green `#1f3a2e`, cream `#f6f5f1`, denim blue `#3b5b7a`.
+Brand colours: indigo `#1e2a44`, copper `#c47a3a`, cream `#f6f1e7`. Do **not** use the older files in `us/brand/` (the green "TRENZORA" set); they are replaced.
 
 1. **Settings → Brand:**
-   - Upload `trenzora-logo.png` as the default logo and `trenzora-icon.png` as the square logo.
-   - Set the primary colour to `#1f3a2e` and the accent colour to `#3b5b7a`.
+   - Upload `trenzora-logo-denim.png` as the default logo and `trenzora-profile-1080-denim.png` as the square logo.
+   - Set the primary colour to `#1e2a44` and the accent colour to `#c47a3a`.
    - Short description: `Jeans that fit, sizes 0–24W. Free US shipping.`
    - Fill in the social links only for accounts that exist (see Task 9).
 2. **Online Store → Themes → the newly published denim theme → Customize:**
-   - Set the header logo to `trenzora-logo.png`, at a desktop width of about 180–220 px, so the header does not get taller than before.
+   - Set the header logo to `trenzora-logo-denim.png`, at a desktop width of about 180–220 px, so the header does not get taller than before.
    - Set the mobile-menu logo the same way.
-   - In Theme settings, set the favicon to `trenzora-favicon-512.png`.
+   - In Theme settings, set the favicon to `trenzora-favicon-denim.png`.
    - Save.
    - If the theme has already been published, this is a live change: check the result on desktop and on a phone-sized screen. If the logo looks wrong, undo it and tell me.
-3. **Settings → Checkout → Customize:** set the checkout logo to `trenzora-logo.png` and save. Do not change any checkout fields or payment settings.
+3. **Settings → Checkout → Customize:** set the checkout logo to `trenzora-logo-denim.png` and save. Do not change any checkout fields or payment settings.
 4. **Shopify Email:** check that the logo shows in the two automations from Task 7.
 
 ## Task 9: Social media accounts (profiles only, no posting, no ads)
 
-Use only the **existing Trenzora accounts**. The Facebook Page to use is **"Trenzora" (Page ID 491950360668226)**. Do **not** touch any India pages or any MaternEase accounts.
+Use only the **existing US Trenzora accounts**. If the only Instagram account is the India one (trenzora.in lingerie), do **not** change it: tell me, and I will decide whether to create a separate US account. The Facebook Page to use is **"Trenzora" (Page ID 491950360668226)**. Do **not** touch any India pages or any MaternEase accounts.
 
 Rules for this task:
 - Do not create new accounts.
@@ -124,7 +125,7 @@ Rules for this task:
 - Do not change Business Manager users, roles, payment methods or ad accounts.
 
 1. **Facebook Page "Trenzora"** (Meta Business Suite → Settings → Page info):
-   - Profile picture: `trenzora-icon.png`. Cover photo: `trenzora-cover-facebook.png`.
+   - Profile picture: `trenzora-profile-1080-denim.png`. Cover photo: `trenzora-facebook-cover-1640x624-denim.png`.
    - Category: "Women's Clothing Store", or "Clothing (Brand)" if that one is not available.
    - Bio or intro: `Jeans that fit, sizes 0–24W. Tummy-control and high-rise denim from Judy Blue and RISEN, plus cozy layers. Free US shipping · 14-day returns.`
    - Website: `https://trenzora.com/?utm_source=facebook&utm_medium=social&utm_campaign=profile`
@@ -133,7 +134,8 @@ Rules for this task:
    - Action button: "Shop now", linking to `https://trenzora.com/collections/jeans-that-fit?utm_source=facebook&utm_medium=social&utm_campaign=button`
 2. **Instagram:**
    - First, tell me which Instagram account (if any) is linked to the Trenzora Page, and its handle. If none is linked and a Trenzora Instagram account exists that I am signed in to, ask me before linking it to the Page.
-   - Profile picture: `trenzora-icon.png`. Name field: `Trenzora | Jeans That Fit 0–24W`.
+   - Profile picture: `trenzora-profile-1080-denim.png`. Name field: `Trenzora | Jeans That Fit 0–24W`.
+   - If story highlights exist, change only their covers, using the `ig-highlight-*.png` files. Do not delete highlights or stories.
    - Bio:
      ```
      Jeans that fit, sizes 0–24W 👖
@@ -144,7 +146,7 @@ Rules for this task:
    - Link: `https://trenzora.com/pages/fit-guide?utm_source=instagram&utm_medium=social&utm_campaign=bio`
    - Category: "Clothing (Brand)" or "Shopping & retail". If the account is personal, report this; do not switch it to a professional account without asking me.
 3. **Pinterest** (only if a Trenzora Pinterest account already exists):
-   - Profile picture: `trenzora-icon.png`. Name: `Trenzora`.
+   - Profile picture: `trenzora-profile-1080-denim.png`. Name: `Trenzora`.
    - About: `Jeans that fit, sizes 0–24W. Tummy-control denim, cozy layers, fit tips. Free US shipping.`
    - Website: `https://trenzora.com`. Do not claim the website or add any code to the store.
 4. **Shopify social links:**
